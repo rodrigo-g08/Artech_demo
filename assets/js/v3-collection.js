@@ -73,7 +73,7 @@
   }
   function canRotate(){
     const control=document.activeElement?.closest('button,a');
-    return onCollection()&&openingVisible&&!document.hidden&&!document.body.classList.contains('nav-open')&&!hovered&&!preference.matches&&!(keyboardFocus&&control&&opening.contains(control));
+    return onCollection()&&openingVisible&&!document.hidden&&!document.body.classList.contains('nav-open')&&!preference.matches&&!(keyboardFocus&&control&&opening.contains(control));
   }
   function scheduleAuto(){
     clearAuto();const bar=tabs.querySelector('[aria-pressed="true"] .collection-feature-progress i');
@@ -123,9 +123,6 @@
   }
   tabs.addEventListener('click',event=>{const button=event.target.closest('[data-slug]');if(button)select(button.dataset.slug,true);});
   previous.addEventListener('click',()=>step(-1));next.addEventListener('click',()=>step(1));
-  opening.addEventListener('pointerover',event=>{const control=event.target.closest('a,button');if(control&&opening.contains(control)){hovered=true;clearAuto();}});
-  opening.addEventListener('pointerout',event=>{const control=event.relatedTarget instanceof Element?event.relatedTarget.closest('a,button'):null;hovered=!!control&&opening.contains(control);scheduleAuto();});
-  opening.addEventListener('pointerleave',()=>{hovered=false;scheduleAuto();});
   opening.addEventListener('focusin',clearAuto);
   opening.addEventListener('focusout',()=>requestAnimationFrame(scheduleAuto));
   document.addEventListener('keydown',event=>{if(event.key==='Tab'){keyboardFocus=true;requestAnimationFrame(scheduleAuto);}});

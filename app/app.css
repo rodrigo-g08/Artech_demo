@@ -624,3 +624,12 @@ h1, h2, h3 { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Independent keyboard controls for opening a car and saving a favourite. */
+:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.car-card{position:relative;padding:0}
+.car-open{display:block;width:100%;text-align:left;border:0;background:transparent;padding:0;border-radius:inherit;color:inherit}
+.car-card>.cc-fav{position:absolute;top:10px;right:10px;z-index:2;min-width:44px;min-height:44px;border:0}
+.gallery-open{border:0;padding:0;background:transparent;flex:none;width:80%;max-width:420px}
+.gallery-open .ph{width:100%}
+.step-media{display:block;width:100%;padding:0;border:0;background:transparent;position:relative}

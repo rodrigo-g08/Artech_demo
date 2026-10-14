@@ -4,18 +4,29 @@
    Sin build, sin backend. Vanilla JS.
    ============================================================ */
 'use strict';
+const { storage, language, normaliseCars, escapeHTML } = Artech;
+function savedFavorites() {
+  try { const value=JSON.parse(storage('localStorage','artech_favs')||'[]');
+    return Array.isArray(value)?value.filter(slug=>typeof slug==='string'):[];
+  } catch (_) { return []; }
+}
+let activeCar=null, activeStep=null, applyingRoute=false, loadStatus='loading';
+function navigate(hash) {
+  if(!applyingRoute && location.hash!==hash) history.pushState(null,'',hash);
+}
+
 
 const ASSET = '../assets';
 const CARIMG = (slug, file) => `${ASSET}/cars/${slug}/${file}`;
 
 const state = {
-  lang: localStorage.getItem('artech_lang') || 'es',
+  lang: language('es'),
   cars: [],
   tab: 'home',
   search: '',
   brand: 'all',
   era: 'all',
-  favs: JSON.parse(localStorage.getItem('artech_favs') || '[]'),
+  favs: savedFavorites(),
   context: [],       // lista de slugs para prev/next en la ficha
   back: null         // callback de "volver"
 };
@@ -43,11 +54,11 @@ const I = {
     addFav: 'Guardar en favoritos', remFav: 'En favoritos',
     prevCar: 'Anterior', nextCar: 'Siguiente',
     infoTitle: 'Información', hours: 'Horarios', location: 'Ubicación', visit: 'Tu visita',
-    open: 'Mar – Dom', openHrs: '10:00 – 19:00', monday: 'Lunes', closed: 'Cerrado',
-    addr: 'Chorrillos, Lima — Perú', tickets: 'Entradas', ticketsVal: 'Reserva por WhatsApp',
+    open: 'Mar – Dom', openHrs: '09:00 – 19:00', monday: 'Lunes', closed: 'Cerrado',
+    addr: 'Chorrillos, Lima — Perú', tickets: 'Entradas', ticketsVal: 'Consulta por WhatsApp',
     restTitle: 'Restaurante · Café · Bar', restTxt: 'Cocina de autor dentro del museo. Haz una pausa entre salas.',
     howTitle: 'Cómo usar la app', howTxt: 'Explora la colección, sigue el recorrido guiado por épocas y guarda tus autos favoritos. Añádela a tu pantalla de inicio para abrirla como una app.',
-    waBtn: 'Reservar por WhatsApp', foot: 'ARTECH · Guía del museo — versión demo. Uso interno.',
+    waBtn: 'Consultar por WhatsApp', foot: 'ARTECH · Guía del museo — versión demo. Uso interno.',
     favsEmpty: 'Aún no has guardado autos. Toca la estrella en cualquier ficha.'
   },
   en: {
@@ -71,14 +82,16 @@ const I = {
     addFav: 'Save to favorites', remFav: 'Saved',
     prevCar: 'Previous', nextCar: 'Next',
     infoTitle: 'Information', hours: 'Hours', location: 'Location', visit: 'Your visit',
-    open: 'Tue – Sun', openHrs: '10:00 – 19:00', monday: 'Monday', closed: 'Closed',
-    addr: 'Chorrillos, Lima — Peru', tickets: 'Tickets', ticketsVal: 'Book via WhatsApp',
+    open: 'Tue – Sun', openHrs: '09:00 – 19:00', monday: 'Monday', closed: 'Closed',
+    addr: 'Chorrillos, Lima — Peru', tickets: 'Tickets', ticketsVal: 'Enquire via WhatsApp',
     restTitle: 'Restaurant · Café · Bar', restTxt: 'Signature cuisine inside the museum. Take a break between halls.',
     howTitle: 'How to use the app', howTxt: 'Browse the collection, follow the era-by-era guided tour and save your favorite cars. Add it to your home screen to open it like an app.',
-    waBtn: 'Book via WhatsApp', foot: 'ARTECH · Museum guide — demo build. Internal use.',
+    waBtn: 'Enquire via WhatsApp', foot: 'ARTECH · Museum guide — demo build. Internal use.',
     favsEmpty: 'No saved cars yet. Tap the star on any car.'
   }
 };
+Object.assign(I.es,{loading:'Cargando la colección…',loadError:'No pudimos cargar la colección. Revisa tu conexión y reintenta.',retry:'Reintentar',close:'Cerrar',back:'Volver',photo:'Abrir fotografía',unknownBrand:'Marca por confirmar',today:'hoy'});
+Object.assign(I.en,{loading:'Loading the collection…',loadError:'The collection could not be loaded. Check your connection and retry.',retry:'Retry',close:'Close',back:'Back',photo:'Open photo',unknownBrand:'Brand to be confirmed',today:'today'});
 const t = (k) => (I[state.lang][k] ?? k);
 
 /* ---------- ÉPOCAS (derivadas del año) ---------- */
@@ -124,27 +137,54 @@ async function boot() {
   el('splashStart').addEventListener('click', hideSplash);
   el('btnLang').addEventListener('click', toggleLang);
   el('btnBack').addEventListener('click', () => { if (state.back) state.back(); });
-  el('lbClose').addEventListener('click', () => el('lightbox').hidden = true);
-  el('lightbox').addEventListener('click', (e) => { if (e.target.id === 'lightbox') el('lightbox').hidden = true; });
+  el('lbClose').addEventListener('click', closeLightbox);
+  el('lightbox').addEventListener('click', e => { if(e.target.id==='lightbox')closeLightbox(); });
   document.querySelectorAll('.tab').forEach(b =>
     b.addEventListener('click', () => switchTab(b.dataset.tab)));
 
+  const skipIntro=matchMedia('(prefers-reduced-motion:reduce)').matches || location.hash || storage('sessionStorage','artech_app_intro_seen')==='1';
+  if(skipIntro)hideSplash(); else setTimeout(hideSplash,2500);
+  addEventListener('popstate',renderRoute);addEventListener('hashchange',renderRoute);
+  await loadCars();
+}
+async function loadCars() {
+  loadStatus='loading';el('view').innerHTML=`<p class="empty" role="status">${t('loading')}</p>`;
   try {
-    const res = await fetch(`${ASSET}/cars.json`);
-    const data = await res.json();
-    state.cars = Array.isArray(data) ? data : (data.cars || Object.values(data));
-  } catch (e) {
-    state.cars = [];
-    console.error('No se pudo cargar cars.json', e);
+    const res=await fetch(`${ASSET}/cars.json`);
+    if(!res.ok)throw new Error('Catalogue request failed');
+    state.cars=normaliseCars(await res.json());loadStatus='ready';renderRoute();
+  }catch(_) {
+    state.cars=[];loadStatus='error';showLoadError();
   }
-  // auto-cierra el splash tras unos segundos si no tocan
-  setTimeout(hideSplash, 4200);
-  switchTab('home');
+}
+function showLoadError() {
+  el('view').innerHTML=`<p class="empty" role="alert">${t('loadError')}</p><button class="wa-btn" id="loadRetry" type="button">${t('retry')}</button>`;
+  el('loadRetry').addEventListener('click',loadCars);
+}
+function renderRoute() {
+  closeLightbox();
+  if(loadStatus!=='ready')return;
+  const parts=location.hash.slice(1).split('/');
+  applyingRoute=true;
+  try {
+    if(parts[0]==='car') {
+      const car=state.cars.find(c=>c.slug===parts[1]);
+      if(car){state.tab='collection';openCar(car.slug);}
+      else {history.replaceState(null,'','#collection');switchTab('collection');}
+    }else if(parts[0]==='tour'&&parts[1]) {
+      const era=ERAS.find(e=>e.id===parts[1]);
+      if(era){state.tab='tour';state.context=state.cars.filter(c=>eraOf(c).id===era.id).sort((a,b)=>yearNum(a)-yearNum(b)).map(c=>c.slug);
+        const idx=Number(parts[2]);if(state.context.length)renderStep(era.id,Number.isInteger(idx)&&idx>=0&&idx<state.context.length?idx:0);else switchTab('tour');}
+      else {history.replaceState(null,'','#tour');switchTab('tour');}
+    }else switchTab(['home','collection','tour','info'].includes(parts[0])?parts[0]:'home');
+  }finally{applyingRoute=false;}
+
 }
 
 function hideSplash() {
   const s = el('splash');
-  if (s.classList.contains('hide')) return;
+  if (!s || s.classList.contains('hide')) return;
+  storage('sessionStorage','artech_app_intro_seen','1');
   s.classList.add('hide');
   el('app').hidden = false;
   setTimeout(() => s.remove(), 550);
@@ -154,19 +194,28 @@ function applyStaticI18n() {
   document.querySelectorAll('[data-i]').forEach(n => { n.textContent = t(n.dataset.i); });
   el('btnLang').textContent = state.lang === 'es' ? 'EN' : 'ES';
   document.documentElement.lang = state.lang;
+  el('btnBack').setAttribute('aria-label',t('back'));
+  el('lbClose').setAttribute('aria-label',t('close'));
+  el('lightbox').setAttribute('aria-label',t('photo'));
+  document.title=state.lang==='es'?'ARTECH · Guía del Museo':'ARTECH · Museum Guide';
 }
 
 function toggleLang() {
   state.lang = state.lang === 'es' ? 'en' : 'es';
-  localStorage.setItem('artech_lang', state.lang);
+  storage('localStorage','artech_lang',state.lang);
   applyStaticI18n();
-  switchTab(state.tab, true); // re-render de la vista actual
+  if(loadStatus==='error'){showLoadError();return;}
+  if(activeCar){openCar(activeCar,state.context,state.back);return;}
+  if(activeStep){renderStep(activeStep.eraId,activeStep.idx);return;}
+  if(loadStatus==='ready')switchTab(state.tab,true);
 }
 
 /* ============================================================
    NAVEGACIÓN
    ============================================================ */
 function switchTab(tab, keep) {
+  activeCar=null;activeStep=null;
+  navigate('#'+tab);
   state.tab = tab;
   state.back = null;
   document.querySelectorAll('.tab').forEach(b => b.classList.toggle('tab-on', b.dataset.tab === tab));
@@ -180,6 +229,10 @@ function switchTab(tab, keep) {
   else if (tab === 'collection') v.innerHTML = viewCollection();
   else if (tab === 'tour') v.innerHTML = viewTour();
   else if (tab === 'info') v.innerHTML = viewInfo();
+  document.querySelectorAll('.tab').forEach(button=>{
+    if(button.dataset.tab===tab)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
+  });
+  if(loadStatus==='error'){showLoadError();return;}
   bindView(tab);
 }
 
@@ -200,15 +253,15 @@ function viewHome() {
     <button class="feat-card" data-slug="${c.slug}">
       ${ph('FOTO', CARIMG(c.slug, 'cover.jpg'))}
       <div class="feat-scrim">
-        <span class="feat-year">${c.year}</span>
-        <span class="feat-name">${c.name}</span>
-        <span class="feat-brand">${c.brand}</span>
+        <span class="feat-year">${escapeHTML(c.year)}</span>
+        <span class="feat-name">${escapeHTML(c.name)}</span>
+        <span class="feat-brand">${escapeHTML(c.brand||t('unknownBrand'))}</span>
       </div>
     </button>`).join('');
 
-  const brands = new Set(state.cars.map(c => c.brand)).size;
+  const brands = new Set(state.cars.map(c => c.brand).filter(Boolean)).size;
   const years = state.cars.map(yearNum).filter(Boolean);
-  const decades = Math.round((Math.max(...years) - Math.min(...years)) / 10);
+  const decades = years.length ? Math.round((Math.max(...years) - Math.min(...years)) / 10) : 0;
 
   return `
   <section class="home-hero">
@@ -261,22 +314,22 @@ function filteredCars() {
   return state.cars.filter(c => {
     if (state.brand !== 'all' && c.brand !== state.brand) return false;
     if (state.era !== 'all' && eraOf(c).id !== state.era) return false;
-    if (q && !`${c.name} ${c.brand} ${c.model} ${c.year}`.toLowerCase().includes(q)) return false;
+    if (q && !`${escapeHTML(c.name)} ${escapeHTML(c.brand||t('unknownBrand'))} ${c.model} ${escapeHTML(c.year)}`.toLowerCase().includes(q)) return false;
     return true;
   });
 }
 
 function viewCollection() {
-  const brands = ['all', ...[...new Set(state.cars.map(c => c.brand))].sort()];
+  const brands = ['all', ...[...new Set(state.cars.map(c => c.brand).filter(Boolean))].sort()];
   const list = filteredCars();
   return `
   <div class="col-tools">
     <div class="search">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <input id="q" type="search" placeholder="${t('searchPh')}" value="${state.search.replace(/"/g,'&quot;')}">
+      <input id="q" type="search" aria-label="${t('searchPh')}" placeholder="${t('searchPh')}" value="${state.search.replace(/"/g,'&quot;')}">
     </div>
     <div class="chips" id="brandChips">
-      ${brands.map(b => `<button class="chip ${state.brand===b?'chip-on':''}" data-brand="${b}">${b==='all'?t('allBrands'):b}</button>`).join('')}
+      ${brands.map(b => `<button class="chip ${state.brand===b?'chip-on':''}" data-brand="${escapeHTML(b)}">${b==='all'?t('allBrands'):escapeHTML(b)}</button>`).join('')}
     </div>
   </div>
   <div class="col-count">${list.length} ${t('results')}</div>
@@ -286,19 +339,14 @@ function viewCollection() {
 }
 
 function cardHTML(c) {
-  const on = state.favs.includes(c.slug) ? 'on' : '';
-  return `
-  <button class="car-card" data-slug="${c.slug}">
-    <div class="cc-media">
-      <span class="cc-fav ${on}" data-fav="${c.slug}">★</span>
-      ${ph('FOTO', CARIMG(c.slug, 'thumb.jpg'))}
-    </div>
-    <div class="cc-body">
-      <div class="cc-year">${c.year}</div>
-      <div class="cc-name">${c.name}</div>
-      <div class="cc-brand">${c.brand}</div>
-    </div>
-  </button>`;
+  const on=state.favs.includes(c.slug);
+  return `<article class="car-card" data-slug="${c.slug}">
+    <button class="car-open" type="button" data-open="${c.slug}" aria-label="${escapeHTML(c.name)}">
+      <div class="cc-media">${ph('FOTO',CARIMG(c.slug,'thumb.jpg'))}</div>
+      <div class="cc-body"><div class="cc-year">${escapeHTML(c.year)}</div><div class="cc-name">${escapeHTML(c.name)}</div><div class="cc-brand">${escapeHTML(c.brand||t('unknownBrand'))}</div></div>
+    </button>
+    <button class="cc-fav ${on?'on':''}" type="button" data-fav="${c.slug}" aria-pressed="${on}" aria-label="${escapeHTML((on?t('remFav'):t('addFav'))+' · '+c.name)}">★</button>
+  </article>`;
 }
 
 /* ============================================================
@@ -313,7 +361,7 @@ function viewTour() {
       <div class="era-scrim">
         <span class="era-num">${String(i+1).padStart(2,'0')}</span>
         <span class="era-name">${state.lang==='en'?e.en:e.es}</span>
-        <span class="era-meta">${e.min===0?'– '+e.max:e.min+' – '+(e.max===9999?''+t('open').slice(0,0)+'hoy':e.max)} · ${n} ${t('statCars').toLowerCase()}</span>
+        <span class="era-meta">${e.min===0?'– '+e.max:e.min+' – '+(e.max===9999?t('today'):e.max)} · ${n} ${t('statCars').toLowerCase()}</span>
         <span class="era-go">${t('tourCtaBtn')} →</span>
       </div>
     </button>`;
@@ -334,6 +382,7 @@ function startTour(eraId) {
 }
 
 function renderStep(eraId, idx) {
+  activeCar=null;activeStep={eraId,idx};navigate(`#tour/${eraId}/${idx}`);
   const era = ERAS.find(e => e.id === eraId);
   const cars = state.context.map(s => state.cars.find(c => c.slug === s));
   const c = cars[idx];
@@ -346,15 +395,15 @@ function renderStep(eraId, idx) {
   el('view').innerHTML = `
   <div class="stepper">
     <div class="step-progress">${cars.map((_,i)=>`<span class="dot ${i<=idx?'on':''}"></span>`).join('')}</div>
-    <div class="step-media" data-slug="${c.slug}">
+    <button type="button" class="step-media" data-slug="${c.slug}" aria-label="${t('photo')}">
       ${ph('FOTO', CARIMG(c.slug, 'cover.jpg'))}
       <span class="step-tag">${t('stop')} ${idx+1} ${t('of')} ${total}</span>
-    </div>
+    </button>
     <div class="step-body">
-      <div class="step-year">${c.year}</div>
-      <div class="step-name">${c.name}</div>
-      <div class="step-brand">${c.brand} · ${c.model || ''}</div>
-      <p class="step-desc">${dOf(c)}</p>
+      <div class="step-year">${escapeHTML(c.year)}</div>
+      <div class="step-name">${escapeHTML(c.name)}</div>
+      <div class="step-brand">${escapeHTML(c.brand||t('unknownBrand'))} · ${escapeHTML(c.model || '')}</div>
+      <p class="step-desc">${escapeHTML(dOf(c))}</p>
     </div>
     <button class="step-full" data-slug="${c.slug}">${t('seeFull')}</button>
     <div class="step-nav">
@@ -373,40 +422,41 @@ function renderStep(eraId, idx) {
    FICHA DE AUTO
    ============================================================ */
 function openCar(slug, context, back) {
+  activeCar=slug;activeStep=null;navigate('#car/'+slug);
   const c = state.cars.find(x => x.slug === slug);
   if (!c) return;
   state.context = context && context.length ? context : filteredCars().map(x => x.slug);
   const idx = state.context.indexOf(slug);
   state.back = back || (() => switchTab(state.tab, true));
-  setHeader(c.brand);
+  setHeader(c.brand||t('unknownBrand'));
   el('tabbar').style.display = 'none';
   window.scrollTo(0,0);
 
   const specs = specsOf(c);
   const lbls = SPEC_LABELS[state.lang];
   const specHTML = Object.entries(specs).filter(([,v]) => v)
-    .map(([k,v]) => `<div class="spec"><div class="spec-k">${lbls[k]||k}</div><div class="spec-v">${v}</div></div>`).join('');
+    .map(([k,v]) => `<div class="spec"><div class="spec-k">${escapeHTML(lbls[k]||k)}</div><div class="spec-v">${escapeHTML(v)}</div></div>`).join('');
   const shots = ['cover.jpg', ...(c.shots || [])];
-  const gal = shots.map(f => ph('FOTO', CARIMG(c.slug, f))).join('');
+  const gal = shots.map(f => `<button class="gallery-open" type="button" aria-label="${t('photo')}">${ph('FOTO',CARIMG(c.slug,f))}</button>`).join('');
   const favOn = state.favs.includes(slug);
   const prev = idx > 0 ? state.cars.find(x=>x.slug===state.context[idx-1]) : null;
   const next = idx < state.context.length-1 ? state.cars.find(x=>x.slug===state.context[idx+1]) : null;
 
   el('view').innerHTML = `
   <div class="detail">
-    <div class="dt-cover" data-shot="cover.jpg">
+    <div class="dt-cover" data-shot="cover.jpg" role="button" tabindex="0" aria-label="${t('photo')}">
       ${ph('FOTO DE PORTADA', CARIMG(c.slug, 'cover.jpg'))}
       <div class="dt-cover-scrim"></div>
-      ${c.plate ? `<span class="dt-plate">${c.plate}</span>` : ''}
+      ${c.plate ? `<span class="dt-plate">${escapeHTML(c.plate)}</span>` : ''}
     </div>
     <div class="dt-head">
-      <div class="dt-year">${c.year}</div>
-      <h1 class="dt-name">${c.name}</h1>
-      <div class="dt-model">${c.brand} · ${c.model || ''}</div>
+      <div class="dt-year">${escapeHTML(c.year)}</div>
+      <h1 class="dt-name">${escapeHTML(c.name)}</h1>
+      <div class="dt-model">${escapeHTML(c.brand||t('unknownBrand'))} · ${escapeHTML(c.model || '')}</div>
     </div>
 
     <div class="dt-section-title">${t('history')}</div>
-    <p class="dt-desc">${dOf(c)}</p>
+    <p class="dt-desc">${escapeHTML(dOf(c))}</p>
 
     ${specHTML ? `<div class="dt-section-title">${t('techsheet')}</div><div class="specs">${specHTML}</div>` : ''}
 
@@ -418,15 +468,16 @@ function openCar(slug, context, back) {
     </button>
 
     <div class="dt-adjacent">
-      ${prev ? `<button data-slug="${prev.slug}"><span class="lbl">← ${t('prevCar')}</span><span class="nm">${prev.name}</span></button>` : '<span style="flex:1"></span>'}
-      ${next ? `<button class="right" data-slug="${next.slug}"><span class="lbl">${t('nextCar')} →</span><span class="nm">${next.name}</span></button>` : '<span style="flex:1"></span>'}
+      ${prev ? `<button data-slug="${prev.slug}"><span class="lbl">← ${t('prevCar')}</span><span class="nm">${escapeHTML(prev.name)}</span></button>` : '<span style="flex:1"></span>'}
+      ${next ? `<button class="right" data-slug="${next.slug}"><span class="lbl">${t('nextCar')} →</span><span class="nm">${escapeHTML(next.name)}</span></button>` : '<span style="flex:1"></span>'}
     </div>
   </div>`;
 
   // bind
   el('favBtn').onclick = () => { toggleFav(slug); openCar(slug, state.context, back); };
   el('view').querySelector('.dt-cover').onclick = () => openLightbox(CARIMG(c.slug, 'cover.jpg'));
-  el('gal').querySelectorAll('.ph').forEach((node, i) =>
+  el('view').querySelector('.dt-cover').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLightbox(CARIMG(c.slug,'cover.jpg'));}};
+  el('gal').querySelectorAll('.gallery-open').forEach((node, i) =>
     node.onclick = () => openLightbox(CARIMG(c.slug, shots[i])));
   el('view').querySelectorAll('.dt-adjacent [data-slug]').forEach(b =>
     b.onclick = () => openCar(b.dataset.slug, state.context, back));
@@ -435,7 +486,7 @@ function openCar(slug, context, back) {
 function toggleFav(slug) {
   const i = state.favs.indexOf(slug);
   if (i >= 0) state.favs.splice(i,1); else state.favs.push(slug);
-  localStorage.setItem('artech_favs', JSON.stringify(state.favs));
+  storage('localStorage','artech_favs',JSON.stringify(state.favs));
 }
 
 /* ============================================================
@@ -478,12 +529,20 @@ function viewInfo() {
 /* ============================================================
    LIGHTBOX
    ============================================================ */
-function openLightbox(src) {
-  const lb = el('lightbox'), img = el('lbImg');
-  img.onerror = () => { lb.hidden = true; };
-  img.src = src;
-  lb.hidden = false;
+let lightboxOpener=null,lightboxOverflow='';
+function closeLightbox() {
+  const lb=el('lightbox');if(lb.hidden)return;
+  lb.hidden=true;el('app').inert=false;document.documentElement.style.overflow=lightboxOverflow;
+  el('lbImg').removeAttribute('src');
+  if(lightboxOpener?.isConnected)lightboxOpener.focus({preventScroll:true});
 }
+function openLightbox(src) {
+  const lb=el('lightbox'),img=el('lbImg');lightboxOpener=document.activeElement;
+  lightboxOverflow=document.documentElement.style.overflow;
+  img.onerror=closeLightbox;img.src=src;lb.hidden=false;
+  el('app').inert=true;document.documentElement.style.overflow='hidden';el('lbClose').focus();
+}
+document.addEventListener('keydown',e=>{if(el('lightbox').hidden)return;if(e.key==='Escape'){e.preventDefault();closeLightbox();}if(e.key==='Tab'){e.preventDefault();el('lbClose').focus();}});
 
 /* ============================================================
    BIND por vista
@@ -499,16 +558,16 @@ function bindView(tab) {
   });
 
   // tarjetas de auto (home rail + colección)
-  v.querySelectorAll('[data-slug]').forEach(b => {
-    if (b.classList.contains('feat-card') || b.classList.contains('car-card'))
-      b.onclick = (e) => { if (e.target.closest('[data-fav]')) return; openCar(b.dataset.slug); };
+  v.querySelectorAll('.feat-card[data-slug], [data-open]').forEach(b => {
+    if (b.classList.contains('feat-card') || b.hasAttribute('data-open'))
+      b.onclick = (e) => { if (e.target.closest('[data-fav]')) return; openCar(b.dataset.open||b.dataset.slug); };
   });
 
   // favoritos en las tarjetas
   v.querySelectorAll('[data-fav]').forEach(s => s.onclick = (e) => {
     e.stopPropagation();
     toggleFav(s.dataset.fav);
-    s.classList.toggle('on');
+    s.classList.toggle('on');s.setAttribute('aria-pressed',String(state.favs.includes(s.dataset.fav)));s.setAttribute('aria-label',state.favs.includes(s.dataset.fav)?t('remFav'):t('addFav'));
   });
 
   if (tab === 'collection') {
@@ -534,10 +593,10 @@ function bindView(tab) {
 
 function bindGrid() {
   const v = el('view');
-  v.querySelectorAll('.car-card[data-slug]').forEach(b =>
-    b.onclick = (e) => { if (e.target.closest('[data-fav]')) return; openCar(b.dataset.slug); });
+  v.querySelectorAll('[data-open]').forEach(b =>
+    b.onclick = (e) => { if (e.target.closest('[data-fav]')) return; openCar(b.dataset.open||b.dataset.slug); });
   v.querySelectorAll('[data-fav]').forEach(s => s.onclick = (e) => {
-    e.stopPropagation(); toggleFav(s.dataset.fav); s.classList.toggle('on');
+    e.stopPropagation(); toggleFav(s.dataset.fav); s.classList.toggle('on');s.setAttribute('aria-pressed',String(state.favs.includes(s.dataset.fav)));
   });
 }
 

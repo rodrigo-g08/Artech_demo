@@ -1,0 +1,1160 @@
+{
+  "version": "V3-00",
+  "preparedAt": "2026-10-14",
+  "timeZone": "America/Lima",
+  "status": "content-preparation",
+  "primaryCTA": {
+    "es": "Reserva tu turno",
+    "en": "Book your visit",
+    "route": "#p-tickets"
+  },
+  "design": {
+    "concept": "La historia del automóvil, y el oficio que la mantiene presente.",
+    "black": "#080808",
+    "paper": "#F2F0EB",
+    "red": "#C8102E",
+    "displayFont": "Archivo",
+    "bodyFont": "Inter",
+    "fontStatus": "Continuidad del sistema digital MH01; el PDF revisado no especifica estos nombres.",
+    "photos": "Sin filtros, blur, viñeta, sombras, máscaras ni texto superpuesto. Respetar composición y relación de aspecto; excepción explícita antes simulado.",
+    "motion": "Escena completa → negro → escena siguiente; reversible. Negro también en transición a papel. Sin barridos ni brillo de pantalla.",
+    "headlinesOnPaper": "Reflejo sólo en letras con base oscura siempre legible.",
+    "mobile": "Texto e imagen separados en secuencia vertical; sin recortes de autos para simular fondo.",
+    "reducedMotion": "Flujo normal, sin pin prolongado ni cambio de ruta automático; acceso por enlaces."
+  },
+  "catalogueSnapshot": {
+    "vehicles": 96,
+    "identifiedBrands": 40,
+    "missingBrandSlugs": [
+      "a5m-345",
+      "ammp-057",
+      "sin-placa-11",
+      "sin-placa-18",
+      "sin-placa-25"
+    ],
+    "firstYear": 1903,
+    "lastYear": 2018,
+    "source": "assets/cars.json",
+    "status": "Verificado en datos existentes; no certifica autenticidad histórica."
+  },
+  "menu": [
+    {
+      "es": "Colección",
+      "en": "Collection",
+      "route": "#p-collection",
+      "media": "assets/cars/maserati-300s/cover.jpg"
+    },
+    {
+      "es": "El taller",
+      "en": "The workshop",
+      "route": "#p-workshops",
+      "media": "assets/cars/cxj-330/d1.jpg"
+    },
+    {
+      "es": "Experiencias",
+      "en": "Experiences",
+      "route": "#p-experience",
+      "media": "assets/legacy.png"
+    },
+    {
+      "es": "Restaurante",
+      "en": "Restaurant",
+      "route": "#p-cafe",
+      "media": "assets/legacy.png"
+    },
+    {
+      "es": "Historia",
+      "en": "History",
+      "route": "#p-history",
+      "media": "assets/cars/maserati-300s/cover.jpg"
+    }
+  ],
+  "eraVehicles": [
+    "sin-placa-25",
+    "sin-placa-15",
+    "maserati-300s",
+    "awf-621",
+    "cxj-330",
+    "bfu-487"
+  ],
+  "pending": [
+    "Par real antes/después del mismo vehículo.",
+    "Fotos de trabajo real: desarme, mecánica, pintura, cromados, costura y pruebas.",
+    "Fotos reales del restaurante y platos.",
+    "Foto panorámica final con autos completos; legacy.png es sustituto disponible.",
+    "Film de cada pieza, si existe; hero.mp4 es video general, no film específico.",
+    "Retrato de Jimmy y cronología institucional autorizada.",
+    "Marca/modelo de cinco fichas incompletas; confirmar pieza de 1903.",
+    "Nuevos autos de 2020 o posteriores: no figuran en el catálogo disponible.",
+    "Precios, duración, descuentos, dirección, horario e inclusiones vigentes.",
+    "Estado y datos del proyecto Auburn: sin motor, 12 meses, 2000 piezas y número de proyecto.",
+    "Hay dos en el taller; fines de semana se agotan primero; todos llegaron como pérdida: no publicar sin evidencia.",
+    "Promoción restaurante S/100 e ingreso: no publicar sin confirmación.",
+    "Recepción de reservas, pago, cupos y Libro de Reclamaciones: integraciones por confirmar."
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "title": "Portada",
+      "route": "#top",
+      "routeStatus": "existing",
+      "scenes": [
+        {
+          "id": "home-01",
+          "headline": {
+            "es": "El automóvil,\na través del tiempo.",
+            "en": "The automobile,\nthrough time."
+          },
+          "body": {
+            "es": "Clásicos y contemporáneos. Una colección para descubrir en Lima.",
+            "en": "Classic and contemporary cars. A collection to discover in Lima."
+          },
+          "media": "assets/cars/cxj-330/cover.jpg",
+          "layout": "split",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "home-02",
+          "headline": {
+            "es": "El recorrido\ncomienza en 1903.",
+            "en": "The journey\nbegins in 1903."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "type",
+          "tone": "black",
+          "productionNote": "Año calculado desde el catálogo; no afirmar que es el auto más antiguo del mundo."
+        },
+        {
+          "id": "home-03",
+          "headline": {
+            "es": "1903.\nOtra forma de viajar.",
+            "en": "1903.\nA different way to travel."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/sin-placa-25/v1.jpg",
+          "layout": "photo-caption",
+          "tone": "black",
+          "productionNote": "Marca y modelo de esta pieza pendientes; no inventarlos."
+        },
+        {
+          "id": "home-04",
+          "headline": {
+            "es": "Cada época,\nsu propia forma.",
+            "en": "Every era,\na shape of its own."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/cxj-330/cover.jpg",
+          "layout": "era-gallery",
+          "tone": "black",
+          "productionNote": "Seis piezas: 1903, 1936, 1956, 1970, 1988, 2018; selector accesible."
+        },
+        {
+          "id": "home-05",
+          "headline": {
+            "es": "Lo que ves en la sala\nes parte de la historia.",
+            "en": "What you see in the gallery\nis part of the story."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "type",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "home-06",
+          "headline": {
+            "es": "La historia también\nse reconstruye.",
+            "en": "History can\nbe rebuilt."
+          },
+          "body": {
+            "es": "Carrocería, mecánica, pintura y tapicería. Descubre los oficios detrás de la colección.",
+            "en": "Bodywork, mechanics, paint and upholstery. Discover the crafts behind the collection."
+          },
+          "media": "assets/cars/cxj-330/d1.jpg",
+          "layout": "split",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "home-07",
+          "headline": {
+            "es": "Elige cómo\nvivir Artech.",
+            "en": "Choose how\nto experience Artech."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "experience-options",
+          "tone": "paper",
+          "productionNote": "Mostrar precios e inclusiones existentes como provisionales; confirmación comercial pendiente."
+        },
+        {
+          "id": "home-08",
+          "headline": {
+            "es": "Haz espacio\npara descubrir.",
+            "en": "Make time\nto discover."
+          },
+          "body": {
+            "es": "Elige una experiencia y solicita tu turno.",
+            "en": "Choose an experience and request your visit."
+          },
+          "media": null,
+          "layout": "type",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "home-09",
+          "headline": {
+            "es": "El taller.",
+            "en": "The workshop."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/cxj-330/d1.jpg",
+          "layout": "next-chapter",
+          "tone": "black",
+          "productionNote": "Siguiente ruta: #p-workshops. Progreso reversible; botón alternativo siempre disponible."
+        },
+        {
+          "id": "home-10",
+          "headline": {
+            "es": "Artech. Lima.",
+            "en": "Artech. Lima."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "footer",
+          "tone": "black",
+          "productionNote": ""
+        }
+      ]
+    },
+    {
+      "id": "workshop",
+      "title": "El taller",
+      "route": "#p-workshops",
+      "routeStatus": "existing",
+      "scenes": [
+        {
+          "id": "workshop-01",
+          "headline": {
+            "es": "El oficio detrás\nde cada auto.",
+            "en": "The craft behind\nevery car."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/cxj-330/d1.jpg",
+          "layout": "split",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "workshop-02",
+          "headline": {
+            "es": "Restaurar es\nvolver a mirar cada detalle.",
+            "en": "Restoration begins\nwith every detail."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "type",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "workshop-03",
+          "headline": {
+            "es": "Antes.\nDespués.",
+            "en": "Before.\nAfter."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/sin-placa-15/cover.jpg",
+          "layout": "comparison",
+          "tone": "black",
+          "productionNote": "Comparador de demostración: la mitad antes es una simulación claramente rotulada. Sustituir por un par auténtico de la misma pieza."
+        },
+        {
+          "id": "workshop-04",
+          "headline": {
+            "es": "Un proceso.\nDistintos oficios.",
+            "en": "One process.\nMany crafts."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/interior.png",
+          "layout": "process-dial",
+          "tone": "paper",
+          "productionNote": "Diagnóstico, desarme, chasis y mecánica, pintura, tapicería y cuero, pruebas y ajustes. Fotos de detalles terminados como apoyo, sin atribuirlas a una etapa real."
+        },
+        {
+          "id": "workshop-05",
+          "headline": {
+            "es": "Cada oficio\ndeja su huella.",
+            "en": "Every craft\nleaves its mark."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/interior.png",
+          "layout": "craft-list",
+          "tone": "paper",
+          "productionNote": ""
+        },
+        {
+          "id": "workshop-06",
+          "headline": {
+            "es": "Lo que no se ve\ntambién se restaura.",
+            "en": "What stays hidden\nis restored too."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "type",
+          "tone": "paper",
+          "productionNote": ""
+        },
+        {
+          "id": "workshop-07",
+          "headline": {
+            "es": "Conoce el taller\ndurante tu visita.",
+            "en": "Discover the workshop\nduring your visit."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/bfu-487/cover.jpg",
+          "layout": "photo-caption",
+          "tone": "black",
+          "productionNote": "Acceso según condiciones de la experiencia Colección + taller. No insinuar disponibilidad garantizada."
+        },
+        {
+          "id": "workshop-08",
+          "headline": {
+            "es": "Proyectos\ndel taller.",
+            "en": "Workshop\nprojects."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/sin-placa-15/cover.jpg",
+          "layout": "next-chapter",
+          "tone": "black",
+          "productionNote": "Ruta a construir: #p-projects."
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "Proyectos",
+      "route": "#p-projects",
+      "routeStatus": "planned",
+      "scenes": [
+        {
+          "id": "projects-01",
+          "headline": {
+            "es": "Cada restauración\ntiene un comienzo.",
+            "en": "Every restoration\nhas a beginning."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/sin-placa-15/cover.jpg",
+          "layout": "split",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "projects-02",
+          "headline": {
+            "es": "Del detalle\nal conjunto.",
+            "en": "From each detail\nto the whole."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/sin-placa-15/cover.jpg",
+          "layout": "project-grid",
+          "tone": "paper",
+          "productionNote": "Publicar sólo proyectos documentados. No crear seis proyectos ficticios para llenar la grilla."
+        },
+        {
+          "id": "projects-03",
+          "headline": {
+            "es": "Auburn 852\nSupercharged.",
+            "en": "Auburn 852\nSupercharged."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/sin-placa-15/cover.jpg",
+          "layout": "project-feature",
+          "tone": "black",
+          "productionNote": "No afirmar que llegó sin motor ni que está hoy en proceso, hasta confirmación."
+        }
+      ]
+    },
+    {
+      "id": "auburn",
+      "title": "Proyecto Auburn",
+      "route": "#p-project/auburn-852",
+      "routeStatus": "planned",
+      "scenes": [
+        {
+          "id": "auburn-01",
+          "headline": {
+            "es": "Auburn 852.\n1936.",
+            "en": "Auburn 852.\n1936."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/sin-placa-15/cover.jpg",
+          "layout": "photo-caption",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "auburn-02",
+          "headline": {
+            "es": "Una pieza,\nmuchos detalles.",
+            "en": "One car,\nmany details."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/sin-placa-15/d1.jpg",
+          "layout": "split",
+          "tone": "black",
+          "productionNote": "Relato del proyecto pendiente. No usar número de proyecto, duración, conteo de piezas o condición inicial inventados."
+        },
+        {
+          "id": "auburn-03",
+          "headline": {
+            "es": "El proceso,\npaso a paso.",
+            "en": "The process,\nstep by step."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/sin-placa-15/cover.jpg",
+          "layout": "project-process",
+          "tone": "paper",
+          "productionNote": "Distinguir proceso general de Artech y registro específico del Auburn; ocultar cronología del proyecto hasta recibir evidencia."
+        },
+        {
+          "id": "auburn-04",
+          "headline": {
+            "es": "Míralo\nde cerca.",
+            "en": "Take\na closer look."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/sin-placa-15/cover.jpg",
+          "layout": "photo-caption",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "auburn-05",
+          "headline": {
+            "es": "La colección.",
+            "en": "The collection."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/maserati-300s/cover.jpg",
+          "layout": "next-chapter",
+          "tone": "black",
+          "productionNote": ""
+        }
+      ]
+    },
+    {
+      "id": "collection",
+      "title": "Colección",
+      "route": "#p-collection",
+      "routeStatus": "existing",
+      "scenes": [
+        {
+          "id": "collection-01",
+          "headline": {
+            "es": "¿Cuál era el auto\nde tu papá?",
+            "en": "Which car\ndid your dad drive?"
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "catalogue-search",
+          "tone": "black",
+          "productionNote": "Conservar el gancho de la lámina. Etiqueta funcional del campo: Buscar un auto; placeholder: Marca, modelo o año."
+        },
+        {
+          "id": "collection-02",
+          "headline": {
+            "es": "Encuentra\ntu próxima pieza.",
+            "en": "Find\nyour next discovery."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "catalogue-grid",
+          "tone": "black",
+          "productionNote": "Todas las piezas; marca y época; estados aplicado, vacío y carga; incluir marcas sin identificar sin asignarles una marca ficticia."
+        },
+        {
+          "id": "collection-03",
+          "headline": {
+            "es": "Cada auto,\nuna historia.",
+            "en": "Every car,\na story."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/cxj-330/cover.jpg",
+          "layout": "card-to-vehicle",
+          "tone": "black",
+          "productionNote": "El zoom es opcional; enlace individual, Atrás y filtros persistentes son obligatorios."
+        }
+      ]
+    },
+    {
+      "id": "vehicle",
+      "title": "Ficha de vehículo",
+      "route": "#p-vehicle/{slug}",
+      "routeStatus": "existing",
+      "scenes": [
+        {
+          "id": "vehicle-01",
+          "headline": {
+            "es": "Ferrari Testarossa.\n1988.",
+            "en": "Ferrari Testarossa.\n1988."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/cxj-330/cover.jpg",
+          "layout": "photo-caption",
+          "tone": "black",
+          "productionNote": "Ejemplo de plantilla; nombre y año del catálogo. Film de la pieza sólo si existe uno identificado."
+        },
+        {
+          "id": "vehicle-02",
+          "headline": {
+            "es": "Diseño.\nIngeniería.\nCarácter.",
+            "en": "Design.\nEngineering.\nCharacter."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "spec-highlights",
+          "tone": "black",
+          "productionNote": "Ferrari: 390 HP, motor Flat-12, 290 km/h según catálogo; confirmar ficha técnica con Artech."
+        },
+        {
+          "id": "vehicle-03",
+          "headline": {
+            "es": "Una silueta\ninconfundible.",
+            "en": "An unmistakable\nsilhouette."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/cxj-330/d1.jpg",
+          "layout": "split",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "vehicle-04",
+          "headline": {
+            "es": "Míralo\nde cerca.",
+            "en": "Take\na closer look."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/cxj-330/cover.jpg",
+          "layout": "gallery",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "vehicle-05",
+          "headline": {
+            "es": "La pieza\nen detalle.",
+            "en": "The car\nin detail."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "specifications",
+          "tone": "paper",
+          "productionNote": ""
+        },
+        {
+          "id": "vehicle-06",
+          "headline": {
+            "es": "Sigue\ndescubriendo.",
+            "en": "Keep\ndiscovering."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "recommendations",
+          "tone": "black",
+          "productionNote": "Razones verificables: misma década, misma marca en otra época o misma categoría. No inventar rivales históricos."
+        },
+        {
+          "id": "vehicle-07",
+          "headline": {
+            "es": "La siguiente\npieza.",
+            "en": "The next\ncar."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/maserati-300s/cover.jpg",
+          "layout": "next-vehicle",
+          "tone": "black",
+          "productionNote": "Vehículo de destino real, con nombre, año y enlace; imagen generada desde catálogo."
+        }
+      ]
+    },
+    {
+      "id": "experiences",
+      "title": "Experiencias",
+      "route": "#p-experience",
+      "routeStatus": "existing",
+      "scenes": [
+        {
+          "id": "experience-01",
+          "headline": {
+            "es": "Tu forma de\nvivir Artech.",
+            "en": "Your way to\nexperience Artech."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/legacy.png",
+          "layout": "split",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "experience-02",
+          "headline": {
+            "es": "La colección.",
+            "en": "The collection."
+          },
+          "body": {
+            "es": "Un recorrido por los autos y sus historias.",
+            "en": "A journey through the cars and their stories."
+          },
+          "media": "assets/cars/maserati-300s/cover.jpg",
+          "layout": "split",
+          "tone": "paper",
+          "productionNote": ""
+        },
+        {
+          "id": "experience-03",
+          "headline": {
+            "es": "La colección.\nY lo que hay detrás.",
+            "en": "The collection.\nAnd the craft behind it."
+          },
+          "body": {
+            "es": "La visita a la colección, con acceso al taller según las condiciones de la experiencia.",
+            "en": "A collection visit with workshop access under the experience conditions."
+          },
+          "media": "assets/cars/cxj-330/d1.jpg",
+          "layout": "split",
+          "tone": "paper",
+          "productionNote": ""
+        },
+        {
+          "id": "experience-04",
+          "headline": {
+            "es": "Artech,\na tu ritmo.",
+            "en": "Artech,\nat your pace."
+          },
+          "body": {
+            "es": "Consulta las opciones de visita privada para tu grupo.",
+            "en": "Ask about private visit options for your group."
+          },
+          "media": "assets/interior.png",
+          "layout": "split",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "experience-05",
+          "headline": {
+            "es": "Elige tu día.\nNos vemos en Artech.",
+            "en": "Choose your day.\nSee you at Artech."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "type",
+          "tone": "black",
+          "productionNote": "CTA Reserva tu turno; no afirmar escasez de cupos."
+        },
+        {
+          "id": "experience-06",
+          "headline": {
+            "es": "El restaurante.",
+            "en": "The restaurant."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/legacy.png",
+          "layout": "next-chapter",
+          "tone": "black",
+          "productionNote": ""
+        }
+      ]
+    },
+    {
+      "id": "restaurant",
+      "title": "Restaurante",
+      "route": "#p-cafe",
+      "routeStatus": "existing",
+      "scenes": [
+        {
+          "id": "restaurant-01",
+          "headline": {
+            "es": "Una mesa\nentre clásicos.",
+            "en": "A table\namong classics."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/legacy.png",
+          "layout": "split",
+          "tone": "black",
+          "productionNote": "Foto del museo como apoyo temporal, no como prueba de ubicación exacta de las mesas; sustituir por foto real del salón."
+        },
+        {
+          "id": "restaurant-02",
+          "headline": {
+            "es": "El recorrido\ncontinúa en la mesa.",
+            "en": "The journey\ncontinues at the table."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "type",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "restaurant-03",
+          "headline": {
+            "es": "La carta.",
+            "en": "The menu."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "menu",
+          "tone": "paper",
+          "productionNote": "Categorías Arranque / En ruta / Meta y acordeones; platos ya existentes; confirmar vigencia y precios."
+        },
+        {
+          "id": "restaurant-04",
+          "headline": {
+            "es": "Haz una pausa.",
+            "en": "Take a moment."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "restaurant-request",
+          "tone": "paper",
+          "productionNote": "Solicitar una mesa por WhatsApp. No publicar promoción de S/100 con ingreso incluido sin validación."
+        },
+        {
+          "id": "restaurant-05",
+          "headline": {
+            "es": "Un lugar\npara quedarse.",
+            "en": "A place\nto linger."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/legacy.png",
+          "layout": "photo-caption",
+          "tone": "black",
+          "productionNote": "Reemplazar con mesa y ambiente real del restaurante al recibir medios."
+        },
+        {
+          "id": "restaurant-06",
+          "headline": {
+            "es": "Nuestra historia.",
+            "en": "Our story."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/maserati-300s/cover.jpg",
+          "layout": "next-chapter",
+          "tone": "black",
+          "productionNote": ""
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "title": "Historia",
+      "route": "#p-history",
+      "routeStatus": "existing",
+      "scenes": [
+        {
+          "id": "history-01",
+          "headline": {
+            "es": "Una colección.\nUna historia que continúa.",
+            "en": "One collection.\nA story that continues."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/legacy.png",
+          "layout": "split",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "history-02",
+          "headline": {
+            "es": "Preservar\npara compartir.",
+            "en": "Preserve\nto share."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "type",
+          "tone": "black",
+          "productionNote": "Retrato y relato de Jimmy pendientes; no inventar cita literal ni primer auto."
+        },
+        {
+          "id": "history-03",
+          "headline": {
+            "es": "Más de un siglo\nde diseño.",
+            "en": "More than a century\nof design."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/maserati-300s/cover.jpg",
+          "layout": "timeline",
+          "tone": "paper",
+          "productionNote": "La cronología del catálogo no representa la fundación de Artech. Fechas de fundación e hitos institucionales pendientes."
+        },
+        {
+          "id": "history-04",
+          "headline": {
+            "es": "La historia sigue\ncon cada visita.",
+            "en": "The story continues\nwith every visit."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/maserati-300s/cover.jpg",
+          "layout": "photo-caption",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "history-05",
+          "headline": {
+            "es": "Reserva\ntu turno.",
+            "en": "Book\nyour visit."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/cxj-330/cover.jpg",
+          "layout": "next-chapter",
+          "tone": "black",
+          "productionNote": ""
+        }
+      ]
+    },
+    {
+      "id": "visit",
+      "title": "Reserva",
+      "route": "#p-tickets",
+      "routeStatus": "existing",
+      "scenes": [
+        {
+          "id": "visit-01",
+          "headline": {
+            "es": "Elige el día.\nDescubre Artech.",
+            "en": "Choose the day.\nDiscover Artech."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/maserati-300s/cover.jpg",
+          "layout": "visit-form",
+          "tone": "paper",
+          "productionNote": "Selección de experiencia, fecha, hora preferida y visitantes. Resumen siempre visible en escritorio."
+        },
+        {
+          "id": "visit-02",
+          "headline": {
+            "es": "¿A nombre\nde quién?",
+            "en": "Whose name\nis the visit under?"
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "visitor-details",
+          "tone": "paper",
+          "productionNote": "Nombre, contacto, idioma y consentimiento. Conservar errores y valores al volver."
+        },
+        {
+          "id": "visit-03",
+          "headline": {
+            "es": "Tu visita,\npaso a paso.",
+            "en": "Your visit,\nstep by step."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "visit-steps",
+          "tone": "paper",
+          "productionNote": "01 Preparas tu solicitud / 02 Confirmas con Artech / 03 Visitas el museo. Números separados de títulos."
+        },
+        {
+          "id": "visit-04",
+          "headline": {
+            "es": "Nos encuentras\nen Chorrillos.",
+            "en": "Find us\nin Chorrillos."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "map",
+          "tone": "paper",
+          "productionNote": "Google Maps real con enlace alternativo. Verificar dirección exacta; no prometer 15 minutos desde Miraflores."
+        },
+        {
+          "id": "visit-05",
+          "headline": {
+            "es": "Tu solicitud\nestá preparada.",
+            "en": "Your request\nis ready."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/legacy.png",
+          "layout": "request-ready",
+          "tone": "black",
+          "productionNote": "Primero mostrar este estado. Enviar por WhatsApp requiere acción del visitante; no existe recepción de backend."
+        },
+        {
+          "id": "visit-06",
+          "headline": {
+            "es": "Te esperamos\nen Artech.",
+            "en": "See you\nat Artech."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/legacy.png",
+          "layout": "photo-caption",
+          "tone": "black",
+          "productionNote": "Invitación editorial, acompañada de estado Solicitud por confirmar. No equivale a entrada emitida ni reserva confirmada."
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "title": "Páginas secundarias",
+      "route": "multiple",
+      "routeStatus": "existing",
+      "scenes": [
+        {
+          "id": "secondary-01",
+          "headline": {
+            "es": "Historias\npara seguir el recorrido.",
+            "en": "Stories\nto continue the journey."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/cars/cxj-330/d1.jpg",
+          "layout": "journal",
+          "tone": "black",
+          "productionNote": "Rutas existentes #p-blog y #p-post/{id}. Revisar artículos: cifras, citas e historias requieren fuentes."
+        },
+        {
+          "id": "secondary-02",
+          "headline": {
+            "es": "Cada detalle\ntiene su historia.",
+            "en": "Every detail\nhas a story."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": "assets/interior.png",
+          "layout": "article",
+          "tone": "black",
+          "productionNote": ""
+        },
+        {
+          "id": "secondary-03",
+          "headline": {
+            "es": "Vehículos\nen venta.",
+            "en": "Vehicles\nfor sale."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "sales",
+          "tone": "black",
+          "productionNote": "Ruta existente #p-preowned. Publicar únicamente inventario autorizado, no toda la colección como venta."
+        },
+        {
+          "id": "secondary-04",
+          "headline": {
+            "es": "Antes\nde tu visita.",
+            "en": "Before\nyour visit."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "faq",
+          "tone": "paper",
+          "productionNote": ""
+        },
+        {
+          "id": "secondary-05",
+          "headline": {
+            "es": "Libro\nde Reclamaciones.",
+            "en": "Complaints\nbook."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "claims",
+          "tone": "paper",
+          "productionNote": "Ruta informativa existente #p-claims. Formulario operativo y recepción de reclamos requieren canal e integración confirmados; no publicar el mockup como servicio legal operativo."
+        },
+        {
+          "id": "secondary-06",
+          "headline": {
+            "es": "Esta pieza no está\nen la colección.",
+            "en": "This piece is not\nin the collection."
+          },
+          "body": {
+            "es": "",
+            "en": ""
+          },
+          "media": null,
+          "layout": "not-found",
+          "tone": "black",
+          "productionNote": "Estado a implementar para slugs inexistentes; mantener botones Colección e Inicio."
+        }
+      ]
+    }
+  ]
+}

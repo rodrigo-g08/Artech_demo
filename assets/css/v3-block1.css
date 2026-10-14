@@ -6,7 +6,7 @@ body #header,body #header.scrolled,body.page-open #header,body.on-tickets #heade
 #header .wrap.nav{max-width:1560px;gap:26px;align-items:center}
 .v3-header-links{display:flex;align-items:center;justify-content:center;gap:clamp(14px,1.6vw,26px);margin-left:auto;white-space:nowrap}
 body #header .v3-header-links a{color:#d9d7d2;font:400 10px/1.4 Inter,Arial,sans-serif;letter-spacing:.07em;padding:14px 0;text-decoration:none}
-body #header .v3-header-links a:hover,body #header .v3-header-links a[aria-current=page]{color:#fff;text-decoration:underline;text-underline-offset:7px}
+body #header .v3-header-links a:hover,body #header .v3-header-links a[aria-current=page]{color:#fff;text-decoration:none}
 .v3-header-tools{margin-left:0;gap:18px}
 body #header.nav-open .v3-header-links{visibility:hidden}
 

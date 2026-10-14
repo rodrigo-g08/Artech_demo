@@ -1,0 +1,146 @@
+/* B06: viewport-safe composition over the B05 actually published. */
+.b5-timeline{box-sizing:border-box;padding:90px clamp(24px,7vw,110px) 70px!important;gap:12px!important;justify-content:center!important}
+.b5-timeline .v3-era-view{gap:12px!important;min-height:0}
+.b5-timeline .v3-era-view figure{width:min(58vw,calc((100svh - 380px)*1.5))!important;max-height:calc(100svh - 380px);margin:0 auto!important}
+.b5-timeline .v3-photo-caption h2{font-size:clamp(23px,2.6vw,43px)!important;line-height:1.15!important;white-space:normal;overflow:visible}
+.b5-timeline .v3-photo-caption{gap:20px;align-items:center}
+.b5-timeline .v3-era-years{overflow:visible!important;flex:none;min-height:62px;margin:4px 0 0!important;padding:28px 12px 4px!important}
+.b5-timeline .v3-era-years button{min-width:44px;min-height:40px;font-size:clamp(16px,1.6vw,25px)!important;line-height:1.4!important}
+.b5-timeline .v3-era-years::before{height:2px}
+.b5-home #legacy .v3-copy{min-width:0;max-width:100%}
+.b5-home #legacy h2{font-size:clamp(29px,3.6vw,56px)!important;line-height:1.12!important;overflow:visible;overflow-wrap:normal}
+.b5-rise .b5-line{overflow:visible;padding:0 .08em .13em 0;margin:0 0 -.13em;line-height:1.14}
+.b5-rise .b5-line>span{max-width:100%;overflow-wrap:normal}
+/* Photo remains unobscured; copy and compact selector share the bottom edge. */
+#page-collection .collection-opening-copy{position:absolute;left:clamp(28px,4vw,72px);bottom:44px;right:auto;width:min(43%,620px);padding:0;margin:0;color:#111!important;text-shadow:none!important}
+#page-collection .collection-opening-copy :is(h1,p,.editorial-kicker,.editorial-lead,.editorial-link){color:#111!important;text-shadow:none!important;-webkit-text-fill-color:#111}
+#page-collection .collection-opening-copy h1{font-size:clamp(30px,3.4vw,53px);margin:8px 0 15px}
+#page-collection .collection-opening-copy .editorial-lead{font-size:12px;max-width:400px}
+#page-collection .collection-opening-copy .editorial-actions{gap:18px;margin-top:18px}
+#page-collection .collection-selector-panel{left:auto;right:30px;bottom:32px;transform:none;width:min(46vw,630px);padding:8px 15px 12px;border-radius:12px;background:rgba(245,244,240,.25);backdrop-filter:none;-webkit-backdrop-filter:none;box-sizing:border-box}
+#page-collection .collection-selector-heading{padding-bottom:4px;min-height:22px}
+#page-collection .collection-selector-heading p{font-size:8px}
+#page-collection #collectionFeatureTabs button{min-height:70px;padding:6px 10px 2px;gap:8px;font-size:10px}
+#page-collection .collection-feature-label{font-size:10px;min-height:2.5em}
+#page-collection .collection-feature-year{font-size:25px!important}
+/* The whole process is measured against the viewport, not an oversized dial. */
+#page-workshops .process-sticky{top:88px;height:calc(100svh - 100px);min-height:0;padding:10px 0;box-sizing:border-box;grid-template-columns:.9fr 1.1fr;gap:5%;align-items:center}
+#page-workshops .atelier-dial{width:100%;max-width:340px;margin:auto}
+#page-workshops .atelier-dial svg{width:100%;height:auto;max-height:37svh;display:block;overflow:visible}
+#page-workshops #dialNumber{font:300 52px Archivo,Arial,sans-serif!important}
+#page-workshops .process-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:10px 0 0}
+#page-workshops .process-tabs button{font-size:15px!important;width:38px!important;height:38px!important;min-height:38px}
+#page-workshops .atelier-dial>p{font-size:9px;margin:8px 0}
+#page-workshops .process-copy h2{font-size:clamp(25px,2.9vw,43px);line-height:1.08;margin:8px 0 14px}
+#page-workshops .process-copy h3{font-size:clamp(21px,2vw,29px);margin:7px 0}
+#page-workshops .process-copy p{min-height:0;margin:8px 0;font-size:12px;line-height:1.5}
+#page-workshops .process-copy>img{height:auto;max-height:25svh;object-fit:contain;aspect-ratio:auto;margin-top:12px}
+#page-workshops .process-copy .editorial-note{font-size:9px!important;margin-top:8px}
+/* White menu with actual gaps. Selection tint belongs only to hover/focus. */
+#page-cafe .editorial-paper{background:#fff!important}
+#page-cafe #cafeMenu .cm-list{display:grid!important;grid-template-columns:1fr!important;gap:24px!important;padding:12px 0 28px!important;border:0}
+#page-cafe #cafeMenu .cm-items{padding:0!important}
+#page-cafe #cafeMenu .cm-block.open .cm-items{max-height:none!important;overflow:visible}
+#page-cafe #cafeMenu .cm-item{box-sizing:border-box;padding:22px!important;margin:0!important;border:0!important;border-radius:5px;background:transparent!important;min-height:90px;transition:background .18s}
+#page-cafe #cafeMenu .cm-item:hover,#page-cafe #cafeMenu .cm-item:focus-visible{background:#f2f2f2!important}
+#page-cafe #cafeMenu .cm-item .in{line-height:1.4!important;margin:0 0 12px!important}
+#page-cafe #cafeMenu .cm-item .id{line-height:1.75!important}
+/* One closing composition, followed directly by the shared footer. */
+#page-cafe .editorial-table{position:relative;box-sizing:border-box;min-height:min(760px,88svh);max-width:none;width:100%;padding:80px 5vw 45px!important;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;overflow:hidden}
+#page-cafe .editorial-table .b6-table-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:0;filter:none;mask:none}
+#page-cafe .editorial-table>:not(.b6-table-photo){position:relative;z-index:1;background:none!important;max-width:460px;text-shadow:0 1px 4px #000}
+#page-cafe .editorial-table h2{font-size:clamp(34px,4vw,62px);line-height:1.1}
+#page-cafe .editorial-table>p:not(.editorial-kicker){font-size:12px;line-height:1.6}
+#page-cafe .editorial-table .editorial-media-note{display:none}
+#page-cafe>.editorial-closing{display:none!important}
+/* Tear-off ticket: all booking IDs, calculations and buttons remain intact. */
+.visit-summary{position:sticky;top:94px;padding:28px 26px 24px!important;background:#fffdf8!important;color:#171717;border-radius:16px;box-shadow:0 12px 30px #0000000a!important;box-sizing:border-box;border:1px solid #dad7cf;overflow:visible}
+.visit-summary::before,.visit-summary::after{content:"";position:absolute;top:54%;width:24px;height:24px;background:var(--paper,#eceae5);border:1px solid #dad7cf;border-radius:50%;z-index:2}
+.visit-summary::before{left:-13px;border-left:0}.visit-summary::after{right:-13px;border-right:0}
+.visit-summary h2{font-size:clamp(25px,2.7vw,36px)!important;margin:18px 0!important}
+.visit-summary dl{margin:20px 0!important}
+.visit-summary .visit-total{border-top:2px dashed #c8c3b8;padding-top:18px;margin-top:15px;gap:12px}
+.visit-summary #visitTotal{font-size:clamp(23px,2.7vw,35px);line-height:1.1;text-align:right;white-space:normal}
+.visit-summary .b6-ticket-barcode{display:block;width:100%;height:43px;margin-top:20px;opacity:.85}
+.visit-summary .b6-ticket-mark{font:9px/1.5 Inter,Arial,sans-serif;letter-spacing:.16em;text-align:center;margin:7px 0 0;color:#777}
+@media(max-width:760px){
+ .b5-timeline{padding:90px 24px 85px!important}.b5-timeline .v3-era-view figure{width:min(85vw,calc((100svh - 390px)*1.5))!important;max-height:calc(100svh - 390px)}.b5-timeline .v3-photo-caption h2{font-size:21px!important}.b5-timeline .v3-photo-caption{gap:12px}.b5-timeline .v3-era-years button{font-size:14px!important;min-width:36px}
+ #page-collection .collection-opening-copy{bottom:210px;left:24px;width:calc(100% - 48px)}#page-collection .collection-selector-panel{right:24px;left:24px;bottom:26px;width:auto}
+ #page-workshops .process-sticky{position:relative;top:auto;height:auto;grid-template-columns:1fr;padding:35px 0;gap:24px}#page-workshops .process-scroll{height:auto;min-height:0}#page-workshops .atelier-dial{max-width:280px}#page-workshops .process-copy>img{max-height:35svh}
+ .visit-summary{position:relative;top:auto;margin:20px 0}
+}
+
+#page-workshops .atelier-dial svg>path{stroke-width:2.5!important}#page-workshops #dialTicks line{stroke-width:1.8!important}#page-workshops #atelierNeedle path{stroke-width:3!important}#page-workshops #atelierNeedle circle{r:6;stroke-width:2}
+body:has(#page-cafe.active) .internal-only,body:has(#page-cafe.active) .newsletter{display:none!important}
+
+.b5-journey .v3-scene-bottom{display:none!important}.b5-timeline>.v3-kicker{margin:0!important}.b5-timeline .v3-photo-caption .v3-kicker{margin:0 0 5px!important}
+
+/* B06.1 — Taller: larger reading scale, one alignment and a fixed media position. */
+#page-workshops .atelier-process>.wrap{width:100%;max-width:1600px;padding:0 clamp(24px,3.4vw,64px);box-sizing:border-box}
+#page-workshops .process-sticky{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:6%;top:88px;height:calc(100svh - 104px);padding:12px 0;align-items:center}
+#page-workshops .atelier-dial{max-width:400px}
+#page-workshops .atelier-dial svg{max-height:43svh}
+#page-workshops #dialNumber{font-size:60px!important}
+#page-workshops .process-tabs button{width:44px!important;height:44px!important;font-size:18px!important}
+#page-workshops .atelier-dial>p{font-size:11px;letter-spacing:.16em;margin:10px 0}
+#page-workshops .process-copy{min-width:0}
+#page-workshops .process-copy>.chapter-kicker{font-size:13px;line-height:1.5;letter-spacing:.14em;margin:8px 0}
+#page-workshops .process-copy h2{font-size:clamp(32px,3.2vw,52px);line-height:1.07;margin:8px 0 18px}
+#page-workshops .process-copy #stageMarker{font-size:14px;margin:12px 0 8px}
+#page-workshops .process-copy #stageName{font-size:clamp(26px,2.25vw,36px);line-height:1.15;min-height:1.15em;margin:8px 0}
+#page-workshops .process-copy #stageDescription{font-size:clamp(15px,1.05vw,18px);line-height:1.55;min-height:3.1em;margin:8px 0 12px;max-width:680px}
+#page-workshops .process-media{display:block;position:relative;width:100%;height:clamp(230px,36svh,370px);margin:0;overflow:hidden;background:none}
+#page-workshops .process-media #stagePhoto{position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;aspect-ratio:auto;margin:0;object-fit:contain;object-position:left top;filter:none;transform:none}
+#page-workshops .process-copy .editorial-note{font-size:12px!important;line-height:1.55!important;margin-top:10px;max-width:680px}
+#page-workshops .atelier-crafts .crafts-sticky{padding:104px 0 28px}
+#page-workshops .atelier-crafts .crafts-grid.b3-crafts{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:6%;margin-top:20px;align-items:center}
+#page-workshops .atelier-crafts .crafts-sticky>.chapter-kicker{font-size:12px;letter-spacing:.18em;margin:0;line-height:1.6}
+#page-workshops .craft-list{gap:clamp(12px,2svh,23px)}
+#page-workshops .craft-list .craft-row{grid-template-columns:20px 38px minmax(0,1fr);gap:15px;min-height:48px;padding:7px 0}
+#page-workshops .craft-list .craft-row strong{font-size:clamp(21px,1.65vw,30px)!important;line-height:1.15;letter-spacing:0}
+#page-workshops .craft-list li.is-active .craft-row strong{font-size:clamp(31px,2.55vw,48px)!important}
+#page-workshops .craft-list .craft-num{font-size:20px!important;letter-spacing:.04em}
+#page-workshops .craft-stage{min-width:0;width:100%;margin:0}
+#page-workshops .craft-media{width:100%;height:auto;aspect-ratio:3/2;max-height:calc(100svh - 300px);background:none}
+#page-workshops .craft-media img{width:100%;height:100%;object-fit:contain;object-position:left top;transform:none!important}
+#page-workshops .craft-stage figcaption{padding-top:19px;gap:8px 22px;grid-template-columns:70px minmax(0,1fr);align-items:baseline}
+#page-workshops .craft-index{font-size:15px;letter-spacing:.1em}
+#page-workshops .craft-stage h3{font-size:clamp(32px,3vw,56px);line-height:1.08}
+#page-workshops .craft-stage figcaption p{font-size:17px;line-height:1.55}
+@media(min-width:901px) and (max-height:800px){
+ #page-workshops .process-copy h2{font-size:clamp(29px,2.8vw,42px);margin:6px 0 12px}
+ #page-workshops .process-copy #stageName{font-size:28px}
+ #page-workshops .process-copy #stageDescription{font-size:15px;min-height:3.1em;margin-bottom:9px}
+ #page-workshops .process-media{height:29svh;min-height:180px}
+ #page-workshops .process-copy .editorial-note{font-size:11px!important}
+ #page-workshops .atelier-dial{max-width:350px}
+ #page-workshops .craft-stage h3{font-size:36px}
+ #page-workshops .craft-stage figcaption p{font-size:16px}
+ #page-workshops .craft-list .craft-row strong{font-size:23px!important}
+ #page-workshops .craft-list li.is-active .craft-row strong{font-size:34px!important}
+}
+@media(max-width:900px){
+ #page-workshops .atelier-process>.wrap{padding:0 24px}
+ #page-workshops .process-sticky{grid-template-columns:1fr;position:relative;top:auto;height:auto;gap:30px;padding:40px 0}
+ #page-workshops .process-scroll{height:auto;min-height:0}
+ #page-workshops .atelier-dial{max-width:330px}
+ #page-workshops .process-copy h2{font-size:36px}
+ #page-workshops .process-media{height:clamp(250px,42svh,400px)}
+ #page-workshops .atelier-crafts .crafts-grid.b3-crafts{grid-template-columns:1fr;gap:22px}
+ #page-workshops .craft-list .craft-row{grid-template-columns:1fr;gap:7px;min-width:44px;padding:10px 2px}
+ #page-workshops .craft-media{aspect-ratio:3/2;max-height:40svh}
+ #page-workshops .craft-stage figcaption{grid-template-columns:60px 1fr;padding-top:15px;gap:7px 12px}
+ #page-workshops .craft-stage h3{font-size:32px}
+ #page-workshops .craft-stage figcaption p{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){#page-workshops .atelier-crafts .crafts-sticky{padding:35px 0}}
+@media(min-width:901px) and (max-height:720px){
+ #page-workshops .process-copy h2{font-size:32px;line-height:1.05;margin:5px 0 10px}
+ #page-workshops .process-copy>.chapter-kicker{font-size:12px;margin:6px 0}
+ #page-workshops .process-copy #stageMarker{font-size:12px;margin:8px 0 6px}
+ #page-workshops .process-copy #stageName{font-size:25px;margin:6px 0}
+ #page-workshops .process-copy #stageDescription{font-size:14px;margin:6px 0 9px}
+ #page-workshops .process-media{height:24svh;min-height:140px}
+ #page-workshops .process-copy .editorial-note{font-size:10px!important;margin-top:7px}
+}
+@media(min-width:901px) and (max-height:640px){#page-workshops .process-sticky{position:relative;top:auto;height:auto;min-height:0;padding:35px 0}#page-workshops .process-scroll{height:auto;min-height:0}}

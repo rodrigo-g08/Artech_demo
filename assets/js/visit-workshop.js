@@ -98,6 +98,7 @@
     scrollFrame=0;
     if(!$('page-workshops').classList.contains('active')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     const box=$('processScroll'),sticky=box.firstElementChild;
+    if(getComputedStyle(sticky).position!=='sticky')return;
     const distance=Math.max(1,box.offsetHeight-sticky.offsetHeight);
     const top=parseFloat(getComputedStyle(sticky).top)||110;
     const progress=Math.max(0,Math.min(.999,(top-box.getBoundingClientRect().top)/distance));

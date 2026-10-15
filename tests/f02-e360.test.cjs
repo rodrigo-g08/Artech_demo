@@ -37,7 +37,7 @@ test('Each of the three cars offers six distinct local views with an explicit or
     for (const view of car.views) {
       assert.ok(['photograph','reconstruction'].includes(view.kind));
       assert.ok(view.label.es && view.label.en && view.reference);
-      assert.match(view.src, /^assets\/media\/(e360|b05)\/[^/]+\.webp$/);
+      assert.match(view.src, /^assets\/media\/(e360|e361|b05)\/[^/]+\.webp$/);
       assert.ok(fs.existsSync(path.join(root, view.src)));
     }
   }
@@ -65,9 +65,9 @@ test('Confirmed E360 records use catalogue years; the unconfirmed classic does n
 });
 
 test('All generated views retain their recorded integrity and stay separate from collection originals', () => {
-  const media = read('assets/data/e360-media.json').media;
+  const media = [...read('assets/data/e360-media.json').media, ...read('assets/data/e361-media.json').media];
   const files = new Set(media.map(m => m.file));
-  assert.equal(files.size, 16);
+  assert.equal(files.size, 35);
   for (const item of media) {
     const bytes = fs.readFileSync(path.join(root, item.file));
     assert.equal(bytes.length, item.bytes);
@@ -75,7 +75,7 @@ test('All generated views retain their recorded integrity and stay separate from
     assert.ok(item.width > item.height);
     assert.equal(item.kind, 'reconstruction');
   }
-  for (const view of [...experience.cars.flatMap(c => c.views), ...experience.details]) {
+  for (const view of [...experience.cars.flatMap(c => [...c.views, ...Object.values(c.journey)]), ...experience.details]) {
     if (view.kind === 'reconstruction') assert.ok(files.has(view.src));
   }
   assert.ok(gallery.groups.flatMap(g => g.photos).every(p => !files.has(p.src)));

@@ -39,6 +39,7 @@
 <link rel="stylesheet" href="assets/css/artech-f01.css?v=f01-1">
 <link rel="stylesheet" href="assets/css/artech-f02.css?v=f02-1">
 <link rel="stylesheet" href="assets/css/artech-e360.css?v=f02-1">
+<link rel="stylesheet" href="assets/css/artech-e361.css?v=e361-1">
 
 </head>
 <body>
@@ -96,10 +97,12 @@ hecho experiencia.</h1>
    <a data-b01-es="Descubrir ARTECH ↓" data-b01-en="Discover ARTECH ↓" class="b01-text-action" href="#home-collection" data-b01-seek="1">Descubrir ARTECH ↓</a>
   </div>
   <div class="f01-halos" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="e361-studio-floor" aria-hidden="true"></div>
+  <div class="e361-studio-light" aria-hidden="true"></div>
   <div class="b12-lineup" aria-label="Tres épocas de la colección ARTECH">
-   <figure class="b12-lineup-classic"><img src="assets/media/b012/classic-cutout.webp" alt="Automóvil clásico bitono a la izquierda" width="1536" height="1024" decoding="async" fetchpriority="high"></figure>
-   <figure class="b12-lineup-white"><img src="assets/media/b012/white-cutout.webp" alt="Porsche 911 Turbo blanco a la derecha" width="1536" height="1024" decoding="async" fetchpriority="high"></figure>
-   <figure class="b12-lineup-red"><img src="assets/media/b012/red-cutout.webp" alt="Porsche 911 GT3 rojo al centro" width="1536" height="1024" decoding="async" id="b01HeroImage" fetchpriority="high"></figure>
+   <figure class="b12-lineup-classic" data-e361-ground="0.9639"><i class="e361-contact" aria-hidden="true"></i><img src="assets/media/e361/classic-exterior.webp" alt="Chrysler Roadster clásico bitono a la izquierda" width="1672" height="941" decoding="async" fetchpriority="high"><span class="e361-reflection" aria-hidden="true"></span></figure>
+   <figure class="b12-lineup-white" data-e361-ground="0.8672"><i class="e361-contact" aria-hidden="true"></i><img src="assets/media/e361/white-exterior.webp" alt="Porsche 911 Turbo blanco a la derecha" width="1672" height="941" decoding="async" fetchpriority="high"><span class="e361-reflection" aria-hidden="true"></span></figure>
+   <figure class="b12-lineup-red" data-e361-ground="0.8342"><i class="e361-contact" aria-hidden="true"></i><img src="assets/media/e361/red-exterior.webp" alt="Porsche 911 GT3 rojo al centro" width="1672" height="941" decoding="async" id="b01HeroImage" fetchpriority="high"><span class="e361-reflection" aria-hidden="true"></span></figure>
 
   <div class="f02-lineup-access"><a class="f02-car-access f02-car-access-classic" href="#exp3d/classic" data-e360-entry="classic" aria-label="Explorar el roadster clásico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></a><a class="f02-car-access f02-car-access-red" href="#exp3d/red" data-e360-entry="red" aria-label="Explorar Porsche 911 GT3, 2010"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></a><a class="f02-car-access f02-car-access-white" href="#exp3d/white" data-e360-entry="white" aria-label="Explorar Porsche 911 Turbo, 1986"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></a></div>
   </div>
@@ -192,14 +195,23 @@ un oficio.</h2><p data-b01-es="La ingeniería también se hace a mano." data-b01
 </div>
 </section>
 
-<!-- E360 · Guided photographic experience, shared site header and footer. -->
+<!-- E361 · Shared studio and a reversible, prerendered camera journey. -->
 <section class="subpage e360-page" id="exp3d" aria-labelledby="e360Name">
  <div class="e360-stage" id="e360Stage" aria-busy="false">
   <div class="f01-halos" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="e361-studio-floor" aria-hidden="true"></div>
+  <div class="e361-studio-light" aria-hidden="true"></div>
   <div class="e360-top"><a href="#top" id="e360Back" data-b01-es="← Volver al inicio" data-b01-en="← Back to home">← Volver al inicio</a><a href="#p-collection" id="e360More">Ver más ↗</a></div>
   <div class="e360-heading"><p class="b01-eyebrow" data-b01-es="ARTECH / EXPERIENCIA 360" data-b01-en="ARTECH / 360 EXPERIENCE">ARTECH / EXPERIENCIA 360</p><h1 id="e360Name" tabindex="-1">Porsche 911 Turbo</h1><p id="e360Year">1986</p></div>
-  <div class="e360-media" id="e360Media"><img id="e360PhotoA" alt="" decoding="async"><img id="e360PhotoB" alt="" decoding="async" aria-hidden="true"></div>
+  <div class="e360-media" id="e360Media">
+   <i class="e361-contact" id="e360Contact" aria-hidden="true"></i>
+   <span class="e361-reflection" id="e360Reflection" aria-hidden="true"></span>
+   <img id="e360PhotoA" alt="" decoding="async"><img id="e360PhotoB" alt="" decoding="async" aria-hidden="true">
+   <button class="e361-enter" id="e360Enter" type="button" hidden aria-controls="e360Media"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Entrar al habitáculo</span></button>
+  </div>
   <nav class="e360-zones" id="e360Zones" aria-label="Zonas del vehículo"></nav>
+  <div class="e361-journey" id="e360Journey" hidden><span id="e360JourneyLabel" role="status" aria-live="polite"></span><div aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+  <button class="e361-return" id="e360Exit" type="button" hidden>← Volver al exterior</button>
   <div class="e360-bottom"><div><p class="e360-zone-caption" id="e360Zone" role="status" aria-live="polite"></p><span id="e360Credit" class="e360-credit"></span></div><div class="e360-controls"><button type="button" id="e360Prev" aria-label="Vista anterior">←</button><span id="e360Count">01 / 06</span><button type="button" id="e360Next" aria-label="Vista siguiente">→</button></div></div>
   <div class="e360-progress" aria-hidden="true"><span id="e360Progress"></span></div>
   <p class="e360-loading" id="e360Loading" role="status" hidden>Preparando la vista…</p>
@@ -619,7 +631,7 @@ el automóvil como nunca antes.</p>
 <script defer src="assets/js/artech-b06.js?v=f01-1"></script>
 <script defer src="assets/js/artech-f01.js?v=f01-1"></script>
 <script defer src="assets/js/artech-f02.js?v=f02-1"></script>
-<script defer src="assets/js/artech-e360.js?v=f02-1"></script>
+<script defer src="assets/js/artech-e360.js?v=e361-1"></script>
 <script defer src="assets/js/editorial.js?v=b456-1"></script>
 <script defer src="assets/js/v3-collection.js?v=b012"></script>
 <!-- Native sticky + scroll scrub; the scene engine has no CDN dependency. -->

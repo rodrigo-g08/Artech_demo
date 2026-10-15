@@ -1,0 +1,125 @@
+{
+  "policy": "Only user-supplied A88A0846.zip and A88A0584.zip photographs; logo is existing brand artwork.",
+  "photos": [
+    {
+      "file": "assets/media/b01/hero-porsche-960.webp",
+      "source": "A88A0652.jpg",
+      "source_sha256": "c1e5dfbae2eca7b283610ec368dee5c44127449e571857c86e050f8e2e3052f2",
+      "crop_px": [
+        1200,
+        1030,
+        4740,
+        3450
+      ],
+      "dimensions": [
+        960,
+        656
+      ],
+      "bytes": 109248
+    },
+    {
+      "file": "assets/media/b01/hero-porsche-1920.webp",
+      "source": "A88A0652.jpg",
+      "source_sha256": "c1e5dfbae2eca7b283610ec368dee5c44127449e571857c86e050f8e2e3052f2",
+      "crop_px": [
+        1200,
+        1030,
+        4740,
+        3450
+      ],
+      "dimensions": [
+        1920,
+        1313
+      ],
+      "bytes": 356232
+    },
+    {
+      "file": "assets/media/b01/collection-classic-960.webp",
+      "source": "A88A0638.jpg",
+      "source_sha256": "b83cfab1ca348f7e6b8738a37059bce178efe40cbc6a0afe049bf22827915343",
+      "crop_px": null,
+      "dimensions": [
+        960,
+        640
+      ],
+      "bytes": 81778
+    },
+    {
+      "file": "assets/media/b01/collection-classic-1920.webp",
+      "source": "A88A0638.jpg",
+      "source_sha256": "b83cfab1ca348f7e6b8738a37059bce178efe40cbc6a0afe049bf22827915343",
+      "crop_px": null,
+      "dimensions": [
+        1920,
+        1280
+      ],
+      "bytes": 268930
+    },
+    {
+      "file": "assets/media/b01/collection-modern-960.webp",
+      "source": "A88A0656.jpg",
+      "source_sha256": "52995b9d2babca5b3b5efcd998e22c3afbb7d17ae613a5aa3ab47a4f62d98862",
+      "crop_px": null,
+      "dimensions": [
+        960,
+        640
+      ],
+      "bytes": 68728
+    },
+    {
+      "file": "assets/media/b01/collection-modern-1920.webp",
+      "source": "A88A0656.jpg",
+      "source_sha256": "52995b9d2babca5b3b5efcd998e22c3afbb7d17ae613a5aa3ab47a4f62d98862",
+      "crop_px": null,
+      "dimensions": [
+        1920,
+        1280
+      ],
+      "bytes": 228222
+    },
+    {
+      "file": "assets/media/b01/interior-960.webp",
+      "source": "A88A0730.jpg",
+      "source_sha256": "d60a6c787cc459105511382f4c3f588805af8b381b67183923ec6d0a238d9830",
+      "crop_px": null,
+      "dimensions": [
+        960,
+        640
+      ],
+      "bytes": 46864
+    },
+    {
+      "file": "assets/media/b01/interior-1920.webp",
+      "source": "A88A0730.jpg",
+      "source_sha256": "d60a6c787cc459105511382f4c3f588805af8b381b67183923ec6d0a238d9830",
+      "crop_px": null,
+      "dimensions": [
+        1920,
+        1280
+      ],
+      "bytes": 122256
+    },
+    {
+      "file": "assets/media/b01/detail-960.webp",
+      "source": "A88A0739.jpg",
+      "source_sha256": "2ea7f6cd81f9c6914fa1a794389949999660c840b85cd5132edb1e276b4d4c74",
+      "crop_px": null,
+      "dimensions": [
+        960,
+        1440
+      ],
+      "bytes": 106114
+    },
+    {
+      "file": "assets/media/b01/detail-1920.webp",
+      "source": "A88A0739.jpg",
+      "source_sha256": "2ea7f6cd81f9c6914fa1a794389949999660c840b85cd5132edb1e276b4d4c74",
+      "crop_px": null,
+      "dimensions": [
+        1920,
+        2880
+      ],
+      "bytes": 343348
+    }
+  ]
+}

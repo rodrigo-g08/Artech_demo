@@ -1,0 +1,216 @@
+{
+  "policy": "All B01.2 photo sources are user-supplied A88A0846.zip and A88A0584.zip. No stock photographs or newly invented vehicles. Cutouts are edited derivatives; detail and interior photos only resized/encoded.",
+  "scope": "B01.2 homepage, curated collection and shared menu. Retained legacy inner pages are outside this block.",
+  "photos": [
+    {
+      "file": "assets/media/b012/interior-wide-960.webp",
+      "source": "A88A0834.jpg",
+      "source_sha256": "a7a25164c8ebbc7d9ebe29de218c32c3e294744d8e0b926e0b6e4d6c30a7d7b7",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "f434bf21f115526c89cae377e0a0c109457e120c837dc53121b5b7bc88a712ab",
+      "bytes": 54472
+    },
+    {
+      "file": "assets/media/b012/interior-wide-1920.webp",
+      "source": "A88A0834.jpg",
+      "source_sha256": "a7a25164c8ebbc7d9ebe29de218c32c3e294744d8e0b926e0b6e4d6c30a7d7b7",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "8027521a7710403132becf8a3a1b0b2fbb68e2a0e6f8173d2b6c3b224818768e",
+      "bytes": 157514
+    },
+    {
+      "file": "assets/media/b012/interior-close-960.webp",
+      "source": "A88A0831.jpg",
+      "source_sha256": "f41eb9aa2d0d88b0340996923555d46ad79db66cb4bebf59da1911238d9a9259",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "102c96a6af50eac605aafd9681e757c4c5e271057cb16324195bc755ce7428dc",
+      "bytes": 52580
+    },
+    {
+      "file": "assets/media/b012/interior-close-1920.webp",
+      "source": "A88A0831.jpg",
+      "source_sha256": "f41eb9aa2d0d88b0340996923555d46ad79db66cb4bebf59da1911238d9a9259",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "19bfbb410cbb9148f5c75a2b5c6e3c23fd580cc1dd40f552f7eccf32509b87e6",
+      "bytes": 146052
+    },
+    {
+      "file": "assets/media/b012/red-detail-960.webp",
+      "source": "A88A0840.jpg",
+      "source_sha256": "07c490bf24c0a536d682be4648dcb3dda9e4d1dcb9fe01ad51a97e7522fb03d5",
+      "width": 960,
+      "height": 1440,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "adf09afd4a6cbce929bf29d5ab4ea59ecc81cf493dd19132907e6177b92e59a2",
+      "bytes": 63590
+    },
+    {
+      "file": "assets/media/b012/red-detail-1920.webp",
+      "source": "A88A0840.jpg",
+      "source_sha256": "07c490bf24c0a536d682be4648dcb3dda9e4d1dcb9fe01ad51a97e7522fb03d5",
+      "width": 1920,
+      "height": 2880,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "ff7f2d73e0f145a8991b991a74c17ad0adf3cd4f4634fed25a17907766c6c149",
+      "bytes": 167876
+    },
+    {
+      "file": "assets/media/b012/white-interior-960.webp",
+      "source": "A88A0909.jpg",
+      "source_sha256": "2351c7206fd7a3d13848ba5bfd9354bb676dff9b796cf91b1904f261f517ee92",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "eb55bfb77033da93d2aa5b75326704ed1aee4bfaa642393750385bde8060e071",
+      "bytes": 67256
+    },
+    {
+      "file": "assets/media/b012/white-interior-1920.webp",
+      "source": "A88A0909.jpg",
+      "source_sha256": "2351c7206fd7a3d13848ba5bfd9354bb676dff9b796cf91b1904f261f517ee92",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "78685ef9858ec9fc329a1e49a4d3e9451bf224093ca44797fbca8081fb7a810c",
+      "bytes": 211488
+    },
+    {
+      "file": "assets/media/b012/white-close-960.webp",
+      "source": "A88A0921.jpg",
+      "source_sha256": "2daf7c309ead77fd2f6f2d53fe206cfdf8a0d252d6772eae54ccbc87c76b1a70",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "312f3d684ebfa691a73f4aeecce24704db2adeade56bb231215b9d04731169d0",
+      "bytes": 47166
+    },
+    {
+      "file": "assets/media/b012/white-close-1920.webp",
+      "source": "A88A0921.jpg",
+      "source_sha256": "2daf7c309ead77fd2f6f2d53fe206cfdf8a0d252d6772eae54ccbc87c76b1a70",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "29272a1c2e6f4bc6b45360b1f83d559c096ce838a77480b06531bea7ef628974",
+      "bytes": 131204
+    },
+    {
+      "file": "assets/media/b012/craft-960.webp",
+      "source": "A88A0602.jpg",
+      "source_sha256": "d77a27c9d3056f6c38732e502af4f2035f96ef2e4359df56b9ed6e4672bd53d4",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "1218b747a90b58b0d039666bdc58e3f90fbd1e81b024e8b2775cdf84d64fea93",
+      "bytes": 85204
+    },
+    {
+      "file": "assets/media/b012/craft-1920.webp",
+      "source": "A88A0602.jpg",
+      "source_sha256": "d77a27c9d3056f6c38732e502af4f2035f96ef2e4359df56b9ed6e4672bd53d4",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "1a69194df59db8bd39d5c3cd945fd698fdff383d6303bb98bce16bb0de7390cb",
+      "bytes": 274202
+    },
+    {
+      "file": "assets/media/b012/red-side-960.webp",
+      "source": "A88A0683.jpg",
+      "source_sha256": "b899ed3323357a2b3138e8efe28d6efbfb7d62260c5cee778e9f6ab0fc61230a",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "c5e1c78e3c07036e574af26bab8a87c753984530172cf91cda6701bb7910ffa3",
+      "bytes": 61736
+    },
+    {
+      "file": "assets/media/b012/red-side-1920.webp",
+      "source": "A88A0683.jpg",
+      "source_sha256": "b899ed3323357a2b3138e8efe28d6efbfb7d62260c5cee778e9f6ab0fc61230a",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "0d040db4fe7ff26b8c7b41862d3af2db9d9658e74cffd3ff90492e9bfc65657a",
+      "bytes": 195124
+    },
+    {
+      "file": "assets/media/b012/white-side-960.webp",
+      "source": "A88A0702.jpg",
+      "source_sha256": "c7eaa61c3adb0e88efba7f659e271a6b98a164b261eed9975f1006e6ac6cbbc0",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "add305106b49cc4a1f0a1a363f4c582171433ce339798781511d95a0d54ed987",
+      "bytes": 53596
+    },
+    {
+      "file": "assets/media/b012/white-side-1920.webp",
+      "source": "A88A0702.jpg",
+      "source_sha256": "c7eaa61c3adb0e88efba7f659e271a6b98a164b261eed9975f1006e6ac6cbbc0",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "d9ef4e112ceed56bd333e06fa83dee6b4ae695a82d6aa5a6466ca166b3c1b901",
+      "bytes": 171024
+    },
+    {
+      "file": "assets/media/b012/classic-original-960.webp",
+      "source": "A88A0602.jpg",
+      "source_sha256": "d77a27c9d3056f6c38732e502af4f2035f96ef2e4359df56b9ed6e4672bd53d4",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "1218b747a90b58b0d039666bdc58e3f90fbd1e81b024e8b2775cdf84d64fea93",
+      "bytes": 85204
+    },
+    {
+      "file": "assets/media/b012/classic-original-1920.webp",
+      "source": "A88A0602.jpg",
+      "source_sha256": "d77a27c9d3056f6c38732e502af4f2035f96ef2e4359df56b9ed6e4672bd53d4",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only; no photographic synthesis",
+      "sha256": "1a69194df59db8bd39d5c3cd945fd698fdff383d6303bb98bce16bb0de7390cb",
+      "bytes": 274202
+    },
+    {
+      "file": "assets/media/b012/classic-cutout.webp",
+      "source": "A88A0602.jpg",
+      "source_sha256": "d77a27c9d3056f6c38732e502af4f2035f96ef2e4359df56b9ed6e4672bd53d4",
+      "width": 1536,
+      "height": 1024,
+      "processing": "AI-assisted background extraction/edit from the supplied photograph, transparent alpha, WebP encoding. Edited derivative, not an unmodified original.",
+      "sha256": "8b3ca3bdaf7db0d6ee58645437f3c46daf08882da175a4c28b93402921df5e1d",
+      "bytes": 331692
+    },
+    {
+      "file": "assets/media/b012/red-cutout.webp",
+      "source": "A88A0682.jpg",
+      "source_sha256": "f03ee52c73a8db08a80d17c0d840184da6cbbbf1eeaac8d6b316bf72b6982493",
+      "width": 1536,
+      "height": 1024,
+      "processing": "AI-assisted background extraction/edit from the supplied photograph, transparent alpha, WebP encoding. Edited derivative, not an unmodified original.",
+      "sha256": "81785d218ff58c5d20e452e0958c0c43f469fd2d2d141d40e94604541c4896d5",
+      "bytes": 317960
+    },
+    {
+      "file": "assets/media/b012/white-cutout.webp",
+      "source": "A88A0700.jpg",
+      "source_sha256": "0d605bdd423a33de4101e6b803e89640979ae46d6b7645d434bd3e5e0c5cced3",
+      "width": 1536,
+      "height": 1024,
+      "processing": "AI-assisted background extraction/edit from the supplied photograph, transparent alpha, WebP encoding. Edited derivative, not an unmodified original.",
+      "sha256": "3af64be5f5877e84b716efabf026b9b560eb407a9b113365e1fe51f878979d69",
+      "bytes": 245184
+    }
+  ]
+}

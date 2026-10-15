@@ -1,6 +1,8 @@
 /* V3-B02. This module owns featured cars, counters and the name's light sweep. */
 (function(){
   'use strict';
+  // B01.2 owns the new photographic collection; retained vehicle routes use core/editorial.
+  if (document.getElementById('page-collection')?.dataset.b12 === 'true') return;
   const $=id=>document.getElementById(id),preference=matchMedia('(prefers-reduced-motion: reduce)');
   const es=()=>document.documentElement.lang==='es',L=(a,b)=>es()?a:b;
   const collection=$('page-collection'),opening=collection.querySelector('.collection-opening');

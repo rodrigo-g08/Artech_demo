@@ -14,13 +14,13 @@
   const CHAPTERS=[
     {page:'page-collection',next:'#p-workshops',es:'EL TALLER.',en:'THE WORKSHOP.',noteEs:'Donde los autos vuelven a rodar.',noteEn:'Where the cars run again.',img:'assets/cars/sin-placa-22/marcelo.jpg'},
     {page:'page-workshops',next:'#p-experience',es:'EXPERIENCIAS.',en:'EXPERIENCES.',noteEs:'Elige hasta dónde quieres entrar.',noteEn:'Choose how far you want to go.',img:'assets/cars/cpl-048/marcelo.jpg'},
-    {page:'page-experience',next:'#p-cafe',es:'EL RESTAURANTE.',en:'THE RESTAURANT.',noteEs:'Una mesa entre clásicos.',noteEn:'A table among classics.',img:'assets/cars/aue-622/marcelo.jpg'},
+    {page:'page-experience',next:'#p-history',es:'NUESTRA HISTORIA.',en:'OUR STORY.',noteEs:'Una pasión que se comparte.',noteEn:'A passion to share.',img:'assets/media/b012/red-side-960.webp'},
     {page:'page-cafe',next:'#p-history',es:'NUESTRA HISTORIA.',en:'OUR STORY.',noteEs:'Esto no es un garaje.',noteEn:'This is not a garage.',img:'assets/cars/axs-615/marcelo.jpg'},
     {page:'page-history',next:'#p-tickets',es:'TU VISITA.',en:'YOUR VISIT.',noteEs:'Elige el día. Nosotros encendemos las luces.',noteEn:'Choose the day. We turn on the lights.',img:'assets/cars/y1s-584/marcelo.jpg'}
   ];
   function buildChapters(){
     CHAPTERS.forEach(ch=>{
-      const page=document.getElementById(ch.page);if(!page||page.querySelector('.b4-next'))return;
+      const page=document.getElementById(ch.page);if(!page||page.dataset.b12==='true'||page.querySelector('.b4-next'))return;
       const link=document.createElement('a');link.className='b4-next';link.href=ch.next;
       link.innerHTML=`<figure class="b4-next-media" aria-hidden="true"><img src="${ch.img}" alt="" loading="lazy" width="2000" height="1333"></figure><span class="b4-next-copy"><span class="b4-next-kicker" data-b4-es="SIGUIENTE CAPÍTULO" data-b4-en="NEXT CHAPTER"></span><span class="b4-next-title" data-b4-es="${ch.es}" data-b4-en="${ch.en}"></span><span class="b4-next-note" data-b4-es="${ch.noteEs}" data-b4-en="${ch.noteEn}"></span><span class="b4-next-arrow" aria-hidden="true">↗</span></span>`;
       page.append(link);
@@ -39,7 +39,7 @@
   function collect(){
     page=document.querySelector('.subpage.active');
     rise=[];heroes=[];lights=[];
-    if(!page||preference.matches){root.classList.remove('b4-on');reset();return;}
+    if(!page||page.dataset.b12==='true'||preference.matches){page=null;root.classList.remove('b4-on');reset();return;}
     root.classList.add('b4-on');
     rise=[...page.querySelectorAll(RISE)].filter(el=>!el.closest('[data-transition-content]'));
     heroes=[...page.querySelectorAll(HERO)];

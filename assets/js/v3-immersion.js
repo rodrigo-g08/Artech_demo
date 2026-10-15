@@ -41,7 +41,7 @@
     rise=[];heroes=[];lights=[];
     if(!page||page.dataset.b12==='true'||preference.matches){page=null;root.classList.remove('b4-on');reset();return;}
     root.classList.add('b4-on');
-    rise=[...page.querySelectorAll(RISE)].filter(el=>!el.closest('[data-transition-content]'));
+    rise=[...page.querySelectorAll(RISE)].filter(el=>!el.closest('[data-transition-content]')&&!el.matches('.history-statement'));
     heroes=[...page.querySelectorAll(HERO)];
     lights=[...page.querySelectorAll(LIGHT)];
   }

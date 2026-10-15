@@ -172,7 +172,7 @@
     window.scrollTo({ top, behavior: immediate || reduce.matches ? 'instant' : 'smooth' });
   }
   function markRoute() {
-    const hash = (/^#p-(vehicle|photo)(?:\/|$)/.test(location.hash)) ? '#p-collection' : location.hash.split('/')[0];
+    const hash = (/^#p-detail(?:\/|$)/.test(location.hash)) ? '#p-experience' : (/^#p-(vehicle|photo)(?:\/|$)/.test(location.hash)) ? '#p-collection' : location.hash.split('/')[0];
     header.querySelectorAll('.b01-nav-links a, #navlinks a').forEach(link => {
       if (link.getAttribute('href') === hash) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
     });

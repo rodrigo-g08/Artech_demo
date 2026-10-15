@@ -28,7 +28,7 @@ test('Related galleries use available photographs without borrowing an unrelated
   assert.equal(recommendations.length, 4);
   assert.equal(new Set(recommendations.map(x => x.slug)).size, 4);
   assert.ok(recommendations.every(x => x.slug !== current.slug && x.group?.photos.length));
-  assert.deepEqual(recommendations.slice(0, 2).map(x => x.slug), ['fol-661', 'akv-003']);
+  assert.deepEqual(recommendations.slice(0, 2).map(x => x.slug), ['a4d-305', 'fol-661']);
 });
 
 test('Sparse catalogues return real available entries without duplicates or invented fillers', () => {

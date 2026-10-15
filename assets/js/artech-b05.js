@@ -10,8 +10,9 @@
   const nextFrame = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
   let cars = [], groups = [], ready = false, loading = false, current = null, photoIndex = 0;
   let front = 'b05PhotoA', imageVersion = 0, photoAnimations = [], transition = null;
-  let view = 'catalogue', era = 'all', shown = 24, savedScroll = 0, originHref = '', previousKey = '';
+  let era = 'all', shown = 24, savedScroll = 0, originHref = '', previousKey = '';
   const model = window.ArtechCollectionModel;
+  let currentPhotoReady = Promise.resolve();
   let travelVersion = 0, travelPending = false;
   const carMap = new Map(), groupMap = new Map(), slugGroups = new Map();
   const href = item => item.slug ? '#p-vehicle/' + encodeURIComponent(item.slug) : '#p-photo/' + encodeURIComponent(item.id);
@@ -35,9 +36,7 @@
     return `<a class="b05-card" href="${E(href(item))}" data-b05-open><figure class="b05-card-photo">${visual}</figure><div class="b05-card-copy"><h3>${E(item.name)}</h3><p>${E(meta)}</p></div></a>`;
   }
   function allEntries() {
-    return view === 'photos'
-      ? groups.map(photoEntry).sort((a,b) => Number(!!b.car)-Number(!!a.car) || (a.era==='modern' ? -1:1)-(b.era==='modern' ? -1:1))
-      : cars.map(catalogueEntry).sort((a,b) => Number(!!b.group)-Number(!!a.group) || (a.car.featured_order||100)-(b.car.featured_order||100));
+    return groups.map(photoEntry).sort((a,b) => Number(!!b.car)-Number(!!a.car) || (a.car?.featured_order||100)-(b.car?.featured_order||100) || a.name.localeCompare(b.name));
   }
   function renderGrid() {
     if (!ready) return;
@@ -49,24 +48,23 @@
     const filtered = entries.filter(item => (!brand || model.normalizeBrand(item.brand)===model.normalizeBrand(brand)) && (era==='all' || item.era===era) && (!q || [item.name,item.brand,item.year,item.car?.plate,item.car?.model].join(' ').toLocaleLowerCase().includes(q)));
     $('b05Grid').innerHTML = filtered.slice(0,shown).map(card).join('');
     $('b05Grid').setAttribute('aria-busy','false');
-    $('b05Results').textContent = view === 'photos'
-      ? L(`${filtered.length} unidades · 206 fotografías en el archivo`,`${filtered.length} cars · 206 photographs in the archive`)
-      : L(`${filtered.length} de ${cars.length} fichas del catálogo`,`${filtered.length} of ${cars.length} catalogue records`);
+    $('b05Results').textContent = L(`${filtered.length} vehículos para descubrir`, `${filtered.length} cars to discover`);
     $('b05More').hidden = filtered.length<=shown; $('b05Empty').hidden = filtered.length>0;
     $('b05Clear').hidden = !(q || brand || era!=='all');
     $('b05Search').placeholder = L('Buscar modelo, año o placa','Find model, year or plate');
     $('b05Brand').setAttribute('aria-label',L('Marca','Brand'));
-    $('b05ArchiveNote').textContent = view==='photos'
-      ? L('206 fotografías originales, organizadas por vehículo. Las unidades todavía sin correspondencia confirmada se muestran como archivo fotográfico, sin atribuirles una ficha técnica.', '206 original photographs, organised by car. Cars without a confirmed catalogue match appear as photographic archives without assigned technical specifications.')
-      : L('Se conservan las 96 fichas originales. Las fotografías se incorporan cuando la unidad está identificada; las demás fichas permanecen disponibles sin imágenes de otros autos.', 'All 96 original records are retained. Photographs are added where the car is identified; other records remain available without pictures of a different car.');
-    document.querySelectorAll('[data-b05-view]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.b05View===view)));
+    $('b05ArchiveNote').textContent = L('Una selección de la colección, fotografiada en ARTECH.', 'A selection from the collection, photographed at ARTECH.');
     document.querySelectorAll('[data-b05-era]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.b05Era===era)));
   }
-  function showPhoto(index, immediate=false) {
+  async function showPhoto(index, immediate=false) {
     const photos=current?.group?.photos || []; if (!photos.length) return;
     const version=++imageVersion;
     photoIndex=(index+photos.length)%photos.length;
-    const photo=photos[photoIndex], label=`${current.name} · ${L('fotografía','photograph')} ${photoIndex+1}`;
+    const photo=photos[photoIndex];
+    const loaded = new Image(); loaded.src = photo.src;
+    try { await loaded.decode?.(); } catch (_) { if (version === imageVersion) $('b05PhotoCount').textContent = L('No se pudo cargar', 'Could not load'); return; }
+    if (version !== imageVersion) return;
+    const label=`${current.name} · ${L('fotografía','photograph')} ${photoIndex+1}`;
     $('b05PhotoCount').textContent=`${String(photoIndex+1).padStart(2,'0')} / ${String(photos.length).padStart(2,'0')}`;
     $('b05Thumbs').querySelectorAll('button').forEach((button,i)=>button.setAttribute('aria-pressed',String(i===photoIndex)));
     photoAnimations.forEach(animation=>animation.cancel()); photoAnimations=[];
@@ -88,7 +86,7 @@
     if (!same) photoIndex=0;
     const photos=item.group?.photos || [], car=item.car;
     $('vhName').textContent=item.name;
-    $('b05VehicleKicker').textContent=car ? L('ARTECH / LA COLECCIÓN','ARTECH / THE COLLECTION') : L('ARTECH / ARCHIVO FOTOGRÁFICO','ARTECH / PHOTOGRAPHIC ARCHIVE');
+    $('b05VehicleKicker').textContent=car ? L('ARTECH / LA COLECCIÓN','ARTECH / THE COLLECTION') : L('ARTECH / LA COLECCIÓN','ARTECH / THE COLLECTION');
     $('b05VehicleMeta').textContent=[item.year,item.brand,car?.plate].filter(Boolean).join(' · ');
     $('b05VehicleEdition').textContent=car ? `${String(cars.indexOf(car)+1).padStart(2,'0')} / ${cars.length}` : `${photos.length} ${L('FOTOGRAFÍAS','PHOTOGRAPHS')}`;
     $('b05NoPhoto').hidden=!!photos.length; $('b05ArchiveYear').textContent=item.year;
@@ -97,7 +95,7 @@
     $('b05Previous').setAttribute('aria-label',L('Foto anterior','Previous photograph'));
     $('b05Next').setAttribute('aria-label',L('Foto siguiente','Next photograph'));
     $('b05Thumbs').innerHTML=photos.map((photo,i)=>`<button type="button" data-b05-photo="${i}" aria-pressed="${i===photoIndex}" aria-label="${E(L('Ver fotografía','View photograph'))} ${i+1}"><img src="${E(photo.thumb)}" width="${photo.width}" height="${photo.height}" alt="" loading="lazy" decoding="async"></button>`).join('');
-    if (photos.length) showPhoto(photoIndex,true);
+    if (photos.length) currentPhotoReady = showPhoto(photoIndex,true);
     else {++imageVersion;photoAnimations.forEach(animation=>animation.cancel());photoAnimations=[];['b05PhotoA','b05PhotoB'].forEach(id=>{$(id).removeAttribute('src');$(id).classList.remove('is-front');});}
     $('b05Description').textContent=car ? (root.lang==='en'?car.desc:car.desc_es||car.desc) : L('Una mirada a la forma, los materiales y los detalles que hacen única a esta pieza. Recorre todas las fotografías de la misma unidad.', 'A closer look at the shape, materials and details that make this car unique. Explore every photograph of the same car.');
     $('b05IdentityNote').textContent=car
@@ -109,7 +107,7 @@
       : [[L('Fabricante','Manufacturer'),item.brand || unknown],[L('Modelo','Model'),item.name],[L('Año','Year'),unknown],[L('Placa','Plate'),unknown]];
     $('b05Specs').innerHTML=rows.filter(row=>row[1]).map(([key,value])=>`<div><dt>${E(key)}</dt><dd>${E(value)}</dd></div>`).join('');
     $('b05Specs').hidden=false;
-    const recommendations=model.recommend(item,cars.map(catalogueEntry),4);
+    const recommendations=model.recommend(item,allEntries(),4);
     $('b05Recommendations').innerHTML=recommendations.map(card).join('');
     document.title=`${item.name} · ARTECH · Lima`;
   }
@@ -121,7 +119,7 @@
       if(responses.some(response=>!response.ok))throw new Error('Unavailable catalogue');
       const [catalogue,manifest]=await Promise.all(responses.map(response=>response.json()));
       if(!Array.isArray(catalogue)||!Array.isArray(manifest.groups)||!catalogue.length)throw new Error('Invalid catalogue');
-      cars=catalogue;groups=manifest.groups;carMap.clear();groupMap.clear();slugGroups.clear();
+      cars=catalogue;groups=model.landscapeGroups(manifest.groups);carMap.clear();groupMap.clear();slugGroups.clear();
       cars.forEach(car=>carMap.set(car.slug,car));groups.forEach(group=>{groupMap.set(group.id,group);if(group.slug)slugGroups.set(group.slug,group);});
       ready=true;
       window.ArtechCollectionStats=model.stats(cars);
@@ -183,7 +181,7 @@
       // Keep the gallery-room composition readable before the photograph fills the view.
       await animate(state,room,[{opacity:1},{opacity:1}],{duration:160,fill:'forwards'});
       if(transition!==state)return;
-      state.committed=true;location.hash=target;await nextFrame();
+      state.committed=true;location.hash=target;await nextFrame();await currentPhotoReady;
       if(transition!==state)return;
       if(back){scrollTo({top:savedScroll,behavior:'instant'});await nextFrame();}
       const destination=back ? [...$('b05Grid').querySelectorAll('a')].find(a=>a.getAttribute('href')===originHref)?.querySelector('img') : $(front);
@@ -226,7 +224,6 @@
     if(!link || event.button!==0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)return;
     event.preventDefault();travel(link,link.hasAttribute('data-b05-return'));
   });
-  document.querySelectorAll('[data-b05-view]').forEach(button=>button.addEventListener('click',()=>{view=button.dataset.b05View;shown=24;$('b05Brand').value='';renderGrid();}));
   document.querySelectorAll('[data-b05-era]').forEach(button=>button.addEventListener('click',()=>{era=button.dataset.b05Era;shown=24;renderGrid();}));
   $('b05Search').addEventListener('input',()=>{shown=24;renderGrid();});$('b05Brand').addEventListener('change',()=>{shown=24;renderGrid();});
   $('b05Clear').addEventListener('click',()=>{era='all';shown=24;$('b05Search').value=$('b05Brand').value='';renderGrid();});

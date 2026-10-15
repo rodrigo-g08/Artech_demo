@@ -24,31 +24,15 @@
   const cockpit = $('b02Cockpit'), layer = cockpit.querySelector('.b02-cockpit-layer');
   const photo = $('b02CockpitPhoto'), points = [...cockpit.querySelectorAll('[data-b02-hotspot]')];
   let selectedPoint = null;
-  const pointCopy = {
-    wheel: [['01 / El volante', '01 / The steering wheel'], ['Todo, al alcance.', 'Everything, within reach.'], ['El emblema, los tres radios y la posición de los instrumentos: el interior se organiza alrededor de quien conduce.', 'The crest, the three spokes and the instruments: the interior is arranged around the driver.']],
-    console: [['02 / La consola', '02 / The console'], ['La conexión es directa.', 'A direct connection.'], ['La palanca y los controles conservan una relación física con el automóvil. Cada gesto forma parte del recorrido.', 'The gear lever and controls retain a physical connection to the car. Every gesture is part of the journey.']],
-    leather: [['03 / La tapicería', '03 / The upholstery'], ['El detalle se siente.', 'A detail you can feel.'], ['Cuero en tonos cálidos y costuras que siguen la forma del asiento. Acércate para descubrir las texturas de esta fotografía.', 'Warm leather and stitching that follows the shape of the seat. Look closer to discover the textures in this photograph.']]
-  };
-  function closePoint(restore = false) {
-    const last = selectedPoint; selectedPoint = null;
-    $('b02HotspotPanel').hidden = true;
-    points.forEach(button => button.setAttribute('aria-expanded', 'false'));
-    if (restore && last) last.focus({ preventScroll: true });
-  }
-  function renderPoint() {
-    if (!selectedPoint) return;
-    const copy = pointCopy[selectedPoint.dataset.b02Hotspot];
-    ['b02HotspotNumber', 'b02HotspotTitle', 'b02HotspotText'].forEach((id, i) => { $(id).textContent = copy[i][en() ? 1 : 0]; });
-  }
+  function closePoint() { selectedPoint = null; }
+  function renderPoint() {}
   points.forEach(button => button.addEventListener('click', () => {
-    if (selectedPoint === button) { closePoint(); return; }
-    closePoint(); selectedPoint = button; renderPoint();
-    button.setAttribute('aria-expanded', 'true'); $('b02HotspotPanel').hidden = false;
-    // Place keyboard focus in the opened content, with an explicit route back.
-    $('b02HotspotClose').focus({ preventScroll: true });
+    selectedPoint = button;
+    const rect = button.getBoundingClientRect();
+    window.ArtechDetailOrigin = { x: (rect.left + rect.width / 2) / innerWidth, y: (rect.top + rect.height / 2) / innerHeight, key: button.dataset.b02Hotspot };
+    const hash = '#p-detail/' + button.dataset.b02Hotspot;
+    if (window.ArtechB01) window.ArtechB01.navigate(hash); else location.hash = hash;
   }));
-  $('b02HotspotClose').addEventListener('click', () => closePoint(true));
-  cockpit.addEventListener('keydown', event => { if (event.key === 'Escape') closePoint(true); });
   function positionPoints() {
     const r = layer.getBoundingClientRect(); if (!r.width || !r.height) return;
     // client dimensions exclude the decorative pointer transform.
@@ -148,7 +132,6 @@
   function translate() {
     renderPoint(); paintTour();
     points.forEach(button => button.setAttribute('aria-label', t('Descubrir ', 'Discover ') + ({ wheel: t('el volante', 'the steering wheel'), console: t('la consola', 'the console'), leather: t('la tapicería', 'the upholstery') })[button.dataset.b02Hotspot]));
-    $('b02HotspotClose').setAttribute('aria-label', t('Cerrar detalle', 'Close detail'));
     $('b02TourBigPlay').setAttribute('aria-label', t('Reproducir recorrido fotográfico', 'Play photographic tour'));
     $('b02TourSeek').setAttribute('aria-label', t('Avance del recorrido', 'Tour progress'));
     $('b02TourFull').setAttribute('aria-label', t('Pantalla completa', 'Full screen'));

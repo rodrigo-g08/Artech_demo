@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": "F02",
   "source": "User ZIP photographs only",
   "catalogueRecords": 96,
   "photoCount": 206,
@@ -1201,7 +1201,7 @@
       "label": "Porsche 911 GT3 · rojo",
       "brand": "Porsche",
       "era": "modern",
-      "slug": null,
+      "slug": "a4d-305",
       "cover": "A88A0683.jpg",
       "photos": [
         {

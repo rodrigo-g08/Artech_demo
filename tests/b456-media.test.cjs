@@ -15,7 +15,7 @@ test('The 96 source records remain available; photographic identities are never 
  assert.deepEqual([...photos].sort(),audit.groups.flatMap(group=>group.filenames).sort());
  const approved=new Set(audit.catalog_coverage.high_confidence_slugs),slugs=new Set(cars.map(car=>car.slug));
  const assigned=manifest.groups.filter(group=>group.slug);
- assert.equal(assigned.length,10);assert.equal(new Set(assigned.map(group=>group.slug)).size,10);
+ assert.equal(assigned.length,11);assert.equal(new Set(assigned.map(group=>group.slug)).size,11);
  assigned.forEach(group=>{assert.ok(slugs.has(group.slug));assert.ok(approved.has(group.slug));});
 });
 

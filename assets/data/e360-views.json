@@ -1,0 +1,245 @@
+{
+  "version": "F02+E360",
+  "mode": "guided-prerendered-views",
+  "cars": [
+    {
+      "key": "classic",
+      "name": "Chrysler Roadster",
+      "year": null,
+      "record": "#p-photo/classic-chrysler-cream-roadster",
+      "identity": "catalogue-match-pending",
+      "views": [
+        {
+          "id": "exterior",
+          "label": {
+            "es": "Exterior",
+            "en": "Exterior"
+          },
+          "src": "assets/media/e360/classic-exterior.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "profile",
+          "label": {
+            "es": "Lateral",
+            "en": "Profile"
+          },
+          "src": "assets/media/e360/classic-profile.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "rear",
+          "label": {
+            "es": "Parte trasera",
+            "en": "Rear"
+          },
+          "src": "assets/media/e360/classic-rear.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "cabin",
+          "label": {
+            "es": "Habitáculo",
+            "en": "Cabin"
+          },
+          "src": "assets/media/e360/classic-cabin.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "wheel",
+          "label": {
+            "es": "Volante",
+            "en": "Steering wheel"
+          },
+          "src": "assets/media/e360/classic-wheel.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "console",
+          "label": {
+            "es": "Consola",
+            "en": "Console"
+          },
+          "src": "assets/media/e360/classic-console.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        }
+      ]
+    },
+    {
+      "key": "red",
+      "name": "Porsche 911 GT3",
+      "year": "2010",
+      "record": "#p-vehicle/a4d-305",
+      "identity": "confirmed",
+      "views": [
+        {
+          "id": "exterior",
+          "label": {
+            "es": "Exterior",
+            "en": "Exterior"
+          },
+          "src": "assets/media/e360/red-exterior.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "profile",
+          "label": {
+            "es": "Lateral",
+            "en": "Profile"
+          },
+          "src": "assets/media/e360/red-profile.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "rear",
+          "label": {
+            "es": "Parte trasera",
+            "en": "Rear"
+          },
+          "src": "assets/media/e360/red-rear.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "cabin",
+          "label": {
+            "es": "Habitáculo",
+            "en": "Cabin"
+          },
+          "src": "assets/media/b05/a88a0834-1920.webp",
+          "kind": "photograph",
+          "reference": "A88A0834.jpg"
+        },
+        {
+          "id": "wheel",
+          "label": {
+            "es": "Volante",
+            "en": "Steering wheel"
+          },
+          "src": "assets/media/b05/a88a0813-1920.webp",
+          "kind": "photograph",
+          "reference": "A88A0813.jpg"
+        },
+        {
+          "id": "console",
+          "label": {
+            "es": "Consola",
+            "en": "Console"
+          },
+          "src": "assets/media/b05/a88a0821-1920.webp",
+          "kind": "photograph",
+          "reference": "A88A0821.jpg"
+        }
+      ]
+    },
+    {
+      "key": "white",
+      "name": "Porsche 911 Turbo",
+      "year": "1986",
+      "record": "#p-vehicle/d5z-370",
+      "identity": "confirmed",
+      "views": [
+        {
+          "id": "exterior",
+          "label": {
+            "es": "Exterior",
+            "en": "Exterior"
+          },
+          "src": "assets/media/e360/white-exterior.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "profile",
+          "label": {
+            "es": "Lateral",
+            "en": "Profile"
+          },
+          "src": "assets/media/e360/white-profile.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "rear",
+          "label": {
+            "es": "Parte trasera",
+            "en": "Rear"
+          },
+          "src": "assets/media/e360/white-rear.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        },
+        {
+          "id": "cabin",
+          "label": {
+            "es": "Habitáculo",
+            "en": "Cabin"
+          },
+          "src": "assets/media/b05/a88a0909-1920.webp",
+          "kind": "photograph",
+          "reference": "A88A0909.jpg"
+        },
+        {
+          "id": "wheel",
+          "label": {
+            "es": "Volante",
+            "en": "Steering wheel"
+          },
+          "src": "assets/media/b05/a88a0921-1920.webp",
+          "kind": "photograph",
+          "reference": "A88A0921.jpg"
+        },
+        {
+          "id": "console",
+          "label": {
+            "es": "Consola",
+            "en": "Console"
+          },
+          "src": "assets/media/e360/white-console.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json"
+        }
+      ]
+    }
+  ],
+  "details": [
+    {
+      "id": "wheel",
+      "label": {
+        "es": "El volante",
+        "en": "The steering wheel"
+      },
+      "src": "assets/media/e360/experience-wheel.webp",
+      "kind": "reconstruction",
+      "reference": "A88A0804.jpg"
+    },
+    {
+      "id": "console",
+      "label": {
+        "es": "La consola",
+        "en": "The console"
+      },
+      "src": "assets/media/e360/experience-console.webp",
+      "kind": "reconstruction",
+      "reference": "A88A0804.jpg"
+    },
+    {
+      "id": "leather",
+      "label": {
+        "es": "La tapicería",
+        "en": "The upholstery"
+      },
+      "src": "assets/media/e360/experience-leather.webp",
+      "kind": "reconstruction",
+      "reference": "A88A0804.jpg"
+    }
+  ]
+}

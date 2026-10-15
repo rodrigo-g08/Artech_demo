@@ -34,5 +34,8 @@
       return String(a.name).localeCompare(String(b.name));
     }).slice(0, limit);
   }
-  return Object.freeze({ stats, recommend, normalizeBrand: brand });
+  function landscapeGroups(groups) {
+    return groups.map(group => ({ ...group, photos: group.photos.filter(photo => Number(photo.width) > Number(photo.height)) })).filter(group => group.photos.length);
+  }
+  return Object.freeze({ stats, recommend, landscapeGroups, normalizeBrand: brand });
 });

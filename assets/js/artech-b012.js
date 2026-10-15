@@ -26,6 +26,7 @@
     if (focus) { const target = element.querySelector('h1,h2') || element; target.tabIndex = -1; target.focus({ preventScroll: true }); }
   };
   function setPhoto(image, name, alt) {
+    if (!image) return;
     if (!image.getAttribute('src')?.includes('/' + name + '-')) {
       image.srcset = asset(name + '-960.webp') + ' 960w, ' + asset(name + '-1920.webp') + ' 1920w';
       image.src = asset(name + '-960.webp');
@@ -142,7 +143,8 @@
     });
     story.el.addEventListener('keydown', event => {
       if (event.key !== 'Escape') return;
-      const hotspot = q('[data-b12-detail-toggle]'), note = document.getElementById(hotspot.getAttribute('aria-controls'));
+      const hotspot = q('[data-b12-detail-toggle]'); if (!hotspot) return;
+      const note = document.getElementById(hotspot.getAttribute('aria-controls'));
       if (!note.hidden) { note.hidden = true; hotspot.setAttribute('aria-expanded', 'false'); hotspot.focus({ preventScroll: true }); }
     });
     labels(story);

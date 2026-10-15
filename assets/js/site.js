@@ -1216,6 +1216,7 @@ function renderInfo(key){
 const innerPages={ 'location':document.getElementById('location'), 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle'), 'p-cafe':document.getElementById('page-cafe'), 'p-contact':document.getElementById('page-contact'), 'p-blog':document.getElementById('page-blog'), 'p-post':document.getElementById('page-post'), 'p-tickets':document.getElementById('page-tickets')  , 'p-workshops':document.getElementById('page-workshops'), 'p-affiliated':document.getElementById('page-affiliated'), 'p-history':document.getElementById('page-history') };
 Object.keys(INFO).forEach(function(k){ innerPages[k]=document.getElementById('page-info'); });
 innerPages['p-photo']=document.getElementById('page-vehicle');
+innerPages['p-detail']=document.getElementById('page-detail');
 innerPages['exp3d']=document.getElementById('exp3d');
 /* los videos decorativos del home consumen CPU aunque estén ocultos:
    se pausan al abrir una página interna y vuelven al regresar */

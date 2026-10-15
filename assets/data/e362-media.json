@@ -1,0 +1,93 @@
+{
+  "version": "E362",
+  "scope": [
+    "landing composition",
+    "workshop"
+  ],
+  "media": [
+    {
+      "file": "assets/media/e362/home-studio-1920.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 160192,
+      "sha256": "7e6b49f89f1efe3dd02cef17d77f69118657c60bf09a83f86191e9884e48e08d",
+      "kind": "approved_mockup_edit",
+      "reference": "image(20261015-175446).png",
+      "operation": "Remove screenshot UI; preserve the approved three vehicles, camera angles and placement; unify studio floor and fixed lighting."
+    },
+    {
+      "file": "assets/media/e362/home-studio-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 70286,
+      "sha256": "c4b0b607be9114eaf5f9c3ff57107bc385218af2f30fc32beeab0952fc2ef802",
+      "kind": "approved_mockup_edit",
+      "reference": "image(20261015-175446).png",
+      "operation": "Remove screenshot UI; preserve the approved three vehicles, camera angles and placement; unify studio floor and fixed lighting."
+    },
+    {
+      "file": "assets/media/e362/workshop-classic-1920.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 176426,
+      "sha256": "ea2d7785df73df2c1bc4334197732985280f9ee8c09533a63c4e6e7e8c191d3d",
+      "kind": "photographic_edit",
+      "reference": "image(20261015-181802).png",
+      "operation": "AI-assisted environmental relighting/reconstruction from the user museum photograph. Retain the burgundy classic; dark studio and warm floor. Not an unmodified documentary photograph."
+    },
+    {
+      "file": "assets/media/e362/workshop-classic-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 72612,
+      "sha256": "3cbb871f60bbc04eb2239d090a62c5e897dfe7a7ad9906fa5e46038835b9fa19",
+      "kind": "photographic_edit",
+      "reference": "image(20261015-181802).png",
+      "operation": "AI-assisted environmental relighting/reconstruction from the user museum photograph. Retain the burgundy classic; dark studio and warm floor. Not an unmodified documentary photograph."
+    },
+    {
+      "file": "assets/media/e362/workshop-gt3-1920.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 148512,
+      "sha256": "bfd07e54a5c89c476f1a4837d8765de82d963329399f127f24b847e1af0f200e",
+      "kind": "photographic_edit",
+      "reference": "A88A0683.jpg",
+      "operation": "AI-assisted removal of museum surroundings, dark studio relighting and composition from the supplied GT3 photograph; full vehicle above the text-safe floor. Not an unmodified documentary photograph."
+    },
+    {
+      "file": "assets/media/e362/workshop-gt3-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 60602,
+      "sha256": "9ae4f92469564c1682cf09045a6efcf7779afb52a6b7f9ae3bb7b3d7f3c1935e",
+      "kind": "photographic_edit",
+      "reference": "A88A0683.jpg",
+      "operation": "AI-assisted removal of museum surroundings, dark studio relighting and composition from the supplied GT3 photograph; full vehicle above the text-safe floor. Not an unmodified documentary photograph."
+    }
+  ],
+  "reused": [
+    {
+      "file": "assets/media/b023/workshop-mechanics-1920.webp",
+      "kind": "illustration",
+      "note": "Existing approved illustrative hands scene, used once in the Workshop; the supplied photo ZIPs contain no workshop repair photograph."
+    },
+    {
+      "file": "assets/media/b023/cockpit-1920.webp",
+      "kind": "photograph",
+      "reference": "A88A0804.jpg",
+      "note": "Original supplied photograph; only a flat CSS shade over the complete screen."
+    },
+    {
+      "file": "assets/media/b023/cockpit-wide-1920.webp",
+      "kind": "photograph",
+      "reference": "A88A0800.jpg",
+      "note": "Original supplied photograph; distinct closing angle, no animated zoom."
+    }
+  ],
+  "unchanged": [
+    "E360 views and journey data",
+    "Collection originals",
+    "Shared footer content"
+  ]
+}

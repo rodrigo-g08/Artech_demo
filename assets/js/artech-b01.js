@@ -172,7 +172,7 @@
     window.scrollTo({ top, behavior: immediate || reduce.matches ? 'instant' : 'smooth' });
   }
   function markRoute() {
-    const hash = location.hash.startsWith('#p-vehicle') ? '#p-collection' : location.hash.split('/')[0];
+    const hash = (/^#p-(vehicle|photo)(?:\/|$)/.test(location.hash)) ? '#p-collection' : location.hash.split('/')[0];
     header.querySelectorAll('.b01-nav-links a, #navlinks a').forEach(link => {
       if (link.getAttribute('href') === hash) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
     });
@@ -187,6 +187,7 @@
     if (version === routeVersion) location.hash = hash;
   }
   function revealRoute() {
+    if(document.documentElement.classList.contains('b05-transiting'))return;
     const version = ++routeVersion; curtainAnimation?.cancel();
     if (reduce.matches || typeof curtain.animate !== 'function') { curtain.hidden = true; return; }
     curtain.hidden = false;
@@ -196,7 +197,7 @@
   document.addEventListener('click', event => {
     const link = event.target.closest('a[href]');
     if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || link.target === '_blank') return;
-    if (link.matches('[data-b12-gallery-open],[data-b12-enter]')) return;
+    if (link.matches('[data-b12-gallery-open],[data-b12-enter],[data-b05-open],[data-b05-return]')) return;
     const hash = link.getAttribute('href');
     if (link.hasAttribute('data-b01-seek')) { event.preventDefault(); seek(Number(link.dataset.b01Seek)); return; }
     if (hash === '#top' && !isInnerPage()) { event.preventDefault(); setMenu(false); seek(0); return; }

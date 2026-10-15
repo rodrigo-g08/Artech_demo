@@ -1,4 +1,4 @@
-/* B02: workshop details and a photographic cockpit tour. No external player. */
+/* B02 + F01: photographic cockpit tour. Workshop information is now inline. */
 (function () {
   'use strict';
   const $ = id => document.getElementById(id);
@@ -10,45 +10,6 @@
   const esc = window.Artech.escapeHTML;
   const isExperience = () => location.hash.split('/')[0] === '#p-experience';
 
-  // Native dialogs handle focus containment. A small fallback supports older engines.
-  let modal = null, previousFocus = null;
-  function closeModal(restore = true) {
-    if (!modal) return;
-    const el = modal; modal = null;
-    if (typeof el.close === 'function' && el.open) el.close();
-    else el.removeAttribute('open');
-    el.classList.remove('b02-modal-fallback');
-    if (restore && previousFocus && previousFocus.isConnected) previousFocus.focus({ preventScroll: true });
-    previousFocus = null;
-  }
-  function openModal(el, trigger) {
-    closeModal(false); previousFocus = trigger || document.activeElement; modal = el;
-    if (typeof el.showModal === 'function') el.showModal();
-    else { el.setAttribute('open', ''); el.classList.add('b02-modal-fallback'); }
-    el.scrollTop = 0;
-    const first = el.querySelector('button:not([disabled]), [href], input:not([disabled])');
-    if (first) first.focus({ preventScroll: true });
-  }
-  window.ArtechDialogs = Object.freeze({ open: openModal, close: closeModal });
-  document.querySelectorAll('.b02-dialog,.b03-dialog').forEach(el => {
-    el.addEventListener('cancel', event => { event.preventDefault(); closeModal(); });
-    el.addEventListener('click', event => {
-      if (event.target.closest('[data-b02-close],[data-book-close]')) closeModal();
-      else if (event.target === el) {
-        const r = el.getBoundingClientRect();
-        if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) closeModal();
-      }
-    });
-  });
-  document.addEventListener('keydown', event => {
-    if (!modal) return;
-    if (event.key === 'Escape') { event.preventDefault(); closeModal(); return; }
-    if (event.key !== 'Tab' || !modal.classList.contains('b02-modal-fallback')) return;
-    const items = [...modal.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),select:not([disabled])')].filter(el => !el.closest('[hidden]'));
-    const first = items[0], last = items[items.length - 1];
-    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-  });
   document.querySelectorAll('[data-b02-scroll]').forEach(link => link.addEventListener('click', event => {
     const target = document.querySelector(link.getAttribute('href'));
     if (!target) return;
@@ -58,44 +19,6 @@
     window.scrollTo({ top: target.getBoundingClientRect().top + scrollY - offset, behavior: reduced.matches ? 'auto' : 'smooth' });
     const heading = target.querySelector('h2');
     if (heading) { heading.tabIndex = -1; heading.focus({ preventScroll: true }); }
-  }));
-
-  const details = {
-    bodywork: {
-      image: 'assets/media/b012/red-detail-1920.webp', number: '01',
-      category: ['Carrocería', 'Bodywork'], title: ['La precisión empieza en la forma.', 'Precision begins with form.'],
-      alt: ['Detalle de la carrocería roja del Porsche GT3', 'Detail of the red Porsche GT3 bodywork'],
-      text: ['Una curva conduce a la siguiente. Acércate a las superficies, los encuentros y los reflejos que definen la silueta de cada automóvil.', 'One curve leads to the next. Look closer at the surfaces, joins and reflections that define each car’s silhouette.'],
-      steps: [['Observar las líneas y las proporciones.', 'Observe the lines and proportions.'], ['Descubrir cómo se encuentran las superficies.', 'Discover how the surfaces meet.'], ['Leer la forma a través de la luz.', 'Read the form through the light.']]
-    },
-    mechanics: {
-      image: 'assets/media/b023/workshop-mechanics-1920.webp', number: '02',
-      category: ['Mecánica', 'Mechanics'], title: ['Cada ajuste tiene un propósito.', 'Every adjustment has a purpose.'],
-      alt: ['Escena ilustrativa del mockup: ajuste manual de una pieza mecánica', 'Illustrative mockup scene: a mechanical component being adjusted by hand'],
-      text: ['Antes del movimiento, está el detalle. Una pieza, una herramienta y la atención necesaria para entender cómo trabaja cada mecanismo.', 'Before movement comes detail. A component, a tool and the attention needed to understand how each mechanism works.'],
-      steps: [['Identificar la función de cada componente.', 'Identify the role of each component.'], ['Observar el ajuste y la precisión manual.', 'Observe the adjustment and manual precision.'], ['Entender el conjunto, pieza por pieza.', 'Understand the whole, piece by piece.']]
-    },
-    upholstery: {
-      image: 'assets/media/b023/cockpit-1920.webp', number: '03',
-      category: ['Tapicería', 'Upholstery'], title: ['El tacto también cuenta una historia.', 'Touch tells a story, too.'],
-      alt: ['Cuero y costuras del asiento Porsche fotografiado para la colección', 'Leather and stitching of the Porsche seat photographed for the collection'],
-      text: ['El interior se descubre de cerca: la textura del cuero, el ritmo de una costura y las formas que acompañan a quien conduce.', 'An interior reveals itself up close: the texture of the leather, the rhythm of a stitch and the forms surrounding the driver.'],
-      steps: [['Explorar la textura y el color del cuero.', 'Explore the texture and colour of the leather.'], ['Seguir el recorrido de cada costura.', 'Follow the path of each stitch.'], ['Descubrir el habitáculo desde otra perspectiva.', 'Discover the cabin from another perspective.']]
-    }
-  };
-  let detailKey = '';
-  function renderDetail() {
-    const d = details[detailKey]; if (!d) return;
-    const value = pair => pair[en() ? 1 : 0];
-    $('b02DetailDialog').dataset.detail = detailKey;
-    $('b02DetailImage').src = d.image; $('b02DetailImage').alt = value(d.alt);
-    $('b02DetailKicker').textContent = `${d.number} / ${value(d.category)}`;
-    $('b02DetailTitle').textContent = value(d.title);
-    $('b02DetailText').textContent = value(d.text);
-    $('b02DetailSteps').innerHTML = d.steps.map((pair, i) => `<p><span>0${i + 1}</span>${esc(value(pair))}</p>`).join('');
-  }
-  document.querySelectorAll('[data-b02-detail]').forEach(button => button.addEventListener('click', () => {
-    detailKey = button.dataset.b02Detail; renderDetail(); openModal($('b02DetailDialog'), button);
   }));
 
   const cockpit = $('b02Cockpit'), layer = cockpit.querySelector('.b02-cockpit-layer');
@@ -208,15 +131,11 @@
       const r = el.getBoundingClientRect();
       if (reduced.matches || r.top < innerHeight * .94) el.classList.remove('is-awaiting');
     });
-    if (!reduced.matches) active.querySelectorAll('.b02-craft').forEach(el => {
-      const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
-      const progress = Math.max(0, Math.min(1, (innerHeight - r.top) / (innerHeight + r.height)));
-      el.style.setProperty('--b02-photo-scale', (1 + progress * .045).toFixed(3));
-    });
+
   }
   function schedule() { if (!scrollFrame) scrollFrame = requestAnimationFrame(revealAndMove); }
   function route() {
-    closeModal(false); closePoint();
+    closePoint();
     if (!isExperience()) pauseTour();
     positionPoints();
     document.querySelectorAll('.b02-page.active .b02-reveal').forEach(el => {
@@ -227,10 +146,9 @@
   addEventListener('scroll', schedule, { passive: true });
   addEventListener('artech:route', route);
   function translate() {
-    renderDetail(); renderPoint(); paintTour();
+    renderPoint(); paintTour();
     points.forEach(button => button.setAttribute('aria-label', t('Descubrir ', 'Discover ') + ({ wheel: t('el volante', 'the steering wheel'), console: t('la consola', 'the console'), leather: t('la tapicería', 'the upholstery') })[button.dataset.b02Hotspot]));
     $('b02HotspotClose').setAttribute('aria-label', t('Cerrar detalle', 'Close detail'));
-    $('b02DetailDialog').querySelector('button[data-b02-close]').setAttribute('aria-label', t('Cerrar detalle', 'Close detail'));
     $('b02TourBigPlay').setAttribute('aria-label', t('Reproducir recorrido fotográfico', 'Play photographic tour'));
     $('b02TourSeek').setAttribute('aria-label', t('Avance del recorrido', 'Tour progress'));
     $('b02TourFull').setAttribute('aria-label', t('Pantalla completa', 'Full screen'));

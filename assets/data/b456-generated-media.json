@@ -1,0 +1,263 @@
+[
+  {
+    "key": "checkout-front",
+    "source": "exec-94368842-0244-4f67-913b-6a855a0e9c83.png",
+    "prompt": {
+      "transparent_background": true,
+      "prompt": "Use case: background-extraction. Edit target: supplied ARTECH checkout mockup. Extract ONLY the exact dark graphite Porsche 911 GT2 RS front view seen at the top right of the first checkout panel. Preserve its identity, metallic dark charcoal finish, headlights, hood vents, front bumper, front-facing symmetric camera angle, proportions, reflections and cabin exactly as in that reference. Remove all website text, buttons, lines, other cars and UI. Output a high quality isolated photograph of this same complete front view on a truly transparent background, including a soft dark contact shadow below the wheels. Car centered and filling 90% width, no cropping of mirrors or tyres. No extra cars. No added license plate text. This is an extraction/restoration asset for the exact design, not a new different vehicle."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b04/checkout-front.webp",
+        "sha256": "0801a0fad28d491140c8311e606368973ac5fbf89b5d10d913587c9baa6187ab",
+        "bytes": 251526
+      }
+    ]
+  },
+  {
+    "key": "checkout-rear",
+    "source": "exec-abb216c8-f65f-4305-bb97-a9ffa7b973cd.png",
+    "prompt": {
+      "transparent_background": false,
+      "prompt": "Use case: precise-object-edit. Edit target supplied ARTECH checkout mockup. Extract and restore ONLY the exact bottom photograph: dark graphite Porsche rear three-quarter view, slim continuous illuminated red taillight and rear wing, facing away toward the left as shown. Preserve the existing car, viewpoint, color, subtle reflections, silhouette and overall crop. Remove all UI, lettering, footer logo and typography. Make a wide standalone cinematic photograph, 2:1 aspect ratio, pure black background seamlessly meeting all edges, car across the lower two thirds, softly lit body with the red taillight. Do not invent a different vehicle or a front view. Keep the same photograph composition of the reference."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b04/checkout-rear.webp",
+        "sha256": "26e34cc764efeca27860e5a848c9c6315c3f6624493c6d206546a2643df49585",
+        "bytes": 42646
+      }
+    ]
+  },
+  {
+    "key": "restaurant-table",
+    "source": "exec-c9520b32-c776-4615-85f1-e61ca8a69c39.png",
+    "prompt": {
+      "transparent_background": false,
+      "prompt": "Use case: precise-object-edit. Edit target supplied restaurant storyboard. Produce ONLY a standalone overhead photograph of the wooden table in the TOP panel, without any website UI, logos, lettering or text. Wide 16:9 composition. Preserve its natural textured dark gray brown wood, small scattered fresh cilantro, red chilli and cashew nuts along right edge, partly visible side dishes at top-left and top-right. REMOVE the large central beef plate and its sauce bowl and replace that area with continuous realistic bare wood so a separately rendered plate can be composited there in HTML. Keep center and right-center largely clear, with calm darker empty wood at lower left for text. Natural soft daylight, professional restaurant photography, no excessive orange light, no illustration."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b06/restaurant-table-960.webp",
+        "sha256": "dc35e54654733579db742ae9e82fb67815b8096ab0fab0551d8d3ab2ff091354",
+        "bytes": 224562
+      },
+      {
+        "path": "assets/media/b06/restaurant-table-1920.webp",
+        "sha256": "1253cdc44de4ad274e042487be9d359483f3337db77c5546e74302893a31b5ff",
+        "bytes": 644896
+      }
+    ]
+  },
+  {
+    "key": "dish-bife",
+    "source": "exec-3a7b799f-162b-4df0-ae6e-dd976de90d1b.png",
+    "prompt": {
+      "transparent_background": true,
+      "prompt": "Use case: product-mockup. A photorealistic overhead food photograph of 'Bife Americano a la Parrilla': grilled beef steak sliced thick, browned grill sear and juicy medium center, a small portion of golden French fries and a fresh salad of green lettuce, tomato and a few red onion rings. All food on ONE elegant round warm gray ceramic dinner plate with a slim dark rim, full round plate visible, directly top-down, centered, fills 88% of square canvas. Natural soft daylight from upper left, realistic editorial restaurant food styling, tactile and appetizing, subtle realistic contact shadow. Transparent background outside the plate; no wooden table, no props, no text, no logos. High detail 1536 square. This plate will move across a webpage on top of a table photo."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-bife.webp",
+        "sha256": "422a46f1c16817daf0db8236e8e9c94a0b78d2fdc08d09bcde9fcc452ac184e5",
+        "bytes": 593340
+      }
+    ]
+  },
+  {
+    "key": "dish-burrata",
+    "source": "exec-087860af-72f0-49c9-90cd-f4c151bd7de5.png",
+    "prompt": {
+      "transparent_background": true,
+      "prompt": "Use case: product-mockup. Photorealistic overhead restaurant photograph of Burrata Capresse: one fresh creamy white burrata ball with cut and roasted cherry tomatoes, pesto, pistachios, balsamic reduction, arugula, cilantro and olive oil. ONE round warm gray ceramic plate with slim dark rim, entire round plate in frame centered on a transparent background, plate fills 88% of square image. Soft natural daylight from upper left, refined but believable food styling, visible ingredient texture and gentle contact shadow. No table, props, text, logo or other dishes. Same camera overhead flat lay, premium understated museum restaurant visual."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-burrata.webp",
+        "sha256": "b48f2cc12c039d7271e726797e9e15c575a6e7f7a2fa79d555a08b14806f40f9",
+        "bytes": 530054
+      }
+    ]
+  },
+  {
+    "key": "dish-crab",
+    "source": "exec-bcc916b7-a2f6-4ef0-aa14-551125f50408.png",
+    "prompt": {
+      "transparent_background": true,
+      "prompt": "Use case: product-mockup. Photorealistic overhead photograph of a Peruvian restaurant crab salad: tender white crab meat with finely grated cucumber and carrot, restrained creamy house mayonnaise dressing, crispy fried onion garnish. Neatly styled but natural on ONE round warm gray ceramic plate with slim dark rim, some green leaf under salad only, ingredients matching description. Entire circular plate centered, 88% square canvas, truly transparent background outside plate with subtle contact shadow. Soft natural daylight upper-left, premium editorial food photography. No props, table, text, logo or extra plates."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-crab.webp",
+        "sha256": "8c5c7dddb6c8736e439c22b5fa50f6431a6265d3c87720498fe215f39978652f",
+        "bytes": 430552
+      }
+    ]
+  },
+  {
+    "key": "dish-caesar",
+    "source": "exec-dba4a231-cc12-485a-a92d-968a2dd50d95.png",
+    "prompt": {
+      "transparent_background": true,
+      "prompt": "Use case: product-mockup. Photorealistic top-down restaurant food photograph for an elegant museum restaurant. One complete round warm gray ceramic plate with a thin dark rim, or the specified vessel on a matching round saucer; centered, fills 88% of square canvas, all edges visible. Truly transparent background outside the plate/vessel and a gentle realistic contact shadow. Soft natural daylight from upper-left. Restrained professional editorial food styling, crisp realistic texture, no table, props, text, logos or other plates. A Caesar salad: mixed crisp green lettuce, Parmesan reggiano shavings, bacon pieces and golden gluten-free leek croutons, light creamy Caesar dressing. No chicken."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-caesar.webp",
+        "sha256": "51292108bd5ea4aab5b7b42007f7fdeb27ea02777b571b8aeb43b7e8f9b62e4f",
+        "bytes": 558512
+      }
+    ]
+  },
+  {
+    "key": "dish-soup",
+    "source": "exec-f3713b30-1435-40d9-b926-0dc35823d65b.png",
+    "prompt": {
+      "transparent_background": true,
+      "prompt": "Use case: product-mockup. Photorealistic top-down restaurant food photograph for an elegant museum restaurant. One complete round warm gray ceramic plate with a thin dark rim, or the specified vessel on a matching round saucer; centered, fills 88% of square canvas, all edges visible. Truly transparent background outside the plate/vessel and a gentle realistic contact shadow. Soft natural daylight from upper-left. Restrained professional editorial food styling, crisp realistic texture, no table, props, text, logos or other plates. Arracacha cream soup, smooth pale golden cream with a tiny fresh herb garnish, in a dark rim warm gray ceramic shallow bowl on a matching round plate. Believable velvety soup, not bright orange pumpkin soup."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-soup.webp",
+        "sha256": "711c05eca63ba0acdaba63d577faaad1fe8ad5bab745393799f5370179a4d61f",
+        "bytes": 294028
+      }
+    ]
+  },
+  {
+    "key": "dish-fries",
+    "source": "exec-8b9e96f7-5707-4446-9480-b21be6fb5482.png",
+    "prompt": {
+      "transparent_background": true,
+      "prompt": "Use case: product-mockup. Photorealistic top-down restaurant food photograph for an elegant museum restaurant. One complete round warm gray ceramic plate with a thin dark rim, or the specified vessel on a matching round saucer; centered, fills 88% of square canvas, all edges visible. Truly transparent background outside the plate/vessel and a gentle realistic contact shadow. Soft natural daylight from upper-left. Restrained professional editorial food styling, crisp realistic texture, no table, props, text, logos or other plates. Truffled Parmesan fries, naturally golden fried potato strips, grated Parmesan, parsley and a restrained white-truffle dressing, on one round plate."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-fries.webp",
+        "sha256": "76eb65010f6823796046096f1b553f188aff90147d76efe08d877bd8e8f7c4a2",
+        "bytes": 631226
+      }
+    ]
+  },
+  {
+    "key": "dish-pulpo",
+    "source": "exec-55369d8d-2b8e-4b6d-82a3-8249bb732c7c.png",
+    "prompt": {
+      "transparent_background": true,
+      "prompt": "Use case: product-mockup. Photorealistic top-down restaurant food photograph for an elegant museum restaurant. One complete round warm gray ceramic plate with a thin dark rim, or the specified vessel on a matching round saucer; centered, fills 88% of square canvas, all edges visible. Truly transparent background outside the plate/vessel and a gentle realistic contact shadow. Soft natural daylight from upper-left. Restrained professional editorial food styling, crisp realistic texture, no table, props, text, logos or other plates. Grilled octopus with golden char marks, elegantly curved tentacles served over pale arracacha puree on one round plate. No extra fish or steak."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-pulpo.webp",
+        "sha256": "26043b27cfb81ddbb2b46b7dff2ad62683c41c924ec56023444949f07c31e604",
+        "bytes": 459986
+      }
+    ]
+  },
+  {
+    "key": "dish-breakfast",
+    "source": "exec-9fe85646-503a-48dd-9d0f-9edbb8842c61.png",
+    "prompt": {
+      "transparent_background": true,
+      "prompt": "Use case: product-mockup. Photorealistic top-down restaurant food photograph for an elegant museum restaurant. One complete round warm gray ceramic plate with a thin dark rim, or the specified vessel on a matching round saucer; centered, fills 88% of square canvas, all edges visible. Truly transparent background outside the plate/vessel and a gentle realistic contact shadow. Soft natural daylight from upper-left. Restrained professional editorial food styling, crisp realistic texture, no table, props, text, logos or other plates. ARTECH Eggs Benedict: country-bread toast, bacon, two poached eggs, avocado and glossy pale hollandaise on a round plate, appetizing natural presentation."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-breakfast.webp",
+        "sha256": "97f868a1fcd5c209726cdb9d407aa0ff3967d9f12969a7fb8282044fb5eb1333",
+        "bytes": 451104
+      }
+    ]
+  },
+  {
+    "key": "dish-sandwich",
+    "source": "exec-7f761f74-e3e6-4732-8a9b-caff9cbeebab.png",
+    "prompt": {
+      "transparent_background": true,
+      "prompt": "Use case: product-mockup. Photorealistic top-down restaurant food photograph for an elegant museum restaurant. One complete round warm gray ceramic plate with a thin dark rim, or the specified vessel on a matching round saucer; centered, fills 88% of square canvas, all edges visible. Truly transparent background outside the plate/vessel and a gentle realistic contact shadow. Soft natural daylight from upper-left. Restrained professional editorial food styling, crisp realistic texture, no table, props, text, logos or other plates. Peruvian Butifarra sandwich: rustic bread filled with thin country ham slices, criolla onion salsa, house mayonnaise and Dijon. One sandwich cut into two halves, on a round warm gray plate."
+    },
+    "generation": "built-in imagegen; illustrative or reference-derived; not catalogue photographs",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-sandwich.webp",
+        "sha256": "3b3016baa00a2e69f6e3ce17602d0049f9f55911c9e16322278dad83b71086a8",
+        "bytes": 469914
+      }
+    ]
+  },
+  {
+    "key": "dish-dessert",
+    "source": "exec-a7f34cb2-d7d6-47e5-a297-784f728493f9.png",
+    "prompt": {
+      "prompt": "Use case: photorealistic-natural. Asset: premium ARTECH restaurant interactive menu, isolated food photograph. An individual warm dark chocolate soufflé, a scoop of vanilla ice cream and a small raspberry coulis pool, on a round matte warm-gray ceramic restaurant plate. True 90-degree overhead camera, square composition, entire plate/saucer visible with generous transparent margin all around. Soft natural daylight from upper left, real food texture, restrained editorial styling, no utensils, no background surface, no text or logos. Actual transparent alpha background outside the subject; retain only subtle local contact shadow. Match upscale warm-neutral ceramic restaurant photography.",
+      "transparent_background": true
+    },
+    "generation": "built-in imagegen; illustrative food image",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-dessert.webp",
+        "sha256": "6e1f8bedfd1574a6bc59a0c1b35edac581508b05a3fe2eb0834c94b70e73f4f4",
+        "bytes": 428300
+      }
+    ]
+  },
+  {
+    "key": "dish-coffee",
+    "source": "exec-b7fdd54e-3cf1-44f7-b808-0048190d6796.png",
+    "prompt": {
+      "prompt": "Use case: photorealistic-natural. Asset: premium ARTECH restaurant interactive menu, isolated food photograph. A small espresso in a warm-gray ceramic cup on its complete matching round saucer, visible rich crema. True 90-degree overhead camera, square composition, entire plate/saucer visible with generous transparent margin all around. Soft natural daylight from upper left, real food texture, restrained editorial styling, no utensils, no background surface, no text or logos. Actual transparent alpha background outside the subject; retain only subtle local contact shadow. Match upscale warm-neutral ceramic restaurant photography.",
+      "transparent_background": true
+    },
+    "generation": "built-in imagegen; illustrative food image",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-coffee.webp",
+        "sha256": "ee2864ed3181592cecd06ee1fb7e641ce99bba14e2af0ff94fcc55c68e5fe935",
+        "bytes": 205210
+      }
+    ]
+  },
+  {
+    "key": "dish-lemonade",
+    "source": "exec-e863f86c-ed0f-4d3d-8e26-c72ab02c62a6.png",
+    "prompt": {
+      "prompt": "Use case: photorealistic-natural. Asset: premium ARTECH restaurant interactive menu, isolated food photograph. A clear short tumbler of pale lemon-verbena lemonade, ice and a small sprig of lemon verbena, on a round warm-gray ceramic saucer. Straight overhead view. True 90-degree overhead camera, square composition, entire plate/saucer visible with generous transparent margin all around. Soft natural daylight from upper left, real food texture, restrained editorial styling, no utensils, no background surface, no text or logos. Actual transparent alpha background outside the subject; retain only subtle local contact shadow. Match upscale warm-neutral ceramic restaurant photography.",
+      "transparent_background": true
+    },
+    "generation": "built-in imagegen; illustrative food image",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-lemonade.webp",
+        "sha256": "bb5adee14c62575cdf80351552e1c25daf552020e41a4d5f2afca1ae167b1269",
+        "bytes": 253350
+      }
+    ]
+  },
+  {
+    "key": "dish-bar",
+    "source": "exec-726de36a-98a9-4e56-8513-b423bd95c6b6.png",
+    "prompt": {
+      "prompt": "Use case: photorealistic-natural. Asset: premium ARTECH restaurant interactive menu, isolated food photograph. A single classic Peruvian Pisco Sour cocktail in a short clear glass, pale creamy foam with three tiny brown bitters dots, on a round warm-gray ceramic saucer. True 90-degree overhead camera, square composition, entire plate/saucer visible with generous transparent margin all around. Soft natural daylight from upper left, real food texture, restrained editorial styling, no utensils, no background surface, no text or logos. Actual transparent alpha background outside the subject; retain only subtle local contact shadow. Match upscale warm-neutral ceramic restaurant photography.",
+      "transparent_background": true
+    },
+    "generation": "built-in imagegen; illustrative food image",
+    "outputs": [
+      {
+        "path": "assets/media/b06/dish-bar.webp",
+        "sha256": "cca765e52ad5008a633bc40fd6e467e7e68cfb61f0c4f9a2b8913bf44c3d11a6",
+        "bytes": 220492
+      }
+    ]
+  }
+]

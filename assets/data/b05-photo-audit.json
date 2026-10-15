@@ -1,0 +1,4506 @@
+{
+  "version": "B04-B06 asset audit 1",
+  "scope": "Auditoría local de 206 JPG aportados en A88A0584.zip y A88A0846.zip; catálogo de 96 registros sin modificar.",
+  "methodology": [
+    "Se revisaron los siete contactos completos, ampliaciones de originales, emblemas y calcomanías, además de EXIF de las 206 imágenes.",
+    "Los grupos representan al vehículo protagonista, no a coches incidentales del fondo. Un interior no se agrupa solamente por la marca.",
+    "confidence mide la vinculación al slug del catálogo; group_confidence mide la pertenencia a la misma unidad fotográfica.",
+    "high: placa/calcomanía concordante o combinación muy fuerte de placa parcial y rasgos únicos; medium: modelo/rasgos y secuencia compatibles sin placa completa; low: sin ficha, conflicto o candidato insuficiente.",
+    "No se han usado fotos de internet. Las portadas históricas no estaban disponibles en disco. Se intentó consulta local sin lazy fetch; los blobs no estaban presentes, por lo que no se descargaron.",
+    "No se verifica año, motor o potencia por la apariencia. year_from_photo es null en todos los grupos; el catálogo es la fuente de los datos técnicos y puede contener identificaciones que requieren revisión.",
+    "F01: nueva revisión de A88A0611 confirma AXS-615 en la calcomanía del parabrisas."
+  ],
+  "summary": {
+    "photo_count": 206,
+    "distinct_primary_vehicle_groups": 37,
+    "classic_groups": 25,
+    "porsche_groups": 12,
+    "catalog_records": 96,
+    "catalog_high_confidence_matches": 10,
+    "catalog_medium_confidence_candidates": 14,
+    "catalog_low_confidence_candidates": 5,
+    "catalog_without_any_candidate": 67,
+    "groups_without_candidate": 8,
+    "ferrari_primary_photos": 0,
+    "photo_confidence_counts": {
+      "low": 62,
+      "medium": 95,
+      "high": 49
+    },
+    "all_206_photos_accounted_for": true
+  },
+  "catalog_coverage": {
+    "high_confidence_slugs": [
+      "abr-223",
+      "ahe-484",
+      "akv-003",
+      "auk-547",
+      "axs-615",
+      "b4z-517",
+      "cpl-048",
+      "d5z-370",
+      "f0i-108",
+      "fol-661"
+    ],
+    "medium_confidence_candidate_slugs": [
+      "a4d-305",
+      "a9t-107",
+      "alo-686",
+      "asv-385",
+      "aue-622",
+      "bfu-487",
+      "bvs-249",
+      "si-placa-20",
+      "sin-placa-17",
+      "sin-placa-19",
+      "sin-placa-21",
+      "sin-placa-22",
+      "sin-placa-25",
+      "sin-placa-4"
+    ],
+    "low_confidence_candidate_slugs": [
+      "a5m-345",
+      "ahe-474",
+      "sin-placa-15",
+      "sin-placa-16",
+      "sin-placa-26"
+    ],
+    "slugs_without_any_candidate": [
+      "a0d-466",
+      "a2y-410",
+      "a3m-354",
+      "a5t-244",
+      "a7h-440",
+      "a9l-161",
+      "aby-304",
+      "ah-9536",
+      "alr-593",
+      "ammp-057",
+      "apc-142",
+      "apx-114",
+      "asx-457",
+      "awf-621",
+      "awz-629",
+      "axl-068",
+      "b0c-176",
+      "b10-580",
+      "b1p-040",
+      "b2b-316",
+      "b4y-274",
+      "b5-3533",
+      "b6m-164",
+      "b7q-401",
+      "baw-297",
+      "bnk-531",
+      "bnt-311",
+      "bpd-280",
+      "bsz-611",
+      "c3x-140",
+      "c4q-097",
+      "c70-358",
+      "c7m-309",
+      "ctj-276",
+      "ctj-680",
+      "cxj-330",
+      "d6r-546",
+      "d8x-197",
+      "d9z-460",
+      "f11-446",
+      "f1j-304",
+      "f50-140",
+      "f5j-319",
+      "maserati-300s",
+      "sin-placa-1",
+      "sin-placa-10",
+      "sin-placa-11",
+      "sin-placa-12",
+      "sin-placa-13",
+      "sin-placa-14",
+      "sin-placa-18",
+      "sin-placa-2",
+      "sin-placa-23",
+      "sin-placa-24",
+      "sin-placa-27",
+      "sin-placa-3",
+      "sin-placa-5",
+      "sin-placa-6",
+      "sin-placa-7",
+      "sin-placa-8",
+      "sin-placa-9",
+      "t33-080",
+      "v1a-109",
+      "v8f-130",
+      "vab-413",
+      "y1s-584",
+      "z6a-148"
+    ]
+  },
+  "important_findings": [
+    "206 fotografías no equivalen a 206 coches ni cubren los 96: son 37 unidades protagonistas, 25 clásicos y 12 Porsche. No hay Ferrari como protagonista en estos ZIPs.",
+    "Los 12 Porsche son unidades separadas. No mezclar los dos GT3 (rojo/azul), los dos Turbo 997 (azul oscuro/gris) ni el Carrera 4S con un Turbo.",
+    "Hay cuatro Porsche sin ficha equivalente: Carrera 4S azul oscuro 997; Turbo azul oscuro 997; Turbo gris 997; GT3 azul 997.1.",
+    "Los Bayard A0596 y A0600 no deben atribuirse a Renault o Chalmers. El emblema BAYARD es visible.",
+    "A0602 muestra un Chrysler roadster, A0617 un Studebaker roadster; sus correspondencias con registros genéricos no están confirmadas.",
+    "A0900 muestra Turbo S, mientras la ficha a9t-107 dice Turbo. A0643 parece llevar 851 frente a 852 del catálogo. No cambiar especificaciones basándose solo en estos emblemas.",
+    "Las fotografías con candidato low o null pueden publicarse como unidades por identificar, con galería propia, pero no con la ficha técnica de otro auto.",
+    "Todas las fotos pueden conservarse en las galerías, aunque muchas son variaciones casi idénticas o detalles de una sola unidad. Los 96 registros pueden mantenerse, separando los que aún no tienen nueva fotografía asignada."
+  ],
+  "ambiguous_photo_notes": [
+    {
+      "filenames": [
+        "A88A0712.jpg",
+        "A88A0713.jpg",
+        "A88A0714.jpg",
+        "A88A0715.jpg",
+        "A88A0718.jpg",
+        "A88A0725.jpg",
+        "A88A0726.jpg",
+        "A88A0739.jpg",
+        "A88A0744.jpg",
+        "A88A0745.jpg",
+        "A88A0763.jpg",
+        "A88A0806.jpg",
+        "A88A0807.jpg",
+        "A88A0961.jpg"
+      ],
+      "reason": "Macros con solo emblema, volante o umbral: asociación por sesión/entorno/tapicería; por sí solos no demuestran una unidad individual."
+    },
+    {
+      "filenames": [
+        "A88A0592.jpg",
+        "A88A0595.jpg",
+        "A88A0596.jpg",
+        "A88A0600.jpg",
+        "A88A0602.jpg",
+        "A88A0617.jpg",
+        "A88A0631.jpg",
+        "A88A0638.jpg",
+        "A88A0643.jpg"
+      ],
+      "reason": "Las correspondencias de catálogo requieren revisión por ausencia de identificador, marca divergente o varios modelos posibles. Ver notas de cada grupo."
+    },
+    {
+      "filenames": [
+        "A88A0748.jpg"
+      ],
+      "reason": "Regresa al GT3 RS naranja después de la secuencia del GT2 RS negro; el emblema y la pintura permiten corregir la agrupación por simple orden numérico."
+    },
+    {
+      "filenames": [
+        "A88A0751.jpg"
+      ],
+      "reason": "Pertenece al GT2 RS negro, aunque sucede al detalle del GT3 RS naranja. No inferir la unidad solo del orden de archivo."
+    }
+  ],
+  "groups": [
+    {
+      "id": "classic-red-brass-runabout",
+      "label": "Runabout de latón · ruedas y tapicería rojas",
+      "brand": null,
+      "filenames": [
+        "A88A0584.jpg",
+        "A88A0586.jpg"
+      ],
+      "preferred_cover": "A88A0586.jpg",
+      "catalog_slug_candidate": "sin-placa-26",
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Misma unidad pequeña negra con bastidor, ruedas y tapicería rojos; radiador de latón. La descripción de sin-placa-26 menciona ruedas rojas.",
+      "notes": "La marca Renault y el año 1908 no se pueden verificar en la foto. No publicar esta vinculación automáticamente.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-black-surrey-tonneau",
+      "label": "Tonneau negro · techo con flecos",
+      "brand": null,
+      "filenames": [
+        "A88A0588.jpg",
+        "A88A0590.jpg"
+      ],
+      "preferred_cover": "A88A0590.jpg",
+      "catalog_slug_candidate": "sin-placa-25",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Misma unidad negra y latón, banco alto, toldo surrey con flecos. Coincide con la descripción distintiva del catálogo.",
+      "notes": "No hay placa ni marca legible; año 1903 procede únicamente del catálogo.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-burgundy-town-car",
+      "label": "Town car granate · cabina cerrada",
+      "brand": null,
+      "filenames": [
+        "A88A0592.jpg",
+        "A88A0595.jpg"
+      ],
+      "preferred_cover": "A88A0595.jpg",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Misma cabina trasera cerrada alta y capó tipo coal-scuttle, faroles laterales y eje delantero estrecho.",
+      "notes": "Puede corresponder a una de las fichas Renault Town Car, pero no hay emblema legible ni evidencia suficiente para elegir entre ellas. No confundir con el Bayard vecino.",
+      "alternative_candidates": [
+        "sin-placa-23",
+        "sin-placa-24"
+      ],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-bayard-town-car",
+      "label": "Bayard · cabina de madera",
+      "brand": "Clément-Bayard",
+      "filenames": [
+        "A88A0596.jpg"
+      ],
+      "preferred_cover": "A88A0596.jpg",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Emblema BAYARD legible en el capó; cabina alta con frente de madera y dos faros grandes.",
+      "notes": "No existe Clément-Bayard en el catálogo. No vincular a Renault por semejanza del capó.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-bayard-open-tourer",
+      "label": "Bayard · turismo abierto granate",
+      "brand": "Clément-Bayard",
+      "filenames": [
+        "A88A0600.jpg"
+      ],
+      "preferred_cover": "A88A0600.jpg",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Emblema BAYARD legible en el capó; carrocería abierta larga, parabrisas de madera, ruedas de radios de madera.",
+      "notes": "Es otra unidad distinta del Bayard cerrado de A0596. No corresponde al Chalmers identificado en A0609/A0611.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-chrysler-cream-roadster",
+      "label": "Chrysler · roadster crema y negro",
+      "brand": "Chrysler",
+      "filenames": [
+        "A88A0602.jpg"
+      ],
+      "preferred_cover": "A88A0602.jpg",
+      "catalog_slug_candidate": "a5m-345",
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Emblema Chrysler visible en el radiador, capó negro y carrocería crema; roadster de dos puertas. a5m-345 describe un roadster bitono sin identificar marca.",
+      "notes": "La coincidencia con a5m-345 es solo descriptiva, sin placa. No convertir una aproximación en identificación confirmada.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-chevrolet-teal-tourer",
+      "label": "Chevrolet · turismo verde azulado",
+      "brand": "Chevrolet",
+      "filenames": [
+        "A88A0603.jpg"
+      ],
+      "preferred_cover": "A88A0603.jpg",
+      "catalog_slug_candidate": "sin-placa-22",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Corbatín Chevrolet visible en la parte superior del radiador; carrocería de turismo abierta y ruedas de radios de madera.",
+      "notes": "Modelo Superior Touring plausible; año exacto no verificado en la imagen.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-ford-blue-tourer",
+      "label": "Ford A · turismo azul",
+      "brand": "Ford",
+      "filenames": [
+        "A88A0606.jpg"
+      ],
+      "preferred_cover": "A88A0606.jpg",
+      "catalog_slug_candidate": "auk-547",
+      "confidence": "high",
+      "group_confidence": "high",
+      "evidence": "Calcomanía AUK-547 claramente legible en el parabrisas; emblema Ford y carrocería abierta coinciden.",
+      "notes": "Identidad por placa; especificaciones y año se conservan del catálogo.",
+      "alternative_candidates": [],
+      "observed_plate": "AUK-547",
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-studebaker-olive-tudor",
+      "label": "Studebaker · Tudor verde oliva",
+      "brand": "Studebaker",
+      "filenames": [
+        "A88A0608.jpg"
+      ],
+      "preferred_cover": "A88A0608.jpg",
+      "catalog_slug_candidate": "cpl-048",
+      "confidence": "high",
+      "group_confidence": "high",
+      "evidence": "Calcomanía CPL-048 claramente legible en el parabrisas; emblema Studebaker, carrocería cerrada de dos puertas.",
+      "notes": "Identidad por placa.",
+      "alternative_candidates": [],
+      "observed_plate": "CPL-048",
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-chalmers-black-tourer",
+      "label": "Chalmers · turismo negro",
+      "brand": "Chalmers",
+      "filenames": [
+        "A88A0609.jpg",
+        "A88A0611.jpg"
+      ],
+      "preferred_cover": "A88A0611.jpg",
+      "catalog_slug_candidate": "axs-615",
+      "confidence": "high",
+      "group_confidence": "high",
+      "evidence": "Calcomanía de matrícula AXS-615 legible en el parabrisas de A88A0611.jpg; emblema CHALMERS MOTOR CO / CMC visible. A88A0609.jpg y A88A0611.jpg muestran la misma unidad.",
+      "notes": "Confirmación F01 por matrícula; modelo SIX, año 1914 y especificaciones proceden del catálogo, no de una inferencia visual.",
+      "alternative_candidates": [],
+      "observed_plate": "AXS-615",
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-hudson-tan-tourer",
+      "label": "Hudson · turismo beige",
+      "brand": "Hudson",
+      "filenames": [
+        "A88A0613.jpg"
+      ],
+      "preferred_cover": "A88A0613.jpg",
+      "catalog_slug_candidate": "bvs-249",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Emblema triangular HUDSON MOTOR CAR CO DETROIT claramente legible; carrocería beige, guardabarros marrones, ruedas de alambre crema.",
+      "notes": "No es el Lincoln: Lincoln es A0620. Año exacto y serie no verificables por esta toma.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-buick-burgundy-tourer",
+      "label": "Buick · turismo granate",
+      "brand": "Buick",
+      "filenames": [
+        "A88A0615.jpg"
+      ],
+      "preferred_cover": "A88A0615.jpg",
+      "catalog_slug_candidate": "aue-622",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Inscripción Buick legible en el centro de la barra de faros; carrocería abierta granate, capota negra, rueda de repuesto lateral.",
+      "notes": "El texto del catálogo dice limousine, mientras la foto muestra carrocería abierta; revisar denominación de carrocería antes de publicar una ficha técnica definitiva.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-studebaker-burgundy-roadster",
+      "label": "Studebaker · roadster granate",
+      "brand": "Studebaker",
+      "filenames": [
+        "A88A0617.jpg"
+      ],
+      "preferred_cover": "A88A0617.jpg",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Emblema Studebaker legible en el radiador; roadster granate con capota beige y ruedas de alambre.",
+      "notes": "Calcomanía parece FTA-359 (lectura provisional), ausente del catálogo. No usar cpl-048: esa ficha es el Tudor verde oliva de A0608.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-lincoln-burgundy-tourer",
+      "label": "Lincoln · turismo granate con laterales de lona",
+      "brand": "Lincoln",
+      "filenames": [
+        "A88A0620.jpg"
+      ],
+      "preferred_cover": "A88A0620.jpg",
+      "catalog_slug_candidate": "alo-686",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Emblema LINCOLN visible en radiador y ornamento de galgo; carrocería larga abierta con cortinas laterales de lona negra.",
+      "notes": "No hay placa legible; año y 7 asientos se toman del catálogo, no de la imagen.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-riley-two-tone",
+      "label": "Riley · convertible granate y negro",
+      "brand": "Riley",
+      "filenames": [
+        "A88A0622.jpg"
+      ],
+      "preferred_cover": "A88A0622.jpg",
+      "catalog_slug_candidate": "b4z-517",
+      "confidence": "high",
+      "group_confidence": "high",
+      "evidence": "Carrocería Riley de capota negra, parrilla vertical y calcomanía B4Z-517 visible en el parabrisas.",
+      "notes": "Identificación por calcomanía y rasgos concordantes.",
+      "alternative_candidates": [],
+      "observed_plate": "B4Z-517",
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-studebaker-blue-sedan",
+      "label": "Studebaker · sedán azul",
+      "brand": "Studebaker",
+      "filenames": [
+        "A88A0623.jpg"
+      ],
+      "preferred_cover": "A88A0623.jpg",
+      "catalog_slug_candidate": "f0i-108",
+      "confidence": "high",
+      "group_confidence": "high",
+      "evidence": "Calcomanía F0I-108 visible en el parabrisas; emblema y carrocería aerodinámica del Studebaker.",
+      "notes": "Identidad por placa; distinguir cero/letra O de la transcripción normalizada del catálogo.",
+      "alternative_candidates": [],
+      "observed_plate": "F0I-108",
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-chrysler-grey-airflow",
+      "label": "Chrysler Airflow · gris",
+      "brand": "Chrysler",
+      "filenames": [
+        "A88A0626.jpg"
+      ],
+      "preferred_cover": "A88A0626.jpg",
+      "catalog_slug_candidate": "sin-placa-21",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Frente aerodinámico con parrilla envolvente y faros integrados, rasgos distintivos de Airflow; única ficha de ese modelo.",
+      "notes": "Sin placa legible; año exacto conservado solo como dato de catálogo.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-chevrolet-blue-grey-sedan",
+      "label": "Chevrolet Special DeLuxe · azul gris",
+      "brand": "Chevrolet",
+      "filenames": [
+        "A88A0627.jpg"
+      ],
+      "preferred_cover": "A88A0627.jpg",
+      "catalog_slug_candidate": "si-placa-20",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Inscripción CHEVROLET y SPECIAL DELUXE visible en lateral del capó; sedán azul gris con franjas blancas en neumáticos.",
+      "notes": "La calcomanía está desenfocada; no usarla como prueba de placa.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-cadillac-green-v8",
+      "label": "Cadillac V8 · sedán verde",
+      "brand": "Cadillac",
+      "filenames": [
+        "A88A0629.jpg"
+      ],
+      "preferred_cover": "A88A0629.jpg",
+      "catalog_slug_candidate": "sin-placa-19",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Emblemas Cadillac y V8 visibles, sedán verde con ruedas de repuesto laterales. Calcomanía ABR-221 visible.",
+      "notes": "El catálogo usa sin-placa-19 para Cadillac V8 Town Sedan; la foto permite actualizar placa tras revisión, no asumirla idéntica a ABR-223 del Packard vecino.",
+      "alternative_candidates": [],
+      "observed_plate": "ABR-221",
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-packard-tan-phaeton",
+      "label": "Packard · phaeton beige",
+      "brand": "Packard",
+      "filenames": [
+        "A88A0631.jpg"
+      ],
+      "preferred_cover": "A88A0631.jpg",
+      "catalog_slug_candidate": "ahe-474",
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Inscripción Packard visible; carrocería abierta beige larga con cortinas de lona y ruedas de alambre.",
+      "notes": "Puede ser ahe-474 o sin-placa-16. Sin placa visible no se distingue la serie exacta. Conservarlo como unidad separada.",
+      "alternative_candidates": [
+        "sin-placa-16"
+      ],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-packard-black-limousine",
+      "label": "Packard · limusina negra",
+      "brand": "Packard",
+      "filenames": [
+        "A88A0633.jpg"
+      ],
+      "preferred_cover": "A88A0633.jpg",
+      "catalog_slug_candidate": "abr-223",
+      "confidence": "high",
+      "group_confidence": "high",
+      "evidence": "Calcomanía ABR-223 claramente visible; carrocería larga cerrada, Packard negro con ruedas de repuesto laterales.",
+      "notes": "Identidad por placa.",
+      "alternative_candidates": [],
+      "observed_plate": "ABR-223",
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-packard-blue-roadster",
+      "label": "Packard · roadster azul y gris",
+      "brand": "Packard",
+      "filenames": [
+        "A88A0635.jpg"
+      ],
+      "preferred_cover": "A88A0635.jpg",
+      "catalog_slug_candidate": "sin-placa-17",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Inscripción Packard claramente visible, roadster de dos puertas azul/gris. Calcomanía BFT-558 visible.",
+      "notes": "La placa no aparece en cars.json; coincide con la única ficha Six Roadster, pero serie y año siguen pendientes de corroboración.",
+      "alternative_candidates": [],
+      "observed_plate": "BFT-558",
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-packard-burgundy-phaeton",
+      "label": "Packard · phaeton granate y capota beige",
+      "brand": "Packard",
+      "filenames": [
+        "A88A0638.jpg"
+      ],
+      "preferred_cover": "A88A0638.jpg",
+      "catalog_slug_candidate": "sin-placa-16",
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Emblema Packard y misma figura alada de otros Packard; parrilla con trama de rombos, carrocería abierta granate. Calcomanía parece BZA-430.",
+      "notes": "Series 633 / Deluxe Eight no se distinguen con seguridad. No afirmar dual-cowl ni año 1930 a partir de esta imagen.",
+      "alternative_candidates": [
+        "ahe-474"
+      ],
+      "observed_plate": "BZA-430 (lectura provisional)",
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-packard-dark-sedan",
+      "label": "Packard Super Eight · sedán oscuro",
+      "brand": "Packard",
+      "filenames": [
+        "A88A0641.jpg"
+      ],
+      "preferred_cover": "A88A0641.jpg",
+      "catalog_slug_candidate": "ahe-484",
+      "confidence": "high",
+      "group_confidence": "high",
+      "evidence": "Calcomanía AHE-484 claramente legible; parrilla estrecha vertical y ornamento concordantes con Packard Super Eight.",
+      "notes": "Identidad por placa.",
+      "alternative_candidates": [],
+      "observed_plate": "AHE-484",
+      "year_from_photo": null
+    },
+    {
+      "id": "classic-auburn-black-red-convertible",
+      "label": "Auburn · convertible negro y rojo",
+      "brand": "Auburn",
+      "filenames": [
+        "A88A0643.jpg"
+      ],
+      "preferred_cover": "A88A0643.jpg",
+      "catalog_slug_candidate": "sin-placa-15",
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Carrocería Auburn, inscripción SUPERCHARGED en el lateral del capó. Emblema frontal parece 851.",
+      "notes": "El catálogo dice 852 / 1936. No confirmar esa versión o año con esta toma; revisión necesaria de la posible discrepancia 851/852.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-orange-gt3rs",
+      "label": "Porsche 911 GT3 RS · naranja",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0646.jpg",
+        "A88A0648.jpg",
+        "A88A0709.jpg",
+        "A88A0711.jpg",
+        "A88A0712.jpg",
+        "A88A0713.jpg",
+        "A88A0714.jpg",
+        "A88A0715.jpg",
+        "A88A0716.jpg",
+        "A88A0717.jpg",
+        "A88A0718.jpg",
+        "A88A0722.jpg",
+        "A88A0723.jpg",
+        "A88A0724.jpg",
+        "A88A0725.jpg",
+        "A88A0726.jpg",
+        "A88A0727.jpg",
+        "A88A0728.jpg",
+        "A88A0729.jpg",
+        "A88A0730.jpg",
+        "A88A0731.jpg",
+        "A88A0748.jpg"
+      ],
+      "preferred_cover": "A88A0648.jpg",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Exterior naranja con pasos de rueda ventilados y gran alerón; GT3 RS legible en detalle A0748. Interior con centros naranja y jaula naranja en la misma secuencia.",
+      "notes": "Coincide visualmente con generación 991.1; sin placa legible. Año 2016 proviene del catálogo.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-black-gt2rs",
+      "label": "Porsche 911 GT2 RS · negro",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0652.jpg",
+        "A88A0656.jpg",
+        "A88A0732.jpg",
+        "A88A0733.jpg",
+        "A88A0734.jpg",
+        "A88A0736.jpg",
+        "A88A0737.jpg",
+        "A88A0738.jpg",
+        "A88A0739.jpg",
+        "A88A0740.jpg",
+        "A88A0741.jpg",
+        "A88A0742.jpg",
+        "A88A0743.jpg",
+        "A88A0744.jpg",
+        "A88A0745.jpg",
+        "A88A0746.jpg",
+        "A88A0747.jpg",
+        "A88A0751.jpg"
+      ],
+      "preferred_cover": "A88A0656.jpg",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "GT2 RS legible en costado A0656 y detalle A0751. Capó de carbono con dos conductos; interior negro con tiradores/cinturones amarillos.",
+      "notes": "Las macros de umbral A0744/A0745 se agrupan por continuidad de sesión y elementos del habitáculo, no por el reflejo rojo de la carrocería vecina.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-blue-turbo-s",
+      "label": "Porsche 911 Turbo S · azul",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0658.jpg",
+        "A88A0662.jpg",
+        "A88A0752.jpg",
+        "A88A0753.jpg",
+        "A88A0754.jpg",
+        "A88A0755.jpg",
+        "A88A0756.jpg",
+        "A88A0757.jpg",
+        "A88A0758.jpg",
+        "A88A0759.jpg",
+        "A88A0760.jpg",
+        "A88A0762.jpg",
+        "A88A0763.jpg",
+        "A88A0764.jpg",
+        "A88A0765.jpg",
+        "A88A0767.jpg",
+        "A88A0769.jpg",
+        "A88A0771.jpg"
+      ],
+      "preferred_cover": "A88A0662.jpg",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "evidence": "Placa FOL-661 y texto 911 Turbo S claramente legibles en A0758; carrocería azul, habitáculo negro y relojes amarillos.",
+      "notes": "Identidad por placa.",
+      "alternative_candidates": [],
+      "observed_plate": "FOL-661",
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-dark-blue-carrera-4s",
+      "label": "Porsche 911 Carrera 4S · azul oscuro",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0663.jpg",
+        "A88A0667.jpg",
+        "A88A0772.jpg",
+        "A88A0773.jpg",
+        "A88A0774.jpg",
+        "A88A0775.jpg",
+        "A88A0776.jpg",
+        "A88A0777.jpg",
+        "A88A0778.jpg",
+        "A88A0779.jpg",
+        "A88A0780.jpg",
+        "A88A0781.jpg",
+        "A88A0782.jpg",
+        "A88A0783.jpg",
+        "A88A0784.jpg",
+        "A88A0785.jpg",
+        "A88A0788.jpg"
+      ],
+      "preferred_cover": "A88A0667.jpg",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Emblema Carrera 4S visible en A0783/A0784; carrocería azul oscuro, habitáculo cuero caramelo homogéneo.",
+      "notes": "No existe una ficha Carrera 4S (997) en los 96 registros. No asignar a Turbo, Turbo S o GT3 por ser Porsche.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-dark-blue-turbo",
+      "label": "Porsche 911 Turbo · azul oscuro",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0671.jpg",
+        "A88A0674.jpg",
+        "A88A0790.jpg",
+        "A88A0791.jpg",
+        "A88A0792.jpg",
+        "A88A0793.jpg",
+        "A88A0795.jpg",
+        "A88A0797.jpg",
+        "A88A0798.jpg"
+      ],
+      "preferred_cover": "A88A0674.jpg",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Texto turbo visible en A0797; carrocería azul oscuro, habitáculo negro. Secuencia distinta del Carrera 4S con cuero caramelo y del Turbo gris con cuero beige.",
+      "notes": "No hay una ficha 911 Turbo generación 997 en el catálogo. No reutilizar a9t-107 (993) o d5z-370 (930).",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-silver-turbo",
+      "label": "Porsche 911 Turbo · gris plata",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0677.jpg",
+        "A88A0679.jpg",
+        "A88A0799.jpg",
+        "A88A0800.jpg",
+        "A88A0801.jpg",
+        "A88A0802.jpg",
+        "A88A0803.jpg",
+        "A88A0804.jpg",
+        "A88A0805.jpg",
+        "A88A0806.jpg",
+        "A88A0807.jpg",
+        "A88A0809.jpg",
+        "A88A0810.jpg"
+      ],
+      "preferred_cover": "A88A0679.jpg",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "Texto turbo visible en A0809; exterior gris plata y habitáculo beige/negro, distinto del Turbo azul oscuro.",
+      "notes": "No existe ficha 997 Turbo equivalente. Las fotos de interior usadas antes en B02 corresponden a esta unidad.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-red-gt3",
+      "label": "Porsche 911 GT3 · rojo",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0682.jpg",
+        "A88A0683.jpg",
+        "A88A0813.jpg",
+        "A88A0816.jpg",
+        "A88A0821.jpg",
+        "A88A0822.jpg",
+        "A88A0824.jpg",
+        "A88A0825.jpg",
+        "A88A0831.jpg",
+        "A88A0834.jpg",
+        "A88A0837.jpg",
+        "A88A0840.jpg",
+        "A88A0842.jpg"
+      ],
+      "preferred_cover": "A88A0683.jpg",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "GT3 legible en A0840; frontal y llantas de tuerca central corresponden visualmente al 997.2. Habitáculo negro, carrocería roja visible en secuencia.",
+      "notes": "Se distingue del GT3 azul con llantas de cinco tornillos y frontal anterior. Año 2010 se conserva del catálogo; placa sin verificar.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-blue-gt3",
+      "label": "Porsche 911 GT3 · azul",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0686.jpg",
+        "A88A0687.jpg",
+        "A88A0846.jpg",
+        "A88A0847.jpg",
+        "A88A0850.jpg",
+        "A88A0852.jpg",
+        "A88A0855.jpg",
+        "A88A0856.jpg",
+        "A88A0861.jpg",
+        "A88A0864.jpg",
+        "A88A0865.jpg",
+        "A88A0866.jpg"
+      ],
+      "preferred_cover": "A88A0687.jpg",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "evidence": "GT3 visible en A0865; carrocería azul, llantas de cinco tornillos, interior negro. Rasgos exteriores de 997.1 frente al rojo 997.2.",
+      "notes": "No existe ficha separada para este GT3 en el catálogo. No mezclar sus interiores con a4d-305.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-yellow-cayman-gt4",
+      "label": "Porsche Cayman GT4 · amarillo",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0691.jpg",
+        "A88A0694.jpg",
+        "A88A0867.jpg",
+        "A88A0868.jpg",
+        "A88A0870.jpg",
+        "A88A0871.jpg",
+        "A88A0873.jpg",
+        "A88A0874.jpg",
+        "A88A0875.jpg",
+        "A88A0876.jpg",
+        "A88A0879.jpg"
+      ],
+      "preferred_cover": "A88A0694.jpg",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "evidence": "Placa AKV-003 y texto GT4 legibles en A0876; carrocería amarilla y habitáculo negro con elementos amarillos.",
+      "notes": "Identidad por placa.",
+      "alternative_candidates": [],
+      "observed_plate": "AKV-003",
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-burgundy-993-turbo",
+      "label": "Porsche 911 · granate, emblema Turbo S",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0697.jpg",
+        "A88A0699.jpg",
+        "A88A0880.jpg",
+        "A88A0883.jpg",
+        "A88A0886.jpg",
+        "A88A0889.jpg",
+        "A88A0897.jpg",
+        "A88A0900.jpg",
+        "A88A0901.jpg"
+      ],
+      "preferred_cover": "A88A0699.jpg",
+      "catalog_slug_candidate": "a9t-107",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Carrocería 993 granate, habitáculo negro y emblema turbo S visible en A0900; adhesivo de neumáticos con referencia 993 en A0886.",
+      "notes": "El catálogo a9t-107 dice Turbo (sin S), 1996. No inferir versión S, potencia o año a partir del emblema: puede ser otra versión o identificación incompleta. Requiere corroboración antes de tratar especificaciones como verificadas.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-white-930-turbo",
+      "label": "Porsche 911 Turbo · blanco",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0700.jpg",
+        "A88A0702.jpg",
+        "A88A0906.jpg",
+        "A88A0909.jpg",
+        "A88A0912.jpg",
+        "A88A0918.jpg",
+        "A88A0921.jpg",
+        "A88A0927.jpg",
+        "A88A0928.jpg",
+        "A88A0931.jpg",
+        "A88A0936.jpg",
+        "A88A0937.jpg"
+      ],
+      "preferred_cover": "A88A0702.jpg",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "evidence": "Texto turbo y placa parcial …5Z-37… visible en A0936; carrocería blanca 930 y habitáculo negro de la misma secuencia.",
+      "notes": "La placa parcial y la única ficha Turbo 930 del catálogo convergen. No derivar año exacto de la fotografía.",
+      "alternative_candidates": [],
+      "observed_plate": "…5Z-37… (parcial, compatible con D5Z-370)",
+      "year_from_photo": null
+    },
+    {
+      "id": "porsche-white-boxster-spyder",
+      "label": "Porsche Boxster Spyder · blanco",
+      "brand": "Porsche",
+      "filenames": [
+        "A88A0705.jpg",
+        "A88A0706.jpg",
+        "A88A0940.jpg",
+        "A88A0943.jpg",
+        "A88A0951.jpg",
+        "A88A0952.jpg",
+        "A88A0954.jpg",
+        "A88A0955.jpg",
+        "A88A0957.jpg",
+        "A88A0958.jpg",
+        "A88A0961.jpg",
+        "A88A0966.jpg",
+        "A88A0969.jpg",
+        "A88A0970.jpg",
+        "A88A0973.jpg",
+        "A88A0978.jpg",
+        "A88A0981.jpg",
+        "A88A0982.jpg",
+        "A88A0985.jpg",
+        "A88A0988.jpg",
+        "A88A0991.jpg",
+        "A88A0994.jpg",
+        "A88A0998.jpg"
+      ],
+      "preferred_cover": "A88A0706.jpg",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "evidence": "Texto Boxster Spyder claramente visible en A0985/A0988/A0991/A0994; roadster blanco, capota ligera negra, interior negro y consola plata.",
+      "notes": "Coincide con ficha 987 Spyder. Placa no visible; no inferir año de la toma.",
+      "alternative_candidates": [],
+      "observed_plate": null,
+      "year_from_photo": null
+    }
+  ],
+  "photos": [
+    {
+      "filename": "A88A0584.jpg",
+      "group": "classic-red-brass-runabout",
+      "catalog_slug_candidate": "sin-placa-26",
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Misma unidad pequeña negra con bastidor, ruedas y tapicería rojos; radiador de latón. La descripción de sin-placa-26 menciona ruedas rojas.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "acdf721f2f8a0ead139f84d47601d76b3c1bf1b633a9922f4268ca7726b08ebc",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:19:25"
+    },
+    {
+      "filename": "A88A0586.jpg",
+      "group": "classic-red-brass-runabout",
+      "catalog_slug_candidate": "sin-placa-26",
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Misma unidad pequeña negra con bastidor, ruedas y tapicería rojos; radiador de latón. La descripción de sin-placa-26 menciona ruedas rojas.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "acb972548f37b32e495ddad34937c5d19e92ccc04358818bdb84a74d7d2c506c",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:20:36"
+    },
+    {
+      "filename": "A88A0588.jpg",
+      "group": "classic-black-surrey-tonneau",
+      "catalog_slug_candidate": "sin-placa-25",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Misma unidad negra y latón, banco alto, toldo surrey con flecos. Coincide con la descripción distintiva del catálogo.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "3c0fd8f27bb1ace37e037b90e4a5478c0bd85cf8b15a837cd9ae6c69fb51117e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:22:22"
+    },
+    {
+      "filename": "A88A0590.jpg",
+      "group": "classic-black-surrey-tonneau",
+      "catalog_slug_candidate": "sin-placa-25",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Misma unidad negra y latón, banco alto, toldo surrey con flecos. Coincide con la descripción distintiva del catálogo.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "87e177f59379355706418b4252c67fed3f65ecdab97efd8ba300f3bd51d1a4c2",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:23:28"
+    },
+    {
+      "filename": "A88A0592.jpg",
+      "group": "classic-burgundy-town-car",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Misma cabina trasera cerrada alta y capó tipo coal-scuttle, faroles laterales y eje delantero estrecho.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "faf7d7fda5af487510b6e10f2bb5cc3180eadcdf48e2be406b9641885bcdee93",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:24:16"
+    },
+    {
+      "filename": "A88A0595.jpg",
+      "group": "classic-burgundy-town-car",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Misma cabina trasera cerrada alta y capó tipo coal-scuttle, faroles laterales y eje delantero estrecho.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "6b638c7dfa1c23602025fa3262154d68e2f1fde765d9dd3626ef57fe86eb23b5",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:25:09"
+    },
+    {
+      "filename": "A88A0596.jpg",
+      "group": "classic-bayard-town-car",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Emblema BAYARD legible en el capó; cabina alta con frente de madera y dos faros grandes.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "07b42b2aef9bdaaf04a6c77fa2a2b84d7c1e3b2f7ed61c4117f90ad10105a37c",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:27:12"
+    },
+    {
+      "filename": "A88A0600.jpg",
+      "group": "classic-bayard-open-tourer",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Emblema BAYARD legible en el capó; carrocería abierta larga, parabrisas de madera, ruedas de radios de madera.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "89c54b0ff1cdec6b4c55bd4d59340261497cc1146195eba40ea24a73c2202df0",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:29:27"
+    },
+    {
+      "filename": "A88A0602.jpg",
+      "group": "classic-chrysler-cream-roadster",
+      "catalog_slug_candidate": "a5m-345",
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Emblema Chrysler visible en el radiador, capó negro y carrocería crema; roadster de dos puertas. a5m-345 describe un roadster bitono sin identificar marca.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "d77a27c9d3056f6c38732e502af4f2035f96ef2e4359df56b9ed6e4672bd53d4",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:32:15"
+    },
+    {
+      "filename": "A88A0603.jpg",
+      "group": "classic-chevrolet-teal-tourer",
+      "catalog_slug_candidate": "sin-placa-22",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Corbatín Chevrolet visible en la parte superior del radiador; carrocería de turismo abierta y ruedas de radios de madera.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "d213a12dab925efea348fd2608f57d570ca2624a718996cc27c3c45031ccf331",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:32:54"
+    },
+    {
+      "filename": "A88A0606.jpg",
+      "group": "classic-ford-blue-tourer",
+      "catalog_slug_candidate": "auk-547",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Calcomanía AUK-547 claramente legible en el parabrisas; emblema Ford y carrocería abierta coinciden.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "972a9b1cbb38aac6f21eb5ab5c200666f061fe31a5c0391cf7981b7bb730e241",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:34:04"
+    },
+    {
+      "filename": "A88A0608.jpg",
+      "group": "classic-studebaker-olive-tudor",
+      "catalog_slug_candidate": "cpl-048",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Calcomanía CPL-048 claramente legible en el parabrisas; emblema Studebaker, carrocería cerrada de dos puertas.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "83b57bab8c7a0869c22b9d6a84ad0a17accd5b66b7bb43dd5b897ac3f000c8dd",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:34:48"
+    },
+    {
+      "filename": "A88A0609.jpg",
+      "group": "classic-chalmers-black-tourer",
+      "catalog_slug_candidate": "axs-615",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Calcomanía de matrícula AXS-615 legible en el parabrisas de A88A0611.jpg; emblema CHALMERS MOTOR CO / CMC visible. A88A0609.jpg y A88A0611.jpg muestran la misma unidad.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "6a7cfdcd1f4049cffa113acb6e6d80f21909555a16eb192e8dbc5afa7c9ea6f8",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:35:58"
+    },
+    {
+      "filename": "A88A0611.jpg",
+      "group": "classic-chalmers-black-tourer",
+      "catalog_slug_candidate": "axs-615",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Calcomanía de matrícula AXS-615 legible en el parabrisas de A88A0611.jpg; emblema CHALMERS MOTOR CO / CMC visible. A88A0609.jpg y A88A0611.jpg muestran la misma unidad.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "1fb72c5beaa4f0c77e3234952f0084153f56c1ee83658c00366ed03c3102ff39",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:36:38"
+    },
+    {
+      "filename": "A88A0613.jpg",
+      "group": "classic-hudson-tan-tourer",
+      "catalog_slug_candidate": "bvs-249",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Emblema triangular HUDSON MOTOR CAR CO DETROIT claramente legible; carrocería beige, guardabarros marrones, ruedas de alambre crema.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "bcaac66491662abeb4d7e0a704b03f93495a3866857b890eaec230a3f6053122",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:38:21"
+    },
+    {
+      "filename": "A88A0615.jpg",
+      "group": "classic-buick-burgundy-tourer",
+      "catalog_slug_candidate": "aue-622",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Inscripción Buick legible en el centro de la barra de faros; carrocería abierta granate, capota negra, rueda de repuesto lateral.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "f36a16845689af4a7932bbd5e9e5603f1f95f222042f0b6e1f5f5576881e5a3c",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:40:05"
+    },
+    {
+      "filename": "A88A0617.jpg",
+      "group": "classic-studebaker-burgundy-roadster",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Emblema Studebaker legible en el radiador; roadster granate con capota beige y ruedas de alambre.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "265c58b44f2f56117c80ec2060b737f31c0e9ca710d58682c9a4071e1e28d0a5",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:41:03"
+    },
+    {
+      "filename": "A88A0620.jpg",
+      "group": "classic-lincoln-burgundy-tourer",
+      "catalog_slug_candidate": "alo-686",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Emblema LINCOLN visible en radiador y ornamento de galgo; carrocería larga abierta con cortinas laterales de lona negra.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "aefc20af9e79d386f714107a62c32458ad58dc44dfe73dad134fb33853f8c362",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:42:15"
+    },
+    {
+      "filename": "A88A0622.jpg",
+      "group": "classic-riley-two-tone",
+      "catalog_slug_candidate": "b4z-517",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Carrocería Riley de capota negra, parrilla vertical y calcomanía B4Z-517 visible en el parabrisas.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "57d8c3836deeb1ff4b8967815d495bed677ceaf065e9d03d361571bc8c6af240",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:43:34"
+    },
+    {
+      "filename": "A88A0623.jpg",
+      "group": "classic-studebaker-blue-sedan",
+      "catalog_slug_candidate": "f0i-108",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Calcomanía F0I-108 visible en el parabrisas; emblema y carrocería aerodinámica del Studebaker.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "743dd6ebc3ef7bfb8771c52eb64d2b607a16ca9246b05072578c8805c7a157fc",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:44:30"
+    },
+    {
+      "filename": "A88A0626.jpg",
+      "group": "classic-chrysler-grey-airflow",
+      "catalog_slug_candidate": "sin-placa-21",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Frente aerodinámico con parrilla envolvente y faros integrados, rasgos distintivos de Airflow; única ficha de ese modelo.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "202439b25e38d87bada4071a95dc87eedd2fadcacab449f69c09b73204a74621",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:46:33"
+    },
+    {
+      "filename": "A88A0627.jpg",
+      "group": "classic-chevrolet-blue-grey-sedan",
+      "catalog_slug_candidate": "si-placa-20",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Inscripción CHEVROLET y SPECIAL DELUXE visible en lateral del capó; sedán azul gris con franjas blancas en neumáticos.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "107dd4e694074f9095c7488c72874674beab669cd73591c7fc9ed7dccf2f6637",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:47:51"
+    },
+    {
+      "filename": "A88A0629.jpg",
+      "group": "classic-cadillac-green-v8",
+      "catalog_slug_candidate": "sin-placa-19",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Emblemas Cadillac y V8 visibles, sedán verde con ruedas de repuesto laterales. Calcomanía ABR-221 visible.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "0645029a74b022f75edbf7990ed1669dfa31137180037e56c6e9a6f0dc3def63",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:48:53"
+    },
+    {
+      "filename": "A88A0631.jpg",
+      "group": "classic-packard-tan-phaeton",
+      "catalog_slug_candidate": "ahe-474",
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Inscripción Packard visible; carrocería abierta beige larga con cortinas de lona y ruedas de alambre.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "960e5c7b1496ffa465434c8bae9de19ad1408155e12b703793eb644087fd8c45",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:49:43"
+    },
+    {
+      "filename": "A88A0633.jpg",
+      "group": "classic-packard-black-limousine",
+      "catalog_slug_candidate": "abr-223",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Calcomanía ABR-223 claramente visible; carrocería larga cerrada, Packard negro con ruedas de repuesto laterales.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "c15e5a05b23032e334e8f5cbfe411963b5de8305e5eb4d286b22c3f46dfadbb6",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:51:22"
+    },
+    {
+      "filename": "A88A0635.jpg",
+      "group": "classic-packard-blue-roadster",
+      "catalog_slug_candidate": "sin-placa-17",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Inscripción Packard claramente visible, roadster de dos puertas azul/gris. Calcomanía BFT-558 visible.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "f45da944525cb9ed7298d416f71999c04fa3cc6e8451fa50a893e35ed2ff5d7a",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:52:11"
+    },
+    {
+      "filename": "A88A0638.jpg",
+      "group": "classic-packard-burgundy-phaeton",
+      "catalog_slug_candidate": "sin-placa-16",
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Emblema Packard y misma figura alada de otros Packard; parrilla con trama de rombos, carrocería abierta granate. Calcomanía parece BZA-430.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "b83cfab1ca348f7e6b8738a37059bce178efe40cbc6a0afe049bf22827915343",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:54:47"
+    },
+    {
+      "filename": "A88A0641.jpg",
+      "group": "classic-packard-dark-sedan",
+      "catalog_slug_candidate": "ahe-484",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Calcomanía AHE-484 claramente legible; parrilla estrecha vertical y ornamento concordantes con Packard Super Eight.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "97ded9c94ff07bddc198a6301f590e0d34467552e26ba0553d1d199b723fcc97",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:56:16"
+    },
+    {
+      "filename": "A88A0643.jpg",
+      "group": "classic-auburn-black-red-convertible",
+      "catalog_slug_candidate": "sin-placa-15",
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Carrocería Auburn, inscripción SUPERCHARGED en el lateral del capó. Emblema frontal parece 851.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "9f768bfae315a52653a4d77436e95b406b7da017226d8bc4fbe9a8b75e30b7ac",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 11:57:02"
+    },
+    {
+      "filename": "A88A0646.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Exterior naranja con pasos de rueda ventilados y gran alerón; GT3 RS legible en detalle A0748. Interior con centros naranja y jaula naranja en la misma secuencia.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "8a941289e79370d99044ee9e46688ebef1e6582486f35c3a336050c061c74caa",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:14:59"
+    },
+    {
+      "filename": "A88A0648.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Exterior naranja con pasos de rueda ventilados y gran alerón; GT3 RS legible en detalle A0748. Interior con centros naranja y jaula naranja en la misma secuencia.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "54efd05627eb4fbdc6777f4ec32a455e44ec5afb0826ca87bb1592d0de4b4983",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:17:37"
+    },
+    {
+      "filename": "A88A0652.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "GT2 RS legible en costado A0656 y detalle A0751. Capó de carbono con dos conductos; interior negro con tiradores/cinturones amarillos.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "c1e5dfbae2eca7b283610ec368dee5c44127449e571857c86e050f8e2e3052f2",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:19:34"
+    },
+    {
+      "filename": "A88A0656.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "GT2 RS legible en costado A0656 y detalle A0751. Capó de carbono con dos conductos; interior negro con tiradores/cinturones amarillos.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "52995b9d2babca5b3b5efcd998e22c3afbb7d17ae613a5aa3ab47a4f62d98862",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:21:32"
+    },
+    {
+      "filename": "A88A0658.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Placa FOL-661 y texto 911 Turbo S claramente legibles en A0758; carrocería azul, habitáculo negro y relojes amarillos.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "8ba902ca38a41c3d049b6ed28f04539d5f1569bec7e1cdbb27d0f7d6a3ef84a6",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:23:25"
+    },
+    {
+      "filename": "A88A0662.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Placa FOL-661 y texto 911 Turbo S claramente legibles en A0758; carrocería azul, habitáculo negro y relojes amarillos.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "6106424d7e2faaf863d35e98bf0981e1deb141467e8708bd0e0ef568169a73be",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:24:34"
+    },
+    {
+      "filename": "A88A0663.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Emblema Carrera 4S visible en A0783/A0784; carrocería azul oscuro, habitáculo cuero caramelo homogéneo.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "62b009aba979f07a3156ce1a6e54a8589afd2b622a8766b4fe6e17c37b69ae0b",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:25:40"
+    },
+    {
+      "filename": "A88A0667.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Emblema Carrera 4S visible en A0783/A0784; carrocería azul oscuro, habitáculo cuero caramelo homogéneo.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "b634cace86317d67efb9a323b5832ccd4d496fdb541cd41909eea644fde3064f",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:27:19"
+    },
+    {
+      "filename": "A88A0671.jpg",
+      "group": "porsche-dark-blue-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Texto turbo visible en A0797; carrocería azul oscuro, habitáculo negro. Secuencia distinta del Carrera 4S con cuero caramelo y del Turbo gris con cuero beige.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "2e27e52c83e106e6b5b4a832504927b40d50a2370fa683ad717e78866c6df20d",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:28:44"
+    },
+    {
+      "filename": "A88A0674.jpg",
+      "group": "porsche-dark-blue-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Texto turbo visible en A0797; carrocería azul oscuro, habitáculo negro. Secuencia distinta del Carrera 4S con cuero caramelo y del Turbo gris con cuero beige.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "593c4d40db48782ee6ba779c8625d5b757a318309bbab4abcd21b54a08f69d1e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:29:46"
+    },
+    {
+      "filename": "A88A0677.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Texto turbo visible en A0809; exterior gris plata y habitáculo beige/negro, distinto del Turbo azul oscuro.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "a1fda2752db087b9ecfdcd3dc8a23f66e9b3df72417376d20f3891e326ba78f6",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:32:58"
+    },
+    {
+      "filename": "A88A0679.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Texto turbo visible en A0809; exterior gris plata y habitáculo beige/negro, distinto del Turbo azul oscuro.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "21f7c5ea1b3d75ea20cef2bf60c37865e60597c187e62dbdec0ecb53379a822c",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:34:06"
+    },
+    {
+      "filename": "A88A0682.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "GT3 legible en A0840; frontal y llantas de tuerca central corresponden visualmente al 997.2. Habitáculo negro, carrocería roja visible en secuencia.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "f03ee52c73a8db08a80d17c0d840184da6cbbbf1eeaac8d6b316bf72b6982493",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:35:04"
+    },
+    {
+      "filename": "A88A0683.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "GT3 legible en A0840; frontal y llantas de tuerca central corresponden visualmente al 997.2. Habitáculo negro, carrocería roja visible en secuencia.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "b899ed3323357a2b3138e8efe28d6efbfb7d62260c5cee778e9f6ab0fc61230a",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:35:53"
+    },
+    {
+      "filename": "A88A0686.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "GT3 visible en A0865; carrocería azul, llantas de cinco tornillos, interior negro. Rasgos exteriores de 997.1 frente al rojo 997.2.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "259b448f4d3ec8681aa6e21d0edf7637b2afe9221836bfbe78caaf249cbd9126",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:37:03"
+    },
+    {
+      "filename": "A88A0687.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "GT3 visible en A0865; carrocería azul, llantas de cinco tornillos, interior negro. Rasgos exteriores de 997.1 frente al rojo 997.2.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "8faf0a7a83705e79560f17546218efdaed97859a327eb67fbb959ebba26249b4",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:37:42"
+    },
+    {
+      "filename": "A88A0691.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Placa AKV-003 y texto GT4 legibles en A0876; carrocería amarilla y habitáculo negro con elementos amarillos.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "3bcf56151e370ab2c31f1636663183025fb4c21524c467f2098044d5acc8704a",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:40:05"
+    },
+    {
+      "filename": "A88A0694.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Placa AKV-003 y texto GT4 legibles en A0876; carrocería amarilla y habitáculo negro con elementos amarillos.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "284ed25c1c065f7b8227d59a9289a2d59c4af01305e79f5cd7f26c22d73cab9e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:41:06"
+    },
+    {
+      "filename": "A88A0697.jpg",
+      "group": "porsche-burgundy-993-turbo",
+      "catalog_slug_candidate": "a9t-107",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Carrocería 993 granate, habitáculo negro y emblema turbo S visible en A0900; adhesivo de neumáticos con referencia 993 en A0886.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "3698e3b83bcf6025d9280e86be3fd2439ea761dc427652689ab991fa36fca857",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:44:04"
+    },
+    {
+      "filename": "A88A0699.jpg",
+      "group": "porsche-burgundy-993-turbo",
+      "catalog_slug_candidate": "a9t-107",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Carrocería 993 granate, habitáculo negro y emblema turbo S visible en A0900; adhesivo de neumáticos con referencia 993 en A0886.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "60ddfc9e0122a09c803a8b2a7ebf8426813b3e62547a7b573fcea3126d66d297",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:45:09"
+    },
+    {
+      "filename": "A88A0700.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Texto turbo y placa parcial …5Z-37… visible en A0936; carrocería blanca 930 y habitáculo negro de la misma secuencia.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "0d605bdd423a33de4101e6b803e89640979ae46d6b7645d434bd3e5e0c5cced3",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:46:05"
+    },
+    {
+      "filename": "A88A0702.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Texto turbo y placa parcial …5Z-37… visible en A0936; carrocería blanca 930 y habitáculo negro de la misma secuencia.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "c7eaa61c3adb0e88efba7f659e271a6b98a164b261eed9975f1006e6ac6cbbc0",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:47:23"
+    },
+    {
+      "filename": "A88A0705.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Texto Boxster Spyder claramente visible en A0985/A0988/A0991/A0994; roadster blanco, capota ligera negra, interior negro y consola plata.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "e65363ba56a03e7ee07019054d74b2568bb71b9ab51f8febcf09ac8a29303028",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:49:39"
+    },
+    {
+      "filename": "A88A0706.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": true,
+      "evidence": "Texto Boxster Spyder claramente visible en A0985/A0988/A0991/A0994; roadster blanco, capota ligera negra, interior negro y consola plata.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "e9c9243cd9b20c1c2eff006de9588cf201fd7fd48771d39c7a8a36206d568eeb",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 12:51:12"
+    },
+    {
+      "filename": "A88A0709.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "46eb0254675ac17a163993cdd3f51c7b6d27aee1e93656edea8bb1a161231c83",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:26:15"
+    },
+    {
+      "filename": "A88A0711.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "746b7e3213ac64ff05080b4cad794426ae539f0cadf96e7b83cb943279cd3a36",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:27:01"
+    },
+    {
+      "filename": "A88A0712.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "5f6412b0cecf01b605c59bda96054556ea81616a57afafbe7f4648c85207c51d",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:28:55"
+    },
+    {
+      "filename": "A88A0713.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "27f73b990eedde10844ed040ade2e79a2dab64c1465f505c7674504254e6120c",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:29:19"
+    },
+    {
+      "filename": "A88A0714.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "6f3f55f6511df2bf7a3c2c0c32fc2e3f4e4964557c6b53579d47d660f6136f69",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:29:33"
+    },
+    {
+      "filename": "A88A0715.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "795df74806046e24d47d9160491b6e88dd5fd512b61dc9a477fb0355084b52bf",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:29:48"
+    },
+    {
+      "filename": "A88A0716.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "67f1da486368669170ac8a9aed6db94997397b45d0d259bd24d8c45882774fd2",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:30:13"
+    },
+    {
+      "filename": "A88A0717.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "2e7a2a82de66a485ad129d55917ce0366d4026521f809d553da0472b3eb29ff0",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:31:38"
+    },
+    {
+      "filename": "A88A0718.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "846bf7c6d3f52527ab7b973547d76b437468288bbcc63852401421edf06d2b18",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:32:19"
+    },
+    {
+      "filename": "A88A0722.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "637244984ed7bcc8dba25ad6b3c1da448898e0c64aad86a2a4298b6a44d3d859",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:35:19"
+    },
+    {
+      "filename": "A88A0723.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "f041c7675a7ac136aef1f9ea90b9297930cff85587a43dfd8487f2cc9965e339",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:35:31"
+    },
+    {
+      "filename": "A88A0724.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "2cf026e9296d9fa1cfdba467b991ac210c0abbe2b4187fa5b8c3cf01207b12ff",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:36:13"
+    },
+    {
+      "filename": "A88A0725.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "a4ac7822f3f5ee941e9a0443c9029f185c8f38596f55720c54cd0884897577f4",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:36:38"
+    },
+    {
+      "filename": "A88A0726.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "defab25afb805b509c65ac4c6ef375fd8a4988cf7a146b02aa4661a1352c781e",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:36:54"
+    },
+    {
+      "filename": "A88A0727.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "e8226c2249f5eff852b8300b08173efaac7ac49cce959638ed9bc1ba2715a51e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:37:41"
+    },
+    {
+      "filename": "A88A0728.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "4b18d3d6bb27920786dbe77c8cf61d06c1931900ba4c39f5171eb9c22154487d",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:37:47"
+    },
+    {
+      "filename": "A88A0729.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "c0fa39eb7fc053b2377bad259d85c2e5d56aa74055441b7d536b28ab1dbe0798",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:38:00"
+    },
+    {
+      "filename": "A88A0730.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "d60a6c787cc459105511382f4c3f588805af8b381b67183923ec6d0a238d9830",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:38:49"
+    },
+    {
+      "filename": "A88A0731.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Exterior naranja con pasos de rueda ventilados y gran alerón; GT3 RS legible en detalle A0748. Interior con centros naranja y jaula naranja en la misma secuencia.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "3ff1434d041d11428954c3238da4ce0ddbcb9a2a536d763d8cad713ca364982e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:41:38"
+    },
+    {
+      "filename": "A88A0732.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "32b9e661d409ac21585f65ed23e9d6d4768d591fa7ac92b76a6b7d2de89d4949",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:42:25"
+    },
+    {
+      "filename": "A88A0733.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "7e1a3d03183eb6d081ef829c82c4cd1b890c68b0f08522be056e440ed59df8a3",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:42:39"
+    },
+    {
+      "filename": "A88A0734.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "c02b5c1bcf9f34dd243c2a894aa952cbb7f438ebeb94f2f3dac140e2432ba6aa",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:43:36"
+    },
+    {
+      "filename": "A88A0736.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "ce83134563f3da507ad036cac380c110c429317bcae03ef3730672765ac1a58a",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:44:21"
+    },
+    {
+      "filename": "A88A0737.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "fe94517bceb8361dce2910485c58bbea848c5970553bcf8f03a5c2690d2ae38d",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:44:28"
+    },
+    {
+      "filename": "A88A0738.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "c0f276cc28e70921f530def9d77275e67eb6255813200e9e07ed48af0d541d14",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:45:09"
+    },
+    {
+      "filename": "A88A0739.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "2ea7f6cd81f9c6914fa1a794389949999660c840b85cd5132edb1e276b4d4c74",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:45:24"
+    },
+    {
+      "filename": "A88A0740.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "157533dd1f031822a21d3fdc045edb7666edc35bb6c518654517ab2700c40201",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:46:10"
+    },
+    {
+      "filename": "A88A0741.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "b302bceb06ac28b9871bf65620dd183379940c4e750820c24063510cec30580d",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:47:02"
+    },
+    {
+      "filename": "A88A0742.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "e3a28e53205c45a43c02215387ddce923076d2a9ee190e6b7af5a8353ab88c2d",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:51:53"
+    },
+    {
+      "filename": "A88A0743.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "40b83bf2ff4737935db88eb2bf55da147a545e5752d38516c3901b44927ca6eb",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:52:19"
+    },
+    {
+      "filename": "A88A0744.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "30b861fb097b97a3d784e888e2fd6c13e9571f09d964168711248981dad3f6c5",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:52:59"
+    },
+    {
+      "filename": "A88A0745.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "ef307792ac99277da86b46d6159da5590def718eda1ec2225e2bdcc10b97b899",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:53:30"
+    },
+    {
+      "filename": "A88A0746.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "GT2 RS legible en costado A0656 y detalle A0751. Capó de carbono con dos conductos; interior negro con tiradores/cinturones amarillos.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "ef852a028f28570644fbb77791012f89f10034415954eb6282abdb5e8ba6ab42",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:53:56"
+    },
+    {
+      "filename": "A88A0747.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "GT2 RS legible en costado A0656 y detalle A0751. Capó de carbono con dos conductos; interior negro con tiradores/cinturones amarillos.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "306fbd68e622d267e3d8de9d1b12e01b04dc7305624d63c49dbbb5509cf2db94",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:54:04"
+    },
+    {
+      "filename": "A88A0748.jpg",
+      "group": "porsche-orange-gt3rs",
+      "catalog_slug_candidate": "asv-385",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "a5a237e2f3998dae6bdbb5b954f8da40f086a7ac0f7f74c7fb830e9e7d472641",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:56:08"
+    },
+    {
+      "filename": "A88A0751.jpg",
+      "group": "porsche-black-gt2rs",
+      "catalog_slug_candidate": "bfu-487",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "5b4c6ea5a4d71488abf8f826c69b2c36a85d7d8752169e7648bb4e0600a1585e",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:56:53"
+    },
+    {
+      "filename": "A88A0752.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "3da4a77cd8d80282b2a524ada87304baf996c9249ece91639fe1bfdb0e7cadc9",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:58:55"
+    },
+    {
+      "filename": "A88A0753.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "fc0135d34bf800d68a0ddcae134b4a163a6ff628ba4c6de7e663fefbd2400aac",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:59:06"
+    },
+    {
+      "filename": "A88A0754.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "56365b35e2cc9d3aa79f43345b36a157cc8a25595dadaf81802972aac7cb0ee3",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:59:10"
+    },
+    {
+      "filename": "A88A0755.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "6684a66509d8be4cae9f3a148c2d8c8f9774ec9cbd7e180efa98144f8f18d1b7",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:59:17"
+    },
+    {
+      "filename": "A88A0756.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "edb75cbca43562ae42788749b3b81eb8ca083a7cda9f9f2f9106b6d6fd5354e0",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 14:59:30"
+    },
+    {
+      "filename": "A88A0757.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "79c6ac45b30d5ac5bb740289a6599fd0c8911f5c4a5b67fc74e81948976d0282",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 14:59:45"
+    },
+    {
+      "filename": "A88A0758.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "ab29438fdfff738f4a41327fc2f084b207a6a3513329b32d1ac33a85e7e80810",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:00:12"
+    },
+    {
+      "filename": "A88A0759.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "78cceda54575dec0023a32949c3fa9b8e59dbeb117f2b63e3c4a72451a05e81b",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:01:02"
+    },
+    {
+      "filename": "A88A0760.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "dfc1b6b3d8575d54c07bdae87f093fd4defe1aa33651b540a130758a9dee4b9d",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:01:11"
+    },
+    {
+      "filename": "A88A0762.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "b6f54a4dabf50b90fbf129bd6c7cd02b502c3c39d564b6a7b3f08901419fbcca",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:01:23"
+    },
+    {
+      "filename": "A88A0763.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "fc6bae9b43cfe6185360fc614a630cb35165bc8751857d59f141bc1133c05c95",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:01:25"
+    },
+    {
+      "filename": "A88A0764.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "68dffbe6de176230400d62b56e20214f94422cb24e178b2368c0c59ec2aef678",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:02:07"
+    },
+    {
+      "filename": "A88A0765.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "3d791dab6dfc522c377c4ded0879c4adff1f6faa8164a605e83b00d26efb4d3c",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:03:56"
+    },
+    {
+      "filename": "A88A0767.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "bc02805f111a9ad4980d2b4aad6245d2b2ab88d4a53e2414a5d7abd4c1fb8e93",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:05:03"
+    },
+    {
+      "filename": "A88A0769.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "0cf0ffd3336466f89962d38de6f4a1af8a19b096ddbbe0d22160a8ed5bf79d33",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:05:19"
+    },
+    {
+      "filename": "A88A0771.jpg",
+      "group": "porsche-blue-turbo-s",
+      "catalog_slug_candidate": "fol-661",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Placa FOL-661 y texto 911 Turbo S claramente legibles en A0758; carrocería azul, habitáculo negro y relojes amarillos.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "c1b55d3f9d0716fd982c4fafbd9055557fba1250822219f17081cfb034c09976",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:05:52"
+    },
+    {
+      "filename": "A88A0772.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "49a8064a9c654f5d5a321da31044c12e2bbb609681387c9ffd86dee42d683e88",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:06:38"
+    },
+    {
+      "filename": "A88A0773.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "f9e42e7d6cdf46af576ff1793a40335ed534ce6d64ffad4d5533f7ec89fd0a97",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:06:46"
+    },
+    {
+      "filename": "A88A0774.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "07b91ebb57050c8b2df3c26911d8a226a98fa62d0798a68d9adb0dcc7b323e59",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:06:52"
+    },
+    {
+      "filename": "A88A0775.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "c2cec6d83fa48ccd15199768ec2589fdb1642d137f3c267418e6b0b77a42e84e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:07:02"
+    },
+    {
+      "filename": "A88A0776.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "c5597eb1a6b8168b275d05c8abc7dd149c26afe9c76837318be3ba2d4d1aebd6",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:07:14"
+    },
+    {
+      "filename": "A88A0777.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "4ac18106f406f17deba76324202ce5e2f7dbd61a672dd35d090411e353b1bd7e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:07:30"
+    },
+    {
+      "filename": "A88A0778.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "f04863a787da03095a92b4bd664e9ef703fad071776d93957daeb15da23c5d54",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:11:16"
+    },
+    {
+      "filename": "A88A0779.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "dc9eba54c0ee4271f36ecad042246683e162092e4c40539dd12007846f709716",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:11:20"
+    },
+    {
+      "filename": "A88A0780.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "206742d256ebfcf51caccdd1db0fe1f88aead93fdeb3628ffd08463ab99c31a8",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:11:31"
+    },
+    {
+      "filename": "A88A0781.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "ca7a7c9164ee1410f3bdca41b916fd600f90892521e654b54895441f99c8707e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:11:38"
+    },
+    {
+      "filename": "A88A0782.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "be07b3bfc4097f6c446740cb98a06ea6a01816cda1c83e23de2c7234f06e148f",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:11:49"
+    },
+    {
+      "filename": "A88A0783.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "d4ff43e57c84c96ad175982b153ee701fdd7de27a05bab730005943fe85b7a9e",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:12:33"
+    },
+    {
+      "filename": "A88A0784.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "ff70337a25dc244bf77cb0861d538a1a20a451f515f292d552619cbb0287e08a",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:12:48"
+    },
+    {
+      "filename": "A88A0785.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "d913fe30d03d5dfd99a607ae0ae983daadaa8fe972f1eb18438a6bcb26050b5c",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:13:13"
+    },
+    {
+      "filename": "A88A0788.jpg",
+      "group": "porsche-dark-blue-carrera-4s",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Emblema Carrera 4S visible en A0783/A0784; carrocería azul oscuro, habitáculo cuero caramelo homogéneo.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "d8000be4c1f80f2b457edbb64bacbde04280597e972db204bca6c1df56ed8047",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:14:30"
+    },
+    {
+      "filename": "A88A0790.jpg",
+      "group": "porsche-dark-blue-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "4fc07d08abf297fc8f8e1ae0deb34c18a618029959831ca26b9dcadc3a1c58ac",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:18:21"
+    },
+    {
+      "filename": "A88A0791.jpg",
+      "group": "porsche-dark-blue-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "f0ba586c470b6ce653602ef150f1fbfa9d2246563924e371e49f55a8c1abed81",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:18:50"
+    },
+    {
+      "filename": "A88A0792.jpg",
+      "group": "porsche-dark-blue-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "a58c2edac11f449ba5270614f36634e6f445c2683e44121bf34fb4cbf86ea953",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:21:01"
+    },
+    {
+      "filename": "A88A0793.jpg",
+      "group": "porsche-dark-blue-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "549d9205d65ec4b3638416c0e6f7507f5359a1e348636c5d9574e26ec3067ead",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:21:12"
+    },
+    {
+      "filename": "A88A0795.jpg",
+      "group": "porsche-dark-blue-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "55112865f8fb7ecf394f3b884759cbf9370dde2356a6e98483e0e8aa2e823b9e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:21:31"
+    },
+    {
+      "filename": "A88A0797.jpg",
+      "group": "porsche-dark-blue-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "fae04ac351690452a428ca7efb58b181abf3ad3639377d999d6977516505769e",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:22:07"
+    },
+    {
+      "filename": "A88A0798.jpg",
+      "group": "porsche-dark-blue-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Texto turbo visible en A0797; carrocería azul oscuro, habitáculo negro. Secuencia distinta del Carrera 4S con cuero caramelo y del Turbo gris con cuero beige.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "86648600d901d135cccf28709a237dcb18aa8b0936f9d21764abcf5249dc495a",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:22:28"
+    },
+    {
+      "filename": "A88A0799.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "b14bcb38b556f9a6b52c772d9817b13e2f879a6bb7d66e79a9b5c687c3f7735d",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:27:28"
+    },
+    {
+      "filename": "A88A0800.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "d2fa5f3d8a1e9d55a23890ef1b18d74f90595b5c513d578ce36675e3bfbaf688",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:27:40"
+    },
+    {
+      "filename": "A88A0801.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "906713fdd691890bf21ab44151fc54f0f87c18d8d455a6d599118e90e6d75b45",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:27:53"
+    },
+    {
+      "filename": "A88A0802.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "3cd62eb61f4db09df357ac6cb081bf9ed0766ce80d2d50465e09e4b4525430bc",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:28:53"
+    },
+    {
+      "filename": "A88A0803.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "e32c66456c6d8c53b1e77d00ab59cd6b92c19563483c3e6a07609c09ac597884",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:29:22"
+    },
+    {
+      "filename": "A88A0804.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "daa30fc89c2a0191a9ea41249619b127e0a3358f1b2a6ef8d58733565c7203b5",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:29:24"
+    },
+    {
+      "filename": "A88A0805.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "85174ad5302f873e82478621dfdca94881632dbdbe5ca706e447685ae27b4c5e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:29:44"
+    },
+    {
+      "filename": "A88A0806.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "e96e708c477401bf40ca022524fb7959affef1efc16176abcd82d2a66cba7cd1",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:29:53"
+    },
+    {
+      "filename": "A88A0807.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "4a812950500817cd909df79710e75e97dad9800489c5a1af500214782bb22ea5",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:29:56"
+    },
+    {
+      "filename": "A88A0809.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "666f0d02b63e7f1b5b7b0c8ee3deac01e9576112542e69b07b06ba4a2373301e",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:30:21"
+    },
+    {
+      "filename": "A88A0810.jpg",
+      "group": "porsche-silver-turbo",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Texto turbo visible en A0809; exterior gris plata y habitáculo beige/negro, distinto del Turbo azul oscuro.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "f348cb4fb977a590019dc0011b27ef0c8ebcf761ac8212064a7f07b44faaf7db",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:30:49"
+    },
+    {
+      "filename": "A88A0813.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "7d18b4f867b19f425f4b603ed239e5851ffad31d2c05b400d2feec31c352d572",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:37:27"
+    },
+    {
+      "filename": "A88A0816.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "e0b4e14e14d04d9e2edac35aa615c6e08c8bea4a512642ca8269b46c80f1b630",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:41:57"
+    },
+    {
+      "filename": "A88A0821.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "d32187f61c6e7f240d07f766e039a46f52b5c73c8d6c038bf8f52812f30ccfee",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:42:22"
+    },
+    {
+      "filename": "A88A0822.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "725a9582c106d3eaac49ee03bdc87ee24319527fc1286856f5541a122a8348ae",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:42:50"
+    },
+    {
+      "filename": "A88A0824.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "20d87db126fce0101b29e33cc0d18d5d320054259eb91ad44e5a2d6afd2fec36",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:42:50"
+    },
+    {
+      "filename": "A88A0825.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "c4d0ad22e736b1658ab9403053c64c2d7bfd3be99e4d15eadb2cfe6d31b25f64",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:44:49"
+    },
+    {
+      "filename": "A88A0831.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "f41eb9aa2d0d88b0340996923555d46ad79db66cb4bebf59da1911238d9a9259",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:45:08"
+    },
+    {
+      "filename": "A88A0834.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "a7a25164c8ebbc7d9ebe29de218c32c3e294744d8e0b926e0b6e4d6c30a7d7b7",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:45:22"
+    },
+    {
+      "filename": "A88A0837.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "65ae7663abae05f43ab9db9ae5cd0445bd3f1f4b9ade6c962ec64fc8e38086e8",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:45:59"
+    },
+    {
+      "filename": "A88A0840.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "07c490bf24c0a536d682be4648dcb3dda9e4d1dcb9fe01ad51a97e7522fb03d5",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:46:30"
+    },
+    {
+      "filename": "A88A0842.jpg",
+      "group": "porsche-red-gt3",
+      "catalog_slug_candidate": "a4d-305",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "GT3 legible en A0840; frontal y llantas de tuerca central corresponden visualmente al 997.2. Habitáculo negro, carrocería roja visible en secuencia.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "52f4e755f498c3cc36d8ef4df55fa31253c81606cfc058352aed577cc9fcc189",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:46:54"
+    },
+    {
+      "filename": "A88A0846.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "e19fb8b0b0489d359d1cb64d380939b9762ea562c499193aa133231cc06e845d",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:48:00"
+    },
+    {
+      "filename": "A88A0847.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "0f3471ba183661f59661bd9bfb2a08520a2a2e2424848b579de86b52c5226867",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:48:13"
+    },
+    {
+      "filename": "A88A0850.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "95baf1dd0cef5dbaf07b0479f05ad12e2942a301bc99d7a6c3beebda09eb78c4",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:48:28"
+    },
+    {
+      "filename": "A88A0852.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "76245b6ead586b2c83228a35ba9b37b9fd1c9c3a16ba9ce5ed54b5bb61843f5e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:48:28"
+    },
+    {
+      "filename": "A88A0855.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "6ab7ef16d347760572a34fd8e91da2a148b96a89d476b83d34886b94bd64358e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:49:29"
+    },
+    {
+      "filename": "A88A0856.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "b8cd29eaa3e83871e6bb7dda43ec0b204e22905743a0e9d2ad6796cc5bc8f1cf",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:49:41"
+    },
+    {
+      "filename": "A88A0861.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "37d722ae70e20dbdf8883b7d6aba27654a55d401632e928c6215a54b69ecd255",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:49:52"
+    },
+    {
+      "filename": "A88A0864.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "1ec44231c638992298ff21cf627964cd1a06433e574b35d7720657fbb2da2a10",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:50:14"
+    },
+    {
+      "filename": "A88A0865.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "aee4d797c7a7be5410b58eee313ec9f81fddf8a850e51056ed47baff80de4416",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:52:12"
+    },
+    {
+      "filename": "A88A0866.jpg",
+      "group": "porsche-blue-gt3",
+      "catalog_slug_candidate": null,
+      "confidence": "low",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "GT3 visible en A0865; carrocería azul, llantas de cinco tornillos, interior negro. Rasgos exteriores de 997.1 frente al rojo 997.2.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "d3cd9b9ccf971a4746d296f5545e8ee3b9c78d2d68359d0752ace1be5c9980ed",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:52:27"
+    },
+    {
+      "filename": "A88A0867.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "572283d0e3a120d0b33acb2abe35eccb9a5211d934c2fd50a45df7728cb8f02f",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:54:12"
+    },
+    {
+      "filename": "A88A0868.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "32a76107ca118c4686d02facd7af36f9295ba50e7ba90e9c2b16b5acddc9e11e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:54:38"
+    },
+    {
+      "filename": "A88A0870.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "8095b99b11d7860e1b5d8d93456f6981ac3e8e1af46f83354506c4607390e968",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:54:57"
+    },
+    {
+      "filename": "A88A0871.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "da80be7e3f8d562c68dcc2b1c2a0c1956c976acdc9870e0276827b16d073c66b",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:55:23"
+    },
+    {
+      "filename": "A88A0873.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "0a63dfbfebb1a7c760fa38215ff0d6e365f01bbd0cd7dd89ea4bf2cba0a1f3e4",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:56:19"
+    },
+    {
+      "filename": "A88A0874.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "50b9559d0368d6ae568365189300f17eb9be3cdb40ef156ea78b12f2652fd5c3",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:56:31"
+    },
+    {
+      "filename": "A88A0875.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "752b0cb736c82cebd1bbae44860c84788f9a211fdab4a2229fd345025907aa39",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 15:56:56"
+    },
+    {
+      "filename": "A88A0876.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "f8207d0a7561286c7f0d27677305e918a33b8c2a1367d90aa591a4081ebee424",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:58:31"
+    },
+    {
+      "filename": "A88A0879.jpg",
+      "group": "porsche-yellow-cayman-gt4",
+      "catalog_slug_candidate": "akv-003",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Placa AKV-003 y texto GT4 legibles en A0876; carrocería amarilla y habitáculo negro con elementos amarillos.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "0476acac9ea3abb8bc2e7b34754e098c1343c6eb8ab899c2347c846b865ceb4b",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 15:59:28"
+    },
+    {
+      "filename": "A88A0880.jpg",
+      "group": "porsche-burgundy-993-turbo",
+      "catalog_slug_candidate": "a9t-107",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "c504b5552c46eec22a3eaf81ae17e2bc22acba412e6387d1a4ed2b741769f3e3",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:00:54"
+    },
+    {
+      "filename": "A88A0883.jpg",
+      "group": "porsche-burgundy-993-turbo",
+      "catalog_slug_candidate": "a9t-107",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "df6fa18e31395cc9d1b0f4db1c5223034410f0a3acad5302b1ff731f35df19c4",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:01:02"
+    },
+    {
+      "filename": "A88A0886.jpg",
+      "group": "porsche-burgundy-993-turbo",
+      "catalog_slug_candidate": "a9t-107",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "79721230f4390751ea98f3ec73cf4b6a3f2c4a5d25899b368fce29c8cf2eb911",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:01:51"
+    },
+    {
+      "filename": "A88A0889.jpg",
+      "group": "porsche-burgundy-993-turbo",
+      "catalog_slug_candidate": "a9t-107",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "d404241ab651c80d72fe87696665e499f92d7dda0d4b9e88f927da42fd757450",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:02:02"
+    },
+    {
+      "filename": "A88A0897.jpg",
+      "group": "porsche-burgundy-993-turbo",
+      "catalog_slug_candidate": "a9t-107",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "2450f8136d7b72c5d5f25022b2cf7691e2ca06d98587c1b81c3f40138882eb87",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:02:28"
+    },
+    {
+      "filename": "A88A0900.jpg",
+      "group": "porsche-burgundy-993-turbo",
+      "catalog_slug_candidate": "a9t-107",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "b7a2d7af886e92d2df6e8dd5b0a94db0f48c3ef98476f86adc106d2ffdab264d",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:03:53"
+    },
+    {
+      "filename": "A88A0901.jpg",
+      "group": "porsche-burgundy-993-turbo",
+      "catalog_slug_candidate": "a9t-107",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Carrocería 993 granate, habitáculo negro y emblema turbo S visible en A0900; adhesivo de neumáticos con referencia 993 en A0886.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "7ba5db389052fa6cea885d7146d352d254feac1c3fc990e1e4986dafec1e4686",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:04:09"
+    },
+    {
+      "filename": "A88A0906.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "b2dd450ede2136fc377a75583f4029bd313e4b28fdbc5c0d49ea6fe150c38ae9",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:05:01"
+    },
+    {
+      "filename": "A88A0909.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "2351c7206fd7a3d13848ba5bfd9354bb676dff9b796cf91b1904f261f517ee92",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:05:18"
+    },
+    {
+      "filename": "A88A0912.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "e4d9b4758f2198322523a6f7c3121f8cdb909b5c22a26ab91a2214f8a1f98a74",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:05:37"
+    },
+    {
+      "filename": "A88A0918.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "8343577ac0abf04d439f87af7639ef01ee8c05969d616d2bf51532da2546e47e",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:07:02"
+    },
+    {
+      "filename": "A88A0921.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "2daf7c309ead77fd2f6f2d53fe206cfdf8a0d252d6772eae54ccbc87c76b1a70",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:07:34"
+    },
+    {
+      "filename": "A88A0927.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "44054d2e0dc4028ab138f1e14198550737642b43338370c40fff6edff252a5c2",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:08:44"
+    },
+    {
+      "filename": "A88A0928.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "4e0315268b2182a11ce596d8373dbfda6ce67a0daaec5e9f1fd0aadd7804ea52",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:09:11"
+    },
+    {
+      "filename": "A88A0931.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "2ea4bd5d014afcd604eb47f2e18d3f8519547f6cd2ed45223d3b34fd9394b532",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:09:44"
+    },
+    {
+      "filename": "A88A0936.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "c8840b22b6d5347801a2b953b14ddd0a646d1aeaa420271dae6690560e912c7b",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:10:02"
+    },
+    {
+      "filename": "A88A0937.jpg",
+      "group": "porsche-white-930-turbo",
+      "catalog_slug_candidate": "d5z-370",
+      "confidence": "high",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Texto turbo y placa parcial …5Z-37… visible en A0936; carrocería blanca 930 y habitáculo negro de la misma secuencia.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "193ec6f16a173c6710c68121e8039451d79dc08fd20788771dcbc8bd73752886",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:10:22"
+    },
+    {
+      "filename": "A88A0940.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Texto Boxster Spyder claramente visible en A0985/A0988/A0991/A0994; roadster blanco, capota ligera negra, interior negro y consola plata.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "c275f93314add51366f836112121601b05af262808c437e7ecf728d064a5a49c",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:11:06"
+    },
+    {
+      "filename": "A88A0943.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Texto Boxster Spyder claramente visible en A0985/A0988/A0991/A0994; roadster blanco, capota ligera negra, interior negro y consola plata.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "fe6df9074cf08488ebe87a4c7948eac572fb9056c9c08b849a3edbb14f22212f",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:11:14"
+    },
+    {
+      "filename": "A88A0951.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "a2f69c23a9fcaa5ec87f4bfd17d73375b0426d0700f254a03112ea03d24e7faa",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:11:48"
+    },
+    {
+      "filename": "A88A0952.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "76cf435ea1cb8f3a78fd2920474291debb570692f976d236fa86d4316bb85a66",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:12:00"
+    },
+    {
+      "filename": "A88A0954.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "14055db1e51481541a846dec83eddd0de8f62adbb8f8aca6fba3c350ae6dfb06",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:12:00"
+    },
+    {
+      "filename": "A88A0955.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "0bd21ba306fee3d933da94ef21d67d542ea105ef8a560cba77fabe62021c0bb0",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:12:27"
+    },
+    {
+      "filename": "A88A0957.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "09f1724eed8c8b10df9ef2e7dc89c7df4b322c51b77bb41b92360e6715fed915",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:12:27"
+    },
+    {
+      "filename": "A88A0958.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "338082f1c80961bb292622071260e93b1c6ea360be72768fc1a5fb4b43a34b17",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:12:48"
+    },
+    {
+      "filename": "A88A0961.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "medium",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF. Es un macro sin identificador individual; asociación contextual, no identificación independiente.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "b218e7953a4bb02cc326ea8b407a878862be290eeb1a2bf95ab80f8d181b5813",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:13:16"
+    },
+    {
+      "filename": "A88A0966.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "63bd3afa772cbd2a08d44291bc4b0ec49e202bea890e4fc58f9af39a5f1e1ac7",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:13:52"
+    },
+    {
+      "filename": "A88A0969.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "3f3523f331c9a4aa6e8d6f6c1fa06979f6d1359483b484554c46c3c43a4a4e07",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:14:05"
+    },
+    {
+      "filename": "A88A0970.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "f8d81d1f0bba6d375333f5bb2c4fdf61f9c2ddde268f2e79a2ba91afd6f87294",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:15:08"
+    },
+    {
+      "filename": "A88A0973.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "3e064e9a8e7ba19bb036a504e259aa695f2f4ac036f94f010e603c80a42166ba",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:15:28"
+    },
+    {
+      "filename": "A88A0978.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "7258c3edc48a27bde1a78c4c9d7df185ff968b49e0cfbd827a6957939ab4d827",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:15:40"
+    },
+    {
+      "filename": "A88A0981.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "b7075fa4926d415e9dae4b07241a4d1f2d442ee70e9edf856ef574f815d2a872",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:15:56"
+    },
+    {
+      "filename": "A88A0982.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "interior",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "547ced6b307cc6c7751f01bc7f57f7d2796c2029918e1bf20e3fea2fa39f887f",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:16:02"
+    },
+    {
+      "filename": "A88A0985.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "73b8543eff8f162c38b78d0c2e4e052580b9c1062eee9744be0f7bae6efc776e",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:16:33"
+    },
+    {
+      "filename": "A88A0988.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "07ff25270887ece705c3c7aadbe895f6095055b2e9ddad66ca8501480b5caa3f",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:16:46"
+    },
+    {
+      "filename": "A88A0991.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0846.zip",
+      "source_sha256": "f085cb806fa5163726647a0b2c56100817e89e0541d6b1ec9b4e0791127ec8d1",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "captured_at_exif": "2026:10:06 16:17:03"
+    },
+    {
+      "filename": "A88A0994.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "detail",
+      "preferred_cover": false,
+      "evidence": "Misma secuencia visual de la unidad: color de carrocería visible cuando aparece, diseño de volante, consola y tapicería; continuidad EXIF.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "aa9ce955e6f62443bd978c217db07273c43ee38ab2b69bdfc872d9804979ec4d",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:17:15"
+    },
+    {
+      "filename": "A88A0998.jpg",
+      "group": "porsche-white-boxster-spyder",
+      "catalog_slug_candidate": "sin-placa-4",
+      "confidence": "medium",
+      "group_confidence": "high",
+      "kind": "exterior",
+      "preferred_cover": false,
+      "evidence": "Texto Boxster Spyder claramente visible en A0985/A0988/A0991/A0994; roadster blanco, capota ligera negra, interior negro y consola plata.",
+      "source_zip": "A88A0584.zip",
+      "source_sha256": "e11d02ab4c71545c0e22d73acb2a7e524bee8e46b175f8a53c3ce97e441e0ef0",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "captured_at_exif": "2026:10:06 16:17:50"
+    }
+  ]
+}

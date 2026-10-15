@@ -3,7 +3,7 @@
   'use strict';
   const $ = id => document.getElementById(id), page = $('page-tickets');
   if (!page || !page.classList.contains('b03-page')) return;
-  const B = window.ArtechBooking, core = window.Artech, dialogs = window.ArtechDialogs;
+  const B = window.ArtechBooking, core = window.Artech;
   const esc = core.escapeHTML, en = () => document.documentElement.lang === 'en';
   const t = (es, english) => en() ? english : es;
   const locale = () => en() ? 'en-GB' : 'es-PE';
@@ -14,6 +14,33 @@
   let step = 1, reached = 1, busy = false, timer = 0, generation = 0, inTickets = false, lastRouteLevel = '', calendarMonth = '';
   let receipt = null, lastError = '';
   const active = () => core.parseHash(location.hash).key === 'p-tickets';
+  // F01: disclosure panels stay in the document flow; only the arrow opens them.
+  const pickers = {
+    level: { button: $('b03LevelOpen'), panel: $('b03LevelPanel') },
+    date: { button: $('b03CalendarOpen'), panel: $('b03CalendarPanel') },
+    time: { button: $('b03TimeOpen'), panel: $('b03TimePanel') }
+  };
+  let openPicker = '';
+  function setPicker(key = '', restore = false) {
+    const previous = openPicker; openPicker = key;
+    Object.entries(pickers).forEach(([name, item]) => {
+      const open = name === key;
+      item.button.setAttribute('aria-expanded', String(open));
+      item.panel.classList.toggle('is-open', open);
+      item.panel.setAttribute('aria-hidden', String(!open));
+      item.panel.inert = !open;
+    });
+    if (restore && previous) pickers[previous].button.focus({ preventScroll: true });
+  }
+  function togglePicker(key) {
+    if (busy) return;
+    if (key === 'level') renderLevels();
+    if (key === 'date') { calendarMonth = state.date.slice(0, 7); renderCalendar(); }
+    setPicker(openPicker === key ? '' : key);
+  }
+  page.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && openPicker) { event.preventDefault(); setPicker('', true); }
+  });
   function levelName(item = B.level(state.level)) { return item[en() ? 'en' : 'es']; }
   function defaultDate() {
     if (!state.date || B.dateError(state.date) || !B.slots(state.date, state.level).length) state.date = B.nextDates(core.todayInLima(), 1, state.level)[0] || '';
@@ -62,11 +89,15 @@
     defaultDate(); changed();
   }
   function renderDates() {
-    const dates = B.nextDates(state.date, 3, state.level);
-    $('b03MonthLabel').textContent = fmt(state.date, { month: 'long', year: 'numeric' });
-    $('b03QuickDates').innerHTML = dates.map(date => `<button type="button" data-book-date="${date}" aria-pressed="${date === state.date}" aria-label="${esc(fmt(date, { weekday: 'long', day: 'numeric', month: 'long' }))}"><small>${esc(fmt(date, { weekday: 'short' }).replace('.', ''))}</small><strong>${esc(fmt(date, { day: '2-digit' }))}</strong></button>`).join('');
+    $('b03SelectedDate').textContent = fmt(state.date, { day: 'numeric', month: 'long', year: 'numeric' });
+    $('b03SelectedTime').textContent = state.time || t('Elige un horario', 'Choose a time');
     const times = B.slots(state.date, state.level);
     $('b03Times').innerHTML = times.length ? times.map(time => `<button type="button" data-book-time="${time}" aria-pressed="${time === state.time}">${time}</button>`).join('') : `<p class="b03-note">${esc(t('Elige otro día para ver horarios.', 'Choose another day to see times.'))}</p>`;
+    pickers.level.button.setAttribute('aria-label', t('Cambiar experiencia', 'Change experience'));
+    pickers.date.button.setAttribute('aria-label', t('Cambiar fecha', 'Change date'));
+    pickers.time.button.setAttribute('aria-label', t('Cambiar horario', 'Change time'));
+    renderLevels();
+    if (openPicker === 'date') renderCalendar();
   }
   function renderCounts() {
     const count = B.totalGuests(state), minimum = B.level(state.level).minGuests;
@@ -126,7 +157,6 @@
     $('b03DemoResult').options[0].textContent = t('Aprobado', 'Approved'); $('b03DemoResult').options[1].textContent = t('Rechazado', 'Declined');
     $('b03Name').placeholder = t('Nombre y apellido', 'Full name'); $('b03Email').placeholder = t('tu@correo.com', 'you@example.com');
     $('b03Visit').setAttribute('aria-label', t('Configurar visita', 'Plan your visit'));
-    $('b03QuickDates').setAttribute('aria-label', t('Fechas preferidas', 'Preferred dates'));
     $('b03Times').setAttribute('aria-label', t('Horario preferido', 'Preferred time'));
     $('b03Card').setAttribute('aria-label', t('Tarjeta de demostración, no editable', 'Demonstration card, read only'));
     $('b03Ticket').setAttribute('aria-label', t('Entrada de demostración', 'Demonstration ticket'));
@@ -138,7 +168,7 @@
     if (lastError) setError(lastError);
   }
   function showStep(next) {
-    step = next; reached = Math.max(reached, next); setError(''); render();
+    setPicker(); step = next; reached = Math.max(reached, next); setError(''); render();
     const heading = next === 3 ? $('b03CompleteTitle') : $('b03Title');
     heading.tabIndex = -1; heading.focus({ preventScroll: true });
     const y = page.getBoundingClientRect().top + scrollY;
@@ -158,6 +188,7 @@
   }
   function cancelPending() {
     generation++; clearTimeout(timer); timer = 0;
+    window.ArtechCheckoutTransition?.stop();
     if (busy) { busy = false; render(); }
   }
   function next() {
@@ -173,20 +204,22 @@
     const snapshot = { ...state, buyer: { name: $('b03Name').value.trim(), email: $('b03Email').value.trim() }, requestOnly: q.requestOnly };
     const declined = !q.requestOnly && $('b03DemoResult').value === 'declined';
     busy = true; const token = ++generation; render();
+    const transitionMs = matchMedia('(prefers-reduced-motion: reduce)').matches ? 650 : (q.requestOnly ? 1400 : 2400);
+    window.ArtechCheckoutTransition?.start(transitionMs);
     timer = setTimeout(() => {
       if (token !== generation || !active()) return;
-      busy = false;
+      busy = false; window.ArtechCheckoutTransition?.stop();
       if (declined) { render(); setError('declined'); $('b03Error').tabIndex = -1; $('b03Error').focus(); return; }
       receipt = snapshot; showStep(3);
-    }, q.requestOnly ? 250 : 850);
+    }, transitionMs);
   }
   function renderReceipt() {
     if (!receipt) return;
     const q = B.quote(receipt), request = receipt.requestOnly;
-    $('b03CompleteTitle').textContent = request ? t('Tu consulta está lista.', 'Your enquiry is ready.') : t('Tu entrada de demostración.', 'Your demonstration ticket.');
+    $('b03CompleteTitle').textContent = request ? t('Tu consulta está lista.', 'Your enquiry is ready.') : t('Tu visita está confirmada.', 'Your visit is confirmed.');
     $('b03CompleteNote').textContent = request
       ? t('Envíala por WhatsApp para coordinar. Aún no hay una reserva confirmada.', 'Send it through WhatsApp to arrange your visit. No booking has been confirmed.')
-      : t('Pago de prueba aprobado. No se realizó ningún cobro ni envío de correo.', 'Test payment approved. No charge was made and no email was sent.');
+      : t('Confirmación de demostración. Sin cobro, reserva real ni envío de correo.', 'Demonstration confirmation. No charge, actual booking or email.');
     $('b03TicketName').textContent = levelName(B.level(receipt.level));
     $('b03TicketDate').textContent = `${fmt(receipt.date, { day: 'numeric', month: 'short', year: 'numeric' })}\n${receipt.time} · Lima`;
     $('b03TicketCount').textContent = countText(receipt).short;
@@ -199,7 +232,7 @@
     $('b03RequestSend').href = enquiry(receipt, receipt.buyer);
   }
   function renderLevels() {
-    $('b03LevelOptions').innerHTML = B.levels.map(item => `<button type="button" data-book-level="${item.id}" aria-pressed="${item.id === state.level}"><span><strong>${esc(levelName(item))}</strong><small>${esc(item[en() ? 'enInfo' : 'esInfo'])}\n${duration(item.minutes)}</small></span><b>${money(item.price)}<small>${esc(t('por adulto · ref.', 'per adult · est.'))}</small></b></button>`).join('');
+    $('b03LevelOptions').innerHTML = B.levels.filter(item => item.id !== state.level).map(item => `<button type="button" data-book-level="${item.id}" aria-pressed="${item.id === state.level}"><span><strong>${esc(levelName(item))}</strong><small>${esc(item[en() ? 'enInfo' : 'esInfo'])}\n${duration(item.minutes)}</small></span><b>${money(item.price)}<small>${esc(t('por adulto · ref.', 'per adult · est.'))}</small></b></button>`).join('');
   }
   function renderCalendar() {
     const first = calendarMonth + '-01', date = new Date(first + 'T12:00:00Z');
@@ -224,20 +257,18 @@
     calendarMonth = date.toISOString().slice(0, 7); renderCalendar();
     // The prev/next control retains focus when the grid is replaced.
   }
-  $('b03LevelOpen').addEventListener('click', () => { renderLevels(); dialogs.open($('b03LevelDialog'), $('b03LevelOpen')); });
-  $('b03CalendarOpen').addEventListener('click', () => { calendarMonth = state.date.slice(0, 7); renderCalendar(); dialogs.open($('b03CalendarDialog'), $('b03CalendarOpen')); });
+  Object.entries(pickers).forEach(([key, item]) => item.button.addEventListener('click', () => togglePicker(key)));
   $('b03MonthPrev').addEventListener('click', () => changeMonth(-1));
   $('b03MonthNext').addEventListener('click', () => changeMonth(1));
   document.addEventListener('click', event => {
     const button = event.target.closest('button'); if (!button || button.disabled || busy) return;
-    if (button.dataset.bookLevel) { chooseLevel(button.dataset.bookLevel); dialogs.close(); }
+    if (button.dataset.bookLevel) { chooseLevel(button.dataset.bookLevel); setPicker('', true); }
     else if (button.dataset.bookDate) {
       const value = button.dataset.bookDate; if (B.dateError(value) || !B.slots(value, state.level).length) return;
-      const wasCalendar = !!button.closest('#b03CalendarDialog'); state.date = value; defaultDate(); changed();
-      if (wasCalendar) dialogs.close();
-      else $('b03QuickDates').querySelector('[aria-pressed="true"]')?.focus({ preventScroll: true });
+      state.date = value; defaultDate(); changed(); setPicker('', true);
     } else if (button.dataset.bookTime) {
-      state.time = button.dataset.bookTime; changed(); $('b03Times').querySelector('[aria-pressed="true"]')?.focus({ preventScroll: true });
+      if (!B.slots(state.date, state.level).includes(button.dataset.bookTime)) return;
+      state.time = button.dataset.bookTime; changed(); setPicker('', true);
     } else if (button.dataset.bookCount) {
       const key = button.dataset.bookCount, delta = Number(button.dataset.delta), count = B.totalGuests(state);
       if (state[key] + delta < 0 || count + delta < B.level(state.level).minGuests || count + delta > core.visit.maxRequestGuests) return;
@@ -275,8 +306,8 @@
     const copy = { ...receipt, buyer: { ...receipt.buyer } }, label = t('Entrada de demostración', 'Demonstration ticket');
     $('b03Download').disabled = true;
     try {
-      const [logo, car, stamp] = await Promise.all(['assets/logo.png', 'assets/media/b012/red-cutout.webp', 'assets/media/b023/demo-qr.svg'].map(localDataURL));
-      const entries = Array.from({ length: B.totalGuests(copy) }, (_, i) => `<article><div class="main"><img class="logo" src="${logo}" alt="ARTECH"><h2>${esc(levelName(B.level(copy.level)))}</h2><img class="car" src="${car}" alt="Porsche GT3"><p>${esc(fmt(copy.date, { day: 'numeric', month: 'long', year: 'numeric' }))} · ${copy.time} (Lima)</p><p>${esc(copy.buyer.name)}</p><p>${esc(t('Visitante', 'Visitor'))} ${i + 1} / ${B.totalGuests(copy)}</p><small>ARTECH-DEMO-${String(i + 1).padStart(3, '0')} · ${esc(t('NO VÁLIDO PARA INGRESAR', 'NOT VALID FOR ADMISSION'))}</small></div><aside><img src="${stamp}" alt="QR de demostración"><b>DEMO</b><span>${esc(t('MUESTRA · NO VÁLIDO', 'SAMPLE · NOT VALID'))}</span></aside></article>`).join('');
+      const [logo, car, stamp] = await Promise.all(['assets/logo.png', 'assets/media/b04/checkout-front.webp', 'assets/media/b023/demo-qr.svg'].map(localDataURL));
+      const entries = Array.from({ length: B.totalGuests(copy) }, (_, i) => `<article><div class="main"><img class="logo" src="${logo}" alt="ARTECH"><h2>${esc(levelName(B.level(copy.level)))}</h2><img class="car" src="${car}" alt="Porsche oscuro"><p>${esc(fmt(copy.date, { day: 'numeric', month: 'long', year: 'numeric' }))} · ${copy.time} (Lima)</p><p>${esc(copy.buyer.name)}</p><p>${esc(t('Visitante', 'Visitor'))} ${i + 1} / ${B.totalGuests(copy)}</p><small>ARTECH-DEMO-${String(i + 1).padStart(3, '0')} · ${esc(t('NO VÁLIDO PARA INGRESAR', 'NOT VALID FOR ADMISSION'))}</small></div><aside><img src="${stamp}" alt="QR de demostración"><b>DEMO</b><span>${esc(t('MUESTRA · NO VÁLIDO', 'SAMPLE · NOT VALID'))}</span></aside></article>`).join('');
       const html = `<!doctype html><html lang="${en() ? 'en' : 'es'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ARTECH · ${esc(label)}</title><style>*{box-sizing:border-box}body{margin:0;padding:40px 20px;background:#080807;color:#ede5d9;font:14px/1.6 Arial,sans-serif}header,footer{max-width:850px;margin:0 auto 30px}h1{font-size:27px;font-weight:400}h2{font-size:25px;font-weight:400}article{display:grid;grid-template-columns:1fr 150px;max-width:850px;margin:0 auto 30px;border:1px solid #ad9877;border-radius:24px;background:#13110e;break-inside:avoid;overflow:hidden}.main{padding:30px}.logo{width:170px}.car{float:left;width:220px;max-width:48%;margin:0 20px 12px -15px}aside{border-left:1px dashed #ad9877;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px}aside img{width:105px;background:#fff}aside span,small{font-size:10px}small{display:block;clear:both;padding-top:15px;color:#c2ac8d}p{margin:5px 0}footer{font-size:12px;color:#b7a58b}@media(max-width:500px){body{padding:25px 12px}article{grid-template-columns:1fr 105px}.main{padding:20px}.logo{width:125px}.car{width:140px}aside{padding:12px}aside img{width:75px}h2{font-size:21px}}@media print{body{background:white;color:#111;padding:0}article{background:white;color:#111}.logo{filter:invert(1)}header,footer{color:#333}article{margin-bottom:20px}small{color:#333}}</style></head><body><header><h1>${esc(label)}</h1><p>${esc(t('Sin cobro, sin reserva y sin validez para ingresar. Puedes imprimir este archivo o guardarlo como PDF.', 'No charge, no booking and not valid for admission. You can print this file or save it as a PDF.'))}</p></header>${entries}<footer>ARTECH · Av. Huaylas 640, Chorrillos, Lima · info@artech.pe<br>${esc(t('Tarifa referencial del grupo', 'Indicative group price'))}: ${money(B.quote(copy).adultTotal)} · DEMO</footer></body></html>`;
       download(new Blob([html], { type: 'text/html;charset=utf-8' }), 'ARTECH-entradas-DEMO.html');
       $('b03Status').textContent = t('Muestra descargada. Ábrela para imprimir o guardar como PDF.', 'Sample downloaded. Open it to print or save as a PDF.');
@@ -289,7 +320,7 @@
     $('b03Status').textContent = t('Calendario descargado como plan tentativo, sin reserva.', 'Calendar downloaded as a tentative plan, without a booking.');
   });
   function route() {
-    if (!active()) { inTickets = false; cancelPending(); return; }
+    if (!active()) { setPicker(); inTickets = false; cancelPending(); return; }
     const routeLevel = core.parseHash(location.hash).id;
     if ((!inTickets || routeLevel !== lastRouteLevel) && B.levels.some(item => item.id === routeLevel)) {
       cancelPending(); step = 1; reached = 1; chooseLevel(routeLevel);
@@ -298,7 +329,8 @@
     inTickets = true; lastRouteLevel = routeLevel;
   }
   addEventListener('artech:route', route);
-  addEventListener('artech:lang', () => { render(); if ($('b03LevelDialog').open) renderLevels(); if ($('b03CalendarDialog').open) renderCalendar(); });
+  addEventListener('artech:cancel-checkout', cancelPending);
+  addEventListener('artech:lang', render);
   window.updateTickets = render;
   defaultDate(); render(); route();
 })();

@@ -255,18 +255,8 @@
     exitAnimation=intro.animate([{opacity:1},{opacity:0}],{duration:700,easing:'ease-out'});
     exitAnimation.finished.then(finish).catch(finish);
   }
-  const entrance=window.Artech.parseHash(location.hash).key==='top';
-  if(!entrance||preference.matches||window.Artech.storage('sessionStorage','artech_intro_b01_seen')==='1')reveal(true);
-  else{
-    introBlocking=true;intro.hidden=false;document.documentElement.classList.add('pl-lock');
-    background.forEach(el=>el.inert=true);header.inert=true;intro.focus({preventScroll:true});
-    introVideo.addEventListener('playing',()=>{
-      if(renderStarted||introDone)return;
-      renderStarted=true;stopIntroClock();introRemaining=INTRO_MS;startIntroClock();intro.classList.add('is-playing');
-    });
-    introVideo.src=introVideo.dataset.src;introVideo.load();
-    introVideo.play().catch(()=>{});startIntroClock();
-  }
+  // B06.3: open directly on the hero film, without the legacy car intro.
+  reveal(true);
   document.addEventListener('keydown',event=>{
     if(introDone)return;
     if(event.key==='Escape'){event.preventDefault();reveal(true);}

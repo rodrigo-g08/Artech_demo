@@ -1,4 +1,4 @@
-/* LP09 · Restored photographs; full-width frames and lateral fades without zoom. */
+/* LP10 · One continuous stage. Full-width photographs, source-height travel and lateral dissolves. */
 (function () {
   'use strict';
   const clamp = n => Math.max(0, Math.min(1, n));
@@ -39,22 +39,52 @@
   function fitScene({ width, height, imageWidth, imageHeight }) {
     const photoHeight = width * imageHeight / imageWidth;
     return { width, photoHeight, sceneHeight:Math.max(height,photoHeight),
-      top:Math.max(0,(height-photoHeight)/2), fits:photoHeight <= height + 1 };
+      top:Math.max(0,(height-photoHeight)/2), overflow:Math.max(0,photoHeight-height) };
   }
 
-  // A complete 16:9 photo can exceed a wide window's height. Keep native flow
-  // and fade its edges laterally instead of cropping it into the sticky viewport.
-  function flowFrame({ top, height, viewportHeight }) {
-    const entering = between(viewportHeight - top, .05 * viewportHeight, .75 * viewportHeight);
-    const leaving = between(-top, .45 * height, .9 * height);
-    return { edge:-40 + 180 * Math.min(entering, 1-leaving),
-      direction:entering < 1 ? 'to left' : 'to right' };
+  // Extra source height adds native scroll distance INSIDE the shared stage.
+  // It never switches the desktop journey back to stacked photographs.
+  function createTimeline({ height=1, heroOverflow=0, atelierOverflow=0, diningOverflow=0 } = {}) {
+    const viewportHeight = Math.max(1,height);
+    const overflows = [heroOverflow,atelierOverflow,diningOverflow].map(value=>Math.max(0,value));
+    const [hero,atelier,dining] = overflows.map(value=>value/viewportHeight);
+    return {
+      overflows, extra:[hero,atelier,dining],
+      duration:DURATION+hero+atelier+dining,
+      stops:[0,hero+STOPS[1],hero+STOPS[2],hero+atelier+STOPS[3]],
+      scans:[[0,hero],[hero+STOPS[2],hero+STOPS[2]+atelier],
+        [hero+atelier+STOPS[3],hero+atelier+STOPS[3]+dining]]
+    };
+  }
+  const BASE_TIMELINE = createTimeline();
+  function photoTravel(position, range, overflow) {
+    return range[1]>range[0] ? -overflow*clamp((position-range[0])/(range[1]-range[0])) : 0;
   }
 
-  // The photographs do not move laterally or zoom. Broad horizontal opacity gradients
+  function scenePosition(position, timeline) {
+    let p = Math.max(0,Math.min(timeline.duration,position));
+    p -= Math.min(timeline.extra[0],Math.max(0,p));
+    p -= Math.min(timeline.extra[1],Math.max(0,p-STOPS[2]));
+    p -= Math.min(timeline.extra[2],Math.max(0,p-STOPS[3]));
+    return p;
+  }
+  function remapPosition(position, previous, next) {
+    for (let i=0;i<previous.scans.length;i++) {
+      const [start,end] = previous.scans[i];
+      if (end>start && position>=start && position<=end) {
+        const fraction = (position-start)/(end-start);
+        return next.scans[i][0]+fraction*(next.scans[i][1]-next.scans[i][0]);
+      }
+    }
+    const p = scenePosition(position,previous);
+    return p+(p>0?next.extra[0]:0)+(p>STOPS[2]?next.extra[1]:0)+(p>STOPS[3]?next.extra[2]:0);
+  }
+
+  // The photographs never move sideways or zoom. Broad horizontal opacity gradients
   // exchange complete scenes while the wheel's approved vertical entrance remains.
-  function journeyFrame(position) {
-    const p = Math.max(0, Math.min(DURATION, position));
+  function journeyFrame(position, timeline = BASE_TIMELINE) {
+    const raw = Math.max(0, Math.min(timeline.duration, position));
+    const p = scenePosition(raw,timeline);
     const entry = between(p, .12, 1.25);
     const workshop = between(p, 2.2, 3.45);
     const dining = between(p, 4.4, 5.55);
@@ -62,11 +92,14 @@
     const atelierCopy = between(p, 2.75, 3.45) * (1 - between(p, 4.4, 4.95));
     const diningCopy = between(p, 4.95, 5.55);
     return {
-      heroAlpha:1-between(p,.48,1.25),
+      heroAlpha:1-between(p,.65,1.25),
       heroCopyAlpha:1-between(p,.12,.65),
       heroY:-10*entry, titleY:-40*entry,
-      floorAlpha:between(p,.5,1.15),
+      floorAlpha:between(p,.72,1.25),
       wheelY:90*(1-entry),
+      heroScroll:photoTravel(raw,timeline.scans[0],timeline.overflows[0]),
+      atelierPhotoY:photoTravel(raw,timeline.scans[1],timeline.overflows[1]),
+      diningPhotoY:photoTravel(raw,timeline.scans[2],timeline.overflows[2]),
       collectionEdge:140-180*workshop,
       collectionAlpha:collectionCopy, collectionX:-18*workshop,
       collectionY:24*(1-between(p,.7,1.25)),
@@ -79,7 +112,7 @@
       visible:[p<1.25,p>0&&p<3.45,p>2.2&&p<5.55,p>4.05]
     };
   }
-  if (typeof module === 'object' && module.exports) module.exports = { fitHero, fitCockpit, fitScene, flowFrame, journeyFrame, STOPS, DURATION };
+  if (typeof module === 'object' && module.exports) module.exports = { fitHero, fitCockpit, fitScene, createTimeline, remapPosition, journeyFrame, STOPS, DURATION };
   if (typeof document === 'undefined') return;
   const home = document.getElementById('b01Home'), hero = document.getElementById('top');
   const journey = document.getElementById('lpJourney');
@@ -93,7 +126,7 @@
   const closing = document.getElementById('home-visit');
   let frame = 0, resizeFrame = 0, screenHeight = innerHeight, enabled = false, ready = false;
   let loadingMedia = false, failedMedia = false;
-  let flowEnabled = false;
+  let timeline = BASE_TIMELINE, pendingSeek = null;
   let active = 0, near = true, pendingHash = /^#home-(collection|workshop|dining)$/.test(location.hash);
   const probe = document.createElement('div');
   probe.setAttribute('aria-hidden', 'true');
@@ -102,6 +135,7 @@
 
   const properties = Object.entries({
     heroAlpha:'',heroCopyAlpha:'',heroY:'vh',titleY:'px',floorAlpha:'',
+    heroScroll:'px',atelierPhotoY:'px',diningPhotoY:'px',
     wheelY:'vh',collectionEdge:'%',collectionAlpha:'',collectionX:'px',collectionY:'px',
     atelierAlpha:'',atelierEdge:'%',atelierCopyAlpha:'',atelierCopyX:'px',
     diningAlpha:'',diningCopyAlpha:'',diningCopyX:'px'
@@ -116,6 +150,7 @@
     if (desktop.matches && !reduce.matches && !ready && !loadingMedia && !failedMedia) prepareMedia();
     const wasEnabled = enabled;
     const previousPosition = wasEnabled ? -journey.getBoundingClientRect().top / screenHeight : 0;
+    const previousTimeline = timeline;
     screenHeight = probe.getBoundingClientRect().height || innerHeight;
     const width = document.documentElement.clientWidth;
     const result = fitHero({ width, height: screenHeight, header: header.getBoundingClientRect().height,
@@ -133,37 +168,40 @@
       const frame = fitScene({width,height:screenHeight,
         imageWidth:Number(img.getAttribute('width')),imageHeight:Number(img.getAttribute('height'))});
       panel.style.setProperty('--lp-photo-height',frame.photoHeight+'px');
+      panel.style.setProperty('--lp-photo-top',frame.top+'px');
       panel.style.setProperty('--lp-scene-height',frame.sceneHeight+'px');
       return frame;
     });
-    // Wide/short windows keep natural flow if a full-width photo is taller than the screen.
-    const photosFit = sceneFrames.every(frame => frame.fits);
+    timeline = createTimeline({height:screenHeight, heroOverflow:result.heroHeight-screenHeight,
+      atelierOverflow:sceneFrames[0].overflow, diningOverflow:sceneFrames[1].overflow});
     // Tall text must fit too: a zoomed viewport uses the complete static composition.
     const textFits = panels.slice(1).every(panel => {
       const text = panel.querySelector('.lp-collection-copy,.lp-editorial-copy');
       return text.offsetHeight < screenHeight * .56;
     });
-    const eligible = ready && desktop.matches && !reduce.matches && !result.flow && textFits && photosFit;
-    // If media finishes after the visitor has started reading, don't reorganize their page.
-    enabled = eligible && (wasEnabled || scrollY < result.heroHeight * .2 || pendingHash);
+    // Reserve the continuous layout immediately, even while images decode.
+    // Reduced motion, narrow/tiny windows, long text or unavailable media use natural flow.
+    enabled = desktop.matches && !reduce.matches && textFits && !failedMedia;
     home.classList.toggle('lp-cinematic', enabled);
-    flowEnabled = ready && desktop.matches && !reduce.matches && !enabled && !photosFit && textFits && !result.flow;
-    home.classList.toggle('lp-flow-motion', flowEnabled);
+    viewport.setAttribute('aria-busy', String(enabled && !ready));
     journey.style.setProperty('--lp-screen-height', screenHeight + 'px');
-    journey.style.setProperty('--lp-journey-height', ((DURATION + 1) * screenHeight) + 'px');
+    journey.style.setProperty('--lp-journey-height', ((timeline.duration + 1) * screenHeight) + 'px');
     if (!enabled) clearPanels();
     // Preserve the current chapter when resizing or turning reduced motion on.
-    if (wasEnabled && !enabled && previousPosition > .2 && previousPosition < DURATION) {
+    if (wasEnabled && !enabled && previousPosition > .2 && previousPosition < previousTimeline.duration) {
       const target = panels[active];
       window.scrollTo({ top: target.getBoundingClientRect().top + scrollY - header.offsetHeight, behavior: 'instant' });
-    } else if (enabled && wasEnabled && previousPosition > 0 && previousPosition < DURATION) {
+    } else if (enabled && wasEnabled && previousPosition > 0 && previousPosition < previousTimeline.duration) {
       const origin = journey.getBoundingClientRect().top + scrollY;
-      window.scrollTo({ top: origin + previousPosition * screenHeight, behavior: 'instant' });
+      window.scrollTo({ top: origin + remapPosition(previousPosition,previousTimeline,timeline)*screenHeight, behavior:'instant' });
     }
     if (pendingHash && (ready || failedMedia || reduce.matches || !desktop.matches)) {
       pendingHash = false;
       const index = panels.findIndex(panel => '#' + panel.id === location.hash);
       if (index >= 0) seek(index, true);
+    }
+    if (pendingSeek !== null && (ready || !enabled)) {
+      const index = pendingSeek; pendingSeek = null; seek(index,true);
     }
     paint();
   }
@@ -172,17 +210,8 @@
     frame = 0;
     if (document.hidden || document.body.classList.contains('page-open')) return;
     if (!near) return;
-    if (flowEnabled) {
-      panels.slice(1).forEach(panel => {
-        const rect = panel.getBoundingClientRect();
-        const state = flowFrame({top:rect.top, height:rect.height, viewportHeight:screenHeight});
-        panel.style.setProperty('--lp-flow-edge', state.edge.toFixed(5)+'%');
-        panel.style.setProperty('--lp-flow-direction', state.direction);
-      });
-      return;
-    }
     if (!enabled) return;
-    const state = journeyFrame(-journey.getBoundingClientRect().top / screenHeight);
+    const state = journeyFrame(ready ? -journey.getBoundingClientRect().top / screenHeight : 0, timeline);
     active = state.active;
     properties.forEach(([key, name, unit]) => viewport.style.setProperty(name, state[key].toFixed(5) + unit));
     panels.forEach((panel, i) => {
@@ -197,9 +226,10 @@
   function schedule() { if (!frame && !document.hidden) frame = requestAnimationFrame(paint); }
   function seek(index, immediate = false) {
     if (!Number.isInteger(index) || index < 0 || index > 4 || document.body.classList.contains('page-open')) return false;
+    if (enabled && !ready && index > 0 && index < 4) { pendingSeek = index; return true; }
     const target = index === 4 ? closing : panels[index];
     let top = target.getBoundingClientRect().top + scrollY - (index ? header.offsetHeight : 0);
-    if (enabled && index < 4) top = journey.getBoundingClientRect().top + scrollY + STOPS[index] * screenHeight;
+    if (enabled && index < 4) top = journey.getBoundingClientRect().top + scrollY + timeline.stops[index] * screenHeight;
     window.scrollTo({ top: Math.max(0, top), behavior: immediate || reduce.matches ? 'instant' : 'smooth' });
     if (immediate) { near = true; paint(); }
     return true;
@@ -263,6 +293,6 @@
       return new Promise((resolve, reject) => { img.addEventListener('load', resolve, { once:true }); img.addEventListener('error', reject, { once:true }); });
     })).then(() => { ready = true; loadingMedia = false; resize(); }).catch(() => { ready = false; loadingMedia = false; failedMedia = true; resize(); });
   }
-  window.ArtechLandingMotion = Object.freeze({ version:'LP09', refresh:resize, seek });
+  window.ArtechLandingMotion = Object.freeze({ version:'LP10', refresh:resize, seek });
   fit();
 })();

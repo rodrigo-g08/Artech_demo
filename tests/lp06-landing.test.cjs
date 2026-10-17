@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { fitHero, fitCockpit, fitScene, flowFrame, journeyFrame, STOPS, DURATION } = require('../assets/js/artech-lp03-lp06.js');
+const { fitHero, fitCockpit, fitScene, createTimeline, remapPosition, journeyFrame, STOPS, DURATION } = require('../assets/js/artech-lp03-lp06.js');
 
 test('Cars fill the entire width; title, complete bodywork, pluses and cue fit desktop screens', () => {
   for (const [width,height] of [[1905,895],[1881,895],[1920,900],[1920,1080],[1366,768],[1440,900],[1536,730],[2560,1440],[1024,768]]) {
@@ -53,7 +53,7 @@ test('Every chapter has a readable hold and a visible, correctly targeted contro
   assert.equal(journeyFrame(STOPS[3]).diningAlpha,1);
 });
 
-test('Collection fades laterally into workshop without moving, rotating or zooming the photograph', () => {
+test('Collection fades laterally into workshop without sideways motion, rotation or zoom', () => {
   const entry=journeyFrame(.7),rest=journeyFrame(1.65),fade=journeyFrame(2.95),atelier=journeyFrame(3.9),meal=journeyFrame(4.95),dining=journeyFrame(5.95);
   assert.ok(entry.visible[0]&&entry.visible[1]);
   assert.ok(entry.wheelY>rest.wheelY);
@@ -82,7 +82,7 @@ test('The entire cockpit source fits below the header without negative offsets o
   }
 });
 
-test('Restored photographs preserve full width and aspect ratio, using natural height when the screen is short', () => {
+test('Restored photographs preserve full width and aspect ratio and measure the complete extra source height', () => {
   const media=require('../assets/data/lp06-media.json');
   const scenes=media.media.filter(item=>/\/(atelier|dining)-2560\.webp$/.test(item.file));
   assert.equal(scenes.length,2);
@@ -94,24 +94,61 @@ test('Restored photographs preserve full width and aspect ratio, using natural h
       assert.ok(f.top>=0 && f.top+f.photoHeight<=f.sceneHeight+.01);
       assert.ok(Math.abs(f.width/f.photoHeight-scene.width/scene.height)<.00001);
     }
-    assert.equal(fitScene({width:1920,height:1080,imageWidth:scene.width,imageHeight:scene.height}).fits,true);
+    assert.equal(fitScene({width:1920,height:1080,imageWidth:scene.width,imageHeight:scene.height}).overflow,0);
     const wide=fitScene({width:1905,height:895,imageWidth:scene.width,imageHeight:scene.height});
-    assert.equal(wide.fits,false);
+    assert.ok(wide.overflow>0);
     assert.equal(wide.sceneHeight,wide.photoHeight);
   }
 });
 
-test('Tall restored photos retain lateral fades in native flow, with a fully visible reading interval', () => {
-  const geometry={height:1072,viewportHeight:895};
-  assert.equal(flowFrame({...geometry,top:895}).edge,-40);
-  assert.equal(flowFrame({...geometry,top:200}).edge,140);
-  assert.equal(flowFrame({...geometry,top:0}).edge,140);
-  assert.equal(flowFrame({...geometry,top:-400}).edge,140);
-  assert.ok(flowFrame({...geometry,top:500}).edge > -40);
-  assert.ok(flowFrame({...geometry,top:-700}).edge < 140);
-  assert.equal(flowFrame({...geometry,top:-1072}).edge,-40);
-  assert.equal(flowFrame({...geometry,top:500}).direction,'to left');
-  assert.equal(flowFrame({...geometry,top:-700}).direction,'to right');
+test('The entire taller photo is traversed while fully opaque, before the lateral handoff', () => {
+  for(const [width,height] of [[1897,898],[1887,897],[1920,900],[2560,1080],[1366,768],[1920,1080]]) {
+    const photo=fitScene({width,height,imageWidth:2560,imageHeight:1440});
+    const timeline=createTimeline({height,atelierOverflow:photo.overflow,diningOverflow:photo.overflow});
+    assert.ok(Math.abs(timeline.duration-(6.5+2*photo.overflow/height))<.00001);
+    for(const [index,key,alpha] of [[1,'atelierPhotoY','atelierCopyAlpha'],[2,'diningPhotoY','diningCopyAlpha']]) {
+      const [start,end]=timeline.scans[index];
+      const first=journeyFrame(start,timeline),last=journeyFrame(end,timeline);
+      assert.ok(Math.abs(first[key])<.00001);
+      assert.ok(Math.abs(last[key]+photo.overflow)<.00001);
+      assert.ok(Math.abs(photo.top+last[key]+photo.photoHeight-height)<.00001 || photo.overflow===0);
+      for(let i=0;i<=10;i++) {
+        const f=journeyFrame(start+(end-start)*i/10,timeline);
+        assert.equal(f.active,index+1);
+        assert.equal(f[alpha],1,'Text remains readable through the complete image');
+        assert.ok(f[key]<=.00001 && f[key]>=-photo.overflow-.00001);
+        assert.equal(f.visible[index+1],true);
+      }
+    }
+    const overlap=journeyFrame(4.95+timeline.extra[1],timeline);
+    assert.ok(overlap.visible[2]&&overlap.visible[3],'Both photos share the transition');
+    assert.ok(overlap.atelierEdge>0&&overlap.atelierEdge<100);
+    assert.equal(overlap.diningAlpha,1,'Incoming photo is already behind the outgoing one');
+  }
+});
+
+test('Wheel enters while the cars are still visible, then settles without zoom', () => {
+  const frame=journeyFrame(.6);
+  assert.equal(frame.heroAlpha,1);
+  assert.equal(frame.floorAlpha,0);
+  assert.ok(frame.wheelY>0 && frame.wheelY<60);
+  assert.ok(frame.visible[0] && frame.visible[1]);
+});
+
+test('Resizing preserves the dissolve and progress through a tall photograph', () => {
+  const before=createTimeline({height:898,atelierOverflow:169,diningOverflow:169});
+  const after=createTimeline({height:800,atelierOverflow:280,diningOverflow:280});
+  for(const p of [0,.6,1.65,2.95,3.2,4.95+before.extra[1]]) {
+    const mapped=remapPosition(p,before,after);
+    const a=journeyFrame(p,before),b=journeyFrame(mapped,after);
+    for(const key of ['active','collectionEdge','atelierEdge','heroAlpha','diningAlpha']) {
+      assert.ok(Math.abs(a[key]-b[key])<.00001,key);
+    }
+    assert.ok(Math.abs(remapPosition(p,before,before)-p)<.00001);
+  }
+  const p=before.scans[2][0]+before.extra[2]*.5;
+  const b=journeyFrame(remapPosition(p,before,after),after);
+  assert.ok(Math.abs(b.diningPhotoY+140)<.00001);
 });
 
 test('Camera is continuous, reversible and clamped across fast forward/back scrolling', () => {

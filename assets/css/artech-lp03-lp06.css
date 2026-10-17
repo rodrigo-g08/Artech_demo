@@ -1,4 +1,4 @@
-/* LP09 · Restored source frames; lateral dissolves without scale or cover cropping. */
+/* LP10 · Continuous shared stage; complete source travel, no scale or cover cropping. */
 body:not(.page-open) {overflow-x:clip}
 body:not(.page-open) #header.b01-header,
 body:not(.page-open) #header.b01-header.scrolled {border:0;box-shadow:none;background:linear-gradient(#030303f5,#030303b3 60%,#03030300);backdrop-filter:none}
@@ -48,11 +48,12 @@ body:not(.page-open) #header.b01-header .b01-nav-links a:hover {text-shadow:none
 .lp-editorial-copy:before {content:"";position:absolute;z-index:-1;inset:-34px -48px -34px -48px;background:radial-gradient(ellipse at 35% 42%,#030303eb 0%,#030303b8 48%,#03030300 76%);pointer-events:none}
 .lp-home .lp-editorial-copy h2 {font:300 clamp(36px,3.8vw,64px)/1.08 var(--display);letter-spacing:-.045em;white-space:pre-line;color:#f3f3f1;margin:0 0 22px}
 
-/* Enhancement: all four scenes share ONE sticky viewport. */
+/* Enhancement: all four scenes share ONE sticky viewport, including tall images. */
+.lp-home .lp-journey section {border:0;box-shadow:none;outline-offset:-2px}
 .lp-home.lp-cinematic .lp-journey {height:var(--lp-journey-height,700svh)}
 .lp-home.lp-cinematic .lp-viewport {position:sticky;top:0;height:var(--lp-screen-height,100svh);overflow:clip;isolation:isolate}
 .lp-home.lp-cinematic .lp-viewport>section {position:absolute;inset:0;width:100%;height:100%;min-height:0;padding:0;margin:0;scroll-margin-top:0}
-.lp-home.lp-cinematic #top.lp-hero {z-index:3;opacity:var(--lp-hero-alpha,1)}
+.lp-home.lp-cinematic #top.lp-hero {z-index:3;height:var(--lp-hero-height,100svh);opacity:var(--lp-hero-alpha,1);transform:translateY(var(--lp-hero-scroll,0px))}
 .lp-home.lp-cinematic #top .b12-lineup {transform:translateY(var(--lp-hero-y,0vh))}
 .lp-home.lp-cinematic #top .lp-hero-copy {opacity:var(--lp-hero-copy-alpha,1);transform:translateY(var(--lp-title-y,0px))}
 .lp-home.lp-cinematic #top .lp-hero-tools {opacity:var(--lp-hero-copy-alpha,1)}
@@ -62,17 +63,15 @@ body:not(.page-open) #header.b01-header .b01-nav-links a:hover {text-shadow:none
 .lp-home.lp-cinematic .lp-cockpit {transform:translateY(var(--lp-wheel-y,90vh));will-change:transform}
 .lp-home.lp-cinematic .lp-collection-copy {position:absolute;left:67%;right:5%;top:50%;padding:0;max-width:480px;opacity:var(--lp-collection-alpha,0);transform:translate(var(--lp-collection-x,0px),calc(-50% + var(--lp-collection-y,24px)));pointer-events:auto}
 .lp-home.lp-cinematic #home-workshop {z-index:2;opacity:var(--lp-atelier-alpha,0);mask-image:linear-gradient(to right,#000 calc(var(--lp-atelier-edge,140%) - 40%),transparent calc(var(--lp-atelier-edge,140%) + 40%));-webkit-mask-image:linear-gradient(to right,#000 calc(var(--lp-atelier-edge,140%) - 40%),transparent calc(var(--lp-atelier-edge,140%) + 40%))}
+.lp-home.lp-cinematic .lp-editorial-visual {position:absolute;left:0;right:0;top:var(--lp-photo-top,0px);bottom:auto;width:100%;height:auto;max-width:none}
+.lp-home.lp-cinematic #home-workshop .lp-editorial-visual {transform:translateY(var(--lp-atelier-photo-y,0px))}
+.lp-home.lp-cinematic #home-dining .lp-editorial-visual {transform:translateY(var(--lp-dining-photo-y,0px))}
 .lp-home.lp-cinematic #home-workshop .lp-editorial-copy {opacity:var(--lp-atelier-copy-alpha,0);transform:translateX(var(--lp-atelier-copy-x,18px))}
 .lp-home.lp-cinematic #home-dining {z-index:1;opacity:var(--lp-dining-alpha,0)}
 .lp-home.lp-cinematic #home-dining .lp-editorial-copy {opacity:var(--lp-dining-copy-alpha,0);transform:translateX(var(--lp-dining-copy-x,18px))}
 .lp-home.lp-cinematic .lp-editorial-copy {top:max(calc(var(--f02-header,92px) + 38px),17%)}
 .lp-home.lp-cinematic [inert] {pointer-events:none!important}
 .lp-home.lp-cinematic .lp-viewport>section[data-lp-dormant] {visibility:hidden}
-
-/* Full-width photos taller than a wide window keep their natural height.
-   Only imagery dissolves: readable text and keyboard targets remain available. */
-.lp-home.lp-flow-motion .lp-cockpit,
-.lp-home.lp-flow-motion .lp-editorial-visual {mask-image:linear-gradient(var(--lp-flow-direction,to left),#000 calc(var(--lp-flow-edge,140%) - 40%),transparent calc(var(--lp-flow-edge,140%) + 40%));-webkit-mask-image:linear-gradient(var(--lp-flow-direction,to left),#000 calc(var(--lp-flow-edge,140%) - 40%),transparent calc(var(--lp-flow-edge,140%) + 40%))}
 
 .lp-closing {display:flex;justify-content:space-between;align-items:center;gap:40px;padding:95px 7vw 100px;margin:0;background:linear-gradient(#030303,#000);scroll-margin-top:var(--f02-header,92px)}
 .lp-home .lp-closing h2 {font:300 clamp(36px,3.7vw,64px)/1.12 var(--display);letter-spacing:-.045em;margin:0;color:#f3f3f1}

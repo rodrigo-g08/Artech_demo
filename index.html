@@ -11,7 +11,7 @@
 <meta property="og:description" content="Clásicos y contemporáneos. Una colección para descubrir en Lima.">
 <meta property="og:type" content="website">
 <link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
-<link rel="preload" as="image" href="assets/media/e362/home-studio-1920.webp" imagesrcset="assets/media/e362/home-studio-960.webp 960w, assets/media/e362/home-studio-1920.webp 1672w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="assets/media/lp06/hero-red-1280.webp" imagesrcset="assets/media/lp06/hero-red-768.webp 768w, assets/media/lp06/hero-red-1280.webp 1280w, assets/media/lp06/hero-red-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">
 <link rel="preload" as="font" href="assets/fonts/Inter-Variable.ttf" type="font/ttf" crossorigin>
 <script>
 (() => {
@@ -41,6 +41,8 @@
 <link rel="stylesheet" href="assets/css/artech-e360.css?v=f02-1">
 <link rel="stylesheet" href="assets/css/artech-e361.css?v=e361-1">
 <link rel="stylesheet" href="assets/css/artech-e362.css?v=e362-1">
+<link rel="stylesheet" href="assets/css/artech-lp01-lp02.css?v=lp02-1">
+<link rel="stylesheet" href="assets/css/artech-lp03-lp06.css?v=lp09-1">
 
 </head>
 <body>
@@ -85,116 +87,88 @@
 </header>
 
 <main id="main-content" tabindex="-1">
-<!-- B01.2 · Three generations and a complete photographic journey. -->
-<section id="b01Home" class="home-only b01-home b12-home" aria-label="Descubre ARTECH">
- <section id="top" class="b12-hero b12-section e362-home" data-b01-scene="0" aria-labelledby="b01HeroTitle">
-  <div class="b12-hero-copy">
-   <p data-b01-es="Museo del automóvil · Lima, Perú" data-b01-en="Automobile museum · Lima, Peru" class="b01-eyebrow">Museo del automóvil · Lima, Perú</p>
-   <h1 data-b01-es="El automóvil,
+<!-- LP08 · Complete images and lateral crossfades. No image zoom or cover cropping. -->
+<section id="b01Home" class="home-only b01-home b12-home lp-home" aria-label="Descubre ARTECH">
+ <div id="lpJourney" class="lp-journey">
+ <div class="lp-viewport" tabindex="-1">
+ <section id="top" class="lp-hero" data-b01-scene="0" aria-labelledby="b01HeroTitle" data-lit="red">
+  <div class="lp-hero-copy">
+   <p class="b01-eyebrow" data-b01-es="Museo del automóvil · Lima, Perú" data-b01-en="Automobile museum · Lima, Peru">Museo del automóvil · Lima, Perú</p>
+   <h1 id="b01HeroTitle" data-b01-es="El automóvil,
 hecho experiencia." data-b01-en="The automobile,
-an experience." id="b01HeroTitle">El automóvil,
+an experience.">El automóvil,
 hecho experiencia.</h1>
-   <p data-b01-es="Clásicos extraordinarios. Ingeniería contemporánea." data-b01-en="Extraordinary classics. Contemporary engineering." class="b01-lead">Clásicos extraordinarios. Ingeniería contemporánea.</p>
-   <a data-b01-es="Descubrir ARTECH ↓" data-b01-en="Discover ARTECH ↓" class="b01-text-action" href="#home-collection" data-b01-seek="1">Descubrir ARTECH ↓</a>
+   <p class="b01-lead" data-b01-es="Colección, restauración y gastronomía." data-b01-en="Collection, restoration and dining.">Colección, restauración y gastronomía.</p>
   </div>
   <div class="f01-halos" aria-hidden="true" hidden><i></i><i></i><i></i></div>
-  <div class="b12-lineup" aria-label="Tres épocas de la colección ARTECH">
-   <div class="e362-home-canvas">
-    <picture><img src="assets/media/e362/home-studio-1920.webp" srcset="assets/media/e362/home-studio-960.webp 960w, assets/media/e362/home-studio-1920.webp 1672w" sizes="100vw" alt="Clásico bitono, Porsche GT3 rojo frontal y Porsche Turbo blanco, sobre un mismo suelo de estudio" data-b01-alt-es="Clásico bitono, Porsche GT3 rojo frontal y Porsche Turbo blanco, sobre un mismo suelo de estudio" data-b01-alt-en="Two-tone classic, front-facing red Porsche GT3 and white Porsche Turbo on one studio floor" width="1672" height="941" decoding="async" id="b01HeroImage" fetchpriority="high"></picture>
-    <div class="f02-lineup-access">
-     <a class="f02-car-access f02-car-access-classic" href="#exp3d/classic" data-e360-entry="classic" aria-label="Explorar el roadster clásico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span data-b01-es="Clásico" data-b01-en="Classic" aria-hidden="true">Clásico</span></a>
-     <a class="f02-car-access f02-car-access-red" href="#exp3d/red" data-e360-entry="red" aria-label="Explorar Porsche 911 GT3, 2010"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span aria-hidden="true">GT3</span></a>
-     <a class="f02-car-access f02-car-access-white" href="#exp3d/white" data-e360-entry="white" aria-label="Explorar Porsche 911 Turbo, 1986"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span aria-hidden="true">Turbo</span></a>
+  <div class="b12-lineup">
+   <div class="lp-stage">
+    <img id="b01HeroImage" class="lp-base is-lit" data-lp-image="red" src="assets/media/lp06/hero-red-1280.webp" srcset="assets/media/lp06/hero-red-768.webp 768w, assets/media/lp06/hero-red-1280.webp 1280w, assets/media/lp06/hero-red-2560.webp 2560w" sizes="100vw" alt="Clásico bitono, Porsche GT3 rojo y Porsche Turbo blanco sobre un mismo suelo de estudio" data-b01-alt-es="Clásico bitono, Porsche GT3 rojo y Porsche Turbo blanco sobre un mismo suelo de estudio" data-b01-alt-en="Two-tone classic, red Porsche GT3 and white Porsche Turbo on one studio floor" width="2560" height="1440" decoding="async" fetchpriority="high">
+    <img data-lp-image="classic" data-src="assets/media/lp06/hero-classic-1280.webp" data-srcset="assets/media/lp06/hero-classic-768.webp 768w, assets/media/lp06/hero-classic-1280.webp 1280w, assets/media/lp06/hero-classic-2560.webp 2560w" alt="" aria-hidden="true" width="2560" height="1440" decoding="async" fetchpriority="low">
+    <img data-lp-image="white" data-src="assets/media/lp06/hero-white-1280.webp" data-srcset="assets/media/lp06/hero-white-768.webp 768w, assets/media/lp06/hero-white-1280.webp 1280w, assets/media/lp06/hero-white-2560.webp 2560w" alt="" aria-hidden="true" width="2560" height="1440" decoding="async" fetchpriority="low">
+    <div class="lp-car-links">
+     <a class="lp-car-link" href="#exp3d/classic" data-lp-car="classic" data-e360-entry="classic" aria-label="Explorar el roadster clásico"><span class="lp-car-marker" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span class="lp-car-label" data-b01-es="Explorar 360 ↗" data-b01-en="Explore 360 ↗">Explorar 360 ↗</span></span></a>
+     <a class="lp-car-link is-lit" href="#exp3d/red" data-lp-car="red" data-e360-entry="red" aria-label="Explorar Porsche 911 GT3, 2010"><span class="lp-car-marker" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span class="lp-car-label" data-b01-es="Explorar 360 ↗" data-b01-en="Explore 360 ↗">Explorar 360 ↗</span></span></a>
+     <a class="lp-car-link" href="#exp3d/white" data-lp-car="white" data-e360-entry="white" aria-label="Explorar Porsche 911 Turbo, 1986"><span class="lp-car-marker" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span class="lp-car-label" data-b01-es="Explorar 360 ↗" data-b01-en="Explore 360 ↗">Explorar 360 ↗</span></span></a>
     </div>
    </div>
   </div>
+  <div id="lpHeroTools" class="lp-hero-tools">
+  <div class="lp-light-selectors" role="group" aria-label="Elige qué auto iluminar" hidden>
+   <button type="button" data-lp-select="classic" aria-pressed="false" data-b01-es="Clásico" data-b01-en="Classic">Clásico</button>
+   <button type="button" data-lp-select="red" aria-pressed="true" data-b01-es="GT3" data-b01-en="GT3">GT3</button>
+   <button type="button" data-lp-select="white" aria-pressed="false" data-b01-es="Turbo" data-b01-en="Turbo">Turbo</button>
+  </div>
+  <a class="lp-hero-cue" href="#home-collection" data-lp-seek="1"><span data-b01-es="Desliza para descubrir ARTECH" data-b01-en="Scroll to discover ARTECH">Desliza para descubrir ARTECH</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v17m-5-5 5 5 5-5"/></svg></a>
+  </div>
  </section>
- <div class="b12-story" data-b12-story="home">
-  <section class="b12-collection b12-section" id="home-collection" data-b01-scene="1">
-    <div class="b12-heading b12-reveal">
-      <p data-b01-es="La colección" data-b01-en="The collection" class="b01-eyebrow">La colección</p>
-      <h2 data-b01-es="Distintas épocas.
-Una misma pasión." data-b01-en="Different eras.
-The same passion." >Distintas épocas.
-Una misma pasión.</h2>
-      <p data-b01-es="Historia, diseño e ingeniería en una colección viva." data-b01-en="History, design and engineering in a living collection." class="b01-lead">Historia, diseño e ingeniería en una colección viva.</p>
-      <div class="b12-filters" role="group" aria-label="Selección de automóviles">
-        <button data-b01-es="Destacados" data-b01-en="Featured" class="b01-button b01-primary" type="button" data-b12-filter="all" aria-pressed="true">Destacados</button>
-        <button data-b01-es="Clásicos" data-b01-en="Classics" class="b01-button b01-secondary" type="button" data-b12-filter="classic" aria-pressed="false">Clásicos</button>
-        <button data-b01-es="Modernos" data-b01-en="Modern" class="b01-button b01-secondary" type="button" data-b12-filter="modern" aria-pressed="false">Modernos</button>
-      </div>
-    </div>
-    <div class="b12-duo b12-reveal" aria-live="polite">
-      <article class="b12-piece" data-b12-piece="classic">
-        <div class="b12-piece-photo"><img src="assets/media/b012/classic-cutout.webp" alt="Automóvil clásico bitono de la colección ARTECH" width="1536" height="1024" decoding="async" loading="lazy"></div>
-        <p data-b01-es="Los orígenes · Clásico" data-b01-en="The origins · Classic" class="b12-piece-kicker">Los orígenes · Clásico</p>
-        <h3 data-b01-es="El origen de una pasión" data-b01-en="Where a passion began" >El origen de una pasión</h3>
-        <button data-b01-es="Descubrir la pieza ↗" data-b01-en="Discover the vehicle ↗" class="b01-button b01-secondary" type="button" data-b12-select="classic" aria-controls="home-feature">Descubrir la pieza ↗</button>
-      </article>
-      <article class="b12-piece" data-b12-piece="red">
-        <div class="b12-piece-photo"><img src="assets/media/b012/red-cutout.webp" alt="Porsche 911 GT3 rojo fotografiado de frente" width="1536" height="1024" decoding="async" loading="lazy"></div>
-        <p data-b01-es="2010 · Contemporáneo" data-b01-en="2010 · Contemporary" class="b12-piece-kicker">2010 · Contemporáneo</p>
-        <h3>Porsche 911 GT3</h3>
-        <button data-b01-es="Descubrir la pieza ↗" data-b01-en="Discover the vehicle ↗" class="b01-button b01-secondary" type="button" data-b12-select="red" aria-controls="home-feature">Descubrir la pieza ↗</button>
-      </article>
-      <article class="b12-piece" data-b12-piece="white" hidden>
-        <div class="b12-piece-photo"><img src="assets/media/b012/white-cutout.webp" alt="Porsche 911 Turbo blanco de la colección" width="1536" height="1024" decoding="async" loading="lazy"></div>
-        <p data-b01-es="1986 · Clásico" data-b01-en="1986 · Classic" class="b12-piece-kicker">1986 · Clásico</p>
-        <h3>Porsche 911 Turbo</h3>
-        <button data-b01-es="Descubrir la pieza ↗" data-b01-en="Discover the vehicle ↗" class="b01-button b01-secondary" type="button" data-b12-select="white" aria-controls="home-feature">Descubrir la pieza ↗</button>
-      </article>
-    </div>
-    <div class="b12-collection-action"><a data-b01-es="Explorar toda la selección" data-b01-en="Explore the full selection" class="b01-button b01-secondary" data-b12-gallery-open="home" href="#p-collection/catalogue">Explorar toda la selección</a></div>
-  </section>
-  <section class="b12-gallery b12-section" id="home-gallery" data-section="catalogue" hidden>
-    <div class="b12-gallery-heading"><h2 data-b01-es="Una mirada más cercana." data-b01-en="A closer look." >Una mirada más cercana.</h2><button data-b01-es="Cerrar selección ×" data-b01-en="Close selection ×" type="button" data-b12-gallery-close class="b01-text-action">Cerrar selección ×</button></div>
-    <div class="b12-gallery-grid">
-      <figure><img class="" src="assets/media/b012/classic-original-960.webp" srcset="assets/media/b012/classic-original-960.webp 960w, assets/media/b012/classic-original-1920.webp 1920w" sizes="(max-width:700px) 100vw, 70vw" alt="Automóvil clásico bitono en ARTECH" width="960" height="640" loading="lazy" decoding="async"><figcaption><span data-b01-es="El origen de una pasión" data-b01-en="Where a passion began" >El origen de una pasión</span></figcaption></figure>
-      <figure><img class="" src="assets/media/b012/red-side-960.webp" srcset="assets/media/b012/red-side-960.webp 960w, assets/media/b012/red-side-1920.webp 1920w" sizes="(max-width:700px) 100vw, 70vw" alt="Vista lateral del Porsche 911 GT3 rojo" width="960" height="640" loading="lazy" decoding="async"><figcaption>Porsche 911 GT3</figcaption></figure>
-      <figure><img class="" src="assets/media/b012/white-side-960.webp" srcset="assets/media/b012/white-side-960.webp 960w, assets/media/b012/white-side-1920.webp 1920w" sizes="(max-width:700px) 100vw, 70vw" alt="Vista lateral del Porsche 911 Turbo blanco" width="960" height="640" loading="lazy" decoding="async"><figcaption>Porsche 911 Turbo</figcaption></figure>
-    </div>
-  </section>
-  <section class="b12-feature b12-section" id="home-feature" data-b01-scene="2">
-    <div class="b12-feature-copy b12-reveal">
-      <p class="b01-eyebrow" data-b12-feature-kicker>Porsche 911 GT3 · 2010</p>
-      <h2 data-b01-es="Una pieza.
-Muchas historias." data-b01-en="One vehicle.
-Many stories." >Una pieza.
-Muchas historias.</h2>
-      <p data-b01-es="Acércate al diseño que hizo época." data-b01-en="Get closer to the design that defined an era." class="b01-lead">Acércate al diseño que hizo época.</p>
-      <a data-b01-es="Descubrir por dentro ↗" data-b01-en="Discover the interior ↗" class="b01-button b01-primary" href="#home-interior" data-b12-enter>Descubrir por dentro ↗</a>
-      <div class="b12-carousel-controls" role="group" aria-label="Pieza destacada">
-        <button type="button" data-b12-prev aria-label="Pieza anterior">‹</button>
-        <span data-b12-count role="status">01 / 03</span>
-        <button type="button" data-b12-next aria-label="Pieza siguiente">›</button>
-      </div>
-      <p class="b12-feature-name" data-b12-feature-name>Porsche 911 GT3</p>
-    </div>
-    <div class="b12-feature-visual"><img src="assets/media/b012/red-cutout.webp" alt="Porsche 911 GT3 rojo" width="1536" height="1024" decoding="async" loading="lazy" data-b12-feature-image></div>
-  </section>
-  <section class="b12-interior" id="home-interior" data-b12-interior data-b01-scene="3">
-    <div class="b12-interior-stage">
-      <div class="b12-interior-images"><div class="b12-interior-wide"><img class="" src="assets/media/b012/interior-wide-960.webp" srcset="assets/media/b012/interior-wide-960.webp 960w, assets/media/b012/interior-wide-1920.webp 1920w" sizes="(max-width:700px) 100vw, 70vw" alt="Interior del Porsche 911 GT3: volante, asientos y consola" width="960" height="640" loading="lazy" decoding="async"></div><div class="b12-interior-close"><img class="" src="assets/media/b012/interior-close-960.webp" srcset="assets/media/b012/interior-close-960.webp 960w, assets/media/b012/interior-close-1920.webp 1920w" sizes="(max-width:700px) 100vw, 70vw" alt="Volante e instrumentos del Porsche 911 GT3" width="960" height="640" loading="lazy" decoding="async"></div></div>
-      <div class="b12-interior-copy"><p data-b01-es="Desde dentro" data-b01-en="From within" class="b01-eyebrow">Desde dentro</p><h2 data-b01-es="El detalle
-lo cambia todo." data-b01-en="Detail
-changes everything." >El detalle
-lo cambia todo.</h2><p data-b01-es="Sigue bajando para entrar en la experiencia." data-b01-en="Keep scrolling to step inside." class="b01-lead b12-scroll-hint">Sigue bajando para entrar en la experiencia.</p></div>
-      <div class="b12-interior-bottom"><p class="b12-interior-caption" data-b12-interior-caption aria-live="polite"></p><div class="b12-interior-controls" role="group" aria-label="Recorrido interior">
-        <button data-b01-es="01 · Interior" data-b01-en="01 · Interior" type="button" data-b12-view="0" aria-pressed="true">01 · Interior</button>
-        <button data-b01-es="02 · Volante" data-b01-en="02 · Steering wheel" type="button" data-b12-view="1" aria-pressed="false">02 · Volante</button>
-        <button data-b01-es="03 · Consola" data-b01-en="03 · Console" type="button" data-b12-view="2" aria-pressed="false">03 · Consola</button>
-      </div></div>
-      <div class="b12-interior-progress" aria-hidden="true"><span></span></div>
-    </div>
-  </section>
-  <section class="b12-workshop b12-section" id="home-workshop" data-b01-scene="4">
-    <div class="b12-workshop-media"><img class="" src="assets/media/b012/craft-960.webp" srcset="assets/media/b012/craft-960.webp 960w, assets/media/b012/craft-1920.webp 1920w" sizes="(max-width:700px) 100vw, 70vw" alt="Faros, parrilla y carrocería de un automóvil clásico de ARTECH" width="960" height="640" loading="lazy" decoding="async"></div>
-    <div class="b12-workshop-copy b12-reveal"><p data-b01-es="El taller" data-b01-en="The workshop" class="b01-eyebrow">El taller</p><h2 data-b01-es="Detrás de cada pieza,
-un oficio." data-b01-en="Behind every vehicle,
-a craft." >Detrás de cada pieza,
-un oficio.</h2><p data-b01-es="La ingeniería también se hace a mano." data-b01-en="Engineering is also made by hand." class="b01-lead">La ingeniería también se hace a mano.</p><a data-b01-es="Entrar al taller ↗" data-b01-en="Enter the workshop ↗" class="b01-button b01-primary" href="#p-workshops">Entrar al taller ↗</a></div>
-  </section>
-</div>
+ <section id="home-collection" class="lp-collection" data-b01-scene="1" aria-labelledby="lpCollectionTitle">
+  <div class="lp-collection-stage">
+  <figure class="lp-cockpit"><img src="assets/media/lp01/cockpit-1536.webp" srcset="assets/media/lp01/cockpit-960.webp 960w, assets/media/lp01/cockpit-1536.webp 1536w" sizes="(max-width:899px) 100vw, 68vw" width="1536" height="1024" alt="Volante de cuero negro, costuras rojas e instrumentos en penumbra" data-b01-alt-es="Volante de cuero negro, costuras rojas e instrumentos en penumbra" data-b01-alt-en="Black leather steering wheel, red stitching and instruments in the shadows" loading="lazy" decoding="async"></figure>
+  <div class="lp-collection-copy">
+   <p class="b01-eyebrow" data-b01-es="01 / LA COLECCIÓN" data-b01-en="01 / THE COLLECTION">01 / LA COLECCIÓN</p>
+   <h2 id="lpCollectionTitle" data-b01-es="Cada detalle
+te acerca." data-b01-en="Every detail
+brings you closer.">Cada detalle
+te acerca.</h2>
+   <p class="b01-lead" data-b01-es="Historia, diseño e ingeniería, desde otra perspectiva." data-b01-en="History, design and engineering, from a different perspective.">Historia, diseño e ingeniería, desde otra perspectiva.</p>
+   <a class="b01-button b01-primary" href="#p-collection/catalogue" data-b01-es="Explorar la colección ↗" data-b01-en="Explore the collection ↗">Explorar la colección ↗</a>
+  </div>
+  </div>
+ </section>
+ <section id="home-workshop" class="lp-editorial-scene" data-b01-scene="2" aria-labelledby="lpWorkshopTitle">
+  <figure class="lp-editorial-visual"><img src="assets/media/lp06/atelier-1280.webp" srcset="assets/media/lp06/atelier-768.webp 768w, assets/media/lp06/atelier-1280.webp 1280w, assets/media/lp06/atelier-2560.webp 2560w" sizes="100vw" width="2560" height="1440" alt="Escena ilustrativa de un artesano ajustando la carrocería de un clásico rojo" data-b01-alt-es="Escena ilustrativa de un artesano ajustando la carrocería de un clásico rojo" data-b01-alt-en="Illustrative scene of a craftsman adjusting the bodywork of a red classic car" loading="lazy" decoding="async"></figure>
+  <div class="lp-editorial-copy">
+   <p class="b01-eyebrow" data-b01-es="02 / EL TALLER" data-b01-en="02 / THE WORKSHOP">02 / EL TALLER</p>
+   <h2 id="lpWorkshopTitle" data-b01-es="La precisión
+tiene manos." data-b01-en="Precision,
+made by hand.">La precisión
+tiene manos.</h2>
+   <p class="b01-lead" data-b01-es="Descubre el trabajo detrás de cada pieza." data-b01-en="Discover the work behind every car.">Descubre el trabajo detrás de cada pieza.</p>
+   <a class="b01-button b01-primary" href="#p-workshops" data-b01-es="Entrar al taller ↗" data-b01-en="Enter the workshop ↗">Entrar al taller ↗</a>
+  </div>
+ </section>
+ <section id="home-dining" class="lp-editorial-scene" data-b01-scene="3" aria-labelledby="lpDiningTitle">
+  <figure class="lp-editorial-visual"><img src="assets/media/lp06/dining-1280.webp" srcset="assets/media/lp06/dining-768.webp 768w, assets/media/lp06/dining-1280.webp 1280w, assets/media/lp06/dining-2560.webp 2560w" sizes="100vw" width="2560" height="1440" alt="Escena ilustrativa de gastronomía y coctelería en un lounge oscuro" data-b01-alt-es="Escena ilustrativa de gastronomía y coctelería en un lounge oscuro" data-b01-alt-en="Illustrative dining and cocktail scene in a dark lounge" loading="lazy" decoding="async"></figure>
+  <div class="lp-editorial-copy">
+   <p class="b01-eyebrow" data-b01-es="03 / RESTAURANTE &amp; LOUNGE" data-b01-en="03 / DINING &amp; LOUNGE">03 / RESTAURANTE &amp; LOUNGE</p>
+   <h2 id="lpDiningTitle" data-b01-es="Otra forma
+de disfrutar." data-b01-en="Another way
+to enjoy.">Otra forma
+de disfrutar.</h2>
+   <p class="b01-lead" data-b01-es="Gastronomía y conversación, a otro ritmo." data-b01-en="Dining and conversation, at a different pace.">Gastronomía y conversación, a otro ritmo.</p>
+   <a class="b01-button b01-primary" href="#p-cafe/table" data-b01-es="Consultar una mesa ↗" data-b01-en="Enquire about a table ↗">Consultar una mesa ↗</a>
+  </div>
+ </section>
+ </div>
+ </div>
+ <section id="home-visit" class="lp-closing" data-b01-scene="4" aria-labelledby="lpVisitTitle">
+  <h2 id="lpVisitTitle" data-b01-es="Vívelo en Artech." data-b01-en="Experience Artech.">Vívelo en Artech.</h2>
+  <div class="lp-closing-actions">
+   <a class="b01-button b01-primary" href="#p-tickets" data-b01-es="Comprar entradas ↗" data-b01-en="Buy tickets ↗">Comprar entradas ↗</a>
+   <a class="b01-button b01-primary" href="#p-cafe/table" data-b01-es="Reservar una mesa ↗" data-b01-en="Reserve a table ↗">Reservar una mesa ↗</a>
+  </div>
+ </section>
 </section>
 
 <!-- E361 · Shared studio and a reversible, prerendered camera journey. -->
@@ -693,7 +667,7 @@ desde dentro.</h2>
 <script src="assets/js/core.js"></script>
 <script src="assets/js/site.js?v=f02-1"></script>
 
-<script defer src="assets/js/artech-b01.js?v=f02-1"></script>
+<script defer src="assets/js/artech-b01.js?v=lp09-1"></script>
 <script defer src="assets/js/artech-b012.js?v=f02-1"></script>
 <script defer src="assets/js/artech-b02.js?v=f02-1"></script>
 <script defer src="assets/js/artech-booking.js?v=b023-1"></script>
@@ -706,6 +680,8 @@ desde dentro.</h2>
 <script defer src="assets/js/artech-f02.js?v=f02-1"></script>
 <script defer src="assets/js/artech-e360.js?v=e361-1"></script>
 <script defer src="assets/js/artech-e362.js?v=e362-1"></script>
+<script defer src="assets/js/artech-lp01-lp02.js?v=lp06-1"></script>
+<script defer src="assets/js/artech-lp03-lp06.js?v=lp09-1"></script>
 <script defer src="assets/js/editorial.js?v=b456-1"></script>
 <script defer src="assets/js/v3-collection.js?v=b012"></script>
 <!-- Native sticky + scroll scrub; the scene engine has no CDN dependency. -->

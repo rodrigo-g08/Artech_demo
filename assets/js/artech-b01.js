@@ -167,6 +167,7 @@
     if (!frame) frame = requestAnimationFrame(() => { frame = 0; window.ArtechB12?.refresh(); });
   }
   function seek(index, immediate = false) {
+    if (window.ArtechLandingMotion?.seek(index, immediate)) return;
     const scene = scenes[index]; if (!scene) return;
     const top = Math.max(0, scene.getBoundingClientRect().top + scrollY - (index ? 76 : 0));
     window.scrollTo({ top, behavior: immediate || reduce.matches ? 'instant' : 'smooth' });

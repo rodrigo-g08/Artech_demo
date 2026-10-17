@@ -1,0 +1,99 @@
+{
+  "milestones": [
+    "LP01",
+    "LP02"
+  ],
+  "approvedDirection": "Option 1: selective photographic lighting, black/white/red cockpit, breathing space before the workshop.",
+  "usage": "Creative landing assets, not catalogue evidence. The original catalogue photographs remain unchanged.",
+  "processing": "Only proportional format/size conversion (hero states normalized to 16:9), WebP quality 88; no additional color treatment.",
+  "media": [
+    {
+      "file": "assets/media/lp01/hero-red-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 38250,
+      "sha256": "05d89d000b97b642d671a401b254e4e6e422fd3b3814abcc8614a802a3d803ba",
+      "kind": "illustrative-reconstruction",
+      "source": "image(20261016-175616).png",
+      "origin": "user-provided-lighting-reference",
+      "alpha": false
+    },
+    {
+      "file": "assets/media/lp01/hero-red-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 16768,
+      "sha256": "28a3743b93afe34c2fa80a39280b35c391ec2ffbe9ae5c5a2e40be558a0df41f",
+      "kind": "illustrative-reconstruction",
+      "source": "image(20261016-175616).png",
+      "origin": "user-provided-lighting-reference",
+      "alpha": false
+    },
+    {
+      "file": "assets/media/lp01/hero-white-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 32992,
+      "sha256": "cfd10ee4a22730d192a1c5f06b0f27f95046d11ef12bd9620164a3c808e5ed74",
+      "kind": "illustrative-reconstruction",
+      "source": "image(20261016-175637).png",
+      "origin": "user-provided-lighting-reference",
+      "alpha": false
+    },
+    {
+      "file": "assets/media/lp01/hero-white-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 14898,
+      "sha256": "844d6f6452b637f9d5801d9b7287f8284d60dc80bfa119ad32438dbcfa478bbb",
+      "kind": "illustrative-reconstruction",
+      "source": "image(20261016-175637).png",
+      "origin": "user-provided-lighting-reference",
+      "alpha": false
+    },
+    {
+      "file": "assets/media/lp01/hero-classic-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 47412,
+      "sha256": "0a72798b9c53893ed84d855021f83c7026cc2abcac803ac297b6c745a3486b6c",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-5a22f7b7-39cb-4553-9a14-18b50f547c6a.png",
+      "origin": "generated-from-approved-references",
+      "alpha": false
+    },
+    {
+      "file": "assets/media/lp01/hero-classic-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 21478,
+      "sha256": "dc7fd5a253fa656e52666a8bb268e74954632a8a72352ab5791a4e040db29267",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-5a22f7b7-39cb-4553-9a14-18b50f547c6a.png",
+      "origin": "generated-from-approved-references",
+      "alpha": false
+    },
+    {
+      "file": "assets/media/lp01/cockpit-1536.webp",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 158202,
+      "sha256": "b33aa522e8cdbf79d57df8f1b912333c8a0bb07187ee042592b317f50342f2b9",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-062fabb0-f05f-4c71-82f9-fe5bceb105f8.png",
+      "origin": "generated-from-approved-references",
+      "alpha": true
+    },
+    {
+      "file": "assets/media/lp01/cockpit-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 61638,
+      "sha256": "449df3c1d89b61a1f2f48b046c4be339cafb389dacce5fb40431891ed9f3e348",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-062fabb0-f05f-4c71-82f9-fe5bceb105f8.png",
+      "origin": "generated-from-approved-references",
+      "alpha": true
+    }
+  ]
+}

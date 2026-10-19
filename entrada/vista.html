@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <title>ARTECH · Vista previa de entrada</title>
+  <link rel="stylesheet" href="/assets/css/site.css?v=f01-1">
+  <link rel="stylesheet" href="/assets/css/artech-b01.css?v=f01-1">
+  <link rel="stylesheet" href="/assets/css/artech-p11.css?v=p11-1">
+  <script defer src="/assets/js/artech-qr-p10.js?v=p10-1"></script>
+  <script defer src="/assets/js/artech-preview-p11.js?v=p11-1"></script>
+</head>
+<body class="p11-preview-page">
+  <main id="p11Preview">
+    <a href="/#p-tickets">← ARTECH</a>
+    <p class="p11-preview-caption">VISTA PREVIA · Sin cobro ni validez para ingresar</p>
+    <p id="p11Invalid" role="status">Esta vista previa no está disponible. Revisa el enlace.</p>
+    <div id="p11TicketContent" hidden>
+      <article class="p11-preview-ticket">
+        <div><p>ARTECH</p><h1 id="p11VisitName"></h1><p id="p11VisitDate"></p><p id="p11VisitCount"></p><small id="p11VisitCode"></small></div>
+        <div id="p11QR"></div>
+      </article>
+      <div class="p11-wallet-actions" aria-label="Billetera digital">
+        <button id="p11Apple" class="p11-wallet-button" type="button" aria-describedby="p11WalletNote"><img src="/assets/media/wallet-p11/apple-wallet.png" height="48" alt="Agregar a Apple Wallet"></button>
+        <button id="p11Google" class="p11-wallet-button" type="button" aria-describedby="p11WalletNote"><img src="/assets/media/wallet-p11/google-wallet-es.svg" height="48" alt="Agregar a la Billetera de Google"></button>
+      </div>
+      <p id="p11WalletNote" class="p10-ticket-message" role="status" aria-live="polite">Disponible próximamente.</p>
+    </div>
+  </main>
+</body>
+</html>

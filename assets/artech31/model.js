@@ -33,12 +33,16 @@
     return { width: w, height: h, left: (width - w) / 2, top: (height - h) / 2 };
   }
   // Fit the silhouette above the caption, with room visible around the exhibit.
-  function fitCar(width, height, photo) {
+  function fitCar(width, height, photo, era = 'classic') {
     const [x,y,w,h]=photo.carBounds,portrait=width/height<1;
-    // P09: every photographed car is exactly 20% larger than P08.
-    // The shared geometry keeps front/3-4 views and wheel shadows aligned.
-    const scale=1.2*Math.min(width*(portrait?.76:.58)/w,height*(portrait?.30:.44)/h);
-    const carWidth=w*scale,carHeight=h*scale,bottom=height*(portrait?.60:.72);
+    // P10: taller silhouettes get headroom instead of being reduced to the
+    // sports cars' low roof line. Keep the whole vehicle, its aspect ratio,
+    // and a common floor line in every view (including thumbnails).
+    const targetWidth=width*(portrait?.912:.696);
+    const roofRoom=height*(portrait?.45:.65);
+    // P11: exactly 20% smaller only for the catalogue's modern vehicles.
+    const scale=Math.min(targetWidth/w,roofRoom/h)*(era==='modern'?.8:1);
+    const carWidth=w*scale,carHeight=h*scale,bottom=height*(portrait?.60:.73);
     const top=Math.max(height*.08,bottom-carHeight),left=(width-carWidth)/2;
     return {width:photo.cutoutWidth*scale,height:photo.cutoutHeight*scale,left:left-x*scale,top:top-y*scale};
   }

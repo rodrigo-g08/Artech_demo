@@ -77,8 +77,8 @@
     if (height < innerHeight * .45) root.style.setProperty('--c31-header', height + 'px');
   }
   let shadowSerial = 0;
-  function geometryStyle(photo, width = 600, height = 400, percentage = true) {
-    const fit = M.fitCar(width, height, photo);
+  function geometryStyle(photo, era, width = 600, height = 400, percentage = true) {
+    const fit = M.fitCar(width, height, photo, era);
     return Object.entries(fit).map(([key,value]) => '--car-'+key+':'+
       (percentage ? (100*value/(key==='left'||key==='width'?width:height)).toFixed(5)+'%' : value+'px')).join(';');
   }
@@ -87,7 +87,7 @@
   }
   function artwork(car, deferred = false) {
     const photo=car.photos[0];
-    return `<span class="c31-artwork${photo?'':' is-pending'}"${photo?' style="'+geometryStyle(photo)+'"':''}>${sceneMarkup(photo,car.name,deferred)}</span>`;
+    return `<span class="c31-artwork${photo?'':' is-pending'}"${photo?' style="'+geometryStyle(photo,car.era)+'"':''}>${sceneMarkup(photo,car.name,deferred)}</span>`;
   }
   function card(car, native = false) {
     const content=artwork(car), count=car.photos.length;
@@ -230,7 +230,7 @@
     const attr=deferred?'data-src':'src';
     // SVG shadows share the cutout's exact coordinate system. Tire contacts are
     // measured per photograph, not placed at the bottom of its rectangular file.
-    const shadows=ground?`<svg class="c31-floor-shadows" viewBox="0 0 ${photo.cutoutWidth} ${photo.cutoutHeight}" aria-hidden="true"><defs><filter id="${shadowId}-body" x="-35%" y="-100%" width="170%" height="300%"><feGaussianBlur stdDeviation="18"/></filter><filter id="${shadowId}-contact" x="-50%" y="-150%" width="200%" height="400%"><feGaussianBlur stdDeviation="4"/></filter></defs><polygon points="${ground.footprint.map(p=>p.join(',')).join(' ')}" fill="#130e09" fill-opacity=".46" stroke="#130e09" stroke-opacity=".46" stroke-width="42" stroke-linejoin="round" filter="url(#${shadowId}-body)"/>${ground.contacts.map(([x,y,rx,ry])=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry*1.7}" fill="#0d0b08" fill-opacity=".23" filter="url(#${shadowId}-body)"/><ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="#090806" fill-opacity=".79" filter="url(#${shadowId}-contact)"/>`).join('')}</svg>`:'';
+    const shadows=ground?`<svg class="c31-floor-shadows" viewBox="0 0 ${photo.cutoutWidth} ${photo.cutoutHeight}" aria-hidden="true"><defs><filter id="${shadowId}-body" x="-35%" y="-100%" width="170%" height="300%"><feGaussianBlur stdDeviation="22"/></filter><filter id="${shadowId}-contact" x="-50%" y="-150%" width="200%" height="400%"><feGaussianBlur stdDeviation="3.2"/></filter></defs><polygon points="${ground.footprint.map(p=>p.join(',')).join(' ')}" fill="#130e09" fill-opacity=".62" stroke="#130e09" stroke-opacity=".62" stroke-width="52" stroke-linejoin="round" filter="url(#${shadowId}-body)"/>${ground.contacts.map(([x,y,rx,ry])=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry*2.2}" fill="#0d0b08" fill-opacity=".40" filter="url(#${shadowId}-body)"/><ellipse cx="${x}" cy="${y}" rx="${rx*1.12}" ry="${ry*1.1}" fill="#090806" fill-opacity=".95" filter="url(#${shadowId}-contact)"/>`).join('')}</svg>`:'';
     return `<img class="c31-room-backdrop" ${attr}="${E(photo.room)}" alt="" aria-hidden="true" loading="lazy">${shadows}<img class="c31-car" ${attr}="${E(photo.cutout)}" width="${photo.cutoutWidth}" height="${photo.cutoutHeight}" alt="${E(alt)}" decoding="async" loading="lazy">`;
   }
   function layoutScene() {
@@ -239,7 +239,7 @@
     hero.querySelectorAll('.c31-scene-layer').forEach(layer=>{
       const photo=current?.photos.find(photo=>photo.key===layer.dataset.photo);
       if(!photo)return;
-      const g=M.fitCar(rect.width,rect.height,photo);
+      const g=M.fitCar(rect.width,rect.height,photo,current.era);
       for(const [key,value] of Object.entries(g))layer.style.setProperty('--car-'+key,value+'px');
     });
   }
@@ -321,7 +321,7 @@
         exhibit.innerHTML=sceneMarkup(car.photos[0],car.name);layer.append(exhibit);
         const paintEntry=(r)=>{
           Object.assign(exhibit.style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});
-          if(car.photos[0])Object.entries(M.fitCar(r.width,r.height,car.photos[0])).forEach(([key,value])=>exhibit.style.setProperty('--car-'+key,value+'px'));
+          if(car.photos[0])Object.entries(M.fitCar(r.width,r.height,car.photos[0],car.era)).forEach(([key,value])=>exhibit.style.setProperty('--car-'+key,value+'px'));
           else exhibit.classList.add('is-pending');
         };
         paintEntry(rect);

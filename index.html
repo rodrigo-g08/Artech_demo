@@ -53,6 +53,7 @@
 <link rel="stylesheet" href="assets/css/artech-p06.css?v=p06-1">
 <link rel="stylesheet" href="assets/css/artech-p07.css?v=p07-1">
 <link rel="stylesheet" href="assets/css/artech-p08.css?v=p09-1">
+<link rel="stylesheet" href="assets/css/artech-p11.css?v=p11-1">
 </head>
 <body>
 <a class="skip-link" href="#main-content" data-i="skip_content">Skip to content</a>
@@ -314,7 +315,7 @@ MILEAGE.">COCINA CON<br>KILOMETRAJE.</h1><p data-b01-es="Una pausa que también 
 <!-- INTERNAL PAGE · TICKETS -->
 <section class="subpage b03-page" id="page-tickets" data-b12="true">
   <div class="b03-wrap">
-    <nav class="b03-progress" aria-label="Pasos de tu visita"><button type="button" data-book-step="1" aria-current="step"><span>01</span><b data-b01-es="Tu visita" data-b01-en="Your visit" >Tu visita</b></button><i aria-hidden="true"></i><button type="button" data-book-step="2" disabled><span>02</span><b data-b01-es="Pago" data-b01-en="Payment" >Pago</b></button><i aria-hidden="true"></i><button type="button" data-book-step="3" disabled><span>03</span><b data-b01-es="Entradas" data-b01-en="Tickets" >Entradas</b></button></nav>
+    <nav class="b03-progress" aria-label="Pasos de tu visita"><button type="button" data-book-step="1" aria-current="step"><span>01</span><b data-b01-es="Tu visita" data-b01-en="Your visit" >Tu visita</b></button><i aria-hidden="true"></i><button type="button" data-book-step="2" disabled><span>02</span><b data-b01-es="Tus datos" data-b01-en="Your details">Tus datos</b></button><i aria-hidden="true"></i><button type="button" data-book-step="3" disabled><span>03</span><b data-b01-es="Entradas" data-b01-en="Tickets">Entradas</b></button></nav>
     <h1 id="b03Title" tabindex="-1">Tu próxima visita a ARTECH.</h1>
     <p class="b03-demo-notice" id="b03DemoNotice">Demostración · Sin cobros ni entradas válidas.</p>
     <div class="b03-layout" id="b03Layout">
@@ -349,19 +350,18 @@ MILEAGE.">COCINA CON<br>KILOMETRAJE.</h1><p data-b01-es="Una pausa que también 
             <label for="b03Card"><span data-b01-es="Número de tarjeta" data-b01-en="Card number" >Número de tarjeta</span></label><input id="b03Card" type="text" value="4242 4242 4242 4242" readonly tabindex="-1" autocomplete="off" aria-label="Tarjeta de demostración, no editable">
             <div class="b03-fields-pair"><div><label for="b03Expiry"><span data-b01-es="Vencimiento" data-b01-en="Expiry date" >Vencimiento</span></label><input id="b03Expiry" type="text" value="12 / 30" readonly tabindex="-1" autocomplete="off"></div><div><label for="b03Cvv"><span data-b01-es="Código de seguridad" data-b01-en="Security code" >Código de seguridad</span></label><input id="b03Cvv" type="text" value="123" readonly tabindex="-1" autocomplete="off"></div></div>
           </fieldset>
-          <div id="b03RequestNote" class="b03-request-note" hidden><p data-b01-es="Tu grupo se coordina directamente con ARTECH. Prepararemos una consulta para que puedas enviarla por WhatsApp." data-b01-en="Your group is arranged directly with ARTECH. We will prepare an enquiry for you to send through WhatsApp." >Tu grupo se coordina directamente con ARTECH. Prepararemos una consulta para que puedas enviarla por WhatsApp.</p></div>
           <label class="b03-consent"><input id="b03Consent" type="checkbox" required aria-describedby="b03ConsentError"><span id="b03ConsentText">Entiendo que este recorrido es una demostración.</span></label><small id="b03ConsentError" class="b03-field-error"></small>
           <div class="b03-terms-links"><a data-b01-es="Términos y condiciones ↗" data-b01-en="Terms and conditions ↗" href="#p-legal" class="b01-button b01-secondary" >Términos y condiciones ↗</a></div>
           <details id="b03DemoControls" class="b03-demo-controls"><summary><span data-b01-es="Opciones de demostración" data-b01-en="Demonstration options" >Opciones de demostración</span></summary><label for="b03DemoResult"><span data-b01-es="Resultado del pago de prueba" data-b01-en="Test payment result" >Resultado del pago de prueba</span></label><select id="b03DemoResult"><option value="approved">Aprobado</option><option value="declined">Rechazado</option></select></details>
           <button type="submit" hidden tabindex="-1" aria-hidden="true">Continuar</button><button data-b01-es="← Volver a tu visita" data-b01-en="← Back to your visit" type="button" id="b03Back" class="b03-text-button">← Volver a tu visita</button>
         </form>
       </div>
-      <aside class="b03-summary" aria-labelledby="b03SummaryHeading"><figure class="b03-summary-car"><img src="assets/media/b04/checkout-front.webp" width="1536" height="1024" alt="Porsche oscuro, vista frontal" loading="lazy" decoding="async" ></figure><h2 data-b01-es="Tu visita" data-b01-en="Your visit" id="b03SummaryHeading">Tu visita</h2><div id="b03SummaryFacts" class="b03-summary-facts"></div><div class="b03-summary-total"><span id="b03TotalLabel">Total</span><strong id="b03Total">S/ 240.00</strong></div><button class="b01-button b01-primary b03-main-action" id="b03Continue" type="button">Continuar al pago ↗</button><p class="b03-note" id="b03PriceNote"></p><a href="https://wa.me/51992432455" id="b03Enquire" target="_blank" rel="noopener" class="b03-enquire">Consultar disponibilidad ↗</a></aside>
+      <aside class="b03-summary" aria-labelledby="b03SummaryHeading"><figure class="b03-summary-car"><img src="assets/media/b04/checkout-front.webp" width="1536" height="1024" alt="Porsche oscuro, vista frontal" loading="lazy" decoding="async" ></figure><h2 data-b01-es="Tu visita" data-b01-en="Your visit" id="b03SummaryHeading">Tu visita</h2><div id="b03SummaryFacts" class="b03-summary-facts"></div><div class="b03-summary-total"><span id="b03TotalLabel">Total</span><strong id="b03Total">S/ 240.00</strong></div><button class="b01-button b01-primary b03-main-action" id="b03Continue" type="button">Continuar al pago ↗</button><p class="b03-note" id="b03PriceNote"></p></aside>
     </div>
     <p id="b03Error" class="b03-error" role="alert" hidden></p><p id="b03Status" class="b01-sr" role="status" aria-live="polite"></p>
     <section class="b03-complete" id="b03Complete" hidden aria-labelledby="b03CompleteTitle">
       <div class="b03-complete-heading"><svg class="b03-success-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28"/><path d="m18 32 10 10 19-21"/></svg><h2 id="b03CompleteTitle"></h2><p id="b03CompleteNote"></p></div>
-      <div class="b03-complete-grid"><article class="b03-ticket" id="b03Ticket" aria-label="Entrada de demostración"><div class="b03-ticket-main"><img class="b03-ticket-logo" src="assets/logo.png" width="200" height="40" alt="ARTECH"><div class="b03-ticket-body"><figure><img src="assets/media/b04/checkout-front.webp" width="1536" height="1024" alt="Porsche oscuro, vista frontal" loading="lazy" decoding="async" ></figure><div><h3 id="b03TicketName"></h3><p id="b03TicketDate"></p><p id="b03TicketCount"></p><small id="b03TicketCode">ARTECH-DEMO-001</small></div></div></div><div class="b03-ticket-stub"><div class="b03-demo-stamp" aria-hidden="true"><img src="assets/media/b023/demo-qr.svg" width="100" height="100" alt=""><span>DEMO</span></div><small data-b01-es="MUESTRA · NO VÁLIDO" data-b01-en="SAMPLE · NOT VALID" >MUESTRA · NO VÁLIDO</small></div></article><aside class="b03-complete-actions"><h3 id="b03ReceiptHeading">Tu visita</h3><div id="b03ReceiptFacts"></div><strong id="b03ReceiptTotal"></strong><button data-b01-es="Descargar muestra" data-b01-en="Download sample" type="button" class="b01-button b01-primary" id="b03Download">Descargar muestra</button><button data-b01-es="Agregar al calendario" data-b01-en="Add to calendar" type="button" class="b01-button b01-secondary" id="b03CalendarSave">Agregar al calendario</button><a id="b03RequestSend" class="b01-button b01-primary" href="https://wa.me/51992432455" target="_blank" rel="noopener" hidden>Enviar consulta por WhatsApp ↗</a><button data-b01-es="Editar mi visita" data-b01-en="Edit my visit" type="button" id="b03Restart" class="b03-text-button">Editar mi visita</button></aside></div>
+      <div class="b03-complete-grid"><article class="b03-ticket" id="b03Ticket" aria-label="Tu visita a ARTECH"><div class="b03-ticket-main"><img class="b03-ticket-logo" src="assets/logo.png" width="200" height="40" alt="ARTECH"><div class="b03-ticket-body"><figure><img src="assets/media/b04/checkout-front.webp" width="1536" height="1024" alt="Porsche oscuro, vista frontal" loading="lazy" decoding="async" ></figure><div><h3 id="b03TicketName"></h3><p id="b03TicketDate"></p><p id="b03TicketCount"></p><small id="b03TicketCode">ARTECH</small></div></div></div><div class="b03-ticket-stub"><div class="p10-ticket-qr" id="p10TicketQR"></div><small id="p10TicketState"></small></div></article><aside class="b03-complete-actions"><h3 id="b03ReceiptHeading">Tu visita</h3><div id="b03ReceiptFacts"></div><strong id="b03ReceiptTotal"></strong><button data-b01-es="Descargar entrada" data-b01-en="Download ticket" type="button" class="b01-button b01-primary" id="b03Download">Descargar entrada</button><a id="p11PreviewLink" href="#" target="_blank" rel="noopener noreferrer">Ver entrada ↗</a><div class="p11-wallet-actions" aria-label="Billetera digital"><button id="p11Apple" class="p11-wallet-button" type="button" aria-describedby="p11WalletNote"><img src="assets/media/wallet-p11/apple-wallet.png" alt="Agregar a Apple Wallet" height="48"></button><button id="p11Google" class="p11-wallet-button" type="button" aria-describedby="p11WalletNote"><img src="assets/media/wallet-p11/google-wallet-es.svg" alt="Agregar a la Billetera de Google" height="48"></button></div><p class="p10-ticket-message" id="p11WalletNote" role="status" aria-live="polite"></p><button data-b01-es="Agregar al calendario" data-b01-en="Add to calendar" type="button" class="b01-button b01-secondary" id="b03CalendarSave">Agregar al calendario</button><button data-b01-es="Editar mi visita" data-b01-en="Edit my visit" type="button" id="b03Restart" class="b03-text-button">Editar mi visita</button></aside></div>
       <figure class="b03-closing-photo"><img src="assets/media/b04/checkout-rear.webp" width="1920" height="960" alt="Porsche oscuro, luces traseras" loading="lazy" decoding="async" ></figure>
     </section>
   </div>
@@ -674,7 +674,9 @@ Los detalles que acompañan a quien conduce.</p>
 <script defer src="assets/js/artech-b02.js?v=p06-1"></script>
 <script defer src="assets/js/artech-booking.js?v=b023-1"></script>
 <script defer src="assets/js/artech-b04.js?v=b456-1"></script>
-<script defer src="assets/js/artech-b03.js?v=f01-1"></script>
+<script defer src="assets/js/artech-qr-p10.js?v=p10-1"></script>
+<script defer src="assets/js/artech-preview-p11.js?v=p11-1"></script>
+<script defer src="assets/js/artech-b03-p11.js?v=p11-1"></script>
 <script defer src="assets/js/artech-collection-model.js?v=f02-1"></script>
 
 <script defer src="assets/js/artech-b06.js?v=p05-1"></script>
@@ -695,8 +697,8 @@ Los detalles que acompañan a quien conduce.</p>
 
 <!-- ARTECH31:APP -->
 <script defer src="assets/artech31/grounding.js?v=p07-1"></script>
-<script defer src="assets/artech31/model.js?v=p09-1"></script>
-<script defer src="assets/artech31/collection.js?v=p08-1"></script>
+<script defer src="assets/artech31/model.js?v=p11-1"></script>
+<script defer src="assets/artech31/collection.js?v=p11-1"></script>
 <script defer src="assets/artech31/header.js?v=31.4"></script>
 <!-- /ARTECH31:APP -->
 </body>

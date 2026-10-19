@@ -1,0 +1,15 @@
+/* P10: scoped ticket controls. Existing site fonts and palette are inherited. */
+.p10-wallet-actions{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 10px}
+.p10-wallet-actions button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 17px;background:#080807;border:1px solid #776a59;border-radius:8px;color:#f5f3ef;font:400 12px/1.3 var(--body,Arial,sans-serif);cursor:pointer}
+.p10-wallet-actions button:hover{background:#211e19;border-color:#c2ac8d}.p10-wallet-actions button:disabled{opacity:.55;cursor:wait}
+.p10-wallet-actions svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5}
+.p10-ticket-message{font:400 12px/1.7 var(--body,Arial,sans-serif);color:#c2ac8d;max-width:420px}
+.p10-ticket-qr{width:150px;max-width:100%;aspect-ratio:1;background:#fff;border-radius:4px;padding:0}
+.p10-ticket-qr svg{display:block;width:100%;height:100%}
+#page-tickets .b03-ticket-stub{gap:14px;padding:20px;min-width:170px;text-align:center}
+#page-tickets .b03-ticket-stub small{font-size:10px;line-height:1.6;color:#c2ac8d}
+#page-tickets .b03-ticket{grid-template-columns:minmax(0,1fr) 190px}
+#page-tickets .p10-local-note{color:#e6c494;margin:10px 0;font-size:12px}
+#p10StatusLink{font-size:12px;color:inherit;text-underline-offset:4px;display:inline-block;margin:12px 0}
+#p10Refresh{margin-top:10px}
+@media(max-width:640px){#page-tickets .b03-ticket{grid-template-columns:1fr}#page-tickets .b03-ticket-stub{border-left:0;border-top:1px dashed #776a59;display:flex;flex-direction:column}.p10-wallet-actions{flex-direction:column}.p10-wallet-actions button{width:100%}}

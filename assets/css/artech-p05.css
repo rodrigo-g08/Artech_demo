@@ -1,0 +1,205 @@
+/* P05: clean action buttons, restaurant facade and clear Workshop composition. */
+body :is(.b01-button, .btn-red, .btn-ghost, .editorial-button, .c31-pill) {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+body :is(.b01-button, .btn-red, .btn-ghost, .editorial-button, .c31-pill):hover {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+/* The existing light sweep, colors and keyboard focus remain in place. */
+
+/* The whole photograph stays visible; the copy uses the space on its left. */
+@media (min-width: 900px) {
+  #page-workshops .e362-scene--hero .e362-photo {
+    inset: 0 0 0 10vw !important;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 18px);
+    mask-image: linear-gradient(90deg, transparent, #000 18px);
+  }
+  #page-workshops .e362-scene--hero .e362-photo img {
+    object-fit: contain !important;
+    object-position: right bottom !important;
+  }
+  #page-workshops .e362-scene--hero .e362-copy {
+    width: min(540px, 34vw);
+  }
+}
+@media (max-width: 899px) {
+  #page-workshops .e362-scene--hero {
+    min-height: max(760px, calc(100svh - var(--e362-header)));
+  }
+  #page-workshops .e362-scene--hero .e362-copy {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    margin: 0;
+    order: 0;
+  }
+  #page-workshops .e362-scene--hero .e362-photo {
+    position: relative;
+    inset: auto !important;
+    width: calc(100% + 12vw);
+    margin: 0 -6vw;
+    aspect-ratio: 1672 / 941;
+    order: 1;
+    z-index: 0;
+  }
+  #page-workshops .e362-scene--hero .e362-photo img {
+    object-fit: contain !important;
+    object-position: right bottom !important;
+  }
+  #page-workshops .e362-scene--hero .e362-cue { order: 2; }
+}
+
+/* A complete facade photograph opens the restaurant. No plate over its hero. */
+#page-cafe .b06-stage { min-height: 0; }
+#page-cafe .b06-table {
+  background: #080807;
+  opacity: var(--p05-facade-opacity, 1);
+}
+#page-cafe .b06-table img {
+  object-fit: contain;
+  object-position: right center;
+}
+#page-cafe .b06-table::after {
+  background: linear-gradient(90deg, #080807 0%, #080807e6 23%, #08080755 43%, transparent 64%);
+}
+#page-cafe .b06-intro {
+  width: 38%;
+  top: 50%;
+  transform: translateY(calc(-50% - var(--b06-p) * 25px));
+}
+#page-cafe .b06-intro h1 {
+  font-size: clamp(44px, 4.6vw, 76px);
+}
+#page-cafe .p05-menu-layout { display: contents; }
+#page-cafe .b06-plate {
+  opacity: var(--p05-dish-opacity, 0);
+  left: 75%;
+  will-change: opacity;
+}
+#page-cafe .b06-plate-rail img { transform: none; }
+#page-cafe .b06-plate figcaption {
+  opacity: 1;
+}
+#page-cafe .b06-menu-items { overscroll-behavior-y: auto; }
+
+/* In normal flow the photo accompanies the menu as the page scrolls. */
+@media (max-width: 780px), (prefers-reduced-motion: reduce) {
+  #page-cafe .b06-journey { height: auto; }
+  #page-cafe .b06-stage {
+    position: relative;
+    top: 0;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--b06-header);
+    background: #080807;
+  }
+  #page-cafe .b06-table {
+    position: relative;
+    inset: auto;
+    height: auto;
+    width: 100%;
+    opacity: 1 !important;
+    order: 0;
+    z-index: 0;
+  }
+  #page-cafe .b06-table img {
+    width: 100%;
+    height: auto;
+    max-height: calc(100svh - var(--b06-header));
+    object-fit: contain;
+    object-position: center;
+  }
+  #page-cafe .b06-table::after { display: none; }
+  #page-cafe .b06-intro {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    padding: 36px 6vw 48px;
+    order: 1;
+    opacity: 1 !important;
+    transform: none !important;
+    background: #080807;
+  }
+  #page-cafe .b06-intro h1 { font-size: clamp(38px, 7vw, 66px); }
+  #page-cafe .p05-menu-layout {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    position: relative;
+    background: #edeae3;
+    isolation: isolate;
+    --p05-plate-height: clamp(190px, 30svh, 290px);
+  }
+  #page-cafe .b06-plate {
+    position: sticky;
+    top: var(--b06-header);
+    left: auto !important;
+    width: 100%;
+    height: var(--p05-plate-height);
+    flex: none;
+    margin: 0;
+    padding: 12px 5vw 10px;
+    transform: none;
+    opacity: 1 !important;
+    order: 0;
+    z-index: 8;
+    background: #edeae3;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+  #page-cafe .b06-plate-rail {
+    aspect-ratio: auto;
+    width: 100%;
+    height: 100%;
+    filter: none;
+  }
+  #page-cafe .b06-plate figcaption {
+    opacity: 1;
+    font-size: 16px;
+    line-height: 1.3;
+    gap: 3px;
+    margin: 0;
+    padding: 4px 0 0;
+    color: #5a5341;
+  }
+  #page-cafe .b06-plate figcaption small { font-size: 11px; }
+  #page-cafe .b06-menu-panel {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    padding: 25px 6vw 45px;
+    margin: 0;
+    order: 1;
+    opacity: 1 !important;
+    transform: none !important;
+    background: #edeae3;
+    scroll-margin-top: calc(var(--b06-header) + var(--p05-plate-height) + 15px);
+  }
+  #page-cafe .f01-category-nav {
+    position: sticky;
+    top: calc(var(--b06-header) + var(--p05-plate-height));
+    z-index: 7;
+    background: #edeae3;
+  }
+  #page-cafe .b06-categories { position: static; }
+  #page-cafe .b06-menu-items {
+    overflow: visible;
+    max-height: none;
+    min-height: 0;
+  }
+  #page-cafe .b06-scroll-cue { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #page-cafe .b06-plate { will-change: auto; }
+}

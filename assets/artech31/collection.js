@@ -11,6 +11,7 @@
   const E = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
   const L = (es, en) => root.lang === 'en' ? en : es;
   const localized = value => typeof value === 'object' ? value[root.lang === 'en' ? 'en' : 'es'] : value;
+  const yearCaption = car => car.yearLabel+(car.yearNote?' · '+localized(car.yearNote):'');
   let cars = [], carMap = new Map(), current = null, photoIndex = 0, requestedPhoto = 0, loaded = false;
   let filters = { era: 'all', brand: '', query: '' }, catalogueScroll = 0;
   let museum = { slugs: [], position: 0, velocity: 0, target: 0, active: false, selected: -1 };
@@ -25,7 +26,7 @@
   const museumHash = slug => '#p-collection/museum/' + encodeURIComponent(slug);
   const vehicleHash = slug => '#p-vehicle/' + encodeURIComponent(slug);
   function persist() {
-    const value = { filters, catalogueScroll, museum: { slugs: museum.slugs, position: museum.position } };
+    const value = { version: 'P07', filters, catalogueScroll, museum: { slugs: museum.slugs, position: museum.position } };
     try { sessionStorage.setItem('artech.collection31', JSON.stringify(value)); } catch (_) {}
   }
   function restore() {
@@ -33,7 +34,7 @@
       const value = JSON.parse(sessionStorage.getItem('artech.collection31'));
       if (value?.filters) filters = { ...filters, ...value.filters };
       catalogueScroll = Number(value?.catalogueScroll) || 0;
-      if (value?.museum) { museum.slugs = value.museum.slugs || []; museum.position = Number(value.museum.position) || 0; }
+      if (value?.version==='P07' && value?.museum) { museum.slugs = value.museum.slugs || []; museum.position = Number(value.museum.position) || 0; }
     } catch (_) {}
   }
   function prepareDOM() {
@@ -75,10 +76,23 @@
     const height = $('header')?.getBoundingClientRect().height || 86;
     if (height < innerHeight * .45) root.style.setProperty('--c31-header', height + 'px');
   }
+  let shadowSerial = 0;
+  function geometryStyle(photo, width = 600, height = 400, percentage = true) {
+    const fit = M.fitCar(width, height, photo);
+    return Object.entries(fit).map(([key,value]) => '--car-'+key+':'+
+      (percentage ? (100*value/(key==='left'||key==='width'?width:height)).toFixed(5)+'%' : value+'px')).join(';');
+  }
+  function pendingMarkup() {
+    return `<span class="c31-pending"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="7" y="10" width="50" height="44" rx="4"/><circle cx="22" cy="24" r="5"/><path d="m8 45 13-12 10 10 9-17 17 19"/></svg><span>${L('Imagen pendiente','Image pending')}</span></span>`;
+  }
+  function artwork(car, deferred = false) {
+    const photo=car.photos[0];
+    return `<span class="c31-artwork${photo?'':' is-pending'}"${photo?' style="'+geometryStyle(photo)+'"':''}>${sceneMarkup(photo,car.name,deferred)}</span>`;
+  }
   function card(car, native = false) {
-    const photo = car.photos[0];
-    if(native) return `<a class="b05-card" data-c31-museum="${E(car.slug)}" data-b05-open href="${museumHash(car.slug)}"><figure class="b05-card-photo"><img src="${E(photo.thumb)}" width="768" height="512" alt="${E(car.name+' · '+L('vista 3/4','three-quarter view'))}" loading="lazy" decoding="async"></figure><div class="b05-card-copy"><h3>${E(car.name)}</h3><p>${E(car.yearLabel)}</p></div></a>`;
-    return `<a class="c31-card" data-c31-museum="${E(car.slug)}" data-b05-open href="${museumHash(car.slug)}"><figure><img src="${E(photo.thumb)}" width="768" height="512" alt="${E(car.name + ' · ' + L('vista 3/4', 'three-quarter view'))}" loading="lazy" decoding="async"><span class="c31-card-enter" aria-hidden="true">↗</span></figure><div><h3>${E(car.name)}</h3><p>${E(car.yearLabel)}<span>${String(car.photos.length).padStart(2,'0')} ${L('fotos','photos')}</span></p></div></a>`;
+    const content=artwork(car), count=car.photos.length;
+    if(native) return `<a class="b05-card" data-c31-museum="${E(car.slug)}" data-b05-open href="${museumHash(car.slug)}"><figure class="b05-card-photo">${content}</figure><div class="b05-card-copy"><h3>${E(car.name)}</h3><p>${E(yearCaption(car))}</p></div></a>`;
+    return `<a class="c31-card" data-c31-museum="${E(car.slug)}" data-b05-open href="${museumHash(car.slug)}"><figure>${content}<span class="c31-card-enter" aria-hidden="true">↗</span></figure><div><h3>${E(car.name)}</h3><p>${E(yearCaption(car))}<span>${count?String(count).padStart(2,'0')+' '+L('fotos','photos'):L('Imagen pendiente','Image pending')}</span></p></div></a>`;
   }
   function translate() {
     const labels = {
@@ -107,7 +121,7 @@
     if (!brands.includes(filters.brand)) filters.brand = '';
     $('c31Brand').value = filters.brand; $('c31Search').value = filters.query;
     $('c31Brand').setAttribute('aria-label',L('Marca','Brand'));
-    text('b05ArchiveNote',L('Una selección de la colección, fotografiada en ARTECH.','A selection from the collection, photographed at ARTECH.'));
+    text('b05ArchiveNote',L('Descubre las piezas de la colección y sus historias.','Discover the cars in the collection and their stories.'));
     $('c31Eras').querySelectorAll('[data-b05-era]').forEach(button=>{
       const active=filters.era===button.dataset.b05Era;
       button.setAttribute('aria-pressed',String(active));
@@ -122,7 +136,7 @@
   function rememberMuseum() {
     persist();
     if (parse().key === 'p-collection' && parse().mode === 'museum') {
-      history.replaceState({ ...(history.state || {}), c31Museum: { slugs: museum.slugs, position: museum.position } }, '', location.href);
+      history.replaceState({ ...(history.state || {}), c31Museum: { version:'P07', slugs: museum.slugs, position: museum.position } }, '', location.href);
     }
   }
   function openMuseum(slug, fromCatalogue = true) {
@@ -139,7 +153,7 @@
   function buildMuseum() {
     $('c31Exhibits').innerHTML = museum.slugs.map((slug,index) => {
       const car = carMap.get(slug);
-      return `<button type="button" class="c31-exhibit" data-c31-exhibit="${index}" aria-label="${E(L('Ver ','View ') + car.name)}"><img data-photo="${E(car.photos[0].src)}" width="1536" height="1024" alt="${E(car.name)}" decoding="async"><span>${E(car.name)}</span></button>`;
+      return `<button type="button" class="c31-exhibit" data-c31-exhibit="${index}" aria-label="${E(L('Ver ','View ') + car.name)}">${artwork(car,true)}<span class="c31-exhibit-name">${E(car.name)}</span></button>`;
     }).join('');
     museum.selected = -1;
   }
@@ -153,7 +167,7 @@
       node.hidden=!pose.visible;node.tabIndex=index===selected?0:-1;
       node.setAttribute('aria-current',String(index===selected));
       if(!pose.visible)return;
-      const img=node.querySelector('img');if(!img.getAttribute('src'))img.src=img.dataset.photo;
+      node.querySelectorAll('img[data-src]').forEach(img=>{img.src=img.dataset.src;img.removeAttribute('data-src');});
       node.style.width=pose.width+'px';node.style.height=pose.height+'px';
       node.style.transform=`translate(-50%,-50%) translateX(${pose.x}px) perspective(${pose.perspective}px) rotateY(${pose.angle}deg)`;
       node.style.opacity=String(pose.opacity);node.style.zIndex=String(100-Math.round(distance*10));
@@ -162,7 +176,7 @@
     });
     if(force||selected!==museum.selected){
       museum.selected=selected;const car=carMap.get(museum.slugs[selected]);
-      text('c31MuseumName',car.name);text('c31MuseumYear',car.yearLabel);
+      text('c31MuseumName',car.name);text('c31MuseumYear',yearCaption(car));
       text('c31MuseumEdition',car.brand);
       $('c31MuseumPrev').disabled=$('c31MuseumNext').disabled=count<2;
       preload(car.photos[0]);
@@ -206,12 +220,18 @@
     imageCache.set(src,promise); promise.catch(()=>imageCache.delete(src)); return promise;
   }
   function preload(photo) {
-    const images=[loadImage(photo.cutout),loadImage(photo.room)];
+    const images=photo?[loadImage(photo.cutout),loadImage(photo.room)]:[];
     return Promise.allSettled(images);
   }
-  function sceneMarkup(photo, alt) {
-    // A single edge-to-edge room and a true-alpha car. No photo rectangle or panorama seam.
-    return `<img class="c31-room-backdrop" src="${E(photo.room)}" alt="" aria-hidden="true"><span class="c31-car-shadow" aria-hidden="true"></span><img class="c31-car" src="${E(photo.cutout)}" width="${photo.cutoutWidth}" height="${photo.cutoutHeight}" alt="${E(alt)}" decoding="async">`;
+  function sceneMarkup(photo, alt, deferred = false) {
+    if(!photo)return pendingMarkup();
+    const ground=window.ArtechGrounding?.[photo.key];
+    const shadowId='c31-shadow-'+(++shadowSerial);
+    const attr=deferred?'data-src':'src';
+    // SVG shadows share the cutout's exact coordinate system. Tire contacts are
+    // measured per photograph, not placed at the bottom of its rectangular file.
+    const shadows=ground?`<svg class="c31-floor-shadows" viewBox="0 0 ${photo.cutoutWidth} ${photo.cutoutHeight}" aria-hidden="true"><defs><filter id="${shadowId}-body" x="-35%" y="-100%" width="170%" height="300%"><feGaussianBlur stdDeviation="18"/></filter><filter id="${shadowId}-contact" x="-50%" y="-150%" width="200%" height="400%"><feGaussianBlur stdDeviation="4"/></filter></defs><polygon points="${ground.footprint.map(p=>p.join(',')).join(' ')}" fill="#130e09" fill-opacity=".46" stroke="#130e09" stroke-opacity=".46" stroke-width="42" stroke-linejoin="round" filter="url(#${shadowId}-body)"/>${ground.contacts.map(([x,y,rx,ry])=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry*1.7}" fill="#0d0b08" fill-opacity=".23" filter="url(#${shadowId}-body)"/><ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="#090806" fill-opacity=".79" filter="url(#${shadowId}-contact)"/>`).join('')}</svg>`:'';
+    return `<img class="c31-room-backdrop" ${attr}="${E(photo.room)}" alt="" aria-hidden="true" loading="lazy">${shadows}<img class="c31-car" ${attr}="${E(photo.cutout)}" width="${photo.cutoutWidth}" height="${photo.cutoutHeight}" alt="${E(alt)}" decoding="async" loading="lazy">`;
   }
   function layoutScene() {
     const hero=$('c31Hero'); if (!hero) return;
@@ -225,6 +245,13 @@
   }
   async function showPhoto(index, immediate = false) {
     if (!current) return;
+    if (!current.photos.length) {
+      ++photoVersion;photoIndex=requestedPhoto=0;
+      $('c31Scene').innerHTML='<div class="c31-scene-layer is-pending">'+pendingMarkup()+'</div>';
+      $('c31Scene').setAttribute('aria-busy','false');
+      $('c31PhotoError').hidden=$('c31PhotoRetry').hidden=true;
+      return;
+    }
     const car=current,selected=(index+car.photos.length)%car.photos.length,version=++photoVersion;
     requestedPhoto=selected;
     const photo=car.photos[selected]; $('c31Scene').setAttribute('aria-busy','true'); $('c31PhotoError').hidden=$('c31PhotoRetry').hidden=true;
@@ -251,14 +278,15 @@
   function renderVehicle(car, same = false) {
     if (current?.slug !== car.slug) $('c31Scene').replaceChildren();
     if (!same || current?.slug!==car.slug) photoIndex=0;
-    current=car;text('vhName',car.name);text('c31VehicleMeta',[car.yearLabel,car.brand].join(' · '));
+    current=car;text('vhName',car.name);text('c31VehicleMeta',[yearCaption(car),car.brand].join(' · '));
     text('c31VehicleEdition',car.brand);
     text('c31Description',localized(car.description));text('c31SpecScope',localized(car.specScope));
     $('c31Specs').innerHTML=car.technical.map(row=>`<div><dt>${E(localized(row.label))}</dt><dd>${E(localized(row.value))}</dd></div>`).join('');
     $('c31Sources').innerHTML=car.sources.map(source=>`<li><a href="${E(source.url)}" target="_blank" rel="noopener noreferrer">${E(source.title)} ↗</a></li>`).join('');
-    $('c31Thumbs').innerHTML=car.photos.map((photo,index)=>`<button type="button" data-c31-photo="${index}" aria-pressed="${index===photoIndex}" aria-label="${E(L('Ver ','View ')+(photo.view==='front'?L('frontal','front'):L('vista 3/4','three-quarter view')))}"><img src="${E(photo.thumb)}" width="180" height="120" alt="" loading="lazy"><span>${photo.view==='front'?L('Frontal','Front'):'3/4'}</span></button>`).join('');
+    $('c31Thumbs').innerHTML=car.photos.map((photo,index)=>`<button type="button" data-c31-photo="${index}" aria-pressed="${index===photoIndex}" aria-label="${E(L('Ver ','View ')+(photo.view==='front'?L('frontal','front'):L('vista 3/4','three-quarter view')))}"><span class="c31-thumb-image">${artwork({...car,photos:[photo]})}</span><span class="c31-thumb-label">${photo.view==='front'?L('Frontal','Front'):'3/4'}</span></button>`).join('');
     $('c31PhotoPrev').disabled=$('c31PhotoNext').disabled=car.photos.length<2;
-    text('c31PhotoCount',`${String(photoIndex+1).padStart(2,'0')} / ${String(car.photos.length).padStart(2,'0')}`);
+    $('c31PhotoControls').hidden=$('c31Thumbs').hidden=!car.photos.length;
+    text('c31PhotoCount',car.photos.length?`${String(photoIndex+1).padStart(2,'0')} / ${String(car.photos.length).padStart(2,'0')}`:'');
     $('c31Recommendations').innerHTML=cars.filter(other=>other!==car).sort((a,b)=>Number(b.brand===car.brand)-Number(a.brand===car.brand)||Math.abs(a.yearStart-car.yearStart)-Math.abs(b.yearStart-car.yearStart)).slice(0,3).map(other=>card(other)).join('');
     document.title=car.name+' · ARTECH · Lima';
     document.querySelector('meta[name="description"]')?.setAttribute('content',localized(car.description));
@@ -281,26 +309,40 @@
     })]);
     if (transition!==version || !museum.active) {busy=false;$('c31Museum').setAttribute('aria-busy','false');return;}
     rememberMuseum();
-    const source=$('c31Exhibits').querySelector(`[data-c31-exhibit="${index}"] img`);
+    const source=$('c31Exhibits').querySelector(`[data-c31-exhibit="${index}"] .c31-artwork`);
     const rect=source?.getBoundingClientRect();
     let layer,animation;
     try {
       root.classList.add('b05-transiting');
       if(!reduced.matches && rect?.width && typeof source.animate==='function') {
         layer=document.createElement('div');layer.className='c31-entry-transition';layer.setAttribute('aria-hidden','true');
-        const room=document.createElement('img');room.className='c31-entry-room';room.src=car.photos[0].room;room.alt='';layer.append(room);
-        const photo=document.createElement('img');photo.className='c31-entry-car';photo.src=car.photos[0].cutout;photo.alt='';
-        Object.assign(photo.style,{left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px'});layer.append(photo);document.body.append(layer);
+        document.body.append(layer);
+        const exhibit=document.createElement('div');exhibit.className='c31-entry-exhibit';
+        exhibit.innerHTML=sceneMarkup(car.photos[0],car.name);layer.append(exhibit);
+        const paintEntry=(r)=>{
+          Object.assign(exhibit.style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});
+          if(car.photos[0])Object.entries(M.fitCar(r.width,r.height,car.photos[0])).forEach(([key,value])=>exhibit.style.setProperty('--car-'+key,value+'px'));
+          else exhibit.classList.add('is-pending');
+        };
+        paintEntry(rect);
         location.hash=vehicleHash(car.slug);
         await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
         if(transition!==version)return;
         await renderVehicle(car);layoutScene();
-        const end=$('c31Hero').getBoundingClientRect(),fit=M.fitCar(end.width,end.height,car.photos[0]);
-        Object.assign(room.style,{left:end.left+'px',top:end.top+'px',width:end.width+'px',height:end.height+'px'});
-        room.animate([{opacity:0},{opacity:1}],{duration:500,easing:'ease-out',fill:'forwards'});
-        animation=photo.animate([{left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px',opacity:1},{left:(end.left+fit.left)+'px',top:(end.top+fit.top)+'px',width:fit.width+'px',height:fit.height+'px',opacity:1}],{duration:720,easing:'cubic-bezier(.22,.68,0,1)',fill:'forwards'});
-        await animation.finished.catch(()=>{});
-        if(transition===version)await layer.animate([{opacity:1},{opacity:0}],{duration:260,easing:'ease-out',fill:'forwards'}).finished.catch(()=>{});
+        const end=$('c31Hero').getBoundingClientRect(),begin=performance.now();
+        await new Promise(resolve=>{
+          const draw=time=>{
+            if(transition!==version){resolve();return;}
+            const p=M.clamp((time-begin)/720,0,1),ease=1-Math.pow(1-p,3);
+            const r=Object.fromEntries(['left','top','width','height'].map(k=>[k,rect[k]+(end[k]-rect[k])*ease]));
+            paintEntry(r);
+            if(p<1)requestAnimationFrame(draw);else resolve();
+          };draw(begin);
+        });
+        if(transition===version){
+          animation=layer.animate([{opacity:1},{opacity:0}],{duration:260,easing:'ease-out',fill:'forwards'});
+          await animation.finished.catch(()=>{});
+        }
       } else location.hash=vehicleHash(car.slug);
     } finally {
       animation?.cancel();layer?.remove();root.classList.remove('b05-transiting');busy=false;$('c31Museum').setAttribute('aria-busy','false');
@@ -318,8 +360,8 @@
     if(!inMuseum)stopMotion(true);
     if(inMuseum) {
       $('f01CollectionFilm').pause();
-      const saved=history.state?.c31Museum;
-      if(saved?.slugs?.length){museum.slugs=saved.slugs;museum.position=saved.position;}
+      const saved=history.state?.c31Museum?.version==='P07'?history.state.c31Museum:null;
+      if(saved?.version==='P07' && saved?.slugs?.length){museum.slugs=saved.slugs;museum.position=saved.position;}
       museum.slugs=museum.slugs.filter(slug=>carMap.has(slug));
       if(!museum.slugs.length) museum.slugs=cars.map(car=>car.slug);
       if(!wasMuseum && !saved && parsed.id && carMap.has(parsed.id) && !museum.slugs.includes(parsed.id))museum.slugs=cars.map(car=>car.slug);
@@ -409,8 +451,8 @@
   async function load() {
     $('c31Error').hidden=$('c31Retry').hidden=true;$('c31Grid').setAttribute('aria-busy','true');
     try {
-      const response=await fetch('assets/artech31/catalogue.json?v=31.4');if(!response.ok)throw Error('Catalogue unavailable');
-      const data=await response.json();M.validate(data);cars=data;carMap=new Map(cars.map(car=>[car.slug,car]));loaded=true;
+      const response=await fetch('assets/artech31/catalogue.json?v=p07-1');if(!response.ok)throw Error('Catalogue unavailable');
+      const data=await response.json();M.validate(data,window.ARTECH31_SLUGS);cars=data;carMap=new Map(cars.map(car=>[car.slug,car]));loaded=true;
       // Never publish selection statistics to f01's museum KPI listener.
       dispatchEvent(new CustomEvent('artech:selection-ready',{detail:{cars:cars.length}}));
       translate();route();
@@ -421,6 +463,6 @@
     }
   }
   restore();prepareDOM();wire();translate();
-  window.ArtechCollection31=Object.freeze({showVehicle(slug){const car=carMap.get(slug);if(car)return renderVehicle(car,current?.slug===slug);},openMuseum,version:'31.4'});
+  window.ArtechCollection31=Object.freeze({showVehicle(slug){const car=carMap.get(slug);if(car)return renderVehicle(car,current?.slug===slug);},openMuseum,version:'P07'});
   load();
 })();

@@ -32,14 +32,13 @@
     const w = Math.min(width, height * ratio), h = w / ratio;
     return { width: w, height: h, left: (width - w) / 2, top: (height - h) / 2 };
   }
-  // Fit the actual transparent silhouette, never crop the car to fill a viewport.
+  // Fit the silhouette above the caption, with room visible around the exhibit.
   function fitCar(width, height, photo) {
     const [x,y,w,h]=photo.carBounds,portrait=width/height<1;
-    const scale=Math.min(width*(portrait?.92:.86)/w,height*(portrait?.66:.82)/h);
-    const carWidth=w*scale,carHeight=h*scale,bottom=height*(portrait?.62:.90);
+    const scale=Math.min(width*(portrait?.88:.70)/w,height*(portrait?.43:.59)/h);
+    const carWidth=w*scale,carHeight=h*scale,bottom=height*(portrait?.62:.78);
     const top=Math.max(height*.08,bottom-carHeight),left=(width-carWidth)/2;
-    return {width:photo.cutoutWidth*scale,height:photo.cutoutHeight*scale,left:left-x*scale,top:top-y*scale,
-      shadowLeft:left+carWidth*.06,shadowTop:top+carHeight*.83,shadowWidth:carWidth*.88,shadowHeight:carHeight*.2};
+    return {width:photo.cutoutWidth*scale,height:photo.cutoutHeight*scale,left:left-x*scale,top:top-y*scale};
   }
   const wrap = (value, count) => count > 0 ? ((value % count) + count) % count : 0;
   const circularDelta = (index, position, count) => wrap(index - position + count / 2, count) - count / 2;
@@ -84,13 +83,18 @@
     const first = Math.min(...years), last = Math.max(...years);
     return { cars: cars.length, brands: new Set(cars.map(car => car.brand)).size, first, last, years: last - first };
   }
-  function validate(cars) {
-    if (!Array.isArray(cars) || cars.length !== 31) throw Error('The catalogue must contain 31 cars.');
+  function validate(cars, expected) {
+    if (!Array.isArray(cars) || !cars.length) throw Error('The catalogue must contain vehicles.');
+    if (expected && (cars.length!==expected.length || new Set(expected).size!==expected.length)) throw Error('Catalogue and route inventory differ.');
     const slugs = new Set(), photos = new Set();
     cars.forEach(car => {
       if (!car.slug || slugs.has(car.slug) || !car.name || !car.brand) throw Error('Invalid vehicle identity.');
       slugs.add(car.slug);
-      if (!car.photos?.length || car.photos[0].view !== 'three-quarter') throw Error('The first photo must be 3/4.');
+      if (expected && !expected.includes(car.slug)) throw Error('Vehicle route is missing.');
+      if (!car.yearLabel || !car.description?.es || !car.description?.en || !car.technical?.length || !car.sources?.length) throw Error('Incomplete catalogue record.');
+      if (!Array.isArray(car.photos)) throw Error('Photograph inventory is missing.');
+      if (!car.photos.length && car.imageStatus!=='pending') throw Error('Missing photograph status.');
+      if (car.photos.length && car.photos[0].view !== 'three-quarter') throw Error('The first photo must be 3/4.');
       car.photos.forEach((photo, index) => {
         if (photos.has(photo.key) || !photo.src || !photo.cutout || !photo.room) throw Error('Duplicate or incomplete photograph.');
         if(!Array.isArray(photo.carBounds) || photo.carBounds.length!==4 || !photo.carBounds.every(Number.isFinite) || photo.carBounds[2]<=0 || photo.carBounds[3]<=0 || !(photo.cutoutWidth>0 && photo.cutoutHeight>0)) throw Error('Invalid transparent car geometry.');
@@ -98,7 +102,7 @@
         photos.add(photo.key);
       });
     });
-    if (photos.size !== 47) throw Error('The collection must use all 47 photographs exactly once.');
+    if (photos.size !== 47) throw Error('The collection must preserve all 47 existing photographs exactly once.');
     return true;
   }
   return Object.freeze({ clamp, normalize, filter, hoverVelocity, advance, advanceCircular, wrap, circularDelta, galleryPose, fitScene, fitCar, statistics, validate });

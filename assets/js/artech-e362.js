@@ -1,4 +1,4 @@
-/* E362 · One Workshop stage. Native scroll, reversible fades and a crisp iris.
+/* E362 · One Workshop stage. Native scroll and reversible opacity fades.
  * The same progress always produces the same frame; no once-only animations,
  * wheel interception, image zoom, timers or third-party animation dependency. */
 (function () {
@@ -7,33 +7,38 @@
   const smooth = n => { const p = clamp(n); return p * p * (3 - 2 * p); };
   const count = 5, end = 4.65;
 
+  function stepsAt(local) {
+    // All three items finish before the scene starts its exit at .62.
+    return [0, 1, 2].map(i => smooth((local + .05 - i * .16) / .22));
+  }
+
   function frameAt(value) {
     const p = Math.max(0, Math.min(end, Number(value) || 0));
     const index = Math.min(count - 1, Math.floor(p));
     const transition = index < count - 1 ? clamp((p - index - .62) / .38) : 0;
-    const iris = index === 2 && transition > 0;
     const layers = Array.from({ length: count }, (_, i) => ({
-      opacity: 0, copy: 0, iris: null,
-      platinum: 100 * (1 - smooth((p - i + .02) / .6))
+      opacity: 0, copy: 0,
+      platinum: 100 * (1 - smooth((p - i + .02) / .6)),
+      steps: stepsAt(p - i), line: clamp((p - i + .01) / .53)
     }));
-    layers[index].opacity = iris ? 1 : 1 - smooth(transition);
+    layers[index].opacity = 1 - smooth(transition);
     layers[index].copy = 1 - smooth(transition / .45);
     if (transition > 0) {
       const next = layers[index + 1];
-      next.opacity = iris ? 1 : smooth(transition);
+      next.opacity = smooth(transition);
       next.copy = smooth((transition - .43) / .57);
-      next.iris = iris ? smooth(transition) : null;
     }
     return { progress: p, active: index + (transition >= .5 ? 1 : 0), layers };
   }
 
-  if (typeof module === 'object' && module.exports) module.exports = { frameAt, end };
+  if (typeof module === 'object' && module.exports) module.exports = { frameAt, stepsAt, end };
   if (typeof document === 'undefined') return;
   const page = document.getElementById('page-workshops');
   const run = document.getElementById('e362WorkshopRun');
   const stage = document.getElementById('e362WorkshopStage');
   if (!page || !run || !stage) return;
   const scenes = [...stage.querySelectorAll('[data-e362-scene]')];
+  const items = scenes.map(scene => [...scene.querySelectorAll('.e362-steps > div')]);
   const nav = document.getElementById('e362WorkshopNav');
   const controls = [...nav.querySelectorAll('[data-e362-go]')];
   const header = document.getElementById('header');
@@ -44,8 +49,17 @@
   const isOpen = () => page.classList.contains('active');
   const language = () => document.documentElement.lang === 'en' ? 'en' : 'es';
 
+  function paintItems(index, progress, line) {
+    const scene = scenes[index];
+    if (!items[index].length) return;
+    scene.classList.add('p06-steps-ready');
+    scene.querySelector('.e362-steps').style.setProperty('--p06-line', line.toFixed(4));
+    items[index].forEach((item, i) => item.style.setProperty('--p06-item', progress[i].toFixed(4)));
+  }
+
   function release() {
     scenes.forEach(scene => {
+      scene.classList.remove('p06-steps-ready');
       scene.inert = false;
       scene.removeAttribute('aria-hidden');
       scene.removeAttribute('data-current');
@@ -83,24 +97,27 @@
     raf = 0;
     if (!isOpen() || document.hidden) return;
     if (!pinned) {
-      scenes.forEach(scene => {
+      scenes.forEach((scene, index) => {
         const r = scene.getBoundingClientRect();
         const p = smooth((innerHeight * .85 - r.top) / Math.max(1, innerHeight * .65));
         scene.style.setProperty('--e362-platinum', (reduced.matches ? 0 : 100 * (1 - p)).toFixed(3) + '%');
+        const stepsTop = scene.querySelector('.e362-steps')?.getBoundingClientRect().top || 0;
+        // offsetTop excludes the item's own animated transform (no feedback).
+        const progresses = items[index].map((item, i) => reduced.matches ? 1 : smooth((innerHeight * .94 - stepsTop - item.offsetTop - i * innerHeight * .055) / (innerHeight * .18)));
+        paintItems(index, progresses, progresses.length ? progresses.reduce((a, b) => a + b, 0) / progresses.length : 1);
       });
       return;
     }
     const value = (headerHeight - run.getBoundingClientRect().top) / unit;
     const frame = frameAt(value);
-    // A circle calculated in pixels keeps its edge circular on any aspect ratio.
-    const radius = Math.hypot(stage.clientWidth * .57, stageHeight * .59) + 3;
     frame.layers.forEach((layer, i) => {
       const scene = scenes[i];
       scene.style.setProperty('--e362-opacity', layer.opacity.toFixed(4));
       scene.style.setProperty('--e362-copy', layer.copy.toFixed(4));
       scene.style.setProperty('--e362-platinum', layer.platinum.toFixed(3) + '%');
       scene.style.visibility = layer.opacity > 0 ? 'visible' : 'hidden';
-      scene.style.clipPath = layer.iris === null ? 'none' : `circle(${(radius * layer.iris).toFixed(2)}px at 43% 59%)`;
+      scene.style.clipPath = 'none';
+      paintItems(i, layer.steps, layer.line);
     });
     stage.style.setProperty('--e362-progress', (frame.progress / end).toFixed(4));
     selectAccessibility(frame.active);
@@ -206,5 +223,5 @@
   viewport.addEventListener?.('change', () => measure(true));
   document.fonts?.ready.then(() => measure(false));
   translate(); route();
-  window.ArtechWorkshop = Object.freeze({ version: 'E362', refresh: () => measure(false), go });
+  window.ArtechWorkshop = Object.freeze({ version: 'P07', refresh: () => measure(false), go });
 })();

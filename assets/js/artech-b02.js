@@ -1,143 +1,163 @@
-/* B02 + F01: photographic cockpit tour. Workshop information is now inline. */
+/* P06 · A continuous cabin journey, driven only by native scroll position.
+ * No wheel interception, autoplay, mandatory wait, snap or competing pointer pan.
+ * Pure frameAt() makes backwards travel identical to forwards travel. */
 (function () {
   'use strict';
-  const $ = id => document.getElementById(id);
-  if (!$('b02Cockpit')) return;
+  const clamp = n => Math.max(0, Math.min(1, n));
+  const smooth = n => { const p = clamp(n); return p * p * (3 - 2 * p); };
+  const end = 3;
+  function frameAt(value) {
+    const p = Math.max(0, Math.min(end, Number(value) || 0));
+    const index = Math.min(3, Math.floor(p)), t = p - index;
+    const layers = [0, 1, 2, 3].map(i => {
+      const local = clamp((p - i + 1) / 2);
+      return {
+        // Keep the outgoing photograph opaque beneath the incoming one.
+        // A conventional two-way opacity fade would expose the black backdrop.
+        opacity: i === index ? 1 : i === index + 1 ? smooth(t) : 0,
+        caption: i === index ? 1 - smooth(t / .5) : i === index + 1 ? smooth((t - .5) / .5) : 0,
+        scale: 1.04 + local * .065,
+        x: (local - .5) * [1, -1, -.7, .6][i],
+        y: (local - .5) * [-.6, .4, -.5, -.4][i]
+      };
+    });
+    if (p === end) layers[3].caption = 1;
+    return { progress: p, active: Math.min(3, Math.round(p)), intro: 1 - smooth(p / .7), layers };
+  }
+  if (typeof module === 'object' && module.exports) module.exports = { frameAt, end };
+  if (typeof document === 'undefined') return;
+  const page = document.getElementById('page-experience');
+  const run = document.getElementById('b02Cockpit');
+  const stage = document.getElementById('p06CabinStage');
+  if (!page || !run || !stage) return;
+  const frames = [...run.querySelectorAll('[data-p06-frame]')];
+  const controls = [...run.querySelectorAll('[data-p06-go]')];
+  const intro = run.querySelector('.p06-cabin-intro');
+  const nav = run.querySelector('.p06-cabin-nav');
+  const header = document.getElementById('header');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const pointer = matchMedia('(hover: hover) and (pointer: fine)');
-  const en = () => document.documentElement.lang === 'en';
-  const t = (es, english) => en() ? english : es;
-  const esc = window.Artech.escapeHTML;
-  const isExperience = () => location.hash.split('/')[0] === '#p-experience';
+  let raf = 0, unit = 1, headerHeight = 92, pinned = false, previousRoute = '';
+  const isOpen = () => page.classList.contains('active');
+  const currentProgress = () => Math.max(0, Math.min(end, (headerHeight - run.getBoundingClientRect().top) / unit));
 
-  document.querySelectorAll('[data-b02-scroll]').forEach(link => link.addEventListener('click', event => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (!target) return;
+  function release() {
+    run.classList.remove('p06-is-scrubbed');
+    intro.removeAttribute('aria-hidden');
+    frames.forEach(frame => frame.removeAttribute('aria-hidden'));
+  }
+  function paint() {
+    raf = 0;
+    if (!isOpen() || document.hidden) return;
+    if (pinned) {
+      const state = frameAt(currentProgress());
+      stage.style.setProperty('--p06-intro', state.intro.toFixed(4));
+      intro.setAttribute('aria-hidden', String(state.intro < .05));
+      // Router initially focuses h1; do not leave focus inside a hidden heading.
+      if (state.intro < .05 && intro.contains(document.activeElement)) controls[state.active].focus({ preventScroll: true });
+      state.layers.forEach((layer, i) => {
+        const frame = frames[i];
+        frame.style.setProperty('--p06-opacity', layer.opacity.toFixed(4));
+        frame.style.setProperty('--p06-caption', layer.caption.toFixed(4));
+        frame.style.setProperty('--p06-scale', layer.scale.toFixed(5));
+        frame.style.setProperty('--p06-x', layer.x.toFixed(4) + '%');
+        frame.style.setProperty('--p06-y', layer.y.toFixed(4) + '%');
+        frame.setAttribute('aria-hidden', String(i !== state.active));
+      });
+      controls.forEach((button, i) => {
+        button.style.setProperty('--p06-nav', clamp(state.progress - i + 1).toFixed(4));
+        if (i === state.active) button.setAttribute('aria-current', 'step');
+        else button.removeAttribute('aria-current');
+      });
+    }
+    page.querySelectorAll('.b02-reveal').forEach(el => {
+      if (reduced.matches || el.getBoundingClientRect().top < innerHeight * .94) el.classList.remove('is-awaiting');
+    });
+  }
+  function schedule() { if (!raf && isOpen()) raf = requestAnimationFrame(paint); }
+
+  function measure(preserve = false) {
+    if (!isOpen()) return;
+    const oldBounds = run.getBoundingClientRect();
+    const inJourney = oldBounds.bottom > headerHeight && oldBounds.top < innerHeight;
+    const oldPinned = pinned, oldProgress = currentProgress(), oldUnit = unit;
+    const oldIndex = oldPinned ? frameAt(oldProgress).active : Math.max(0, frames.findIndex(f => f.getBoundingClientRect().bottom > headerHeight));
+    const rect = header?.getBoundingClientRect();
+    if (rect?.height && !header.classList.contains('menu-open')) headerHeight = rect.height;
+    const height = Math.max(1, innerHeight - headerHeight);
+    unit = height * .78;
+    pinned = !reduced.matches && height >= 400;
+    page.style.setProperty('--p06-header', headerHeight + 'px');
+    run.style.setProperty('--p06-stage-height', height + 'px');
+    run.style.setProperty('--p06-run-height', (height + end * unit) + 'px');
+    run.classList.toggle('p06-is-scrubbed', pinned);
+    // Large text and very short windows use ordinary document flow.
+    if (pinned && intro.getBoundingClientRect().height > height * .62) pinned = false;
+    if (!pinned) release();
+    if (preserve && inJourney && oldPinned !== pinned) go(oldIndex, true);
+    else if (preserve && inJourney && pinned && oldUnit !== unit && oldProgress > 0 && oldProgress < end) {
+      scrollTo({ top: scrollY + run.getBoundingClientRect().top - headerHeight + oldProgress * unit, behavior: 'instant' });
+    }
+    paint();
+  }
+  function go(value, instant = false) {
+    if (!isOpen()) return;
+    const index = Math.max(0, Math.min(3, Number(value) || 0));
+    const top = pinned ? scrollY + run.getBoundingClientRect().top - headerHeight + index * unit
+      : scrollY + frames[index].getBoundingClientRect().top - headerHeight;
+    scrollTo({ top, behavior: instant || reduced.matches ? 'instant' : 'smooth' });
+  }
+  controls.forEach(button => button.addEventListener('click', () => go(button.dataset.p06Go)));
+  nav.addEventListener('keydown', event => {
+    const index = controls.indexOf(event.target);
+    if (index < 0) return;
+    const delta = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
+    if (!delta && event.key !== 'Home' && event.key !== 'End') return;
     event.preventDefault();
-    const header = $('header');
-    const offset = header ? header.getBoundingClientRect().height + 16 : 90;
-    window.scrollTo({ top: target.getBoundingClientRect().top + scrollY - offset, behavior: reduced.matches ? 'auto' : 'smooth' });
+    const next = event.key === 'Home' ? 0 : event.key === 'End' ? 3 : Math.max(0, Math.min(3, index + delta));
+    controls[next].focus(); go(next);
+  });
+  run.querySelector('[data-p06-skip]').addEventListener('click', event => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    const target = document.getElementById('p06Visits');
+    scrollTo({ top: scrollY + target.getBoundingClientRect().top - headerHeight, behavior: reduced.matches ? 'instant' : 'smooth' });
     const heading = target.querySelector('h2');
-    if (heading) { heading.tabIndex = -1; heading.focus({ preventScroll: true }); }
-  }));
-
-  const cockpit = $('b02Cockpit'), layer = cockpit.querySelector('.b02-cockpit-layer');
-  const photo = $('b02CockpitPhoto'), points = [...cockpit.querySelectorAll('[data-b02-hotspot]')];
-  let selectedPoint = null;
-  function closePoint() { selectedPoint = null; }
-  function renderPoint() {}
-  points.forEach(button => button.addEventListener('click', () => {
-    selectedPoint = button;
-    const rect = button.getBoundingClientRect();
-    window.ArtechDetailOrigin = { x: (rect.left + rect.width / 2) / innerWidth, y: (rect.top + rect.height / 2) / innerHeight, key: button.dataset.b02Hotspot };
-    const hash = '#p-detail/' + button.dataset.b02Hotspot;
-    if (window.ArtechB01) window.ArtechB01.navigate(hash); else location.hash = hash;
-  }));
-  function positionPoints() {
-    const r = layer.getBoundingClientRect(); if (!r.width || !r.height) return;
-    // client dimensions exclude the decorative pointer transform.
-    const width = layer.clientWidth || r.width, height = layer.clientHeight || r.height;
-    const iw = photo.naturalWidth || 1920, ih = photo.naturalHeight || 1280;
-    const contain = getComputedStyle(photo).objectFit === 'contain';
-    const scale = (contain ? Math.min : Math.max)(width / iw, height / ih);
-    const offsetX = (width - iw * scale) / 2;
-    const offsetY = (height - ih * scale) * (contain ? .58 : .5);
-    points.forEach(button => {
-      button.style.left = `${offsetX + Number(button.dataset.pointX) * iw * scale}px`;
-      button.style.top = `${offsetY + Number(button.dataset.pointY) * ih * scale}px`;
-    });
-  }
-  cockpit.addEventListener('pointermove', event => {
-    if (!pointer.matches || reduced.matches || !isExperience() || selectedPoint) return;
-    const r = cockpit.getBoundingClientRect();
-    layer.style.setProperty('--b02-pan-x', `${((event.clientX - r.left) / r.width - .5) * -12}px`);
-    layer.style.setProperty('--b02-pan-y', `${((event.clientY - r.top) / r.height - .5) * -9}px`);
+    heading.tabIndex = -1; heading.focus({ preventScroll: true });
   });
-  cockpit.addEventListener('pointerleave', () => {
-    layer.style.setProperty('--b02-pan-x', '0px'); layer.style.setProperty('--b02-pan-y', '0px');
-  });
-  photo.addEventListener('load', positionPoints);
-  if ('ResizeObserver' in window) new ResizeObserver(positionPoints).observe(cockpit);
-  addEventListener('resize', positionPoints, { passive: true });
-
-  const tour = $('b02Tour'), frames = [...tour.querySelectorAll('[data-tour-frame]')];
-  let playing = false, playFrame = 0, position = 0, previousTime = 0;
-  const duration = 24;
-  const captions = [['01 / El habitáculo', '01 / The cabin'], ['02 / La posición de manejo', '02 / The driving position'], ['03 / Un emblema, una historia', '03 / A crest, a story']];
-  function paintTour() {
-    const current = Math.min(2, Math.floor(position / 8));
-    frames.forEach((frame, i) => {
-      frame.classList.toggle('is-visible', i === current);
-      frame.setAttribute('aria-hidden', String(i !== current));
-      const local = Math.max(0, Math.min(1, (position - i * 8) / 8));
-      frame.style.setProperty('--b02-tour-scale', reduced.matches ? '1' : (1 + local * .075).toFixed(4));
-      frame.style.setProperty('--b02-tour-origin', ['48% 60%', '40% 45%', '50% 50%'][i]);
-    });
-    $('b02TourCaption').textContent = captions[current][en() ? 1 : 0];
-    $('b02TourSeek').value = String(position);
-    $('b02TourSeek').setAttribute('aria-valuetext', `${Math.floor(position)} ${t('de 24 segundos', 'of 24 seconds')}`);
-    $('b02TourTime').textContent = '00:' + String(Math.floor(position)).padStart(2, '0');
-    $('b02TourPlay').textContent = playing ? 'Ⅱ' : '▶';
-    $('b02TourPlay').setAttribute('aria-pressed', String(playing));
-    $('b02TourPlay').setAttribute('aria-label', playing ? t('Pausar recorrido', 'Pause tour') : t('Reproducir recorrido', 'Play tour'));
-    $('b02TourBigPlay').hidden = playing;
-  }
-  function pauseTour() {
-    playing = false; cancelAnimationFrame(playFrame); previousTime = 0; paintTour();
-  }
-  function tick(time) {
-    if (!playing) return;
-    if (previousTime) position = Math.min(duration, position + Math.min(time - previousTime, 100) / 1000);
-    previousTime = time; paintTour();
-    if (position >= duration) pauseTour();
-    else playFrame = requestAnimationFrame(tick);
-  }
-  function toggleTour() {
-    if (playing) { pauseTour(); return; }
-    if (position >= duration) position = 0;
-    playing = true; previousTime = 0; paintTour(); playFrame = requestAnimationFrame(tick);
-  }
-  $('b02TourPlay').addEventListener('click', toggleTour);
-  $('b02TourBigPlay').addEventListener('click', toggleTour);
-  $('b02TourSeek').addEventListener('input', event => { position = Math.max(0, Math.min(duration, Number(event.target.value))); previousTime = 0; paintTour(); });
-  $('b02TourFull').hidden = !tour.requestFullscreen;
-  $('b02TourFull').addEventListener('click', async () => {
-    try { if (document.fullscreenElement) await document.exitFullscreen(); else if (tour.requestFullscreen) await tour.requestFullscreen(); } catch (_) { /* Manual tour remains available. */ }
-  });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) pauseTour(); });
-  $('burger').addEventListener('click', pauseTour);
-
-  let scrollFrame = 0;
-  function revealAndMove() {
-    scrollFrame = 0;
-    const active = document.querySelector('.b02-page.active'); if (!active) return;
-    active.querySelectorAll('.b02-reveal').forEach(el => {
-      const r = el.getBoundingClientRect();
-      if (reduced.matches || r.top < innerHeight * .94) el.classList.remove('is-awaiting');
-    });
-
-  }
-  function schedule() { if (!scrollFrame) scrollFrame = requestAnimationFrame(revealAndMove); }
   function route() {
-    closePoint();
-    if (!isExperience()) pauseTour();
-    positionPoints();
-    document.querySelectorAll('.b02-page.active .b02-reveal').forEach(el => {
-      if (!reduced.matches && el.getBoundingClientRect().top > innerHeight) el.classList.add('is-awaiting');
-    });
+    if (!isOpen()) {
+      cancelAnimationFrame(raf); raf = 0; pinned = false; release(); previousRoute = ''; return;
+    }
+    frames.forEach(frame => { frame.querySelector('img').loading = 'eager'; });
+    measure();
+    if (previousRoute !== location.hash) {
+      const key = location.hash.split('/')[1];
+      if (key === 'interior') go(1, true);
+      if (key === 'visits') {
+        const target = document.getElementById('p06Visits');
+        scrollTo({ top: scrollY + target.getBoundingClientRect().top - headerHeight, behavior: 'instant' });
+      }
+      previousRoute = location.hash;
+    }
     schedule();
   }
-  addEventListener('scroll', schedule, { passive: true });
-  addEventListener('artech:route', route);
   function translate() {
-    renderPoint(); paintTour();
-    points.forEach(button => button.setAttribute('aria-label', t('Descubrir ', 'Discover ') + ({ wheel: t('el volante', 'the steering wheel'), console: t('la consola', 'the console'), leather: t('la tapicería', 'the upholstery') })[button.dataset.b02Hotspot]));
-    $('b02TourBigPlay').setAttribute('aria-label', t('Reproducir recorrido fotográfico', 'Play photographic tour'));
-    $('b02TourSeek').setAttribute('aria-label', t('Avance del recorrido', 'Tour progress'));
-    $('b02TourFull').setAttribute('aria-label', t('Pantalla completa', 'Full screen'));
-    tour.setAttribute('aria-label', t('Recorrido fotográfico del interior', 'Photographic interior tour'));
+    nav.setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Interior details' : 'Detalles del interior');
+    requestAnimationFrame(() => measure(true));
   }
+  addEventListener('scroll', schedule, { passive: true });
+  addEventListener('resize', () => measure(true), { passive: true });
+  addEventListener('artech:route', route);
   addEventListener('artech:lang', translate);
-  if (reduced.addEventListener) reduced.addEventListener('change', () => { paintTour(); schedule(); });
+  addEventListener('pageshow', route);
+  addEventListener('pagehide', () => { cancelAnimationFrame(raf); raf = 0; });
+  document.addEventListener('visibilitychange', schedule);
+  reduced.addEventListener?.('change', () => measure(true));
+  document.fonts?.ready.then(() => measure());
+  frames.forEach((frame, i) => {
+    frame.style.setProperty('--p06-position', ['48% 55%', '43% 50%', '50% 58%', '42% 65%'][i]);
+    frame.style.setProperty('--p06-origin', ['45% 50%', '44% 50%', '52% 62%', '45% 70%'][i]);
+  });
   translate(); route();
+  window.ArtechCabin = Object.freeze({ version: 'P06', refresh: () => measure(), go });
 })();

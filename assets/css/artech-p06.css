@@ -1,0 +1,225 @@
+/* P06 · Continuous photography and scroll-linked details. */
+
+/* One photograph fills each hero. Composition is in the source image. */
+#page-workshops .e362-scene--hero .e362-photo {
+  position: absolute;
+  inset: 0 !important;
+  width: 100%; height: 100%; margin: 0;
+  aspect-ratio: auto; z-index: -1;
+  mask-image: none; -webkit-mask-image: none;
+}
+#page-workshops .e362-scene--hero .e362-photo img {
+  object-fit: cover !important;
+  object-position: center bottom !important;
+}
+#page-workshops .e362-scene--hero .e362-copy {
+  position: absolute; inset: clamp(30px, 5.5vh, 68px) auto auto 5.3vw;
+  width: min(480px, 31vw); margin: 0;
+}
+#page-workshops .e362-scene--hero .e362-title { font-size: clamp(35px, 3.4vw, 60px); }
+#page-workshops .e362-scene--hero .e362-cue { margin-top: auto; }
+
+/* Each item gets its own reversible progress; defaults stay readable without JS. */
+#page-workshops .e362-steps > div { --p06-item: 1; position: relative; }
+#page-workshops .p06-steps-ready .e362-steps > div { transition: none; }
+#page-workshops .p06-steps-ready.e362-scene--bodywork .e362-steps > div {
+  opacity: var(--p06-item);
+  transform: translateY(calc(22px * (1 - var(--p06-item))));
+}
+#page-workshops .e362-scene--mechanics .e362-steps {
+  --p06-line: 1;
+  padding-left: 17px;
+}
+#page-workshops .e362-scene--mechanics .e362-steps::before,
+#page-workshops .e362-scene--mechanics .e362-steps::after {
+  content: ''; position: absolute; top: 8px; bottom: 14px; left: 1px; width: 1px;
+  background: #ffffff26; transform-origin: top;
+}
+#page-workshops .e362-scene--mechanics .e362-steps::after {
+  background: #d4323b; transform: scaleY(var(--p06-line));
+}
+#page-workshops .e362-scene--mechanics .e362-steps > div { border: 0; padding-left: 16px; }
+#page-workshops .e362-scene--mechanics .e362-steps > div::before {
+  content: ''; position: absolute; top: 8px; left: -19px; width: 7px; height: 7px;
+  border-radius: 50%; background: #d4323b; opacity: calc(.2 + .8 * var(--p06-item));
+  transform: scale(calc(.7 + .3 * var(--p06-item)));
+}
+#page-workshops .p06-steps-ready.e362-scene--mechanics .e362-steps > div > * {
+  opacity: calc(.18 + .82 * var(--p06-item));
+  transform: translateX(calc(-10px * (1 - var(--p06-item))));
+}
+#page-workshops .p06-steps-ready.e362-scene--interiors .e362-steps > div {
+  opacity: var(--p06-item);
+  transform: translateX(calc(26px * (1 - var(--p06-item))));
+}
+#page-workshops .p06-steps-ready.e362-scene--interiors .e362-steps > div::after {
+  content: ''; position: absolute; left: 17px; right: 0; bottom: -9px; height: 1px;
+  background: linear-gradient(90deg, #b9212a, #f0e4cd, transparent);
+  transform-origin: left; transform: scaleX(var(--p06-item));
+  opacity: calc(1 - var(--p06-item) * .7);
+}
+
+/* Cabin: native scrolling drives a short continuous photographic journey. */
+#page-experience { --p06-header: var(--f02-header, 92px); padding-top: var(--p06-header) !important; }
+#page-experience .p06-cabin-run { position: relative; margin: 0; background: #050505; }
+#page-experience .p06-cabin-stage { position: relative; isolation: isolate; }
+#page-experience .p06-cabin-intro {
+  position: relative; z-index: 4;
+  padding: 42px 6vw 44px;
+}
+#page-experience .p06-cabin-intro h1 {
+  font-size: clamp(34px, 3.35vw, 52px); margin: 0 auto;
+}
+#page-experience .p06-cabin-intro .b01-lead { margin: 18px auto 0; font-size: 13px; }
+#page-experience .p06-cabin-frames { position: relative; }
+#page-experience .p06-cabin-frame {
+  position: relative; min-height: 440px; height: 80svh; margin: 0;
+  overflow: hidden; isolation: isolate;
+}
+#page-experience .p06-cabin-frame img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  object-position: var(--p06-position, 50% 55%); transform-origin: var(--p06-origin, 50% 55%);
+}
+#page-experience .p06-cabin-frame::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, #050505b8, transparent 38%, transparent 54%, #050505e8);
+}
+#page-experience .p06-cabin-frame figcaption {
+  position: absolute; z-index: 2; left: 6vw; right: 6vw; bottom: 100px;
+  color: #f1ece5; pointer-events: none;
+}
+#page-experience .p06-cabin-frame figcaption span {
+  font-size: 10px; letter-spacing: .15em; color: #d3c6b4;
+}
+#page-experience .p06-cabin-frame h2 { font-size: clamp(30px, 3.4vw, 52px); margin: 12px 0 8px; }
+#page-experience .p06-cabin-frame p { font-size: 13px; color: #d8d0c5; }
+#page-experience .p06-cabin-nav {
+  display: none; position: absolute; z-index: 5; left: 6vw; right: 6vw; bottom: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; max-width: 680px;
+}
+#page-experience .p06-cabin-nav button {
+  --p06-nav: 0; position: relative; min-height: 44px; padding: 16px 0 0;
+  font: 400 11px/1.5 var(--body); text-align: left; color: #cbc4ba;
+  background: transparent; border: 0; cursor: pointer;
+}
+#page-experience .p06-cabin-nav button::before,
+#page-experience .p06-cabin-nav button::after {
+  content: ''; position: absolute; top: 4px; left: 0; right: 0; height: 1px;
+  background: #ffffff40; transform-origin: left;
+}
+#page-experience .p06-cabin-nav button::after { background: #f2e8dc; transform: scaleX(var(--p06-nav)); }
+#page-experience .p06-cabin-nav button[aria-current] { color: #fff; }
+#page-experience :is(.p06-cabin-nav button, .p06-cabin-skip):focus-visible { outline: 2px solid #f4e6d4; outline-offset: 6px; }
+#page-experience .p06-cabin-skip {
+  display: block; position: relative; z-index: 5; padding: 16px 0; margin: 0 6vw;
+  width: fit-content; color: #ede4d8; font-size: 11px; text-decoration: none;
+}
+#page-experience .p06-cabin-run.p06-is-scrubbed { height: var(--p06-run-height); }
+#page-experience .p06-is-scrubbed .p06-cabin-stage {
+  position: sticky; top: var(--p06-header); height: var(--p06-stage-height); overflow: clip;
+}
+#page-experience .p06-is-scrubbed .p06-cabin-intro {
+  position: absolute; inset: 0 0 auto; padding: clamp(28px, 4.8vh, 60px) 6vw 0;
+  opacity: var(--p06-intro, 1); pointer-events: none;
+  transform: translateY(calc((1 - var(--p06-intro, 1)) * -16px));
+}
+#page-experience .p06-is-scrubbed .p06-cabin-frames { position: absolute; inset: 0; }
+#page-experience .p06-is-scrubbed .p06-cabin-frame {
+  position: absolute; inset: 0; min-height: 0; height: 100%;
+  opacity: var(--p06-opacity, 0); transition: none; will-change: opacity;
+}
+#page-experience .p06-is-scrubbed .p06-cabin-frame:first-child { --p06-opacity: 1; }
+#page-experience .p06-is-scrubbed .p06-cabin-frame img {
+  transform: translate3d(var(--p06-x, 0px), var(--p06-y, 0px), 0) scale(var(--p06-scale, 1));
+  transition: none; will-change: transform;
+}
+#page-experience .p06-is-scrubbed .p06-cabin-frame figcaption { opacity: var(--p06-caption, 1); }
+#page-experience .p06-is-scrubbed .p06-cabin-nav { display: grid; }
+#page-experience .p06-is-scrubbed .p06-cabin-skip { position: absolute; top: 16px; right: 6vw; margin: 0; }
+
+/* The entire card changes on hover or keyboard focus, including its text area. */
+#page-experience .b02-experience-card {
+  border-radius: 28px; padding: 12px 12px 28px;
+  transition: background-color .28s ease, color .28s ease;
+}
+#page-experience .b02-experience-card figure { border-radius: 20px; }
+#page-experience #p06Visits { scroll-margin-top: var(--p06-header); }
+#page-experience .b02-experience-card :is(h3, p) { transition: color .28s ease; }
+#page-experience .b02-experience-card:focus-within { background: #fff; color: #191919; }
+#page-experience .b02-experience-card:focus-within h3 { color: #191919; }
+#page-experience .b02-experience-card:focus-within p { color: #52504c; }
+#page-experience .b02-experience-card:focus-within .b01-button { background: #a51c25; color: #fff; }
+@media (hover: hover) {
+  #page-experience .b02-experience-card:hover { background: #fff; color: #191919; }
+  #page-experience .b02-experience-card:hover h3 { color: #191919; }
+  #page-experience .b02-experience-card:hover p { color: #52504c; }
+  #page-experience .b02-experience-card:hover .b01-button { background: #a51c25; color: #fff; }
+}
+
+/* Existing car, unchanged. Empty continuous floor, with NO shadow effects. */
+#page-experience .b02-experience-closing {
+  max-width: none; min-height: min(760px, 90svh); padding: 60px 6vw 70px;
+  background: #030303 url('../media/p06/closing-floor.webp') center bottom / cover no-repeat;
+}
+#page-experience .b02-experience-closing > figure,
+#page-experience .b02-experience-closing > figure img {
+  filter: none !important; box-shadow: none !important;
+}
+#page-experience .b02-experience-closing > figure::before,
+#page-experience .b02-experience-closing > figure::after { content: none !important; }
+
+#page-cafe .b06-table picture { display: block; width: 100%; height: 100%; }
+#page-cafe .b06-table img { object-fit: cover; object-position: center; }
+#page-cafe .b06-table::after {
+  display: block;
+  background: linear-gradient(90deg, #050505c7, #0505057a 24%, #05050526 47%, transparent 67%), linear-gradient(0deg, #05050535, transparent 30%);
+}
+#page-cafe .b06-intro { width: 33%; }
+#page-cafe .b06-intro h1 { font-size: clamp(40px, 4.3vw, 76px); }
+
+@media (max-width: 899px) {
+  #page-workshops .e362-scene--hero { min-height: max(640px, calc(100svh - var(--e362-header))); }
+  #page-workshops .e362-scene--hero .e362-copy { inset: 32px auto auto 6vw; width: 86%; max-width: 500px; }
+  #page-workshops .e362-scene--hero .e362-title { font-size: clamp(32px, 5.5vw, 44px); }
+}
+@media (max-aspect-ratio: 6/5) {
+  #page-workshops .e362-scene--hero .e362-copy { inset: 32px auto auto 6vw; width: 86%; max-width: 520px; }
+  #page-workshops .e362-scene--hero .e362-photo img { object-position: center 72% !important; }
+  #page-cafe .b06-intro { top: 6%; transform: none; width: 80%; max-width: 540px; }
+  #page-cafe .b06-table::after { background: linear-gradient(180deg, #050505bd, #05050560 28%, transparent 58%); }
+}
+@media (max-width: 780px), (prefers-reduced-motion: reduce) {
+  /* Mobile / reduced-motion menu remains in normal flow, after a full hero. */
+  #page-cafe .b06-stage { --p06-cafe-hero-height: max(680px, 100svh); }
+  #page-cafe .b06-table {
+    position: absolute; inset: var(--b06-header) 0 auto; width: 100%;
+    height: calc(var(--p06-cafe-hero-height) - var(--b06-header)); margin: 0;
+  }
+  #page-cafe .b06-table img { width: 100%; height: 100%; max-height: none; object-fit: cover; }
+  #page-cafe .b06-intro {
+    position: relative; inset: auto; width: 100%; max-width: none;
+    min-height: calc(var(--p06-cafe-hero-height) - var(--b06-header));
+    background: transparent; padding: 40px 6vw; order: 1;
+  }
+  #page-cafe .b06-intro h1 { font-size: clamp(36px, 6vw, 64px); }
+  #page-cafe .b06-table::after { display: block; }
+}
+@media (min-width: 781px) and (prefers-reduced-motion: reduce) and (min-aspect-ratio: 6/5) {
+  #page-cafe .b06-intro { padding-top: max(80px, 24svh); }
+  #page-cafe .b06-intro h1 { max-width: 35vw; }
+}
+@media (max-width: 600px) {
+  #page-experience .p06-cabin-nav { gap: 14px; bottom: 20px; }
+  #page-experience .p06-cabin-nav button { font-size: 10px; }
+  #page-experience .p06-cabin-frame figcaption { bottom: 98px; }
+  #page-experience .p06-cabin-intro h1 { font-size: clamp(30px, 8vw, 38px); max-width: 360px; }
+  #page-experience .p06-is-scrubbed .p06-cabin-intro { padding-top: 62px; }
+  #page-experience .p06-cabin-frame { height: 76svh; min-height: 420px; }
+  #page-experience .b02-experience-closing { min-height: 600px; padding: 48px 6vw; gap: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #page-workshops .e362-steps > div,
+  #page-workshops .e362-steps > div > * { opacity: 1 !important; transform: none !important; }
+  #page-workshops .e362-steps { --p06-line: 1 !important; }
+  #page-experience .p06-cabin-frame { scroll-margin-top: var(--p06-header); }
+}

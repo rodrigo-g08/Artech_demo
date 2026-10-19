@@ -1,0 +1,7 @@
+/* P07 · The entire timeline rises together, including its three text blocks. */
+#page-workshops .e362-scene--mechanics .e362-steps {
+  margin-bottom: clamp(24px, 4.8vh, 56px);
+}
+@media (max-width: 899px), (max-height: 679px) {
+  #page-workshops .e362-scene--mechanics .e362-steps { margin-bottom: 24px; }
+}

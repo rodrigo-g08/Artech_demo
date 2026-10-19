@@ -1,0 +1,160 @@
+{
+  "version": "B02+B03",
+  "original_photographs": "User-supplied A88A0846.zip and A88A0584.zip",
+  "reused_b012_assets": [
+    "classic-original-960.webp",
+    "classic-original-1920.webp",
+    "red-cutout.webp",
+    "red-detail-960.webp",
+    "red-detail-1920.webp"
+  ],
+  "reused_provenance": "assets/data/b012-media.json",
+  "media": [
+    {
+      "file": "assets/media/b023/cockpit-960.webp",
+      "source": "A88A0804.jpg",
+      "source_sha256": "daa30fc89c2a0191a9ea41249619b127e0a3358f1b2a6ef8d58733565c7203b5",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only. Framing through CSS.",
+      "sha256": "e6b82d63047f4d4df7a2615b13d68425916d2eb9cbe1ef354e0a17e137e4ffc2",
+      "bytes": 64184
+    },
+    {
+      "file": "assets/media/b023/cockpit-1920.webp",
+      "source": "A88A0804.jpg",
+      "source_sha256": "daa30fc89c2a0191a9ea41249619b127e0a3358f1b2a6ef8d58733565c7203b5",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only. Framing through CSS.",
+      "sha256": "f6268dd3a9d366d096f726cad621f763048da068e7ed712372348ca53fee3043",
+      "bytes": 168824
+    },
+    {
+      "file": "assets/media/b023/cockpit-2560.webp",
+      "source": "A88A0804.jpg",
+      "source_sha256": "daa30fc89c2a0191a9ea41249619b127e0a3358f1b2a6ef8d58733565c7203b5",
+      "width": 2560,
+      "height": 1707,
+      "processing": "Resize and WebP encoding only. Framing through CSS.",
+      "sha256": "2229fc6261f67ab4118f6eea76d40c5f5bc6df86a62bb4d8dd6efd0fc6bf5ee6",
+      "bytes": 272198
+    },
+    {
+      "file": "assets/media/b023/cockpit-wide-960.webp",
+      "source": "A88A0800.jpg",
+      "source_sha256": "d2fa5f3d8a1e9d55a23890ef1b18d74f90595b5c513d578ce36675e3bfbaf688",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only. Framing through CSS.",
+      "sha256": "80ce664af6f6b2966bea8dae9c3a6f75fa1d191f363868795f188a1c37c44081",
+      "bytes": 67900
+    },
+    {
+      "file": "assets/media/b023/cockpit-wide-1920.webp",
+      "source": "A88A0800.jpg",
+      "source_sha256": "d2fa5f3d8a1e9d55a23890ef1b18d74f90595b5c513d578ce36675e3bfbaf688",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only. Framing through CSS.",
+      "sha256": "e40dbe55a774d82e69e10557d2922bb51d26a8c1e2081465a3606e4d4db5820f",
+      "bytes": 192152
+    },
+    {
+      "file": "assets/media/b023/cockpit-wide-2560.webp",
+      "source": "A88A0800.jpg",
+      "source_sha256": "d2fa5f3d8a1e9d55a23890ef1b18d74f90595b5c513d578ce36675e3bfbaf688",
+      "width": 2560,
+      "height": 1707,
+      "processing": "Resize and WebP encoding only. Framing through CSS.",
+      "sha256": "91ebbe9295e0ca0bb84c34678f56e61468b91192dbbf38792ab83bf8e575012c",
+      "bytes": 331118
+    },
+    {
+      "file": "assets/media/b023/cockpit-badge-960.webp",
+      "source": "A88A0806.jpg",
+      "source_sha256": "e96e708c477401bf40ca022524fb7959affef1efc16176abcd82d2a66cba7cd1",
+      "width": 960,
+      "height": 640,
+      "processing": "Resize and WebP encoding only. Framing through CSS.",
+      "sha256": "2d0613c1179b7f32dd6da88efb543e18b1ae2127ae4e48ea4b4801a0f21b038f",
+      "bytes": 24394
+    },
+    {
+      "file": "assets/media/b023/cockpit-badge-1920.webp",
+      "source": "A88A0806.jpg",
+      "source_sha256": "e96e708c477401bf40ca022524fb7959affef1efc16176abcd82d2a66cba7cd1",
+      "width": 1920,
+      "height": 1280,
+      "processing": "Resize and WebP encoding only. Framing through CSS.",
+      "sha256": "695d30ebc25ca09f264527a586ed8358d8327c237c49dae8625cb431ebda9a9d",
+      "bytes": 75696
+    },
+    {
+      "file": "assets/media/b023/cockpit-badge-2560.webp",
+      "source": "A88A0806.jpg",
+      "source_sha256": "e96e708c477401bf40ca022524fb7959affef1efc16176abcd82d2a66cba7cd1",
+      "width": 2560,
+      "height": 1707,
+      "processing": "Resize and WebP encoding only. Framing through CSS.",
+      "sha256": "218aeba8cbd80af01c19d35b812cc88b21661ef76bffe53db009dfb5bb38b34f",
+      "bytes": 119986
+    },
+    {
+      "file": "assets/media/b023/workshop-hero-960.webp",
+      "source": "image(8).png — user workshop mockup",
+      "source_sha256": "8f4b760225e01ba9b511205a4ce648a37c04ce29381e000e92a07e129c5e0286",
+      "derivative_sha256": "101d7037e14eacbc89a3ad4028be36ae0cc8d15d0980a53f476d31d113630663",
+      "width": 960,
+      "height": 540,
+      "processing": "Generative edit of the repair scene in the supplied mockup; remove UI, expand horizontal framing, resize and WebP encoding.",
+      "provenance_note": "Illustrative scene derived from the mockup. Not a documentary photograph of the ARTECH workshop, and not in the two photo ZIPs.",
+      "sha256": "e4c9f3add9187522a60209701510630443d5b943255f19aca3027e531d010794",
+      "bytes": 62650
+    },
+    {
+      "file": "assets/media/b023/workshop-hero-1920.webp",
+      "source": "image(8).png — user workshop mockup",
+      "source_sha256": "8f4b760225e01ba9b511205a4ce648a37c04ce29381e000e92a07e129c5e0286",
+      "derivative_sha256": "101d7037e14eacbc89a3ad4028be36ae0cc8d15d0980a53f476d31d113630663",
+      "width": 1672,
+      "height": 941,
+      "processing": "Generative edit of the repair scene in the supplied mockup; remove UI, expand horizontal framing, resize and WebP encoding.",
+      "provenance_note": "Illustrative scene derived from the mockup. Not a documentary photograph of the ARTECH workshop, and not in the two photo ZIPs.",
+      "sha256": "1014eb2fe83a29339ec3c9a38b8243b478720d2156d47aed7c6bd7d97c4fab1b",
+      "bytes": 131954
+    },
+    {
+      "file": "assets/media/b023/workshop-mechanics-960.webp",
+      "source": "image(8).png — user workshop mockup",
+      "source_sha256": "8f4b760225e01ba9b511205a4ce648a37c04ce29381e000e92a07e129c5e0286",
+      "derivative_sha256": "d0813fb3e4a625dffb513130da1e8cb52340830709b91b3491f8d9425d463fe7",
+      "width": 960,
+      "height": 540,
+      "processing": "Generative edit of the repair scene in the supplied mockup; remove UI, expand horizontal framing, resize and WebP encoding.",
+      "provenance_note": "Illustrative scene derived from the mockup. Not a documentary photograph of the ARTECH workshop, and not in the two photo ZIPs.",
+      "sha256": "c1fea3cb2d8e7e32d8056aa03b68decf02152dd6dfe6eea418f04e0fc8a1bbe4",
+      "bytes": 60538
+    },
+    {
+      "file": "assets/media/b023/workshop-mechanics-1920.webp",
+      "source": "image(8).png — user workshop mockup",
+      "source_sha256": "8f4b760225e01ba9b511205a4ce648a37c04ce29381e000e92a07e129c5e0286",
+      "derivative_sha256": "d0813fb3e4a625dffb513130da1e8cb52340830709b91b3491f8d9425d463fe7",
+      "width": 1672,
+      "height": 941,
+      "processing": "Generative edit of the repair scene in the supplied mockup; remove UI, expand horizontal framing, resize and WebP encoding.",
+      "provenance_note": "Illustrative scene derived from the mockup. Not a documentary photograph of the ARTECH workshop, and not in the two photo ZIPs.",
+      "sha256": "ce9e89233cabbf97b7575c991bc75b42052fba2b3c297efa5f3ce8eefe780782",
+      "bytes": 122844
+    },
+    {
+      "file": "assets/media/b023/demo-qr.svg",
+      "source": "Procedural QR encoding",
+      "content": "ARTECH DEMO - NO VALIDO PARA INGRESAR",
+      "processing": "Constant demonstration payload. Does not identify or validate any admission.",
+      "sha256": "488bddeb059760eaeac0048fe4f094988f1187230b54fe1e75bfa32f0371a90f",
+      "bytes": 65427
+    }
+  ]
+}

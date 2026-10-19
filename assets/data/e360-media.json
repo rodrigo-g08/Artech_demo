@@ -1,0 +1,234 @@
+{
+  "version": "F02+E360",
+  "notes": [
+    "Recreaciones visuales basadas en los vehículos aportados. No constituyen documentación de restauración ni modelos 3D medidos.",
+    "Las galerías de colección siguen utilizando solo los originales del usuario."
+  ],
+  "media": [
+    {
+      "file": "assets/media/e360/classic-exterior.webp",
+      "sha256": "c0e99ac61f8d2f66a570cbbf6e5cb3814aab368eb7cc6f05417437570e3614a0",
+      "width": 1672,
+      "height": 941,
+      "bytes": 170744,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "a88a0602-1920.webp"
+      ],
+      "prompt": "Use case: compositing. Project-bound photographic asset for ARTECH guided automotive experience. Reference is the exact vehicle identity. Create a pristine photorealistic automotive studio image of the cream and black vintage roadster in the CENTER of the reference, black canvas roof, circular headlights, wood steering wheel, whitewall tires and twin chrome bumpers. Preserve its exact shape, proportions, trim, wheels, color and front three-quarter diagonal camera angle from the reference. Isolate ONLY that vehicle on a seamless near pure black (#050505) studio background and matte black floor with a very subtle contact shadow. Remove every other vehicle, wall, building reflection, showroom furniture and floor tile. Remove any protective white transport tape. Keep the whole vehicle, all tires, roof, bumpers fully inside the frame with generous 12 percent margin on all sides. Car centered horizontally, occupying 78 percent frame width, wheels baseline at 78 percent frame height. High end soft overhead strip lighting, readable body contours, restrained specular highlights, no bright window reflections, no haze, no visible lamps. Landscape 16:9, 2048x1152. No UI, captions, text overlay, invented plate or watermark. Faithful automotive photography, not a stylized drawing.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/red-exterior.webp",
+      "sha256": "093b23cf332824073e6ea3d8011a661a29b1c0ed71c1bb6c027b79b0876a6007",
+      "width": 1672,
+      "height": 941,
+      "bytes": 148072,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "a88a0683-1920.webp"
+      ],
+      "prompt": "Use case: compositing. Project-bound photographic asset for ARTECH guided automotive experience. Reference is the exact vehicle identity. Create a pristine photorealistic automotive studio image of the RED Porsche 911 GT3 997.2 in the CENTER of the reference, gray multi spoke centerlock wheels and fixed red rear wing. Preserve its exact shape, proportions, trim, wheels, color and front three-quarter diagonal camera angle from the reference. Isolate ONLY that vehicle on a seamless near pure black (#050505) studio background and matte black floor with a very subtle contact shadow. Remove every other vehicle, wall, building reflection, showroom furniture and floor tile. Remove any protective white transport tape. Keep the whole vehicle, all tires, roof, bumpers fully inside the frame with generous 12 percent margin on all sides. Car centered horizontally, occupying 78 percent frame width, wheels baseline at 78 percent frame height. High end soft overhead strip lighting, readable body contours, restrained specular highlights, no bright window reflections, no haze, no visible lamps. Landscape 16:9, 2048x1152. No UI, captions, text overlay, invented plate or watermark. Faithful automotive photography, not a stylized drawing.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/white-exterior.webp",
+      "sha256": "2451665ab6e314d930cac682a3ef7f8d87ea99cef9a6c1e83e41000215ffac4a",
+      "width": 1672,
+      "height": 941,
+      "bytes": 131900,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "a88a0702-1920.webp"
+      ],
+      "prompt": "Use case: compositing. Project-bound photographic asset for ARTECH guided automotive experience. Reference is the exact vehicle identity. Create a pristine photorealistic automotive studio image of the WHITE Porsche 911 Turbo 930 in the CENTER of the reference, round raised headlights, black Fuchs wheels with polished lips, black rubber bumpers, sharkfin rear quarter strakes and whale tail. Preserve its exact shape, proportions, trim, wheels, color and front three-quarter diagonal camera angle from the reference. Isolate ONLY that vehicle on a seamless near pure black (#050505) studio background and matte black floor with a very subtle contact shadow. Remove every other vehicle, wall, building reflection, showroom furniture and floor tile. Remove any protective white transport tape. Keep the whole vehicle, all tires, roof, bumpers fully inside the frame with generous 12 percent margin on all sides. Car centered horizontally, occupying 78 percent frame width, wheels baseline at 78 percent frame height. High end soft overhead strip lighting, readable body contours, restrained specular highlights, no bright window reflections, no haze, no visible lamps. Landscape 16:9, 2048x1152. No UI, captions, text overlay, invented plate or watermark. Faithful automotive photography, not a stylized drawing.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/classic-profile.webp",
+      "sha256": "082ab0809e98eb9413cf4d17ee2eede02ad7a3d4b06397ecefe3a787b66c7176",
+      "width": 1672,
+      "height": 941,
+      "bytes": 116086,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "exec-e0756c65-5391-45a0-a89a-741109e5d6ac.png",
+        "exec-7568cdcc-adca-4439-84ad-cf60048b2708.png"
+      ],
+      "prompt": "Use case: precise-object-edit. First image is target. Second image shows the correct rear. Keep the first image exactly the same in camera, lighting, colors, wheels, shape and background except REMOVE the exposed spare tire mounted at the very rear, above the rear bumper on the far right edge. The back should be smooth like the second image with no spare tire. Preserve all other details, same landscape dimensions. No text or UI.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/classic-rear.webp",
+      "sha256": "0beb3b4b552b547be152495a761865d6c734f0d8ed137f71647edc1cfe3ee44b",
+      "width": 1672,
+      "height": 941,
+      "bytes": 153774,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "exec-6a298504-5e6c-4320-8b6e-cc8e2487d287.png"
+      ],
+      "prompt": "Use case: identity-preserve. Project automotive photographic visualization. Show the EXACT SAME vehicle as the reference from a DIFFERENT camera angle: a rear three-quarter view, camera walking around the driver's side toward the rear, showing the rear and left side, whole car. Preserve this exact car's generation, paint colors, roof, proportions, wheels, trim and distinctive details. Keep the black canvas soft top, cream body panels, black hood and fenders, whitewall tires and period roadster proportions. Same seamless pure black studio and matte charcoal ground as reference, overhead soft light and subtle rim light, controlled reflections. Entire car centered, occupying 78 percent frame width, baseline at 78 percent frame height with all wheels, mirrors and bumpers inside frame. High-end photoreal car photography, 16:9 landscape. No other cars, people, text, UI, license plate number or watermark. No exaggerated shine, no panorama, no collage.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/red-profile.webp",
+      "sha256": "70138a8e5c8de583e73f2984842287d914a687ed25b64ba3f52941612bddb7fc",
+      "width": 1672,
+      "height": 941,
+      "bytes": 117956,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "exec-63f8e71c-7c29-49e5-b26e-6eba95b20b6c.png"
+      ],
+      "prompt": "Use case: identity-preserve. Project automotive photographic visualization. Show the EXACT SAME vehicle as the reference from a DIFFERENT camera angle: a precise side profile, facing left, both near wheels visible, whole car. Preserve this exact car's generation, paint colors, roof, proportions, wheels, trim and distinctive details. Red Porsche 911 GT3 997.2, grey centerlock wheels, red fixed rear wing, twin exhaust tips in the center. Same seamless pure black studio and matte charcoal ground as reference, overhead soft light and subtle rim light, controlled reflections. Entire car centered, occupying 78 percent frame width, baseline at 78 percent frame height with all wheels, mirrors and bumpers inside frame. High-end photoreal car photography, 16:9 landscape. No other cars, people, text, UI, license plate number or watermark. No exaggerated shine, no panorama, no collage.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/red-rear.webp",
+      "sha256": "cfc36711ef1c640c7a8020d8b1e272d5ef5b6e955e82b54b49e5d665ff8cae39",
+      "width": 1672,
+      "height": 941,
+      "bytes": 134306,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "exec-63f8e71c-7c29-49e5-b26e-6eba95b20b6c.png"
+      ],
+      "prompt": "Use case: identity-preserve. Project automotive photographic visualization. Show the EXACT SAME vehicle as the reference from a DIFFERENT camera angle: a rear three-quarter view, camera walking around the driver's side toward the rear, showing the rear and left side, whole car. Preserve this exact car's generation, paint colors, roof, proportions, wheels, trim and distinctive details. Red Porsche 911 GT3 997.2, grey centerlock wheels, red fixed rear wing, twin exhaust tips in the center. Same seamless pure black studio and matte charcoal ground as reference, overhead soft light and subtle rim light, controlled reflections. Entire car centered, occupying 78 percent frame width, baseline at 78 percent frame height with all wheels, mirrors and bumpers inside frame. High-end photoreal car photography, 16:9 landscape. No other cars, people, text, UI, license plate number or watermark. No exaggerated shine, no panorama, no collage.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/white-profile.webp",
+      "sha256": "6979a3b63d05071ae7eda67f1fa88aa4c8dcb81069e260aa4971892364d8095e",
+      "width": 1672,
+      "height": 941,
+      "bytes": 112430,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "exec-70fc5a06-7fc7-4700-91b4-b8beb14559cf.png"
+      ],
+      "prompt": "Use case: identity-preserve. Project automotive photographic visualization. Show the EXACT SAME vehicle as the reference from a DIFFERENT camera angle: a precise side profile, facing left, both near wheels visible, whole car. Preserve this exact car's generation, paint colors, roof, proportions, wheels, trim and distinctive details. White Porsche 930 Turbo with Fuchs black wheels/polished lips, sharkfin quarter strakes, black rubber impact bumpers, black-edged whale tail rear wing. Same seamless pure black studio and matte charcoal ground as reference, overhead soft light and subtle rim light, controlled reflections. Entire car centered, occupying 78 percent frame width, baseline at 78 percent frame height with all wheels, mirrors and bumpers inside frame. High-end photoreal car photography, 16:9 landscape. No other cars, people, text, UI, license plate number or watermark. No exaggerated shine, no panorama, no collage.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/white-rear.webp",
+      "sha256": "b95a080a87034a51b2fae7620e7651ecab797b580831e25b6c5d1b123662c3a0",
+      "width": 1672,
+      "height": 941,
+      "bytes": 139116,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "exec-70fc5a06-7fc7-4700-91b4-b8beb14559cf.png"
+      ],
+      "prompt": "Use case: identity-preserve. Project automotive photographic visualization. Show the EXACT SAME vehicle as the reference from a DIFFERENT camera angle: a rear three-quarter view, camera walking around the driver's side toward the rear, showing the rear and left side, whole car. Preserve this exact car's generation, paint colors, roof, proportions, wheels, trim and distinctive details. White Porsche 930 Turbo with Fuchs black wheels/polished lips, sharkfin quarter strakes, black rubber impact bumpers, black-edged whale tail rear wing. Same seamless pure black studio and matte charcoal ground as reference, overhead soft light and subtle rim light, controlled reflections. Entire car centered, occupying 78 percent frame width, baseline at 78 percent frame height with all wheels, mirrors and bumpers inside frame. High-end photoreal car photography, 16:9 landscape. No other cars, people, text, UI, license plate number or watermark. No exaggerated shine, no panorama, no collage.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/classic-cabin.webp",
+      "sha256": "b7cfe64e10c5a8259fcc6bf5d9bf04f1b3eac704d2b57286a91fffce6bf2558b",
+      "width": 1672,
+      "height": 941,
+      "bytes": 271562,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "exec-6a298504-5e6c-4320-8b6e-cc8e2487d287.png"
+      ],
+      "prompt": "Use case: photorealistic-natural. Project asset, explicitly an artistic reconstruction of the unseen interior of the cream and black vintage roadster in the reference. Create a wide photograph from just outside the open driver's door looking diagonally into its cabin. Keep its black canvas soft top, cream exterior edge and chrome windshield, large dark wood rim steering wheel with slender polished metal spokes, black leather seats with modest period stitching, understated period black dashboard with round analog gauges and floor-mounted long metal gear lever. No modern controls, digital screens or seatbelts. Tactile natural materials, subtle wear, highly realistic museum automotive photography. Show entire steering wheel, dashboard, lever and front seating so subsequent detailed views can follow these same elements. Outside the windows use a completely black studio. Soft natural controlled light, landscape 16:9, no text, labels, UI or people.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/classic-wheel.webp",
+      "sha256": "f08ca0b0c926c86c287375d377b47939bce4230c7bef53408827f4011d965228",
+      "width": 1672,
+      "height": 941,
+      "bytes": 274914,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "exec-baa44495-587b-49b7-b6ac-4c41a6f9b872.png"
+      ],
+      "prompt": "Use case: identity-preserve. A distinct new photographic view of the SAME cabin in the reference for an immersive guided car experience. Move the camera from the driver's seat, nearly straight on to the wheel. Main subject: wood rim steering wheel with its complete rim and three slender metal spokes, analog black dashboard behind it. Preserve exact materials, colors and period equipment from reference. This must be a new perspective, NOT a crop or zoom of the reference photo. Luxury automotive editorial photography with realistic soft light, sharp natural textures and moderate depth of field. Compose as a landscape 16:9 photo filling the canvas, keep the primary detail completely inside frame with breathing room. No other vehicles or people visible through windows; black background outside. No UI, captions, additional hardware, text overlay or watermark.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/classic-console.webp",
+      "sha256": "6f2d445fd4a8dc31198479d3aa71dea84261c59d5f10f68f34ad53cfec8fbc2c",
+      "width": 1672,
+      "height": 941,
+      "bytes": 320384,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "exec-baa44495-587b-49b7-b6ac-4c41a6f9b872.png"
+      ],
+      "prompt": "Use case: identity-preserve. A distinct new photographic view of the SAME cabin in the reference for an immersive guided car experience. Move the camera from the passenger seat looking diagonally down towards the driver's footwell. Main subject: long floor-mounted manual gear lever, round black knob, period floor and front edge of black leather seat, including the lower dashboard. Preserve exact materials, colors and period equipment from reference. This must be a new perspective, NOT a crop or zoom of the reference photo. Luxury automotive editorial photography with realistic soft light, sharp natural textures and moderate depth of field. Compose as a landscape 16:9 photo filling the canvas, keep the primary detail completely inside frame with breathing room. No other vehicles or people visible through windows; black background outside. No UI, captions, additional hardware, text overlay or watermark.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/white-console.webp",
+      "sha256": "e403bf14a845a0ab677fe725bab1e8fbdff355aac7eb34047257711b7121814a",
+      "width": 1672,
+      "height": 941,
+      "bytes": 235494,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "a88a0909-1920.webp"
+      ],
+      "prompt": "Use case: identity-preserve. A distinct new photographic view of the SAME cabin in the reference for an immersive guided car experience. Move the camera a closer three-quarter view from above the passenger seat looking down at the central controls. Main subject: the exact black manual gear lever with accordion boot, rectangular central controls with two round dials, lower dashboard and the perforated black leather seat edges. Preserve exact materials, colors and period equipment from reference. This must be a new perspective, NOT a crop or zoom of the reference photo. Luxury automotive editorial photography with realistic soft light, sharp natural textures and moderate depth of field. Compose as a landscape 16:9 photo filling the canvas, keep the primary detail completely inside frame with breathing room. No other vehicles or people visible through windows; black background outside. No UI, captions, additional hardware, text overlay or watermark.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/experience-wheel.webp",
+      "sha256": "f8e84a31d4d75cb04d73f96971841967a35e97ffef0df290245f82db876ceeab",
+      "width": 1672,
+      "height": 941,
+      "bytes": 210404,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "cockpit-1920.webp"
+      ],
+      "prompt": "Use case: identity-preserve. A distinct new photographic view of the SAME cabin in the reference for an immersive guided car experience. Move the camera directly behind the driver's seat looking straight at the complete wheel and gauges. Main subject: the complete black leather three-spoke Porsche steering wheel with silver inserts and the exact analog white instrument cluster, black and tan dashboard. Preserve exact materials, colors and period equipment from reference. This must be a new perspective, NOT a crop or zoom of the reference photo. Luxury automotive editorial photography with realistic soft light, sharp natural textures and moderate depth of field. Compose as a landscape 16:9 photo filling the canvas, keep the primary detail completely inside frame with breathing room. No other vehicles or people visible through windows; black background outside. No UI, captions, additional hardware, text overlay or watermark.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/experience-console.webp",
+      "sha256": "3e5dde5ef81ce4b2cf5c0e656204486b92119b13d32098a8f1165ed45719930c",
+      "width": 1672,
+      "height": 941,
+      "bytes": 165996,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "cockpit-1920.webp"
+      ],
+      "prompt": "Use case: identity-preserve. A distinct new photographic view of the SAME cabin in the reference for an immersive guided car experience. Move the camera from passenger shoulder height looking diagonally down at the central gear lever and console. Main subject: the exact black manual gear knob and tan leather shift boot, silver oval base, tan center tunnel and black handbrake, lower black controls. Preserve exact materials, colors and period equipment from reference. This must be a new perspective, NOT a crop or zoom of the reference photo. Luxury automotive editorial photography with realistic soft light, sharp natural textures and moderate depth of field. Compose as a landscape 16:9 photo filling the canvas, keep the primary detail completely inside frame with breathing room. No other vehicles or people visible through windows; black background outside. No UI, captions, additional hardware, text overlay or watermark.",
+      "processing": "WebP encoding only; framing unchanged."
+    },
+    {
+      "file": "assets/media/e360/experience-leather.webp",
+      "sha256": "6cf2145dbd96ee6f4374b38c800d56e195e34da8ba4600bbbc2b77f01f57c6f1",
+      "width": 1672,
+      "height": 941,
+      "bytes": 193258,
+      "kind": "reconstruction",
+      "tool": "built-in imagegen",
+      "references": [
+        "cockpit-1920.webp"
+      ],
+      "prompt": "Use case: identity-preserve. A distinct new photographic view of the SAME cabin in the reference for an immersive guided car experience. Move the camera from the open passenger door, looking slightly down across the seat. Main subject: the tan leather passenger seat, cushion and backrest, natural creases and stitching, adjacent tan door panel and belt buckle. Preserve exact materials, colors and period equipment from reference. This must be a new perspective, NOT a crop or zoom of the reference photo. Luxury automotive editorial photography with realistic soft light, sharp natural textures and moderate depth of field. Compose as a landscape 16:9 photo filling the canvas, keep the primary detail completely inside frame with breathing room. No other vehicles or people visible through windows; black background outside. No UI, captions, additional hardware, text overlay or watermark.",
+      "processing": "WebP encoding only; framing unchanged."
+    }
+  ]
+}

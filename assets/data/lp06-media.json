@@ -1,0 +1,193 @@
+{
+  "milestones": [
+    "LP03",
+    "LP04",
+    "LP05",
+    "LP06"
+  ],
+  "nativeResolution": "1672x941",
+  "note": "2560px variants are Lanczos resamples, not native 4K. AI-created editorial illustrations, not evidence of actual museum vehicles, staff, dishes or premises. No catalogue records changed.",
+  "generation": "Built-in image_gen edits/generation from the approved images. Full prompt set in docs/ARTECH_LP03_LP06_PROMPTS.md.",
+  "media": [
+    {
+      "file": "assets/media/lp06/hero-red-768.webp",
+      "width": 768,
+      "height": 432,
+      "bytes": 18122,
+      "sha256": "79e440fb80e9035c81f0efa89820515cb593ee00e9255709aa963834cc02e22f",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-dcba4276-474a-4001-bbcc-031a3203f328.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": false
+    },
+    {
+      "file": "assets/media/lp06/hero-red-1280.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 42910,
+      "sha256": "ecbe6df60716e501777e600506f2f8ff293c21e5e044186c6536f6b48b395f86",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-dcba4276-474a-4001-bbcc-031a3203f328.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": false
+    },
+    {
+      "file": "assets/media/lp06/hero-red-2560.webp",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 108384,
+      "sha256": "40578d281659f093e8fa6cf7a251297455cec7552d259511bfcb9884381765e4",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-dcba4276-474a-4001-bbcc-031a3203f328.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": true
+    },
+    {
+      "file": "assets/media/lp06/hero-white-768.webp",
+      "width": 768,
+      "height": 432,
+      "bytes": 17502,
+      "sha256": "8b5e4e62a437a9984caf5d4f55e4a783ab04adb95c7625b564ca38df37b7bf7c",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-dde17053-7eea-4e1b-a6f9-083e8d6b524f.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": false
+    },
+    {
+      "file": "assets/media/lp06/hero-white-1280.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 39148,
+      "sha256": "2eeaf94a2bb8f7799d07c4fb0b68b607fcdb8ab7becda0226cd018580bfcaa84",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-dde17053-7eea-4e1b-a6f9-083e8d6b524f.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": false
+    },
+    {
+      "file": "assets/media/lp06/hero-white-2560.webp",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 98056,
+      "sha256": "696f6b524c8880186281e0679a69c1bf629abd0c1a1ddefc0e302022447009ad",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-dde17053-7eea-4e1b-a6f9-083e8d6b524f.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": true
+    },
+    {
+      "file": "assets/media/lp06/hero-classic-768.webp",
+      "width": 768,
+      "height": 432,
+      "bytes": 20114,
+      "sha256": "99b1b97d7b912df7cd6dc9eb1f55b256aabdb90a9f8aac0b2abd4f8b4ae5cdee",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-e38c09a5-6bcd-4a61-bb9f-393104ee5cb8.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": false
+    },
+    {
+      "file": "assets/media/lp06/hero-classic-1280.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 47472,
+      "sha256": "cac93ae0713e5695e4a6eeb136e5e3c6b0f2de1bd069465e4ec7c3bf0f28dae6",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-e38c09a5-6bcd-4a61-bb9f-393104ee5cb8.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": false
+    },
+    {
+      "file": "assets/media/lp06/hero-classic-2560.webp",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 116766,
+      "sha256": "ef782e7ebdf969b8d9c4dad7eb52ab75076598b16f074b5c4c5ecc783b9b64b4",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-e38c09a5-6bcd-4a61-bb9f-393104ee5cb8.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": true
+    },
+    {
+      "file": "assets/media/lp06/atelier-768.webp",
+      "width": 768,
+      "height": 432,
+      "bytes": 20418,
+      "sha256": "3101853a79fa986c8c59c90818fee41e3d4a09c31097a0e3560f2d8f1dd6ed49",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-631d881e-6ea4-4c20-bf82-fc9abd755661.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": false
+    },
+    {
+      "file": "assets/media/lp06/atelier-1280.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 41556,
+      "sha256": "89b88e27dd8c1d1e76ee862419cb5adf97a1821b264bd1153122e743dc0a42c6",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-631d881e-6ea4-4c20-bf82-fc9abd755661.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": false
+    },
+    {
+      "file": "assets/media/lp06/atelier-2560.webp",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 94438,
+      "sha256": "48fdf9726f6f85925f254975b834b5aa3c5e481d3f50fb1ea4ba5f83ecfcc23e",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-631d881e-6ea4-4c20-bf82-fc9abd755661.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": true
+    },
+    {
+      "file": "assets/media/lp06/dining-768.webp",
+      "width": 768,
+      "height": 432,
+      "bytes": 25666,
+      "sha256": "85090d4a2035770ac628fb561d8b12c6281f77f25d30e310f13abe37d119d06a",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-72290ed6-11a3-4934-b270-3ea3e9c0ba15.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": false
+    },
+    {
+      "file": "assets/media/lp06/dining-1280.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 53718,
+      "sha256": "f8905d4810e73996db414bb435e822e39c992a059a13beff5bb7f1e686792d96",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-72290ed6-11a3-4934-b270-3ea3e9c0ba15.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": false
+    },
+    {
+      "file": "assets/media/lp06/dining-2560.webp",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 121454,
+      "sha256": "286a7f665f9a8a8a54391cac1db9f8aeac66c40f03212f91291ce18284369634",
+      "kind": "illustrative-reconstruction",
+      "source": "exec-72290ed6-11a3-4934-b270-3ea3e9c0ba15.png",
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "upscaled": true
+    }
+  ]
+}

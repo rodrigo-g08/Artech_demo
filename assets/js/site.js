@@ -1215,6 +1215,8 @@ function renderInfo(key){
 // internal pages router (same-window views: #p-experience / #p-collection)
 const innerPages={ 'location':document.getElementById('location'), 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle'), 'p-cafe':document.getElementById('page-cafe'), 'p-contact':document.getElementById('page-contact'), 'p-blog':document.getElementById('page-blog'), 'p-post':document.getElementById('page-post'), 'p-tickets':document.getElementById('page-tickets')  , 'p-workshops':document.getElementById('page-workshops'), 'p-affiliated':document.getElementById('page-affiliated'), 'p-history':document.getElementById('page-history') };
 Object.keys(INFO).forEach(function(k){ innerPages[k]=document.getElementById('page-info'); });
+innerPages['p-photo']=document.getElementById('page-vehicle');
+innerPages['p-detail']=document.getElementById('page-detail');
 innerPages['exp3d']=document.getElementById('exp3d');
 /* los videos decorativos del home consumen CPU aunque estén ocultos:
    se pausan al abrir una página interna y vuelven al regresar */
@@ -1248,7 +1250,7 @@ function route(options = {}) {
   if (key === 'p-post' && (!id || !BLOG.some(post => post.id === id))) {
     history.replaceState(null, '', '#p-blog'); key = 'p-blog';
   }
-  if (key === 'p-vehicle' && carsStatus === 'ready' && !CARS.some(car => car.slug === id)) {
+  if (key === 'p-vehicle' && (window.ARTECH31_ENABLED ? !window.ARTECH31_SLUGS.includes(id) : carsStatus === 'ready' && !CARS.some(car => car.slug === id))) {
     history.replaceState(null, '', '#p-collection'); key = 'p-collection';
     window.__toast?.(dict[lang].vehicle_missing);
   }
@@ -1271,7 +1273,7 @@ function route(options = {}) {
     if(key==='p-experience') renderExperiencias();
     if(key==='p-post') showPost(id);
     if(key==='p-vehicle' && carsStatus==='ready') showVehicle(id);
-    if(key==='p-vehicle' && carsStatus!=='ready') {
+    if(key==='p-vehicle' && carsStatus!=='ready' && !window.ARTECH31_ENABLED) {
       document.getElementById('vhName').textContent = dict[lang][carsStatus==='error'?'catalogue_error':'catalogue_loading'];
     }
     page.querySelectorAll('img[data-src]').forEach(im => { im.src=im.dataset.src; im.removeAttribute('data-src'); });
@@ -1339,6 +1341,10 @@ function renderHome() {
 }
 
 function renderCollections(){
+  /* ARTECH31:renderCollections */
+  if(window.ARTECH31_ENABLED)return;
+
+  if(document.getElementById('page-collection')?.dataset.b05==='true')return;
   const home=document.getElementById('homeGrid');
   if(home) home.innerHTML=CARS.slice(0,12).map(c=>carCard(c)).join('');
   const grid=document.getElementById('carGrid');
@@ -1563,8 +1569,12 @@ document.getElementById('cform').addEventListener('submit', e => {
 function setImg(id,src){ const el=document.getElementById(id); if(!el) return; const box=el.parentElement, lbl=box&&box.querySelector('.ph-lbl'); if(src){ el.src=src; if(lbl) lbl.style.display='none'; } else { el.removeAttribute('src'); if(lbl) lbl.style.display=''; } }
 let galTimer=null, galPaused=false;
 function showVehicle(slug){
+  /* ARTECH31:showVehicle */
+  if(window.ARTECH31_ENABLED){currentSlug=slug;window.ArtechCollection31?.showVehicle(slug);return;}
+
   const car=CARS.find(c=>c.slug===slug); if(!car) return;
   currentSlug=slug;
+  if(document.getElementById('page-vehicle')?.dataset.b05==='true'){window.ArtechGallery?.showVehicle(slug);return;}
   const b='assets/cars/'+slug+'/';
   const es=(lang==='es');
   setImg('vhCover',b+'cover.jpg');
@@ -1632,6 +1642,10 @@ function showVehicle(slug){
 }
 // filters (category pills + live search by plate)
 function wireFilters(){
+  /* ARTECH31:wireFilters */
+  if(window.ARTECH31_ENABLED)return;
+
+  if(document.getElementById('page-collection')?.dataset.b05==='true')return;
   const pills=[...document.querySelectorAll('.pf')];
   const brandSel=document.getElementById('brandSel');
   const search=document.getElementById('carSearch');
@@ -1708,6 +1722,10 @@ function wireFilters(){
   apply();
 }
 function updateCatalogueStatus() {
+  /* ARTECH31:updateCatalogueStatus */
+  if(window.ARTECH31_ENABLED)return;
+
+  if(document.getElementById('page-collection')?.dataset.b05==='true')return;
   const node=document.getElementById('catalogue-status');
   const message = carsStatus==='error' ? 'catalogue_error' : carsStatus==='loading' ? 'catalogue_loading' : !CARS.length ? 'catalogue_empty' : null;
   node.textContent = message ? dict[lang][message] : '';
@@ -1727,13 +1745,13 @@ async function loadCars() {
     renderCollections(); wireFilters();
     const brands=new Set(CARS.map(car=>car.brand).filter(Boolean));
     const years=CARS.map(car=>parseInt(car.year,10)).filter(Number.isFinite);
-    document.getElementById('statCars').textContent=CARS.length;
-    document.getElementById('statBrands').textContent=brands.size;
-    document.getElementById('statYears').textContent=years.length ? Math.max(...years)-Math.min(...years) : '—';
+    if(document.getElementById('statCars')) document.getElementById('statCars').textContent=CARS.length;
+    if(document.getElementById('statBrands')) document.getElementById('statBrands').textContent=brands.size;
+    if(document.getElementById('statYears')) document.getElementById('statYears').textContent=years.length ? Math.max(...years)-Math.min(...years) : '—';
   } catch(_) { carsStatus='error'; CARS=[]; }
   updateCatalogueStatus(); apply(lang); route();
 }
-document.getElementById('catalogue-retry').addEventListener('click',loadCars);
+document.getElementById('catalogue-retry')?.addEventListener('click',loadCars);
 loadCars();
 
 // Accessible photo dialog, including keyboard activation and focus restoration.

@@ -1,0 +1,419 @@
+{
+  "version": "E361",
+  "mode": "guided-prerendered-camera-journey",
+  "cars": [
+    {
+      "key": "classic",
+      "name": "Chrysler Roadster",
+      "year": null,
+      "record": "#p-photo/classic-chrysler-cream-roadster",
+      "identity": "catalogue-match-pending",
+      "views": [
+        {
+          "id": "exterior",
+          "label": {
+            "es": "Exterior",
+            "en": "Exterior"
+          },
+          "src": "assets/media/e361/classic-exterior.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 0,
+          "surface": "cutout",
+          "ground": 0.9639,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        {
+          "id": "profile",
+          "label": {
+            "es": "Lateral",
+            "en": "Profile"
+          },
+          "src": "assets/media/e361/classic-profile.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 0,
+          "surface": "cutout",
+          "ground": 0.8077,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        {
+          "id": "rear",
+          "label": {
+            "es": "Parte trasera",
+            "en": "Rear"
+          },
+          "src": "assets/media/e361/classic-rear.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 0,
+          "surface": "cutout",
+          "ground": 0.8969,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        {
+          "id": "cabin",
+          "label": {
+            "es": "Habitáculo",
+            "en": "Cabin"
+          },
+          "src": "assets/media/e361/classic-driver.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 3,
+          "surface": "scene"
+        },
+        {
+          "id": "wheel",
+          "label": {
+            "es": "Volante",
+            "en": "Steering wheel"
+          },
+          "src": "assets/media/e360/classic-wheel.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json",
+          "station": 3,
+          "surface": "scene"
+        },
+        {
+          "id": "console",
+          "label": {
+            "es": "Consola",
+            "en": "Console"
+          },
+          "src": "assets/media/e360/classic-console.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json",
+          "station": 3,
+          "surface": "scene"
+        }
+      ],
+      "journey": {
+        "door": {
+          "id": "door",
+          "label": {
+            "es": "Puerta abierta",
+            "en": "Door open"
+          },
+          "src": "assets/media/e361/classic-door.webp",
+          "station": 1,
+          "surface": "cutout",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "ground": 0.9724,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        "threshold": {
+          "id": "threshold",
+          "label": {
+            "es": "Acceso al habitáculo",
+            "en": "Cabin doorway"
+          },
+          "src": "assets/media/e361/classic-threshold.webp",
+          "station": 2,
+          "surface": "scene",
+          "kind": "reconstruction",
+          "reference": "e361-media.json"
+        }
+      }
+    },
+    {
+      "key": "red",
+      "name": "Porsche 911 GT3",
+      "year": "2010",
+      "record": "#p-vehicle/a4d-305",
+      "identity": "confirmed",
+      "views": [
+        {
+          "id": "exterior",
+          "label": {
+            "es": "Exterior",
+            "en": "Exterior"
+          },
+          "src": "assets/media/e361/red-exterior.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 0,
+          "surface": "cutout",
+          "ground": 0.8342,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        {
+          "id": "profile",
+          "label": {
+            "es": "Lateral",
+            "en": "Profile"
+          },
+          "src": "assets/media/e361/red-profile.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 0,
+          "surface": "cutout",
+          "ground": 0.7258,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        {
+          "id": "rear",
+          "label": {
+            "es": "Parte trasera",
+            "en": "Rear"
+          },
+          "src": "assets/media/e361/red-rear.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 0,
+          "surface": "cutout",
+          "ground": 0.8289,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        {
+          "id": "cabin",
+          "label": {
+            "es": "Habitáculo",
+            "en": "Cabin"
+          },
+          "src": "assets/media/e361/red-driver.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 3,
+          "surface": "scene"
+        },
+        {
+          "id": "wheel",
+          "label": {
+            "es": "Volante",
+            "en": "Steering wheel"
+          },
+          "src": "assets/media/b05/a88a0813-1920.webp",
+          "kind": "photograph",
+          "reference": "A88A0813.jpg",
+          "station": 3,
+          "surface": "scene"
+        },
+        {
+          "id": "console",
+          "label": {
+            "es": "Consola",
+            "en": "Console"
+          },
+          "src": "assets/media/b05/a88a0821-1920.webp",
+          "kind": "photograph",
+          "reference": "A88A0821.jpg",
+          "station": 3,
+          "surface": "scene"
+        }
+      ],
+      "journey": {
+        "door": {
+          "id": "door",
+          "label": {
+            "es": "Puerta abierta",
+            "en": "Door open"
+          },
+          "src": "assets/media/e361/red-door.webp",
+          "station": 1,
+          "surface": "cutout",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "ground": 0.8395,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        "threshold": {
+          "id": "threshold",
+          "label": {
+            "es": "Acceso al habitáculo",
+            "en": "Cabin doorway"
+          },
+          "src": "assets/media/e361/red-threshold.webp",
+          "station": 2,
+          "surface": "scene",
+          "kind": "reconstruction",
+          "reference": "e361-media.json"
+        }
+      }
+    },
+    {
+      "key": "white",
+      "name": "Porsche 911 Turbo",
+      "year": "1986",
+      "record": "#p-vehicle/d5z-370",
+      "identity": "confirmed",
+      "views": [
+        {
+          "id": "exterior",
+          "label": {
+            "es": "Exterior",
+            "en": "Exterior"
+          },
+          "src": "assets/media/e361/white-exterior.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 0,
+          "surface": "cutout",
+          "ground": 0.8672,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        {
+          "id": "profile",
+          "label": {
+            "es": "Lateral",
+            "en": "Profile"
+          },
+          "src": "assets/media/e361/white-profile.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 0,
+          "surface": "cutout",
+          "ground": 0.7439,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        {
+          "id": "rear",
+          "label": {
+            "es": "Parte trasera",
+            "en": "Rear"
+          },
+          "src": "assets/media/e361/white-rear.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 0,
+          "surface": "cutout",
+          "ground": 0.847,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        {
+          "id": "cabin",
+          "label": {
+            "es": "Habitáculo",
+            "en": "Cabin"
+          },
+          "src": "assets/media/e361/white-driver.webp",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "station": 3,
+          "surface": "scene"
+        },
+        {
+          "id": "wheel",
+          "label": {
+            "es": "Volante",
+            "en": "Steering wheel"
+          },
+          "src": "assets/media/b05/a88a0921-1920.webp",
+          "kind": "photograph",
+          "reference": "A88A0921.jpg",
+          "station": 3,
+          "surface": "scene"
+        },
+        {
+          "id": "console",
+          "label": {
+            "es": "Consola",
+            "en": "Console"
+          },
+          "src": "assets/media/e360/white-console.webp",
+          "kind": "reconstruction",
+          "reference": "Documented in e360-media.json",
+          "station": 3,
+          "surface": "scene"
+        }
+      ],
+      "journey": {
+        "door": {
+          "id": "door",
+          "label": {
+            "es": "Puerta abierta",
+            "en": "Door open"
+          },
+          "src": "assets/media/e361/white-door.webp",
+          "station": 1,
+          "surface": "cutout",
+          "kind": "reconstruction",
+          "reference": "e361-media.json",
+          "ground": 0.8799,
+          "anchor": [
+            0.72,
+            0.47
+          ]
+        },
+        "threshold": {
+          "id": "threshold",
+          "label": {
+            "es": "Acceso al habitáculo",
+            "en": "Cabin doorway"
+          },
+          "src": "assets/media/e361/white-threshold.webp",
+          "station": 2,
+          "surface": "scene",
+          "kind": "reconstruction",
+          "reference": "e361-media.json"
+        }
+      }
+    }
+  ],
+  "details": [
+    {
+      "id": "wheel",
+      "label": {
+        "es": "El volante",
+        "en": "The steering wheel"
+      },
+      "src": "assets/media/e360/experience-wheel.webp",
+      "kind": "reconstruction",
+      "reference": "A88A0804.jpg"
+    },
+    {
+      "id": "console",
+      "label": {
+        "es": "La consola",
+        "en": "The console"
+      },
+      "src": "assets/media/e360/experience-console.webp",
+      "kind": "reconstruction",
+      "reference": "A88A0804.jpg"
+    },
+    {
+      "id": "leather",
+      "label": {
+        "es": "La tapicería",
+        "en": "The upholstery"
+      },
+      "src": "assets/media/e360/experience-leather.webp",
+      "kind": "reconstruction",
+      "reference": "A88A0804.jpg"
+    }
+  ]
+}

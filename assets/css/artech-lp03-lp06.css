@@ -1,0 +1,121 @@
+/* LP10 · Continuous shared stage; complete source travel, no scale or cover cropping. */
+body:not(.page-open) {overflow-x:clip}
+body:not(.page-open) #header.b01-header,
+body:not(.page-open) #header.b01-header.scrolled {border:0;box-shadow:none;background:linear-gradient(#030303f5,#030303b3 60%,#03030300);backdrop-filter:none}
+body:not(.page-open) #header.b01-header.menu-open {background:#030303}
+body:not(.page-open) #header.b01-header .b01-nav-links a {color:#dededb}
+body:not(.page-open) #header.b01-header .b01-nav-links a:before {background:#eee}
+body:not(.page-open) #header.b01-header .b01-nav-links a:hover {text-shadow:none}
+.lp-home {--lp-black:#030303;width:100%;max-width:none;overflow:visible}
+.lp-journey,.lp-viewport {position:relative;width:100%;margin:0;padding:0;background:#030303}
+.lp-viewport:focus {outline:none}
+
+/* Width never comes from available height. Only unused black sky/floor are cropped. */
+#top.lp-hero {display:flow-root;position:relative;height:var(--lp-hero-height,100svh);min-height:0;padding:0;margin:0;overflow:clip}
+#top.lp-hero .lp-hero-copy {position:absolute;top:var(--lp-copy-top,calc(var(--f02-header,92px) + 10px));left:20px;right:20px;padding:0;z-index:4}
+#top.lp-hero .lp-hero-copy .b01-eyebrow {margin:0 0 10px;font-size:10px;letter-spacing:.25em}
+#top.lp-hero .lp-hero-copy h1 {font-size:clamp(34px,3.1vw,56px);line-height:1.06;margin:0}
+#top.lp-hero .lp-hero-copy .b01-lead {margin:12px auto 0;font-size:clamp(14px,1.2vw,18px);max-width:600px}
+#top.lp-hero .b12-lineup {position:absolute;top:var(--lp-stage-top,-5vw);left:0;right:0;bottom:auto;width:100%;height:auto;max-width:none;margin:0;transform:none;z-index:1}
+#top.lp-hero .lp-stage {width:100%;max-width:none;aspect-ratio:16/9}
+#top.lp-hero .lp-stage>img {width:100%;height:100%;max-width:none;object-fit:contain}
+#top.lp-hero .lp-stage:after {background:linear-gradient(#030303 0%,transparent 12%,transparent 78%,#030303 100%)}
+#top.lp-hero .lp-car-link {top:39%;bottom:auto;height:calc(var(--lp-marker-top,82%) + 44px - 39%);border-radius:0}
+#top.lp-hero .lp-car-marker {width:44px;height:44px}
+#top.lp-hero .lp-car-label {font-size:11px;top:44px}
+.lp-hero-tools {position:absolute;bottom:max(12px,env(safe-area-inset-bottom));left:0;right:0;z-index:5;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 16px}
+#top.lp-hero .lp-hero-cue {margin:0;min-height:44px;font-size:11px;gap:4px}
+#top.lp-hero .lp-light-selectors {margin:0;gap:8px}
+#top.lp-hero .lp-light-selectors button {padding:8px 14px;min-height:44px;font-size:11px}
+
+/* Static composition remains complete with reduced motion or without JavaScript. */
+.lp-home .lp-collection {display:block;position:relative;min-height:0;height:auto;padding:0;margin:0;overflow:clip;background:transparent;z-index:2}
+.lp-collection-stage {position:relative;isolation:isolate;display:grid;grid-template-columns:66% 34%;align-items:center;min-height:100svh;padding:100px 6vw;overflow:clip}
+.lp-collection-stage .lp-cockpit {position:absolute;left:0;top:var(--lp-cockpit-top,calc(var(--f02-header,92px) + 16px));width:var(--lp-cockpit-width,min(68vw,calc((100svh - var(--f02-header,92px) - 32px) * 1.5)));max-width:none;margin:0;z-index:0;pointer-events:none}
+.lp-collection-stage .lp-cockpit img {display:block;width:100%;height:auto;max-width:none;mask-image:none;-webkit-mask-image:none}
+.lp-collection-stage .lp-collection-copy {grid-column:2;align-self:center;position:relative;z-index:2;max-width:480px;padding:0 0 0 12px}
+.lp-home .lp-collection-copy h2 {font:300 clamp(36px,3.8vw,64px)/1.08 var(--display);letter-spacing:-.045em;white-space:pre-line;margin:0 0 22px}
+.lp-collection-copy .b01-eyebrow,.lp-editorial-copy .b01-eyebrow {font:400 11px/1.5 var(--body);letter-spacing:.23em;color:#d2d2ce;margin:0 0 20px}
+.lp-collection-copy .b01-lead,.lp-editorial-copy .b01-lead {font:400 clamp(15px,1.25vw,19px)/1.6 var(--body);color:#ccc;max-width:340px;margin:0 0 28px}
+.lp-collection-copy .b01-button,.lp-editorial-copy .b01-button {font-size:13px}
+
+/* Photographs fill the frame. Copy lives IN the upper-left shadow. */
+.lp-home .lp-editorial-scene {position:relative;isolation:isolate;display:grid;align-items:center;min-height:var(--lp-scene-height,100svh);margin:0;padding:0;background:#030303;overflow:clip;scroll-margin-top:var(--f02-header,92px)}
+.lp-editorial-visual {position:relative;inset:auto;width:100%;height:auto;margin:0;z-index:0;overflow:visible}
+.lp-home .lp-editorial-visual img {display:block;width:100%;height:auto;max-width:none;object-fit:contain;object-position:center;transform:none}
+.lp-home .lp-editorial-scene:after,.lp-home #home-workshop.lp-editorial-scene:after {display:none}
+.lp-editorial-copy {position:absolute;z-index:2;left:7vw;top:max(calc(var(--f02-header,92px) + 38px),17%);max-width:430px;padding:0;margin:0;isolation:isolate}
+.lp-editorial-copy:before {content:"";position:absolute;z-index:-1;inset:-34px -48px -34px -48px;background:radial-gradient(ellipse at 35% 42%,#030303eb 0%,#030303b8 48%,#03030300 76%);pointer-events:none}
+.lp-home .lp-editorial-copy h2 {font:300 clamp(36px,3.8vw,64px)/1.08 var(--display);letter-spacing:-.045em;white-space:pre-line;color:#f3f3f1;margin:0 0 22px}
+
+/* Enhancement: all four scenes share ONE sticky viewport, including tall images. */
+.lp-home .lp-journey section {border:0;box-shadow:none;outline-offset:-2px}
+.lp-home.lp-cinematic .lp-journey {height:var(--lp-journey-height,700svh)}
+.lp-home.lp-cinematic .lp-viewport {position:sticky;top:0;height:var(--lp-screen-height,100svh);overflow:clip;isolation:isolate}
+.lp-home.lp-cinematic .lp-viewport>section {position:absolute;inset:0;width:100%;height:100%;min-height:0;padding:0;margin:0;scroll-margin-top:0}
+.lp-home.lp-cinematic #top.lp-hero {z-index:3;height:var(--lp-hero-height,100svh);opacity:var(--lp-hero-alpha,1);transform:translateY(var(--lp-hero-scroll,0px))}
+.lp-home.lp-cinematic #top .b12-lineup {transform:translateY(var(--lp-hero-y,0vh))}
+.lp-home.lp-cinematic #top .lp-hero-copy {opacity:var(--lp-hero-copy-alpha,1);transform:translateY(var(--lp-title-y,0px))}
+.lp-home.lp-cinematic #top .lp-hero-tools {opacity:var(--lp-hero-copy-alpha,1)}
+.lp-home.lp-cinematic #home-collection {z-index:4;background:transparent;overflow:visible;pointer-events:none;mask-image:linear-gradient(to right,#000 calc(var(--lp-collection-edge,140%) - 40%),transparent calc(var(--lp-collection-edge,140%) + 40%));-webkit-mask-image:linear-gradient(to right,#000 calc(var(--lp-collection-edge,140%) - 40%),transparent calc(var(--lp-collection-edge,140%) + 40%))}
+.lp-home.lp-cinematic .lp-collection-stage {display:block;height:100%;min-height:0;padding:0;overflow:visible}
+.lp-home.lp-cinematic .lp-collection-stage:before {content:'';position:absolute;inset:0;background:#030303;opacity:var(--lp-floor-alpha,0);pointer-events:none}
+.lp-home.lp-cinematic .lp-cockpit {transform:translateY(var(--lp-wheel-y,90vh));will-change:transform}
+.lp-home.lp-cinematic .lp-collection-copy {position:absolute;left:67%;right:5%;top:50%;padding:0;max-width:480px;opacity:var(--lp-collection-alpha,0);transform:translate(var(--lp-collection-x,0px),calc(-50% + var(--lp-collection-y,24px)));pointer-events:auto}
+.lp-home.lp-cinematic #home-workshop {z-index:2;opacity:var(--lp-atelier-alpha,0);mask-image:linear-gradient(to right,#000 calc(var(--lp-atelier-edge,140%) - 40%),transparent calc(var(--lp-atelier-edge,140%) + 40%));-webkit-mask-image:linear-gradient(to right,#000 calc(var(--lp-atelier-edge,140%) - 40%),transparent calc(var(--lp-atelier-edge,140%) + 40%))}
+.lp-home.lp-cinematic .lp-editorial-visual {position:absolute;left:0;right:0;top:var(--lp-photo-top,0px);bottom:auto;width:100%;height:auto;max-width:none}
+.lp-home.lp-cinematic #home-workshop .lp-editorial-visual {transform:translateY(var(--lp-atelier-photo-y,0px))}
+.lp-home.lp-cinematic #home-dining .lp-editorial-visual {transform:translateY(var(--lp-dining-photo-y,0px))}
+.lp-home.lp-cinematic #home-workshop .lp-editorial-copy {opacity:var(--lp-atelier-copy-alpha,0);transform:translateX(var(--lp-atelier-copy-x,18px))}
+.lp-home.lp-cinematic #home-dining {z-index:1;opacity:var(--lp-dining-alpha,0)}
+.lp-home.lp-cinematic #home-dining .lp-editorial-copy {opacity:var(--lp-dining-copy-alpha,0);transform:translateX(var(--lp-dining-copy-x,18px))}
+.lp-home.lp-cinematic .lp-editorial-copy {top:max(calc(var(--f02-header,92px) + 38px),17%)}
+.lp-home.lp-cinematic [inert] {pointer-events:none!important}
+.lp-home.lp-cinematic .lp-viewport>section[data-lp-dormant] {visibility:hidden}
+
+.lp-closing {display:flex;justify-content:space-between;align-items:center;gap:40px;padding:95px 7vw 100px;margin:0;background:linear-gradient(#030303,#000);scroll-margin-top:var(--f02-header,92px)}
+.lp-home .lp-closing h2 {font:300 clamp(36px,3.7vw,64px)/1.12 var(--display);letter-spacing:-.045em;margin:0;color:#f3f3f1}
+.lp-closing-actions {display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end}
+.lp-closing-actions .b01-button {font-size:13px;min-height:46px}
+
+@media(max-height:800px) and (min-width:900px) {
+ #top.lp-hero .lp-hero-copy h1 {font-size:34px}
+ #top.lp-hero .lp-hero-copy .b01-eyebrow {font-size:9px;margin-bottom:8px}
+ #top.lp-hero .lp-hero-copy .b01-lead {font-size:14px;margin-top:10px}
+ .lp-home.lp-cinematic .lp-editorial-copy {top:calc(var(--f02-header,92px) + 28px)}
+}
+@media(max-width:899px) {
+ #top.lp-hero .lp-hero-copy h1 {font-size:clamp(30px,5.2vw,43px)}
+ #top.lp-hero .lp-hero-copy .b01-eyebrow {font-size:9px;letter-spacing:.16em}
+ #top.lp-hero .lp-hero-copy .b01-lead {font-size:14px;max-width:330px}
+ #top.lp-hero .lp-car-label {display:none}
+ #top.lp-hero .lp-light-selectors {display:flex;flex-wrap:wrap;justify-content:center}
+ #top.lp-hero .lp-light-selectors button {border:1px solid #666;border-radius:999px;background:#080808;color:#ddd}
+ #top.lp-hero .lp-light-selectors button[aria-pressed=true] {border-color:#bc1b25;background:#26080b;color:#fff}
+ .lp-home .lp-collection {margin:0}
+ .lp-collection-stage {display:block;min-height:0;padding:0 0 70px}
+ .lp-collection-stage .lp-cockpit {position:relative;inset:auto;width:100%;margin:0;transform:none}
+ .lp-collection-stage .lp-collection-copy {position:relative;inset:auto;padding:20px 24px 0;max-width:600px;margin:0 auto}
+ .lp-home .lp-collection-copy h2,.lp-home .lp-editorial-copy h2 {font-size:clamp(34px,6vw,52px)}
+ .lp-home .lp-editorial-scene {display:flex;flex-direction:column;min-height:0;height:auto;padding-top:20px}
+ .lp-editorial-visual {position:relative;inset:auto;height:auto;order:1}
+ .lp-home .lp-editorial-visual img {object-fit:contain}
+ .lp-editorial-copy {position:relative;inset:auto;order:0;width:100%;max-width:600px;padding:0 24px 30px}
+ .lp-editorial-copy:before {display:none}
+ .lp-editorial-copy .b01-eyebrow {font-size:10px;margin-bottom:16px}
+ .lp-editorial-copy .b01-lead {margin-bottom:22px}
+ .lp-closing {flex-direction:column;align-items:flex-start;gap:30px;padding:65px 24px 80px}
+ .lp-closing-actions {justify-content:flex-start;gap:12px}
+ .lp-closing-actions .b01-button {font-size:12px}
+}
+@media(max-height:520px) {
+ #top.lp-hero .lp-hero-copy h1 {font-size:26px;white-space:normal}
+ #top.lp-hero .lp-hero-copy .b01-eyebrow {font-size:8px;margin-bottom:6px}
+ #top.lp-hero .lp-hero-copy .b01-lead {display:none}
+ #top.lp-hero .lp-car-label {display:none}
+ #top.lp-hero .lp-hero-cue {min-height:32px;flex-direction:row}
+}
+@media(prefers-reduced-motion:reduce) {
+ .lp-home * {scroll-behavior:auto!important}
+ .lp-home .lp-cockpit,.lp-home .lp-editorial-visual img {will-change:auto}
+}

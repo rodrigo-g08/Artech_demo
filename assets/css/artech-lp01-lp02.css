@@ -1,0 +1,92 @@
+/* LP01 · Approved option 1: continuous darkness, cockpit, then a quiet pause.
+   LP02 · Actual three-state photographic lighting; existing header/footer intact. */
+.lp-home {--lp-black:#030303;--lp-white:#f3f3f1;background:var(--lp-black);color:var(--lp-white)}
+.lp-home [hidden] {display:none!important}
+#top.lp-hero {position:relative;isolation:isolate;display:block;min-height:100svh;padding:0 0 30px;background:var(--lp-black);overflow:clip}
+.lp-hero-copy {position:absolute;top:calc(var(--f02-header,92px) + 30px);left:24px;right:24px;z-index:3;text-align:center;pointer-events:none}
+.lp-hero-copy .b01-eyebrow {font-size:11px;line-height:1.5;letter-spacing:.28em;color:#c2c2be;margin:0 0 18px}
+.lp-hero-copy h1 {font:300 clamp(40px,3.4vw,60px)/1.08 var(--display);letter-spacing:-.045em;white-space:pre-line;margin:0;color:var(--lp-white)}
+.lp-hero-copy .b01-lead {font:400 clamp(15px,1.25vw,20px)/1.5 var(--body);margin:18px auto 0;color:#c9c9c6;max-width:570px}
+#top.lp-hero .b12-lineup {position:relative;inset:auto;width:min(100%,2000px);height:auto;margin:var(--f02-header,92px) auto 0;transform:none;filter:none;z-index:1}
+#top.lp-hero .b12-lineup:after {display:none}
+.lp-stage {position:relative;aspect-ratio:16/9;width:100%;isolation:isolate;background:var(--lp-black)}
+.lp-stage:after {content:'';position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(#030303 0%,transparent 13%,transparent 79%,#030303 100%)}
+.lp-stage>img {position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:fill;opacity:0;transition:opacity 380ms cubic-bezier(.22,.61,.36,1);pointer-events:none}
+.lp-stage>img.lp-base {opacity:1;z-index:0}
+.lp-stage>img:not(.lp-base) {z-index:1}
+.lp-stage>img.is-lit {opacity:1}
+.lp-car-links {position:absolute;inset:0;z-index:3}
+.lp-car-link {position:absolute;top:39%;bottom:13%;width:33.333%;display:block;text-decoration:none;color:#f3f3f1;border-radius:14px;outline-offset:-6px;-webkit-tap-highlight-color:transparent}
+.lp-car-link[data-lp-car=classic] {left:0}
+.lp-car-link[data-lp-car=red] {left:33.333%}
+.lp-car-link[data-lp-car=white] {left:66.666%}
+.lp-home .lp-car-link:focus-visible {outline:1px solid #f3f3f19c;outline-offset:-6px}
+.lp-home :is(a,button):focus-visible {outline-color:#f3f3f1}
+.lp-car-marker {position:absolute;bottom:0;left:50%;transform:translateX(-50%);display:grid;place-items:center;width:44px;height:44px;color:#f3f3f1;opacity:.5;transition:opacity .25s}
+.lp-car-marker:before {content:'';position:absolute;inset:6px;border:1px solid #f3f3f175;border-radius:50%;background:#03030330;transition:border-color .25s}
+.lp-car-marker svg {width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.2}
+.lp-car-label {position:absolute;top:46px;left:50%;transform:translateX(-50%);font:400 11px/1.4 var(--body);white-space:nowrap;opacity:0;transition:opacity .25s}
+.lp-car-link:is(.is-lit,:hover,:focus-visible) .lp-car-marker {opacity:1}
+.lp-car-link:is(.is-lit,:hover,:focus-visible) .lp-car-marker:before {border-color:#f3f3f1ad}
+.lp-car-link:is(.is-lit,:hover,:focus-visible) .lp-car-label {opacity:1}
+.lp-light-selectors {display:none}
+.lp-hero-cue {position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;gap:9px;width:max-content;max-width:90%;min-height:48px;margin:8px auto 0;color:#c2c2be;text-decoration:none;font:400 12px/1.5 var(--body)}
+.lp-hero-cue svg {width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1}
+.lp-hero-cue:focus-visible {outline:1px solid #eee;outline-offset:5px}
+.lp-hero.lp-ready:not(.lp-entered) .lp-hero-copy>* {opacity:0;transform:translateY(9px)}
+.lp-hero.lp-entered .lp-hero-copy>* {animation:lp-copy-enter 700ms both cubic-bezier(.22,.61,.36,1)}
+.lp-hero.lp-entered .lp-hero-copy h1 {animation-delay:80ms}
+.lp-hero.lp-entered .lp-hero-copy .b01-lead {animation-delay:160ms}
+@keyframes lp-copy-enter {from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+
+/* LP01 is the static composition. The camera movement is deliberately LP03. */
+.lp-collection {position:relative;isolation:isolate;display:grid;grid-template-columns:58% 42%;align-items:center;min-height:clamp(700px,60vw,1020px);padding:40px 6vw clamp(160px,15vw,240px);margin:0;background:var(--lp-black);scroll-margin-top:calc(var(--f02-header,92px) + 20px)}
+.lp-cockpit {position:absolute;z-index:-1;left:-2%;top:0;width:min(1080px,70vw);margin:0;pointer-events:none}
+.lp-cockpit img {display:block;width:100%;height:auto;object-fit:contain;mask-image:linear-gradient(to bottom,#000 0%,#000 77%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 77%,transparent 100%)}
+.lp-collection-copy {grid-column:2;align-self:center;position:relative;padding:25px 0 80px 20px;max-width:520px}
+.lp-collection-copy .b01-eyebrow {font:400 11px/1.6 var(--body);letter-spacing:.23em;color:#c8c8c3;margin:0 0 22px}
+.lp-collection-copy h2 {font:300 clamp(36px,3.7vw,64px)/1.1 var(--display);letter-spacing:-.04em;white-space:pre-line;margin:0 0 22px;color:var(--lp-white)}
+.lp-collection-copy .b01-lead {font:400 clamp(15px,1.2vw,18px)/1.6 var(--body);color:#c5c5c2;max-width:360px;margin:0 0 28px}
+.lp-collection-copy .b01-button {font-size:13px}
+.lp-home #home-workshop {background:var(--lp-black)}
+.lp-home #home-workshop:after {background:linear-gradient(90deg,#030303 0%,#030303bd 34%,transparent 76%),linear-gradient(#030303,transparent 20%,transparent 60%,#030303 89%)}
+
+@media(max-width:1099px) {
+ #top.lp-hero {min-height:0;padding-bottom:30px}
+ .lp-hero-copy {position:relative;top:auto;left:auto;right:auto;padding:calc(var(--f02-header,76px) + 30px) 24px 0}
+ .lp-hero-copy h1 {font-size:clamp(34px,5vw,50px)}
+ #top.lp-hero .b12-lineup {margin:-12vw auto 0}
+ .lp-hero-cue {margin:18px auto 0}
+ .lp-collection {min-height:670px;padding-bottom:180px}
+ .lp-collection-copy {padding-left:16px;padding-bottom:50px}
+}
+@media(max-width:699px) {
+ .lp-hero-copy .b01-eyebrow {font-size:9px;letter-spacing:.17em;margin-bottom:18px}
+ .lp-hero-copy .b01-lead {font-size:15px;max-width:310px;margin-top:16px}
+ .lp-stage {width:100%}
+ .lp-car-link {top:34%;bottom:1%}
+ .lp-car-marker:before {inset:8px}
+ .lp-car-label {display:none}
+ .lp-light-selectors {display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:12px 18px 0}
+ .lp-light-selectors button {min-height:44px;min-width:64px;padding:9px 14px;border:1px solid #646461;border-radius:999px;background:#030303;color:#bfbfbd;font:400 12px var(--body);cursor:pointer}
+ .lp-light-selectors button[aria-pressed=true] {color:#fff;border-color:#c62630;background:#240709}
+ .lp-light-selectors button:focus-visible {outline:2px solid #f3f3f1;outline-offset:3px}
+ .lp-hero-cue {font-size:11px;margin-top:24px}
+ .lp-collection {display:flex;flex-direction:column;min-height:0;gap:20px;padding:28px 24px 150px;overflow:clip}
+ .lp-cockpit {position:relative;left:auto;top:auto;width:calc(100% + 70px);margin:0 24px 0 -46px;z-index:0}
+ .lp-collection-copy {align-self:stretch;padding:0;max-width:100%}
+ .lp-collection-copy h2 {font-size:clamp(33px,8.5vw,44px)}
+ .lp-collection-copy .b01-lead {max-width:340px}
+}
+@media(max-width:799px) {
+ .lp-home #home-workshop:after {background:linear-gradient(#030303,#030303ad 32%,transparent 62%,#030303 90%)}
+}
+@media(pointer:coarse) and (min-width:700px) {
+ .lp-light-selectors {display:flex;justify-content:center;gap:12px;position:relative;z-index:4;margin:12px auto}
+ .lp-light-selectors button {min-height:44px;padding:10px 18px;color:#eee;background:#080808;border:1px solid #666;border-radius:999px;font:400 13px var(--body)}
+ .lp-light-selectors button[aria-pressed=true] {border-color:#c62630}
+}
+@media(prefers-reduced-motion:reduce) {
+ .lp-home *,.lp-home *:before,.lp-home *:after {animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .lp-hero.lp-ready .lp-hero-copy>* {opacity:1;transform:none}
+}

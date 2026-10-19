@@ -1,0 +1,5272 @@
+[
+  {
+    "id": "A01",
+    "slug": "sin-placa-26",
+    "name": "Boyer Voiturette",
+    "brand": "Boyer",
+    "model": "Voiturette",
+    "year": "1901",
+    "desc": "A compact French voiturette with a single-cylinder Aster engine, red spoked wheels and an open driving position.",
+    "desc_es": "Una voiturette francesa compacta, con motor Aster monocilíndrico, ruedas de radios rojos y puesto de conducción abierto.",
+    "specs": {
+      "tipo": "Voiturette",
+      "motor": "Single-cylinder Aster",
+      "cil": "402 cc",
+      "vel": "25 km/h",
+      "pais": "France",
+      "combustible": "Gasoline"
+    },
+    "specs_es": {
+      "tipo": "Voiturette",
+      "motor": "Aster de 1 cilindro",
+      "cil": "402 cc",
+      "vel": "25 km/h",
+      "pais": "Francia",
+      "combustible": "Gasolina"
+    },
+    "aliases": [
+      "boyer-voiturette-1901"
+    ],
+    "yearLabel": "1901",
+    "yearStart": 1901,
+    "yearEnd": 1901,
+    "yearKind": "collection-documentation",
+    "era": "classic",
+    "plate": "",
+    "featured_order": 1,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0586",
+        "src": "assets/artech31/media/a88a0586.webp",
+        "thumb": "assets/artech31/media/a88a0586-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0586-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          187,
+          25,
+          1191,
+          956
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0584",
+        "src": "assets/artech31/media/a88a0584.webp",
+        "thumb": "assets/artech31/media/a88a0584-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0584-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          368,
+          30,
+          798,
+          936
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Una voiturette francesa compacta, con motor Aster monocilíndrico, ruedas de radios rojos y puesto de conducción abierto.",
+      "en": "A compact French voiturette with a single-cylinder Aster engine, red spoked wheels and an open driving position."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Boyer"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Voiturette"
+      },
+      {
+        "label": {
+          "es": "Año",
+          "en": "Year"
+        },
+        "value": "1901"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Voiturette",
+          "es": "Voiturette"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Single-cylinder Aster",
+          "es": "Aster de 1 cilindro"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "402 cc",
+          "es": "402 cc"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "25 km/h",
+          "es": "25 km/h"
+        }
+      },
+      {
+        "label": {
+          "es": "País de origen",
+          "en": "Country of origin"
+        },
+        "value": {
+          "en": "France",
+          "es": "Francia"
+        }
+      },
+      {
+        "label": {
+          "es": "Combustible",
+          "en": "Fuel"
+        },
+        "value": {
+          "en": "Gasoline",
+          "es": "Gasolina"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Touring, issue 63, June 2013 — Nicolini collection",
+        "url": "https://studylib.es/doc/7731319/made-in-per%C3%BA---touring-y-autom%C3%B3vil-club-del-per%C3%BA"
+      }
+    ]
+  },
+  {
+    "id": "A02",
+    "slug": "sin-placa-25",
+    "name": "Clément Brass Phaeton",
+    "brand": "Clément",
+    "model": "Brass Phaeton",
+    "year": "1903",
+    "desc": "An early French phaeton with exposed brass fittings, a tall fabric hood and a single-cylinder engine.",
+    "desc_es": "Un phaeton francés de los primeros años del automóvil, con elementos de latón, capota alta de lona y motor monocilíndrico.",
+    "specs": {
+      "tipo": "Phaeton",
+      "motor": "Single cylinder",
+      "hp": "9 HP",
+      "vel": "40 km/h",
+      "pais": "France",
+      "combustible": "Gasoline"
+    },
+    "specs_es": {
+      "tipo": "Phaeton",
+      "motor": "1 cilindro",
+      "hp": "9 HP",
+      "vel": "40 km/h",
+      "pais": "Francia",
+      "combustible": "Gasolina"
+    },
+    "aliases": [
+      "clement-brass-phaeton-1903"
+    ],
+    "yearLabel": "1903",
+    "yearStart": 1903,
+    "yearEnd": 1903,
+    "yearKind": "collection-documentation",
+    "era": "classic",
+    "plate": "",
+    "featured_order": 2,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0590",
+        "src": "assets/artech31/media/a88a0590.webp",
+        "thumb": "assets/artech31/media/a88a0590-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0590-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          368,
+          37,
+          879,
+          962
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0588",
+        "src": "assets/artech31/media/a88a0588.webp",
+        "thumb": "assets/artech31/media/a88a0588-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0588-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          416,
+          15,
+          719,
+          985
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un phaeton francés de los primeros años del automóvil, con elementos de latón, capota alta de lona y motor monocilíndrico.",
+      "en": "An early French phaeton with exposed brass fittings, a tall fabric hood and a single-cylinder engine."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Clément"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Brass Phaeton"
+      },
+      {
+        "label": {
+          "es": "Año",
+          "en": "Year"
+        },
+        "value": "1903"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Phaeton",
+          "es": "Phaeton"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Single cylinder",
+          "es": "1 cilindro"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "9 HP",
+          "es": "9 HP"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "40 km/h",
+          "es": "40 km/h"
+        }
+      },
+      {
+        "label": {
+          "es": "País de origen",
+          "en": "Country of origin"
+        },
+        "value": {
+          "en": "France",
+          "es": "Francia"
+        }
+      },
+      {
+        "label": {
+          "es": "Combustible",
+          "en": "Fuel"
+        },
+        "value": {
+          "en": "Gasoline",
+          "es": "Gasolina"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Touring, issue 63, June 2013 — Nicolini collection",
+        "url": "https://studylib.es/doc/7731319/made-in-per%C3%BA---touring-y-autom%C3%B3vil-club-del-per%C3%BA"
+      }
+    ]
+  },
+  {
+    "id": "A03",
+    "slug": "sin-placa-24",
+    "name": "Renault Landaulette",
+    "brand": "Renault",
+    "model": "Landaulette",
+    "year": "1908",
+    "desc": "A two-cylinder Renault with a separate chauffeur compartment and a tall landaulette body for its passengers.",
+    "desc_es": "Un Renault de dos cilindros, con espacio separado para el conductor y carrocería landaulette alta para los pasajeros.",
+    "specs": {
+      "tipo": "Landaulette",
+      "motor": "Inline-2",
+      "cil": "1.1 L (1100 cc)",
+      "vel": "50 km/h",
+      "pais": "France",
+      "combustible": "Gasoline"
+    },
+    "specs_es": {
+      "tipo": "Landaulette",
+      "motor": "2 cilindros en línea",
+      "cil": "1,1 L (1100 cc)",
+      "vel": "50 km/h",
+      "pais": "Francia",
+      "combustible": "Gasolina"
+    },
+    "aliases": [
+      "renault-landaulette-1908"
+    ],
+    "yearLabel": "1908",
+    "yearStart": 1908,
+    "yearEnd": 1908,
+    "yearKind": "collection-documentation",
+    "era": "classic",
+    "plate": "",
+    "featured_order": 3,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0595",
+        "src": "assets/artech31/media/a88a0595.webp",
+        "thumb": "assets/artech31/media/a88a0595-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0595-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          156,
+          13,
+          1229,
+          1002
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0592",
+        "src": "assets/artech31/media/a88a0592.webp",
+        "thumb": "assets/artech31/media/a88a0592-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0592-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          374,
+          47,
+          773,
+          947
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un Renault de dos cilindros, con espacio separado para el conductor y carrocería landaulette alta para los pasajeros.",
+      "en": "A two-cylinder Renault with a separate chauffeur compartment and a tall landaulette body for its passengers."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Renault"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Landaulette"
+      },
+      {
+        "label": {
+          "es": "Año",
+          "en": "Year"
+        },
+        "value": "1908"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Landaulette",
+          "es": "Landaulette"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-2",
+          "es": "2 cilindros en línea"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "1.1 L (1100 cc)",
+          "es": "1,1 L (1100 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "50 km/h",
+          "es": "50 km/h"
+        }
+      },
+      {
+        "label": {
+          "es": "País de origen",
+          "en": "Country of origin"
+        },
+        "value": {
+          "en": "France",
+          "es": "Francia"
+        }
+      },
+      {
+        "label": {
+          "es": "Combustible",
+          "en": "Fuel"
+        },
+        "value": {
+          "en": "Gasoline",
+          "es": "Gasolina"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Touring, issue 63, June 2013 — Nicolini collection",
+        "url": "https://studylib.es/doc/7731319/made-in-per%C3%BA---touring-y-autom%C3%B3vil-club-del-per%C3%BA"
+      }
+    ]
+  },
+  {
+    "id": "A04",
+    "slug": "sin-placa-23",
+    "name": "Clément-Bayard Phaeton",
+    "brand": "Clément-Bayard",
+    "model": "Phaeton",
+    "year": "1912–1913",
+    "desc": "A French four-door phaeton with a folding hood and a prominent brass radiator carrying the Bayard emblem.",
+    "desc_es": "Un phaeton francés de cuatro puertas, con capota plegable y radiador de latón coronado por el emblema Bayard.",
+    "specs": {
+      "tipo": "Four-door phaeton",
+      "motor": "Front-mounted gasoline engine",
+      "trans": "Manual",
+      "pais": "France",
+      "combustible": "Gasoline",
+      "vel": "60 km/h"
+    },
+    "specs_es": {
+      "tipo": "Phaeton de 4 puertas",
+      "motor": "Motor delantero de gasolina",
+      "trans": "Manual",
+      "pais": "Francia",
+      "combustible": "Gasolina",
+      "vel": "60 km/h"
+    },
+    "aliases": [
+      "clement-bayard-phaeton"
+    ],
+    "yearLabel": "1912–1913",
+    "yearStart": 1912,
+    "yearEnd": 1913,
+    "yearKind": "documented-period",
+    "era": "classic",
+    "plate": "",
+    "featured_order": 4,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0600",
+        "src": "assets/artech31/media/a88a0600.webp",
+        "thumb": "assets/artech31/media/a88a0600-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0600-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          63,
+          141,
+          1422,
+          795
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0596",
+        "src": "assets/artech31/media/a88a0596.webp",
+        "thumb": "assets/artech31/media/a88a0596-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0596-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          312,
+          19,
+          912,
+          958
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un phaeton francés de cuatro puertas, con capota plegable y radiador de latón coronado por el emblema Bayard.",
+      "en": "A French four-door phaeton with a folding hood and a prominent brass radiator carrying the Bayard emblem."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Clément-Bayard"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Phaeton"
+      },
+      {
+        "label": {
+          "es": "Período documentado",
+          "en": "Documented period"
+        },
+        "value": "1912–1913"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Four-door phaeton",
+          "es": "Phaeton de 4 puertas"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Front-mounted gasoline engine",
+          "es": "Motor delantero de gasolina"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "Manual",
+          "es": "Manual"
+        }
+      },
+      {
+        "label": {
+          "es": "País de origen",
+          "en": "Country of origin"
+        },
+        "value": {
+          "en": "France",
+          "es": "Francia"
+        }
+      },
+      {
+        "label": {
+          "es": "Combustible",
+          "en": "Fuel"
+        },
+        "value": {
+          "en": "Gasoline",
+          "es": "Gasolina"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "60 km/h",
+          "es": "60 km/h"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Historia del automóvil — original photograph of the Nicolini vehicle",
+        "url": "https://es.scribd.com/document/377364120/272481951-historia-del-automovil-pdf"
+      },
+      {
+        "title": "Obelisco Classic Car Club — museum visit",
+        "url": "https://obeliscoclassiccarclub.blogspot.com/2010/12/el-museo-de-don-jorge-nicolini-en-lima.html?m=0"
+      }
+    ]
+  },
+  {
+    "id": "A05",
+    "slug": "a5m-345",
+    "name": "Chrysler Roadster",
+    "brand": "Chrysler",
+    "model": "Roadster",
+    "year": "1926",
+    "desc": "A two-door Chrysler roadster with a folding fabric roof, exposed running boards and a front-mounted engine.",
+    "desc_es": "Un roadster Chrysler de dos puertas, con capota de lona plegable, estribos exteriores y motor delantero.",
+    "specs": {
+      "tipo": "Two-door roadster",
+      "motor": "Front-mounted gasoline engine",
+      "trans": "Manual",
+      "traccion": "Rear-wheel drive",
+      "pais": "United States",
+      "combustible": "Gasoline"
+    },
+    "specs_es": {
+      "tipo": "Roadster de 2 puertas",
+      "motor": "Motor delantero de gasolina",
+      "trans": "Manual",
+      "traccion": "Trasera",
+      "pais": "Estados Unidos",
+      "combustible": "Gasolina"
+    },
+    "aliases": [
+      "chrysler-roadster-1926"
+    ],
+    "yearLabel": "1926",
+    "yearStart": 1926,
+    "yearEnd": 1926,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "A5M - 345",
+    "featured_order": 5,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0602",
+        "src": "assets/artech31/media/a88a0602.webp",
+        "thumb": "assets/artech31/media/a88a0602-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0602-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          43,
+          90,
+          1423,
+          890
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un roadster Chrysler de dos puertas, con capota de lona plegable, estribos exteriores y motor delantero.",
+      "en": "A two-door Chrysler roadster with a folding fabric roof, exposed running boards and a front-mounted engine."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Chrysler"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Roadster"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1926"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Two-door roadster",
+          "es": "Roadster de 2 puertas"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Front-mounted gasoline engine",
+          "es": "Motor delantero de gasolina"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "Manual",
+          "es": "Manual"
+        }
+      },
+      {
+        "label": {
+          "es": "Tracción",
+          "en": "Drive"
+        },
+        "value": {
+          "en": "Rear-wheel drive",
+          "es": "Trasera"
+        }
+      },
+      {
+        "label": {
+          "es": "País de origen",
+          "en": "Country of origin"
+        },
+        "value": {
+          "en": "United States",
+          "es": "Estados Unidos"
+        }
+      },
+      {
+        "label": {
+          "es": "Combustible",
+          "en": "Fuel"
+        },
+        "value": {
+          "en": "Gasoline",
+          "es": "Gasolina"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Original catalog — Chrysler radiator emblem",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars/a5m-345/d1.jpg"
+      },
+      {
+        "title": "Chrysler corporate history — Walter’s Cars, Walter’s Company",
+        "url": "https://fcagroup.pl/wp-content/uploads/2015/05/Chapter-Three_Walters-Cars-Walters-Company.pdf"
+      }
+    ]
+  },
+  {
+    "id": "A06",
+    "slug": "sin-placa-22",
+    "name": "Chevrolet Superior Touring",
+    "brand": "Chevrolet",
+    "model": "Superior Touring",
+    "year": "1923–1926",
+    "desc": "An open Chevrolet Superior with a four-cylinder overhead-valve engine, spoked wheels and a folding fabric hood.",
+    "desc_es": "Un Chevrolet Superior abierto, con motor de cuatro cilindros y válvulas en cabeza, ruedas de radios y capota de lona plegable.",
+    "specs": {
+      "tipo": "Touring",
+      "motor": "Inline-4, overhead valves",
+      "cil": "2.8 L (171 cu in)",
+      "hp": "26 HP",
+      "trans": "3-speed manual",
+      "frenos": "Rear mechanical drums"
+    },
+    "specs_es": {
+      "tipo": "Touring",
+      "motor": "4 en línea, válvulas en cabeza",
+      "cil": "2,8 L (171 pulgadas cúbicas)",
+      "hp": "26 HP",
+      "trans": "Manual de 3 velocidades",
+      "frenos": "Tambores mecánicos traseros"
+    },
+    "aliases": [],
+    "yearLabel": "1923–1926",
+    "yearStart": 1923,
+    "yearEnd": 1926,
+    "yearKind": "production-range",
+    "era": "classic",
+    "plate": "",
+    "featured_order": 6,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0603",
+        "src": "assets/artech31/media/a88a0603.webp",
+        "thumb": "assets/artech31/media/a88a0603-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0603-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          65,
+          38,
+          1408,
+          979
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un Chevrolet Superior abierto, con motor de cuatro cilindros y válvulas en cabeza, ruedas de radios y capota de lona plegable.",
+      "en": "An open Chevrolet Superior with a four-cylinder overhead-valve engine, spoked wheels and a folding fabric hood."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Chevrolet"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Superior Touring"
+      },
+      {
+        "label": {
+          "es": "Período del modelo",
+          "en": "Model period"
+        },
+        "value": "1923–1926"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Touring",
+          "es": "Touring"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-4, overhead valves",
+          "es": "4 en línea, válvulas en cabeza"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "2.8 L (171 cu in)",
+          "es": "2,8 L (171 pulgadas cúbicas)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "26 HP",
+          "es": "26 HP"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual de 3 velocidades"
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Rear mechanical drums",
+          "es": "Tambores mecánicos traseros"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Nicolini collection inventory, Hugo Agüero",
+        "url": "https://www.scribd.com/doc/94757905/Relacion-de-automoviles-en-el-museo-Nicolini"
+      },
+      {
+        "title": "RM Sotheby’s — inspected 1925 Superior K Touring",
+        "url": "https://rmsothebys.com/auctions/hf11/lots/r228-1925-chevrolet-series-k-superior-touring/"
+      }
+    ]
+  },
+  {
+    "id": "A07",
+    "slug": "auk-547",
+    "name": "Ford Model A Phaeton",
+    "brand": "Ford",
+    "model": "Model A Phaeton",
+    "year": "1928",
+    "desc": "The open touring version of Ford’s Model A, pairing a four-cylinder engine with a three-speed gearbox and four-wheel brakes.",
+    "desc_es": "La versión de turismo abierta del Ford Model A, con motor de cuatro cilindros, caja de tres velocidades y frenos en las cuatro ruedas.",
+    "specs": {
+      "tipo": "Tourer (Phaeton)",
+      "motor": "Inline-4 (L-head)",
+      "cil": "3.3 L (201 cu in)",
+      "hp": "40 HP @ 2200 rpm",
+      "trans": "3-speed manual",
+      "frenos": "Mechanical drum"
+    },
+    "specs_es": {
+      "tipo": "Turismo (Phaeton)",
+      "motor": "4 en línea (L-head)",
+      "cil": "3.3 L (201 pulg³)",
+      "hp": "40 HP @ 2200 rpm",
+      "trans": "Manual 3 vel.",
+      "frenos": "Tambor mecánico"
+    },
+    "aliases": [],
+    "yearLabel": "1928",
+    "yearStart": 1928,
+    "yearEnd": 1928,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "AUK - 547",
+    "featured_order": 7,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0606",
+        "src": "assets/artech31/media/a88a0606.webp",
+        "thumb": "assets/artech31/media/a88a0606-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0606-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          51,
+          67,
+          1427,
+          955
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "La versión de turismo abierta del Ford Model A, con motor de cuatro cilindros, caja de tres velocidades y frenos en las cuatro ruedas.",
+      "en": "The open touring version of Ford’s Model A, pairing a four-cylinder engine with a three-speed gearbox and four-wheel brakes."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Ford"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Model A Phaeton"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1928"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Tourer (Phaeton)",
+          "es": "Turismo (Phaeton)"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-4 (L-head)",
+          "es": "4 en línea (L-head)"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.3 L (201 cu in)",
+          "es": "3.3 L (201 pulg³)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "40 HP @ 2200 rpm",
+          "es": "40 HP @ 2200 rpm"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual 3 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Mechanical drum",
+          "es": "Tambor mecánico"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "The Henry Ford — Model A engine",
+        "url": "https://www.thehenryford.org/collections/explore/artifact/21184"
+      },
+      {
+        "title": "The Henry Ford — 1928 Model A touring car",
+        "url": "https://www.thehenryford.org/collections/explore/artifact/64736"
+      }
+    ]
+  },
+  {
+    "id": "A08",
+    "slug": "cpl-048",
+    "name": "Studebaker Special Six Tudor Coupé",
+    "brand": "Studebaker",
+    "model": "Special Six Tudor Coupé",
+    "year": "1924",
+    "desc": "A closed two-door Studebaker Special Six, with a six-cylinder engine and the upright proportions of an early touring coupé.",
+    "desc_es": "Un Studebaker Special Six cerrado de dos puertas, con motor de seis cilindros y las proporciones verticales de los primeros cupés de turismo.",
+    "specs": {
+      "tipo": "Two-door coupé",
+      "motor": "Inline-6, L-head",
+      "cil": "4.7 L (4729 cc)",
+      "hp": "50 HP",
+      "trans": "3-speed manual",
+      "pais": "United States"
+    },
+    "specs_es": {
+      "tipo": "Cupé de 2 puertas",
+      "motor": "6 en línea, válvulas laterales",
+      "cil": "4,7 L (4729 cc)",
+      "hp": "50 HP",
+      "trans": "Manual de 3 velocidades",
+      "pais": "Estados Unidos"
+    },
+    "aliases": [
+      "studebaker-special-six-1924"
+    ],
+    "yearLabel": "1924",
+    "yearStart": 1924,
+    "yearEnd": 1924,
+    "yearKind": "collection-documentation",
+    "era": "classic",
+    "plate": "CPL - 048",
+    "featured_order": 8,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0608",
+        "src": "assets/artech31/media/a88a0608.webp",
+        "thumb": "assets/artech31/media/a88a0608-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0608-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          29,
+          77,
+          1491,
+          901
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un Studebaker Special Six cerrado de dos puertas, con motor de seis cilindros y las proporciones verticales de los primeros cupés de turismo.",
+      "en": "A closed two-door Studebaker Special Six, with a six-cylinder engine and the upright proportions of an early touring coupé."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Studebaker"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Special Six Tudor Coupé"
+      },
+      {
+        "label": {
+          "es": "Año",
+          "en": "Year"
+        },
+        "value": "1924"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Two-door coupé",
+          "es": "Cupé de 2 puertas"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-6, L-head",
+          "es": "6 en línea, válvulas laterales"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "4.7 L (4729 cc)",
+          "es": "4,7 L (4729 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "50 HP",
+          "es": "50 HP"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual de 3 velocidades"
+        }
+      },
+      {
+        "label": {
+          "es": "País de origen",
+          "en": "Country of origin"
+        },
+        "value": {
+          "en": "United States",
+          "es": "Estados Unidos"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Historia del automóvil — Special Six in the Nicolini collection",
+        "url": "https://es.scribd.com/document/377364120/272481951-historia-del-automovil-pdf"
+      },
+      {
+        "title": "Studebaker Drivers Club — Special Six history",
+        "url": "https://rrvcsdc.org/studebaker-history/1913-to-1927/"
+      }
+    ]
+  },
+  {
+    "id": "A09",
+    "slug": "axs-615",
+    "name": "Chalmers Six Touring",
+    "brand": "Chalmers",
+    "model": "Six Touring",
+    "year": "1914",
+    "desc": "A large open Chalmers tourer, with an inline-six engine, brass-era fittings and a broad passenger compartment.",
+    "desc_es": "Un gran turismo abierto de Chalmers, con motor de seis cilindros en línea, accesorios de la época del latón y amplio habitáculo.",
+    "specs": {
+      "tipo": "Touring",
+      "motor": "Inline-6, L-head",
+      "trans": "Manual",
+      "traccion": "Rear-wheel drive",
+      "pais": "United States",
+      "combustible": "Gasoline"
+    },
+    "specs_es": {
+      "tipo": "Touring",
+      "motor": "6 en línea, válvulas laterales",
+      "trans": "Manual",
+      "traccion": "Trasera",
+      "pais": "Estados Unidos",
+      "combustible": "Gasolina"
+    },
+    "aliases": [],
+    "yearLabel": "1914",
+    "yearStart": 1914,
+    "yearEnd": 1914,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "AXS - 615",
+    "featured_order": 9,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0609",
+        "src": "assets/artech31/media/a88a0609.webp",
+        "thumb": "assets/artech31/media/a88a0609-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0609-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          60,
+          15,
+          1408,
+          996
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0611",
+        "src": "assets/artech31/media/a88a0611.webp",
+        "thumb": "assets/artech31/media/a88a0611-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0611-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          41,
+          72,
+          1471,
+          914
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un gran turismo abierto de Chalmers, con motor de seis cilindros en línea, accesorios de la época del latón y amplio habitáculo.",
+      "en": "A large open Chalmers tourer, with an inline-six engine, brass-era fittings and a broad passenger compartment."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Chalmers"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Six Touring"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1914"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Touring",
+          "es": "Touring"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-6, L-head",
+          "es": "6 en línea, válvulas laterales"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "Manual",
+          "es": "Manual"
+        }
+      },
+      {
+        "label": {
+          "es": "Tracción",
+          "en": "Drive"
+        },
+        "value": {
+          "en": "Rear-wheel drive",
+          "es": "Trasera"
+        }
+      },
+      {
+        "label": {
+          "es": "País de origen",
+          "en": "Country of origin"
+        },
+        "value": {
+          "en": "United States",
+          "es": "Estados Unidos"
+        }
+      },
+      {
+        "label": {
+          "es": "Combustible",
+          "en": "Fuel"
+        },
+        "value": {
+          "en": "Gasoline",
+          "es": "Gasolina"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "The Automobile, September 4, 1913 — new Chalmers Six",
+        "url": "https://hcca.org/wp-content/uploads/wpforo/attachments/3551/2988-Chalmers-24-introduction.pdf"
+      }
+    ]
+  },
+  {
+    "id": "A10",
+    "slug": "bvs-249",
+    "name": "Hudson Super Six Touring",
+    "brand": "Hudson",
+    "model": "Super Six Touring",
+    "year": "1919",
+    "desc": "Hudson’s Super Six combined an inline-six engine with a counterbalanced crankshaft, designed to make sustained touring smoother.",
+    "desc_es": "El Super Six de Hudson combinaba seis cilindros en línea con un cigüeñal contrapesado, pensado para dar mayor suavidad en recorridos prolongados.",
+    "specs": {
+      "tipo": "Tourer",
+      "motor": "Inline-6 (L-head)",
+      "cil": "4.7 L (289 cu in)",
+      "hp": "76 HP",
+      "trans": "3-speed manual",
+      "frenos": "Mechanical drum"
+    },
+    "specs_es": {
+      "tipo": "Turismo",
+      "motor": "6 en línea (L-head)",
+      "cil": "4.7 L (289 pulg³)",
+      "hp": "76 HP",
+      "trans": "Manual 3 vel.",
+      "frenos": "Tambor mecánico"
+    },
+    "aliases": [],
+    "yearLabel": "1919",
+    "yearStart": 1919,
+    "yearEnd": 1919,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "BVS - 249",
+    "featured_order": 10,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0613",
+        "src": "assets/artech31/media/a88a0613.webp",
+        "thumb": "assets/artech31/media/a88a0613-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0613-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          14,
+          33,
+          1405,
+          952
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "El Super Six de Hudson combinaba seis cilindros en línea con un cigüeñal contrapesado, pensado para dar mayor suavidad en recorridos prolongados.",
+      "en": "Hudson’s Super Six combined an inline-six engine with a counterbalanced crankshaft, designed to make sustained touring smoother."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Hudson"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Super Six Touring"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1919"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Tourer",
+          "es": "Turismo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-6 (L-head)",
+          "es": "6 en línea (L-head)"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "4.7 L (289 cu in)",
+          "es": "4.7 L (289 pulg³)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "76 HP",
+          "es": "76 HP"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual 3 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Mechanical drum",
+          "es": "Tambor mecánico"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Hyman Ltd — inspected 1919 Hudson Super Six",
+        "url": "https://hymanltd.com/vehicles/5682-1919-hudson-super-six-boat-tail-speedster/"
+      }
+    ]
+  },
+  {
+    "id": "A11",
+    "slug": "aue-622",
+    "name": "Buick Series 60 Phaeton",
+    "brand": "Buick",
+    "model": "Series 60 Phaeton",
+    "year": "1930",
+    "desc": "A seven-passenger Buick phaeton, with a long open body and Buick’s overhead-valve six-cylinder engine.",
+    "desc_es": "Un phaeton Buick de siete plazas, con carrocería abierta de gran longitud y motor de seis cilindros con válvulas en cabeza.",
+    "specs": {
+      "tipo": "Seven-passenger phaeton",
+      "motor": "Inline-6 (OHV)",
+      "cil": "5.4 L (331 cu in)",
+      "hp": "99 HP @ 2800 rpm",
+      "trans": "3-speed manual",
+      "frenos": "Mechanical drum"
+    },
+    "specs_es": {
+      "tipo": "Phaeton de 7 plazas",
+      "motor": "6 en línea (OHV)",
+      "cil": "5.4 L (331 pulg³)",
+      "hp": "99 HP @ 2800 rpm",
+      "trans": "Manual 3 vel.",
+      "frenos": "Tambor mecánico"
+    },
+    "aliases": [],
+    "yearLabel": "1930",
+    "yearStart": 1930,
+    "yearEnd": 1930,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "AUE - 622",
+    "featured_order": 11,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0615",
+        "src": "assets/artech31/media/a88a0615.webp",
+        "thumb": "assets/artech31/media/a88a0615-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0615-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          27,
+          78,
+          1489,
+          922
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un phaeton Buick de siete plazas, con carrocería abierta de gran longitud y motor de seis cilindros con válvulas en cabeza.",
+      "en": "A seven-passenger Buick phaeton, with a long open body and Buick’s overhead-valve six-cylinder engine."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Buick"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Series 60 Phaeton"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1930"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Seven-passenger phaeton",
+          "es": "Phaeton de 7 plazas"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-6 (OHV)",
+          "es": "6 en línea (OHV)"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "5.4 L (331 cu in)",
+          "es": "5.4 L (331 pulg³)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "99 HP @ 2800 rpm",
+          "es": "99 HP @ 2800 rpm"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual 3 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Mechanical drum",
+          "es": "Tambor mecánico"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "BMW Clásicos — first-hand Nicolini visit",
+        "url": "https://www.bmwclasicos.com/foro/threads/2941/"
+      },
+      {
+        "title": "Hyman Ltd — inspected 1930 Buick Series 60",
+        "url": "https://hymanltd.com/vehicles/6578-1930-buick-series-60-roadster/"
+      }
+    ]
+  },
+  {
+    "id": "A12",
+    "slug": "sin-placa-18",
+    "name": "Studebaker Roadster",
+    "brand": "Studebaker",
+    "model": "Roadster",
+    "year": "1928",
+    "desc": "An open two-door Studebaker with a folding fabric hood, separate fenders and a rear rumble-seat compartment.",
+    "desc_es": "Un Studebaker abierto de dos puertas, con capota de lona plegable, guardabarros separados y compartimento posterior de asiento auxiliar.",
+    "specs": {
+      "tipo": "Two-door roadster",
+      "motor": "Front-mounted gasoline engine",
+      "trans": "Manual",
+      "traccion": "Rear-wheel drive",
+      "pais": "United States",
+      "combustible": "Gasoline"
+    },
+    "specs_es": {
+      "tipo": "Roadster de 2 puertas",
+      "motor": "Motor delantero de gasolina",
+      "trans": "Manual",
+      "traccion": "Trasera",
+      "pais": "Estados Unidos",
+      "combustible": "Gasolina"
+    },
+    "aliases": [
+      "studebaker-roadster-1928"
+    ],
+    "yearLabel": "1928",
+    "yearStart": 1928,
+    "yearEnd": 1928,
+    "yearKind": "collection-documentation",
+    "era": "classic",
+    "plate": "",
+    "featured_order": 12,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0617",
+        "src": "assets/artech31/media/a88a0617.webp",
+        "thumb": "assets/artech31/media/a88a0617-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0617-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          29,
+          80,
+          1495,
+          914
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un Studebaker abierto de dos puertas, con capota de lona plegable, guardabarros separados y compartimento posterior de asiento auxiliar.",
+      "en": "An open two-door Studebaker with a folding fabric hood, separate fenders and a rear rumble-seat compartment."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Studebaker"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Roadster"
+      },
+      {
+        "label": {
+          "es": "Año",
+          "en": "Year"
+        },
+        "value": "1928"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Two-door roadster",
+          "es": "Roadster de 2 puertas"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Front-mounted gasoline engine",
+          "es": "Motor delantero de gasolina"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "Manual",
+          "es": "Manual"
+        }
+      },
+      {
+        "label": {
+          "es": "Tracción",
+          "en": "Drive"
+        },
+        "value": {
+          "en": "Rear-wheel drive",
+          "es": "Trasera"
+        }
+      },
+      {
+        "label": {
+          "es": "País de origen",
+          "en": "Country of origin"
+        },
+        "value": {
+          "en": "United States",
+          "es": "Estados Unidos"
+        }
+      },
+      {
+        "label": {
+          "es": "Combustible",
+          "en": "Fuel"
+        },
+        "value": {
+          "en": "Gasoline",
+          "es": "Gasolina"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "BMW Clásicos — first-hand Nicolini visit",
+        "url": "https://www.bmwclasicos.com/foro/threads/2941/"
+      },
+      {
+        "title": "Original catalog — Studebaker detail image",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars/sin-placa-18/d2.jpg"
+      }
+    ]
+  },
+  {
+    "id": "A13",
+    "slug": "alo-686",
+    "name": "Lincoln Model L Phaeton",
+    "brand": "Lincoln",
+    "model": "Model L Phaeton",
+    "year": "1925",
+    "desc": "A long-wheelbase Lincoln Model L phaeton, combining an open passenger body with Lincoln’s V8 engine.",
+    "desc_es": "Un Lincoln Model L phaeton de batalla larga, que combina una carrocería de pasajeros abierta con el motor V8 de la marca.",
+    "specs": {
+      "tipo": "Seven-passenger phaeton",
+      "motor": "V8 (L-head 60°)",
+      "cil": "5.9 L (358 cu in)",
+      "hp": "90 HP @ 2800 rpm",
+      "trans": "3-speed manual",
+      "frenos": "Mechanical drum"
+    },
+    "specs_es": {
+      "tipo": "Phaeton de 7 plazas",
+      "motor": "V8 (L-head 60°)",
+      "cil": "5.9 L (358 pulg³)",
+      "hp": "90 HP @ 2800 rpm",
+      "trans": "Manual 3 vel.",
+      "frenos": "Tambor mecánico"
+    },
+    "aliases": [],
+    "yearLabel": "1925",
+    "yearStart": 1925,
+    "yearEnd": 1925,
+    "yearKind": "collection-documentation",
+    "era": "classic",
+    "plate": "ALO-686",
+    "featured_order": 13,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0620",
+        "src": "assets/artech31/media/a88a0620.webp",
+        "thumb": "assets/artech31/media/a88a0620-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0620-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          39,
+          102,
+          1485,
+          881
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un Lincoln Model L phaeton de batalla larga, que combina una carrocería de pasajeros abierta con el motor V8 de la marca.",
+      "en": "A long-wheelbase Lincoln Model L phaeton, combining an open passenger body with Lincoln’s V8 engine."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Lincoln"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Model L Phaeton"
+      },
+      {
+        "label": {
+          "es": "Año",
+          "en": "Year"
+        },
+        "value": "1925"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Seven-passenger phaeton",
+          "es": "Phaeton de 7 plazas"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "V8 (L-head 60°)",
+          "es": "V8 (L-head 60°)"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "5.9 L (358 cu in)",
+          "es": "5.9 L (358 pulg³)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "90 HP @ 2800 rpm",
+          "es": "90 HP @ 2800 rpm"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual 3 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Mechanical drum",
+          "es": "Tambor mecánico"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Touring, issue 63, June 2013 — Nicolini collection",
+        "url": "https://studylib.es/doc/7731319/made-in-per%C3%BA---touring-y-autom%C3%B3vil-club-del-per%C3%BA"
+      },
+      {
+        "title": "RM Sotheby’s — Lincoln Model L technical reference",
+        "url": "https://rmsothebys.com/auctions/hf19/lots/r0083-1924-lincoln-model-l-fourpassenger-phaeton/"
+      }
+    ]
+  },
+  {
+    "id": "A14",
+    "slug": "b4z-517",
+    "name": "Riley RMD Drophead Coupé",
+    "brand": "Riley",
+    "model": "RMD Drophead Coupé",
+    "year": "1951",
+    "desc": "Riley’s four-seat drophead coupé uses the 2½-litre Big Four engine, a four-speed gearbox and independent front suspension.",
+    "desc_es": "El descapotable de cuatro plazas de Riley utiliza el motor Big Four de 2½ litros, caja de cuatro velocidades y suspensión delantera independiente.",
+    "specs": {
+      "tipo": "Drop Head Coupe",
+      "motor": "Inline-4 (high-cam)",
+      "cil": "2.5 L (2443 cc)",
+      "hp": "100 bhp",
+      "trans": "4-speed manual",
+      "frenos": "Hydro-mechanical drum"
+    },
+    "specs_es": {
+      "tipo": "Drop Head Coupé",
+      "motor": "4 en línea (levas altas)",
+      "cil": "2.5 L (2443 cc)",
+      "hp": "100 bhp",
+      "trans": "Manual 4 vel.",
+      "frenos": "Tambor hidromecánico"
+    },
+    "aliases": [],
+    "yearLabel": "1951",
+    "yearStart": 1951,
+    "yearEnd": 1951,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "B4Z - 517",
+    "featured_order": 14,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0622",
+        "src": "assets/artech31/media/a88a0622.webp",
+        "thumb": "assets/artech31/media/a88a0622-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0622-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          4,
+          158,
+          1521,
+          814
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "El descapotable de cuatro plazas de Riley utiliza el motor Big Four de 2½ litros, caja de cuatro velocidades y suspensión delantera independiente.",
+      "en": "Riley’s four-seat drophead coupé uses the 2½-litre Big Four engine, a four-speed gearbox and independent front suspension."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Riley"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "RMD Drophead Coupé"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1951"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Drop Head Coupe",
+          "es": "Drop Head Coupé"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-4 (high-cam)",
+          "es": "4 en línea (levas altas)"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "2.5 L (2443 cc)",
+          "es": "2.5 L (2443 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "100 bhp",
+          "es": "100 bhp"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "4-speed manual",
+          "es": "Manual 4 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Hydro-mechanical drum",
+          "es": "Tambor hidromecánico"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Riley RM Club — RMD model archive",
+        "url": "https://rileyrmclub.org.uk/rm-models/"
+      }
+    ]
+  },
+  {
+    "id": "A15",
+    "slug": "f0i-108",
+    "name": "Studebaker Land Cruiser",
+    "brand": "Studebaker",
+    "model": "Land Cruiser",
+    "year": "1935",
+    "desc": "A streamlined Studebaker sedan whose sloping tail and integrated body shapes reflect the aerodynamic styling of the mid-1930s.",
+    "desc_es": "Un sedán Studebaker de líneas aerodinámicas, con zaga inclinada y volúmenes integrados propios del diseño de mediados de los años treinta.",
+    "specs": {
+      "tipo": "Four-door streamlined sedan",
+      "motor": "Front-mounted gasoline engine",
+      "trans": "3-speed manual",
+      "traccion": "Rear-wheel drive",
+      "pais": "United States",
+      "combustible": "Gasoline"
+    },
+    "specs_es": {
+      "tipo": "Sedán aerodinámico de 4 puertas",
+      "motor": "Motor delantero de gasolina",
+      "trans": "Manual de 3 velocidades",
+      "traccion": "Trasera",
+      "pais": "Estados Unidos",
+      "combustible": "Gasolina"
+    },
+    "aliases": [],
+    "yearLabel": "1935",
+    "yearStart": 1935,
+    "yearEnd": 1935,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "F0I - 108",
+    "featured_order": 15,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0623",
+        "src": "assets/artech31/media/a88a0623.webp",
+        "thumb": "assets/artech31/media/a88a0623-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0623-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          29,
+          135,
+          1483,
+          830
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un sedán Studebaker de líneas aerodinámicas, con zaga inclinada y volúmenes integrados propios del diseño de mediados de los años treinta.",
+      "en": "A streamlined Studebaker sedan whose sloping tail and integrated body shapes reflect the aerodynamic styling of the mid-1930s."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Studebaker"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Land Cruiser"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1935"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Four-door streamlined sedan",
+          "es": "Sedán aerodinámico de 4 puertas"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Front-mounted gasoline engine",
+          "es": "Motor delantero de gasolina"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual de 3 velocidades"
+        }
+      },
+      {
+        "label": {
+          "es": "Tracción",
+          "en": "Drive"
+        },
+        "value": {
+          "en": "Rear-wheel drive",
+          "es": "Trasera"
+        }
+      },
+      {
+        "label": {
+          "es": "País de origen",
+          "en": "Country of origin"
+        },
+        "value": {
+          "en": "United States",
+          "es": "Estados Unidos"
+        }
+      },
+      {
+        "label": {
+          "es": "Combustible",
+          "en": "Fuel"
+        },
+        "value": {
+          "en": "Gasoline",
+          "es": "Gasolina"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "BMW Clásicos — first-hand Nicolini visit",
+        "url": "https://www.bmwclasicos.com/foro/threads/2941/"
+      },
+      {
+        "title": "Studebaker Drivers Club — 1935 Commander",
+        "url": "https://rrvcsdc.org/studebaker-history/1927-to-1942-commanders/1935-commander/"
+      }
+    ]
+  },
+  {
+    "id": "A16",
+    "slug": "sin-placa-21",
+    "name": "Chrysler Airflow",
+    "brand": "Chrysler",
+    "model": "Airflow",
+    "year": "1934",
+    "desc": "The Airflow placed its passengers inside a rounded, wind-tunnel-influenced body, with an inline-eight engine and hydraulic brakes.",
+    "desc_es": "El Airflow situó a sus pasajeros dentro de una carrocería redondeada influida por el túnel de viento, con ocho cilindros en línea y frenos hidráulicos.",
+    "specs": {
+      "tipo": "Streamliner Sedan",
+      "motor": "Inline-8",
+      "cil": "4.9 L (299 cu in)",
+      "hp": "122 HP",
+      "trans": "3-speed manual",
+      "frenos": "Hydraulic drum"
+    },
+    "specs_es": {
+      "tipo": "Sedán aerodinámico",
+      "motor": "8 en línea",
+      "cil": "4.9 L (299 pulg³)",
+      "hp": "122 HP",
+      "trans": "Manual 3 vel.",
+      "frenos": "Tambor hidráulico"
+    },
+    "aliases": [],
+    "yearLabel": "1934",
+    "yearStart": 1934,
+    "yearEnd": 1934,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "",
+    "featured_order": 16,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0626",
+        "src": "assets/artech31/media/a88a0626.webp",
+        "thumb": "assets/artech31/media/a88a0626-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0626-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          32,
+          153,
+          1489,
+          800
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "El Airflow situó a sus pasajeros dentro de una carrocería redondeada influida por el túnel de viento, con ocho cilindros en línea y frenos hidráulicos.",
+      "en": "The Airflow placed its passengers inside a rounded, wind-tunnel-influenced body, with an inline-eight engine and hydraulic brakes."
+    },
+    "specScope": {
+      "es": "Referencia del Chrysler Airflow CU de 1934",
+      "en": "1934 Airflow CU model reference"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Chrysler"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Airflow"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1934"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Streamliner Sedan",
+          "es": "Sedán aerodinámico"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-8",
+          "es": "8 en línea"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "4.9 L (299 cu in)",
+          "es": "4.9 L (299 pulg³)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "122 HP",
+          "es": "122 HP"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual 3 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Hydraulic drum",
+          "es": "Tambor hidráulico"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Southward Car Museum — Airflow CU",
+        "url": "https://www.southwardcarmuseum.co.nz/vehicles/chrysler-airflow-series-cu-sedan"
+      }
+    ]
+  },
+  {
+    "id": "A17",
+    "slug": "si-placa-20",
+    "name": "Chevrolet Special De Luxe",
+    "brand": "Chevrolet",
+    "model": "Special De Luxe",
+    "year": "1940",
+    "desc": "A prewar Chevrolet sedan with a valve-in-head six-cylinder engine, a three-speed transmission and hydraulic drum brakes.",
+    "desc_es": "Un sedán Chevrolet de preguerra, con seis cilindros y válvulas en cabeza, transmisión de tres velocidades y frenos hidráulicos de tambor.",
+    "specs": {
+      "tipo": "Classic Sedan",
+      "motor": "Inline-6, overhead valves",
+      "cil": "3.5 L (216.5 cu in)",
+      "hp": "85 HP",
+      "trans": "3-speed manual",
+      "frenos": "Hydraulic drum"
+    },
+    "specs_es": {
+      "tipo": "Sedán clásico",
+      "motor": "6 en línea, válvulas en cabeza",
+      "cil": "3,5 L (216,5 pulgadas cúbicas)",
+      "hp": "85 HP",
+      "trans": "Manual 3 vel.",
+      "frenos": "Tambor hidráulico"
+    },
+    "aliases": [],
+    "yearLabel": "1940",
+    "yearStart": 1940,
+    "yearEnd": 1940,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "",
+    "featured_order": 17,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0627",
+        "src": "assets/artech31/media/a88a0627.webp",
+        "thumb": "assets/artech31/media/a88a0627-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0627-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          13,
+          106,
+          1512,
+          854
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un sedán Chevrolet de preguerra, con seis cilindros y válvulas en cabeza, transmisión de tres velocidades y frenos hidráulicos de tambor.",
+      "en": "A prewar Chevrolet sedan with a valve-in-head six-cylinder engine, a three-speed transmission and hydraulic drum brakes."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Chevrolet"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Special De Luxe"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1940"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Classic Sedan",
+          "es": "Sedán clásico"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-6, overhead valves",
+          "es": "6 en línea, válvulas en cabeza"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.5 L (216.5 cu in)",
+          "es": "3,5 L (216,5 pulgadas cúbicas)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "85 HP",
+          "es": "85 HP"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual 3 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Hydraulic drum",
+          "es": "Tambor hidráulico"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "General Motors Heritage — 1940 Chevrolet information kit",
+        "url": "https://news.chevrolet.com/content/dam/company/no_search/heritage-archive-docs/vehicle-information-kits/chevrolet/1940-Chevrolet.pdf"
+      }
+    ]
+  },
+  {
+    "id": "A18",
+    "slug": "sin-placa-19",
+    "name": "Cadillac V8 Town Coupé",
+    "brand": "Cadillac",
+    "model": "V8 Town Coupé",
+    "year": "1932",
+    "desc": "An upright two-door Cadillac luxury coupé from the early 1930s, with a V8 engine and a synchronized three-speed gearbox.",
+    "desc_es": "Un cupé Cadillac de lujo de dos puertas de comienzos de los años treinta, con motor V8 y caja sincronizada de tres velocidades.",
+    "specs": {
+      "tipo": "Two-door town coupé",
+      "motor": "V8",
+      "cil": "5.8 L (353 cu in)",
+      "hp": "115 HP",
+      "trans": "3-speed manual",
+      "frenos": "Mechanical drum"
+    },
+    "specs_es": {
+      "tipo": "Town coupé de 2 puertas",
+      "motor": "V8",
+      "cil": "5.8 L (353 pulg³)",
+      "hp": "115 HP",
+      "trans": "Manual 3 vel.",
+      "frenos": "Tambor mecánico"
+    },
+    "aliases": [],
+    "yearLabel": "1932",
+    "yearStart": 1932,
+    "yearEnd": 1932,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "",
+    "featured_order": 18,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0629",
+        "src": "assets/artech31/media/a88a0629.webp",
+        "thumb": "assets/artech31/media/a88a0629-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0629-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          15,
+          131,
+          1513,
+          821
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un cupé Cadillac de lujo de dos puertas de comienzos de los años treinta, con motor V8 y caja sincronizada de tres velocidades.",
+      "en": "An upright two-door Cadillac luxury coupé from the early 1930s, with a V8 engine and a synchronized three-speed gearbox."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Cadillac"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "V8 Town Coupé"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1932"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Two-door town coupé",
+          "es": "Town coupé de 2 puertas"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "V8",
+          "es": "V8"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "5.8 L (353 cu in)",
+          "es": "5.8 L (353 pulg³)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "115 HP",
+          "es": "115 HP"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual 3 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Mechanical drum",
+          "es": "Tambor mecánico"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "FIMAAS — first-hand Nicolini museum visit",
+        "url": "https://es.scribd.com/document/319762245/El-Museo-Nicolini"
+      },
+      {
+        "title": "General Motors Heritage — 1932 Cadillac engine comparison",
+        "url": "https://www.gm.com/content/dam/company/no_search/heritage-archive-docs/vehicle-information-kits/cadillac/1932_Cadillac_V12_VVI.pdf"
+      }
+    ]
+  },
+  {
+    "id": "A19",
+    "slug": "ahe-474",
+    "name": "Packard 633 Standard Eight Phaeton",
+    "brand": "Packard",
+    "model": "633 Standard Eight Phaeton",
+    "year": "1929",
+    "desc": "An open Packard from the Sixth Series, powered by the Standard Eight straight-eight engine and a three-speed manual gearbox.",
+    "desc_es": "Un Packard abierto de la sexta serie, con motor Standard Eight de ocho cilindros en línea y cambio manual de tres velocidades.",
+    "specs": {
+      "tipo": "Phaeton",
+      "motor": "Inline-8 (L-head)",
+      "cil": "5.2 L (319 cu in)",
+      "hp": "90 HP @ 3200 rpm",
+      "trans": "3-speed manual",
+      "frenos": "Mechanical drum"
+    },
+    "specs_es": {
+      "tipo": "Phaeton",
+      "motor": "8 en línea (L-head)",
+      "cil": "5.2 L (319 pulg³)",
+      "hp": "90 HP @ 3200 rpm",
+      "trans": "Manual 3 vel.",
+      "frenos": "Tambor mecánico"
+    },
+    "aliases": [],
+    "yearLabel": "1929",
+    "yearStart": 1929,
+    "yearEnd": 1929,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "AHE - 474",
+    "featured_order": 19,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0631",
+        "src": "assets/artech31/media/a88a0631.webp",
+        "thumb": "assets/artech31/media/a88a0631-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0631-isolated-v4.webp",
+        "room": "assets/artech31/media/room-classic-v4.webp",
+        "carBounds": [
+          28,
+          125,
+          1495,
+          850
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un Packard abierto de la sexta serie, con motor Standard Eight de ocho cilindros en línea y cambio manual de tres velocidades.",
+      "en": "An open Packard from the Sixth Series, powered by the Standard Eight straight-eight engine and a three-speed manual gearbox."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Packard"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "633 Standard Eight Phaeton"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1929"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Phaeton",
+          "es": "Phaeton"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Inline-8 (L-head)",
+          "es": "8 en línea (L-head)"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "5.2 L (319 cu in)",
+          "es": "5.2 L (319 pulg³)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "90 HP @ 3200 rpm",
+          "es": "90 HP @ 3200 rpm"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "3-speed manual",
+          "es": "Manual 3 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Mechanical drum",
+          "es": "Tambor mecánico"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "RM Sotheby’s — 1929 Packard 633 Standard Eight Phaeton",
+        "url": "https://rmsothebys.com/auctions/af20/lots/r0367-1929-packard-633-standard-eight-phaeton/"
+      }
+    ]
+  },
+  {
+    "id": "A20",
+    "slug": "asv-385",
+    "name": "Porsche 911 GT3 RS (991.1)",
+    "brand": "Porsche",
+    "model": "911 GT3 RS (991.1)",
+    "year": "2016",
+    "desc": "A naturally aspirated RS with a four-litre flat-six, a seven-speed PDK and a fixed rear wing developed for sustained track use.",
+    "desc_es": "Un RS atmosférico con bóxer de cuatro litros, PDK de siete velocidades y alerón posterior fijo, concebido para un uso intenso en circuito.",
+    "specs": {
+      "tipo": "Sports Coupe",
+      "motor": "Flat-6",
+      "cil": "4.0 L (3996 cc)",
+      "hp": "500 PS",
+      "trans": "7-speed PDK",
+      "frenos": "Ventilated discs; PCCB optional",
+      "vel": "310 km/h"
+    },
+    "specs_es": {
+      "tipo": "Coupé deportivo",
+      "motor": "6 bóxer",
+      "cil": "4.0 L (3996 cc)",
+      "hp": "500 CV",
+      "trans": "PDK 7 vel.",
+      "frenos": "Discos ventilados; PCCB opcional",
+      "vel": "310 km/h"
+    },
+    "aliases": [],
+    "yearLabel": "2016",
+    "yearStart": 2016,
+    "yearEnd": 2016,
+    "yearKind": "catalog-year",
+    "era": "modern",
+    "plate": "ASV - 385",
+    "featured_order": 20,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0648",
+        "src": "assets/artech31/media/a88a0648.webp",
+        "thumb": "assets/artech31/media/a88a0648-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0648-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          26,
+          211,
+          1479,
+          630
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0646",
+        "src": "assets/artech31/media/a88a0646.webp",
+        "thumb": "assets/artech31/media/a88a0646-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0646-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          151,
+          106,
+          1257,
+          816
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un RS atmosférico con bóxer de cuatro litros, PDK de siete velocidades y alerón posterior fijo, concebido para un uso intenso en circuito.",
+      "en": "A naturally aspirated RS with a four-litre flat-six, a seven-speed PDK and a fixed rear wing developed for sustained track use."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "911 GT3 RS (991.1)"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "2016"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports Coupe",
+          "es": "Coupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Flat-6",
+          "es": "6 bóxer"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "4.0 L (3996 cc)",
+          "es": "4.0 L (3996 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "500 PS",
+          "es": "500 CV"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "7-speed PDK",
+          "es": "PDK 7 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Ventilated discs; PCCB optional",
+          "es": "Discos ventilados; PCCB opcional"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "310 km/h",
+          "es": "310 km/h"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Porsche — the 991 GT3 RS",
+        "url": "https://newsroom.porsche.com/en/christophorus/porsche-new-911-gt3-rs-10228.html"
+      }
+    ]
+  },
+  {
+    "id": "A21",
+    "slug": "bfu-487",
+    "name": "Porsche 911 GT2 RS (991.2)",
+    "brand": "Porsche",
+    "model": "911 GT2 RS (991.2)",
+    "year": "2018",
+    "desc": "The rear-wheel-drive GT2 RS pairs a twin-turbo flat-six with a seven-speed PDK and standard ceramic-composite brakes.",
+    "desc_es": "El GT2 RS de tracción trasera combina un bóxer biturbo con PDK de siete velocidades y frenos cerámicos de serie.",
+    "specs": {
+      "tipo": "Sports Coupe",
+      "motor": "Twin-turbo flat-6",
+      "cil": "3.8 L (3800 cc)",
+      "hp": "700 PS",
+      "trans": "7-speed PDK",
+      "frenos": "Carbon-ceramic disc",
+      "vel": "340 km/h"
+    },
+    "specs_es": {
+      "tipo": "Coupé deportivo",
+      "motor": "6 bóxer biturbo",
+      "cil": "3.8 L (3800 cc)",
+      "hp": "700 CV",
+      "trans": "PDK 7 vel.",
+      "frenos": "Disco carbono-cerámico",
+      "vel": "340 km/h"
+    },
+    "aliases": [],
+    "yearLabel": "2018",
+    "yearStart": 2018,
+    "yearEnd": 2018,
+    "yearKind": "catalog-year",
+    "era": "modern",
+    "plate": "BFU - 487",
+    "featured_order": 21,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0656",
+        "src": "assets/artech31/media/a88a0656.webp",
+        "thumb": "assets/artech31/media/a88a0656-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0656-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          32,
+          226,
+          1473,
+          660
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0652",
+        "src": "assets/artech31/media/a88a0652.webp",
+        "thumb": "assets/artech31/media/a88a0652-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0652-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          192,
+          161,
+          1153,
+          762
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "El GT2 RS de tracción trasera combina un bóxer biturbo con PDK de siete velocidades y frenos cerámicos de serie.",
+      "en": "The rear-wheel-drive GT2 RS pairs a twin-turbo flat-six with a seven-speed PDK and standard ceramic-composite brakes."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "911 GT2 RS (991.2)"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "2018"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports Coupe",
+          "es": "Coupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Twin-turbo flat-6",
+          "es": "6 bóxer biturbo"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.8 L (3800 cc)",
+          "es": "3.8 L (3800 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "700 PS",
+          "es": "700 CV"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "7-speed PDK",
+          "es": "PDK 7 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Carbon-ceramic disc",
+          "es": "Disco carbono-cerámico"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "340 km/h",
+          "es": "340 km/h"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Porsche — GT2 RS world premiere",
+        "url": "https://newsroom.porsche.com/de/produkte/porsche-911-gt2-rs-weltpremiere-festival-of-speed-2017-goodwood-13891.html"
+      }
+    ]
+  },
+  {
+    "id": "A22",
+    "slug": "fol-661",
+    "name": "Porsche 911 Turbo S (991.1)",
+    "brand": "Porsche",
+    "model": "911 Turbo S (991.1)",
+    "year": "2015",
+    "desc": "The first 991 Turbo S combines a 3.8-litre twin-turbo engine, all-wheel drive and a seven-speed PDK transmission.",
+    "desc_es": "El primer Turbo S de la generación 991 combina motor biturbo de 3,8 litros, tracción total y transmisión PDK de siete velocidades.",
+    "specs": {
+      "tipo": "Sports Coupe",
+      "motor": "Twin-turbo flat-6",
+      "cil": "3.8 L (3800 cc)",
+      "hp": "560 PS",
+      "trans": "7-speed PDK",
+      "frenos": "Carbon-ceramic disc",
+      "vel": "318 km/h"
+    },
+    "specs_es": {
+      "tipo": "Coupé deportivo",
+      "motor": "6 bóxer biturbo",
+      "cil": "3.8 L (3800 cc)",
+      "hp": "560 CV",
+      "trans": "PDK 7 vel.",
+      "frenos": "Disco carbono-cerámico",
+      "vel": "318 km/h"
+    },
+    "aliases": [],
+    "yearLabel": "2015",
+    "yearStart": 2015,
+    "yearEnd": 2015,
+    "yearKind": "catalog-year",
+    "era": "modern",
+    "plate": "FOL - 661",
+    "featured_order": 22,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0662",
+        "src": "assets/artech31/media/a88a0662.webp",
+        "thumb": "assets/artech31/media/a88a0662-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0662-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          28,
+          240,
+          1470,
+          657
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "El primer Turbo S de la generación 991 combina motor biturbo de 3,8 litros, tracción total y transmisión PDK de siete velocidades.",
+      "en": "The first 991 Turbo S combines a 3.8-litre twin-turbo engine, all-wheel drive and a seven-speed PDK transmission."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "911 Turbo S (991.1)"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "2015"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports Coupe",
+          "es": "Coupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Twin-turbo flat-6",
+          "es": "6 bóxer biturbo"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.8 L (3800 cc)",
+          "es": "3.8 L (3800 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "560 PS",
+          "es": "560 CV"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "7-speed PDK",
+          "es": "PDK 7 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Carbon-ceramic disc",
+          "es": "Disco carbono-cerámico"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "318 km/h",
+          "es": "318 km/h"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Porsche — Turbo S history",
+        "url": "https://newsroom.porsche.com/es_ES/carpetas-de-prensa/pfv-porsche-911-turbo-s/Porsche-911-Turbo-S--Historia.html"
+      }
+    ]
+  },
+  {
+    "id": "A23",
+    "slug": "porsche-911-carrera-997-azul",
+    "name": "Porsche 911 Carrera (997.2)",
+    "brand": "Porsche",
+    "model": "911 Carrera (997.2)",
+    "year": "2009–2012",
+    "desc": "A second-phase 997 Carrera with naturally aspirated rear-mounted flat-six power and the revised front lighting of the facelifted generation.",
+    "desc_es": "Un Carrera de la segunda fase 997, con bóxer atmosférico trasero y el alumbrado frontal renovado de esta evolución.",
+    "specs": {
+      "tipo": "Sports coupé",
+      "motor": "Naturally aspirated flat-6, rear",
+      "cil": "3.6–3.8 L, Carrera / Carrera S range",
+      "hp": "345–385 PS, Carrera / Carrera S range",
+      "trans": "6-speed manual or 7-speed PDK",
+      "frenos": "Ventilated disc brakes"
+    },
+    "specs_es": {
+      "tipo": "Cupé deportivo",
+      "motor": "Bóxer atmosférico de 6 cilindros, trasero",
+      "cil": "3,6–3,8 L, gama Carrera / Carrera S",
+      "hp": "345–385 CV, gama Carrera / Carrera S",
+      "trans": "Manual de 6 velocidades o PDK de 7",
+      "frenos": "Discos ventilados"
+    },
+    "aliases": [],
+    "yearLabel": "2009–2012",
+    "yearStart": 2009,
+    "yearEnd": 2012,
+    "yearKind": "production-range",
+    "era": "modern",
+    "plate": "",
+    "featured_order": 23,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0667",
+        "src": "assets/artech31/media/a88a0667.webp",
+        "thumb": "assets/artech31/media/a88a0667-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0667-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          53,
+          232,
+          1431,
+          651
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0663",
+        "src": "assets/artech31/media/a88a0663.webp",
+        "thumb": "assets/artech31/media/a88a0663-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0663-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          225,
+          187,
+          1088,
+          727
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un Carrera de la segunda fase 997, con bóxer atmosférico trasero y el alumbrado frontal renovado de esta evolución.",
+      "en": "A second-phase 997 Carrera with naturally aspirated rear-mounted flat-six power and the revised front lighting of the facelifted generation."
+    },
+    "specScope": {
+      "es": "Gama 997.2 Carrera / Carrera S",
+      "en": "997.2 Carrera / Carrera S range"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "911 Carrera (997.2)"
+      },
+      {
+        "label": {
+          "es": "Período del modelo",
+          "en": "Model period"
+        },
+        "value": "2009–2012"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports coupé",
+          "es": "Cupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Naturally aspirated flat-6, rear",
+          "es": "Bóxer atmosférico de 6 cilindros, trasero"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.6–3.8 L, Carrera / Carrera S range",
+          "es": "3,6–3,8 L, gama Carrera / Carrera S"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "345–385 PS, Carrera / Carrera S range",
+          "es": "345–385 CV, gama Carrera / Carrera S"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "6-speed manual or 7-speed PDK",
+          "es": "Manual de 6 velocidades o PDK de 7"
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Ventilated disc brakes",
+          "es": "Discos ventilados"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Porsche Classic — 997 Carrera",
+        "url": "https://www.porsche.com/spain/accessoriesandservice/classic/models/997/997/"
+      },
+      {
+        "title": "Porsche — 997 generation history",
+        "url": "https://newsroom.porsche.com/en/history/porsche-911-seven-generations-part-6-type-997-16489.html"
+      }
+    ]
+  },
+  {
+    "id": "A24",
+    "slug": "porsche-911-turbo-997-azul",
+    "name": "Porsche 911 Turbo (997)",
+    "brand": "Porsche",
+    "model": "911 Turbo (997)",
+    "year": "2006–2012",
+    "desc": "A 997-generation Turbo coupé with side air intakes, a wide rear body and a twin-turbo flat-six driving all four wheels.",
+    "desc_es": "Un Turbo de la generación 997, con tomas de aire laterales, zaga ancha y bóxer biturbo que transmite la potencia a las cuatro ruedas.",
+    "specs": {
+      "tipo": "Sports coupé",
+      "motor": "Twin-turbo flat-6, rear",
+      "cil": "3.6–3.8 L, 997 Turbo family",
+      "hp": "480–530 PS, Turbo / Turbo S range",
+      "trans": "Manual, Tiptronic S or PDK, by version",
+      "traccion": "All-wheel drive"
+    },
+    "specs_es": {
+      "tipo": "Cupé deportivo",
+      "motor": "Bóxer biturbo de 6 cilindros, trasero",
+      "cil": "3,6–3,8 L, familia 997 Turbo",
+      "hp": "480–530 CV, gama Turbo / Turbo S",
+      "trans": "Manual, Tiptronic S o PDK según versión",
+      "traccion": "Total"
+    },
+    "aliases": [],
+    "yearLabel": "2006–2012",
+    "yearStart": 2006,
+    "yearEnd": 2012,
+    "yearKind": "production-range",
+    "era": "modern",
+    "plate": "",
+    "featured_order": 24,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0674",
+        "src": "assets/artech31/media/a88a0674.webp",
+        "thumb": "assets/artech31/media/a88a0674-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0674-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          47,
+          208,
+          1447,
+          673
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0671",
+        "src": "assets/artech31/media/a88a0671.webp",
+        "thumb": "assets/artech31/media/a88a0671-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0671-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          219,
+          169,
+          1099,
+          748
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un Turbo de la generación 997, con tomas de aire laterales, zaga ancha y bóxer biturbo que transmite la potencia a las cuatro ruedas.",
+      "en": "A 997-generation Turbo coupé with side air intakes, a wide rear body and a twin-turbo flat-six driving all four wheels."
+    },
+    "specScope": {
+      "es": "Gama 997 Turbo / Turbo S",
+      "en": "997 Turbo / Turbo S model range"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "911 Turbo (997)"
+      },
+      {
+        "label": {
+          "es": "Período del modelo",
+          "en": "Model period"
+        },
+        "value": "2006–2012"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports coupé",
+          "es": "Cupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Twin-turbo flat-6, rear",
+          "es": "Bóxer biturbo de 6 cilindros, trasero"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.6–3.8 L, 997 Turbo family",
+          "es": "3,6–3,8 L, familia 997 Turbo"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "480–530 PS, Turbo / Turbo S range",
+          "es": "480–530 CV, gama Turbo / Turbo S"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "Manual, Tiptronic S or PDK, by version",
+          "es": "Manual, Tiptronic S o PDK según versión"
+        }
+      },
+      {
+        "label": {
+          "es": "Tracción",
+          "en": "Drive"
+        },
+        "value": {
+          "en": "All-wheel drive",
+          "es": "Total"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Porsche Classic — 997 Turbo",
+        "url": "https://www.porsche.com/spain/accessoriesandservice/classic/models/997/997-turbo/"
+      }
+    ]
+  },
+  {
+    "id": "A25",
+    "slug": "porsche-911-turbo-997-plata",
+    "name": "Porsche 911 Turbo (997)",
+    "brand": "Porsche",
+    "model": "911 Turbo (997)",
+    "year": "2006–2012",
+    "desc": "A 997-generation Turbo coupé with side air intakes, a wide rear body and a twin-turbo flat-six driving all four wheels.",
+    "desc_es": "Un Turbo de la generación 997, con tomas de aire laterales, zaga ancha y bóxer biturbo que transmite la potencia a las cuatro ruedas.",
+    "specs": {
+      "tipo": "Sports coupé",
+      "motor": "Twin-turbo flat-6, rear",
+      "cil": "3.6–3.8 L, 997 Turbo family",
+      "hp": "480–530 PS, Turbo / Turbo S range",
+      "trans": "Manual, Tiptronic S or PDK, by version",
+      "traccion": "All-wheel drive"
+    },
+    "specs_es": {
+      "tipo": "Cupé deportivo",
+      "motor": "Bóxer biturbo de 6 cilindros, trasero",
+      "cil": "3,6–3,8 L, familia 997 Turbo",
+      "hp": "480–530 CV, gama Turbo / Turbo S",
+      "trans": "Manual, Tiptronic S o PDK según versión",
+      "traccion": "Total"
+    },
+    "aliases": [],
+    "yearLabel": "2006–2012",
+    "yearStart": 2006,
+    "yearEnd": 2012,
+    "yearKind": "production-range",
+    "era": "modern",
+    "plate": "",
+    "featured_order": 25,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0679",
+        "src": "assets/artech31/media/a88a0679.webp",
+        "thumb": "assets/artech31/media/a88a0679-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0679-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          58,
+          213,
+          1418,
+          661
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0677",
+        "src": "assets/artech31/media/a88a0677.webp",
+        "thumb": "assets/artech31/media/a88a0677-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0677-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          210,
+          147,
+          1111,
+          767
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un Turbo de la generación 997, con tomas de aire laterales, zaga ancha y bóxer biturbo que transmite la potencia a las cuatro ruedas.",
+      "en": "A 997-generation Turbo coupé with side air intakes, a wide rear body and a twin-turbo flat-six driving all four wheels."
+    },
+    "specScope": {
+      "es": "Gama 997 Turbo / Turbo S",
+      "en": "997 Turbo / Turbo S model range"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "911 Turbo (997)"
+      },
+      {
+        "label": {
+          "es": "Período del modelo",
+          "en": "Model period"
+        },
+        "value": "2006–2012"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports coupé",
+          "es": "Cupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Twin-turbo flat-6, rear",
+          "es": "Bóxer biturbo de 6 cilindros, trasero"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.6–3.8 L, 997 Turbo family",
+          "es": "3,6–3,8 L, familia 997 Turbo"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "480–530 PS, Turbo / Turbo S range",
+          "es": "480–530 CV, gama Turbo / Turbo S"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "Manual, Tiptronic S or PDK, by version",
+          "es": "Manual, Tiptronic S o PDK según versión"
+        }
+      },
+      {
+        "label": {
+          "es": "Tracción",
+          "en": "Drive"
+        },
+        "value": {
+          "en": "All-wheel drive",
+          "es": "Total"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Porsche Classic — 997 Turbo",
+        "url": "https://www.porsche.com/spain/accessoriesandservice/classic/models/997/997-turbo/"
+      }
+    ]
+  },
+  {
+    "id": "A26",
+    "slug": "a4d-305",
+    "name": "Porsche 911 GT3 (997.2)",
+    "brand": "Porsche",
+    "model": "911 GT3 (997.2)",
+    "year": "2010",
+    "desc": "The second 997 GT3 uses a 3.8-litre naturally aspirated flat-six and a six-speed manual transmission, with a fixed rear wing.",
+    "desc_es": "El segundo GT3 de la serie 997 utiliza un bóxer atmosférico de 3,8 litros y cambio manual de seis velocidades, con alerón posterior fijo.",
+    "specs": {
+      "tipo": "Sports Coupe",
+      "motor": "Flat-6",
+      "cil": "3.8 L (3797 cc)",
+      "hp": "435 PS",
+      "trans": "6-speed manual",
+      "frenos": "Ventilated discs; PCCB optional",
+      "vel": "312 km/h"
+    },
+    "specs_es": {
+      "tipo": "Coupé deportivo",
+      "motor": "6 bóxer",
+      "cil": "3.8 L (3797 cc)",
+      "hp": "435 CV",
+      "trans": "Manual 6 vel.",
+      "frenos": "Discos ventilados; PCCB opcional",
+      "vel": "312 km/h"
+    },
+    "aliases": [],
+    "yearLabel": "2010",
+    "yearStart": 2010,
+    "yearEnd": 2010,
+    "yearKind": "catalog-year",
+    "era": "modern",
+    "plate": "A4D - 305",
+    "featured_order": 26,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0683",
+        "src": "assets/artech31/media/a88a0683.webp",
+        "thumb": "assets/artech31/media/a88a0683-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0683-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          47,
+          221,
+          1447,
+          640
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0682",
+        "src": "assets/artech31/media/a88a0682.webp",
+        "thumb": "assets/artech31/media/a88a0682-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0682-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          206,
+          150,
+          1122,
+          767
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "El segundo GT3 de la serie 997 utiliza un bóxer atmosférico de 3,8 litros y cambio manual de seis velocidades, con alerón posterior fijo.",
+      "en": "The second 997 GT3 uses a 3.8-litre naturally aspirated flat-six and a six-speed manual transmission, with a fixed rear wing."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "911 GT3 (997.2)"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "2010"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports Coupe",
+          "es": "Coupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Flat-6",
+          "es": "6 bóxer"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.8 L (3797 cc)",
+          "es": "3.8 L (3797 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "435 PS",
+          "es": "435 CV"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "6-speed manual",
+          "es": "Manual 6 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Ventilated discs; PCCB optional",
+          "es": "Discos ventilados; PCCB opcional"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "312 km/h",
+          "es": "312 km/h"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Porsche — 20 years of the 911 GT3",
+        "url": "https://newsroom.porsche.com/en_US/products/porsche-celebrates-20-years-911-gt3-18389.html"
+      }
+    ]
+  },
+  {
+    "id": "A27",
+    "slug": "porsche-911-gt3-997-azul",
+    "name": "Porsche 911 GT3 (997.1)",
+    "brand": "Porsche",
+    "model": "911 GT3 (997.1)",
+    "year": "2006–2008",
+    "desc": "The first 997 GT3 combines a high-revving 3.6-litre flat-six, a six-speed manual gearbox and a fixed rear wing.",
+    "desc_es": "El primer GT3 de la generación 997 combina un bóxer de 3,6 litros de alto régimen, cambio manual de seis velocidades y alerón posterior fijo.",
+    "specs": {
+      "tipo": "Sports coupé",
+      "motor": "Naturally aspirated flat-6, rear",
+      "cil": "3.6 L (3600 cc)",
+      "hp": "415 PS",
+      "trans": "6-speed manual",
+      "frenos": "Ventilated discs; PCCB optional",
+      "vel": "310 km/h"
+    },
+    "specs_es": {
+      "tipo": "Cupé deportivo",
+      "motor": "Bóxer atmosférico de 6 cilindros, trasero",
+      "cil": "3,6 L (3600 cc)",
+      "hp": "415 CV",
+      "trans": "Manual de 6 velocidades",
+      "frenos": "Discos ventilados; PCCB opcional",
+      "vel": "310 km/h"
+    },
+    "aliases": [],
+    "yearLabel": "2006–2008",
+    "yearStart": 2006,
+    "yearEnd": 2008,
+    "yearKind": "production-range",
+    "era": "modern",
+    "plate": "",
+    "featured_order": 27,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0687",
+        "src": "assets/artech31/media/a88a0687.webp",
+        "thumb": "assets/artech31/media/a88a0687-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0687-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          63,
+          227,
+          1385,
+          618
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0686",
+        "src": "assets/artech31/media/a88a0686.webp",
+        "thumb": "assets/artech31/media/a88a0686-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0686-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          207,
+          167,
+          1112,
+          759
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "El primer GT3 de la generación 997 combina un bóxer de 3,6 litros de alto régimen, cambio manual de seis velocidades y alerón posterior fijo.",
+      "en": "The first 997 GT3 combines a high-revving 3.6-litre flat-six, a six-speed manual gearbox and a fixed rear wing."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "911 GT3 (997.1)"
+      },
+      {
+        "label": {
+          "es": "Período del modelo",
+          "en": "Model period"
+        },
+        "value": "2006–2008"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports coupé",
+          "es": "Cupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Naturally aspirated flat-6, rear",
+          "es": "Bóxer atmosférico de 6 cilindros, trasero"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.6 L (3600 cc)",
+          "es": "3,6 L (3600 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "415 PS",
+          "es": "415 CV"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "6-speed manual",
+          "es": "Manual de 6 velocidades"
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "Ventilated discs; PCCB optional",
+          "es": "Discos ventilados; PCCB opcional"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "310 km/h",
+          "es": "310 km/h"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Porsche — 20 years of the 911 GT3",
+        "url": "https://newsroom.porsche.com/en_US/products/porsche-celebrates-20-years-911-gt3-18389.html"
+      }
+    ]
+  },
+  {
+    "id": "A28",
+    "slug": "akv-003",
+    "name": "Porsche Cayman GT4 (981)",
+    "brand": "Porsche",
+    "model": "Cayman GT4 (981)",
+    "year": "2016",
+    "desc": "A mid-engined Cayman with a 3.8-litre flat-six, a six-speed manual gearbox and chassis components derived from the 911 GT3.",
+    "desc_es": "Un Cayman de motor central, con bóxer de 3,8 litros, cambio manual de seis velocidades y componentes de chasis derivados del 911 GT3.",
+    "specs": {
+      "tipo": "Sports Coupe",
+      "motor": "Flat-6 (mid)",
+      "cil": "3.8 L (3800 cc)",
+      "hp": "385 PS",
+      "trans": "6-speed manual",
+      "frenos": "4-wheel disc",
+      "vel": "295 km/h"
+    },
+    "specs_es": {
+      "tipo": "Coupé deportivo",
+      "motor": "6 bóxer (central)",
+      "cil": "3.8 L (3800 cc)",
+      "hp": "385 CV",
+      "trans": "Manual 6 vel.",
+      "frenos": "Disco en 4 ruedas",
+      "vel": "295 km/h"
+    },
+    "aliases": [],
+    "yearLabel": "2016",
+    "yearStart": 2016,
+    "yearEnd": 2016,
+    "yearKind": "catalog-year",
+    "era": "modern",
+    "plate": "AKV - 003",
+    "featured_order": 28,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0694",
+        "src": "assets/artech31/media/a88a0694.webp",
+        "thumb": "assets/artech31/media/a88a0694-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0694-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          33,
+          220,
+          1454,
+          651
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0691",
+        "src": "assets/artech31/media/a88a0691.webp",
+        "thumb": "assets/artech31/media/a88a0691-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0691-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          196,
+          136,
+          1145,
+          766
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un Cayman de motor central, con bóxer de 3,8 litros, cambio manual de seis velocidades y componentes de chasis derivados del 911 GT3.",
+      "en": "A mid-engined Cayman with a 3.8-litre flat-six, a six-speed manual gearbox and chassis components derived from the 911 GT3."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Cayman GT4 (981)"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "2016"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports Coupe",
+          "es": "Coupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Flat-6 (mid)",
+          "es": "6 bóxer (central)"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.8 L (3800 cc)",
+          "es": "3.8 L (3800 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "385 PS",
+          "es": "385 CV"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "6-speed manual",
+          "es": "Manual 6 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "4-wheel disc",
+          "es": "Disco en 4 ruedas"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "295 km/h",
+          "es": "295 km/h"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Porsche — the first Cayman GT4",
+        "url": "https://newsroom.porsche.com/en/products/the-new-porsche-cayman-gt4-2015.html"
+      }
+    ]
+  },
+  {
+    "id": "A29",
+    "slug": "a9t-107",
+    "name": "Porsche 911 Turbo (993)",
+    "brand": "Porsche",
+    "model": "911 Turbo (993)",
+    "year": "1996",
+    "desc": "The 993 Turbo brought twin turbochargers and all-wheel drive to the air-cooled 911 Turbo, using a six-speed manual gearbox.",
+    "desc_es": "El 993 Turbo incorporó dos turbocompresores y tracción total al 911 Turbo refrigerado por aire, con cambio manual de seis velocidades.",
+    "specs": {
+      "tipo": "Sports Coupe",
+      "motor": "Twin-turbo flat-6",
+      "cil": "3.6 L (3600 cc)",
+      "hp": "408 PS",
+      "trans": "6-speed manual",
+      "frenos": "4-wheel disc",
+      "vel": "290 km/h"
+    },
+    "specs_es": {
+      "tipo": "Coupé deportivo",
+      "motor": "6 bóxer biturbo",
+      "cil": "3.6 L (3600 cc)",
+      "hp": "408 CV",
+      "trans": "Manual 6 vel.",
+      "frenos": "Disco en 4 ruedas",
+      "vel": "290 km/h"
+    },
+    "aliases": [],
+    "yearLabel": "1996",
+    "yearStart": 1996,
+    "yearEnd": 1996,
+    "yearKind": "catalog-year",
+    "era": "modern",
+    "plate": "A9T - 107",
+    "featured_order": 29,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0699",
+        "src": "assets/artech31/media/a88a0699.webp",
+        "thumb": "assets/artech31/media/a88a0699-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0699-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          68,
+          233,
+          1393,
+          630
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0697",
+        "src": "assets/artech31/media/a88a0697.webp",
+        "thumb": "assets/artech31/media/a88a0697-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0697-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          174,
+          104,
+          1225,
+          866
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "El 993 Turbo incorporó dos turbocompresores y tracción total al 911 Turbo refrigerado por aire, con cambio manual de seis velocidades.",
+      "en": "The 993 Turbo brought twin turbochargers and all-wheel drive to the air-cooled 911 Turbo, using a six-speed manual gearbox."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "911 Turbo (993)"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1996"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports Coupe",
+          "es": "Coupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Twin-turbo flat-6",
+          "es": "6 bóxer biturbo"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.6 L (3600 cc)",
+          "es": "3.6 L (3600 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "408 PS",
+          "es": "408 CV"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "6-speed manual",
+          "es": "Manual 6 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "4-wheel disc",
+          "es": "Disco en 4 ruedas"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "290 km/h",
+          "es": "290 km/h"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Porsche — the 1995 911 Turbo",
+        "url": "https://newsroom.porsche.com/es/2020/historia/es-porsche-present%C3%B3-nuevo-911-turbo-1995-22680.html"
+      },
+      {
+        "title": "Porsche — 993 Turbo S",
+        "url": "https://newsroom.porsche.com/en/press-kits/Porsche-Heritage-Experience/Porsche-911-%28Typ-993%29-Turbo-S.html"
+      }
+    ]
+  },
+  {
+    "id": "A30",
+    "slug": "d5z-370",
+    "name": "Porsche 911 Turbo (930)",
+    "brand": "Porsche",
+    "model": "911 Turbo (930)",
+    "year": "1986",
+    "desc": "The 3.3-litre 930 combines an air-cooled turbocharged flat-six with a four-speed gearbox and its characteristic wide rear body.",
+    "desc_es": "El 930 de 3,3 litros combina un bóxer turbo refrigerado por aire con cambio de cuatro velocidades y su característica carrocería trasera ensanchada.",
+    "specs": {
+      "tipo": "Sports Coupe",
+      "motor": "Turbo flat-6",
+      "cil": "3.3 L (3299 cc)",
+      "hp": "300 PS (European specification)",
+      "trans": "4-speed manual",
+      "frenos": "4-wheel disc",
+      "vel": "260 km/h"
+    },
+    "specs_es": {
+      "tipo": "Coupé deportivo",
+      "motor": "6 bóxer turbo",
+      "cil": "3.3 L (3299 cc)",
+      "hp": "300 CV (especificación europea)",
+      "trans": "Manual 4 vel.",
+      "frenos": "Disco en 4 ruedas",
+      "vel": "260 km/h"
+    },
+    "aliases": [],
+    "yearLabel": "1986",
+    "yearStart": 1986,
+    "yearEnd": 1986,
+    "yearKind": "catalog-year",
+    "era": "classic",
+    "plate": "D5Z - 370",
+    "featured_order": 30,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0702",
+        "src": "assets/artech31/media/a88a0702.webp",
+        "thumb": "assets/artech31/media/a88a0702-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0702-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          40,
+          216,
+          1454,
+          640
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0700",
+        "src": "assets/artech31/media/a88a0700.webp",
+        "thumb": "assets/artech31/media/a88a0700-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0700-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          164,
+          116,
+          1167,
+          804
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "El 930 de 3,3 litros combina un bóxer turbo refrigerado por aire con cambio de cuatro velocidades y su característica carrocería trasera ensanchada.",
+      "en": "The 3.3-litre 930 combines an air-cooled turbocharged flat-six with a four-speed gearbox and its characteristic wide rear body."
+    },
+    "specScope": {
+      "es": "Referencia europea del modelo de 3,3 litros",
+      "en": "European 3.3-litre model reference"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "911 Turbo (930)"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "1986"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Sports Coupe",
+          "es": "Coupé deportivo"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Turbo flat-6",
+          "es": "6 bóxer turbo"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.3 L (3299 cc)",
+          "es": "3.3 L (3299 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "300 PS (European specification)",
+          "es": "300 CV (especificación europea)"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "4-speed manual",
+          "es": "Manual 4 vel."
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "4-wheel disc",
+          "es": "Disco en 4 ruedas"
+        }
+      },
+      {
+        "label": {
+          "es": "Velocidad máxima",
+          "en": "Top speed"
+        },
+        "value": {
+          "en": "260 km/h",
+          "es": "260 km/h"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Porsche — G-series history",
+        "url": "https://newsroom.porsche.com/en/press-kits/60-Years-Porsche-911/50-Jahre-Porsche-911-%28G-Serie%29-%E2%80%93-Der-Dauerbrenner-von-Porsche.html"
+      }
+    ]
+  },
+  {
+    "id": "A31",
+    "slug": "sin-placa-4",
+    "name": "Porsche Boxster Spyder (987)",
+    "brand": "Porsche",
+    "model": "Boxster Spyder (987)",
+    "year": "2011",
+    "desc": "A lightweight two-seat roadster with a mid-mounted 3.4-litre flat-six, a low windscreen and a distinctive double-hump rear deck.",
+    "desc_es": "Un roadster ligero de dos plazas, con bóxer central de 3,4 litros, parabrisas bajo y cubierta posterior de doble resalte.",
+    "specs": {
+      "tipo": "Roadster",
+      "motor": "Flat-6 (mid)",
+      "cil": "3.4 L (3436 cc)",
+      "hp": "320 PS",
+      "trans": "6-speed manual or 7-speed PDK",
+      "frenos": "4-wheel disc"
+    },
+    "specs_es": {
+      "tipo": "Roadster",
+      "motor": "6 bóxer (central)",
+      "cil": "3.4 L (3436 cc)",
+      "hp": "320 CV",
+      "trans": "Manual de 6 velocidades o PDK de 7",
+      "frenos": "Disco en 4 ruedas"
+    },
+    "aliases": [],
+    "yearLabel": "2011",
+    "yearStart": 2011,
+    "yearEnd": 2011,
+    "yearKind": "catalog-year",
+    "era": "modern",
+    "plate": "",
+    "featured_order": 31,
+    "shots": [],
+    "photos": [
+      {
+        "key": "a88a0706",
+        "src": "assets/artech31/media/a88a0706.webp",
+        "thumb": "assets/artech31/media/a88a0706-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "three-quarter",
+        "cutout": "assets/artech31/media/a88a0706-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          40,
+          209,
+          1460,
+          667
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      },
+      {
+        "key": "a88a0705",
+        "src": "assets/artech31/media/a88a0705.webp",
+        "thumb": "assets/artech31/media/a88a0705-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "view": "front",
+        "cutout": "assets/artech31/media/a88a0705-isolated-v4.webp",
+        "room": "assets/artech31/media/room-porsche-v4.webp",
+        "carBounds": [
+          166,
+          103,
+          1236,
+          843
+        ],
+        "cutoutWidth": 1536,
+        "cutoutHeight": 1024
+      }
+    ],
+    "description": {
+      "es": "Un roadster ligero de dos plazas, con bóxer central de 3,4 litros, parabrisas bajo y cubierta posterior de doble resalte.",
+      "en": "A lightweight two-seat roadster with a mid-mounted 3.4-litre flat-six, a low windscreen and a distinctive double-hump rear deck."
+    },
+    "specScope": {
+      "es": "Datos de referencia del modelo",
+      "en": "Model reference specifications"
+    },
+    "technical": [
+      {
+        "label": {
+          "es": "Fabricante",
+          "en": "Manufacturer"
+        },
+        "value": "Porsche"
+      },
+      {
+        "label": {
+          "es": "Modelo",
+          "en": "Model"
+        },
+        "value": "Boxster Spyder (987)"
+      },
+      {
+        "label": {
+          "es": "Año de catálogo",
+          "en": "Catalog year"
+        },
+        "value": "2011"
+      },
+      {
+        "label": {
+          "es": "Carrocería",
+          "en": "Body"
+        },
+        "value": {
+          "en": "Roadster",
+          "es": "Roadster"
+        }
+      },
+      {
+        "label": {
+          "es": "Motor",
+          "en": "Engine"
+        },
+        "value": {
+          "en": "Flat-6 (mid)",
+          "es": "6 bóxer (central)"
+        }
+      },
+      {
+        "label": {
+          "es": "Cilindrada",
+          "en": "Displacement"
+        },
+        "value": {
+          "en": "3.4 L (3436 cc)",
+          "es": "3.4 L (3436 cc)"
+        }
+      },
+      {
+        "label": {
+          "es": "Potencia",
+          "en": "Power"
+        },
+        "value": {
+          "en": "320 PS",
+          "es": "320 CV"
+        }
+      },
+      {
+        "label": {
+          "es": "Transmisión",
+          "en": "Transmission"
+        },
+        "value": {
+          "en": "6-speed manual or 7-speed PDK",
+          "es": "Manual de 6 velocidades o PDK de 7"
+        }
+      },
+      {
+        "label": {
+          "es": "Frenos",
+          "en": "Brakes"
+        },
+        "value": {
+          "en": "4-wheel disc",
+          "es": "Disco en 4 ruedas"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Classic Car Museum — supplied catalog",
+        "url": "https://edsonenriquez17-arch.github.io/classic-car-museum/assets/cars.json"
+      },
+      {
+        "title": "Porsche — Boxster Spyder technical specifications",
+        "url": "https://newsroom.porsche.com/dam/jcr:48fa70bf-243a-4223-ad30-348614762824/2010-11_Boxster_Spyder_Specs.pdf"
+      },
+      {
+        "title": "Porsche — period model range brochure",
+        "url": "https://files.porsche.com/filestore/download/international/none/carinformation-models-pdf/default/6e530bcc-69dc-4615-b972-eeea9597b072/The-models.pdf"
+      }
+    ]
+  }
+]

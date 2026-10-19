@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs><filter id="edge" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="15"/><feComponentTransfer><feFuncA type="linear" slope="2" intercept="0"/></feComponentTransfer></filter></defs>
+<polygon points="674.00,264.00 806.00,235.00 1043.01,234.00 1155.00,272.01 1226.00,319.00 1296.00,328.00 1322.00,355.00 1327.99,411.00 1354.00,455.00 1366.00,576.00 1354.00,686.00 1307.00,727.00 1155.00,770.00 1034.00,838.00 948.00,879.00 751.00,914.00 461.00,917.00 212.00,857.00 112.01,783.00 103.00,617.00 154.00,495.00 252.99,427.00 509.00,379.00 548.00,332.00" fill="white" filter="url(#edge)"/>
+</svg>

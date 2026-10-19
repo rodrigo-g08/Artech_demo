@@ -1,0 +1,289 @@
+{
+  "version": "E361",
+  "created_at": "2026-10-15",
+  "scope": "Shared studio and guided cabin entry for the three home vehicles",
+  "kind": "visual-reconstructions",
+  "notes": [
+    "Images generated from existing ARTECH references; not documentary photographs or geometric 3D models.",
+    "True alpha cutouts; studio floor and contact shadows are composed separately in the browser.",
+    "Original collection photography is unchanged.",
+    "Classic year remains unconfirmed."
+  ],
+  "media": [
+    {
+      "file": "assets/media/e361/classic-door.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "prompt": "Create ONE production-ready photorealistic vehicle render asset for a guided camera transition. Reference 1 is the EXACT cream and black vintage Chrysler Roadster, same black canvas roof up, chrome radiator, black fenders, whitewall tires and vintage wheels. Cabin has exactly the reference wood-rim three-spoke steering wheel, black dashboard with cream-on-black round gauges, pleated black leather bench and long slender floor shifter. Preserve its car identity, geometry, wheels, paint, roof, soft fixed studio lighting, camera angle, position, scale and landscape canvas. Reference 2 shows its cabin details, use only for continuity. Make exactly one physical change: OPEN the near-side LEFT DRIVER'S DOOR outward about 65 degrees on its proper front hinge, revealing the driver's seat and cabin behind it. The front of the car remains pointing LEFT in the frame as reference 1, same front-left three-quarter camera. Whole car AND open door fully inside canvas with comfortable margins. Do not swing open the passenger side. Do not shift the camera, do not add extra doors, people, captions, overlays, logos outside the car or watermarks. True transparent RGBA background everywhere outside the vehicle, including beneath and around the wheels: remove all floor and cast shadow. No black rectangle, no floor reflection, no fake transparency checkerboard. Only the isolated car with natural self-shadows. 16:9 wide composition, 1920x1080 preferred. This should align with the closed-door reference when overlaid in a web scene.",
+      "references": [
+        "assets/media/e360/classic-exterior.webp",
+        "assets/media/e360/classic-cabin.webp"
+      ],
+      "width": 1672,
+      "height": 941,
+      "bytes": 254542,
+      "sha256": "85760a3f7dcabcc1ea763e535767d78d2ac7497945ec99a4932868f7cff9310e",
+      "source_image": "exec-ed8e0443-6cb7-42e0-8712-be11e277eacc.png"
+    },
+    {
+      "file": "assets/media/e361/classic-driver.webp",
+      "kind": "reconstruction",
+      "transparent": false,
+      "prompt": "Create ONE premium photorealistic automotive cockpit render. This is the final seated viewpoint after entering the exact cream and black vintage Chrysler Roadster, same black canvas roof up, chrome radiator, black fenders, whitewall tires and vintage wheels. Cabin has exactly the reference wood-rim three-spoke steering wheel, black dashboard with cream-on-black round gauges, pleated black leather bench and long slender floor shifter in the first reference. First reference shows the immediately preceding camera view at the open driver's door. Second reference establishes accurate materials and instruments. Move the camera physically INSIDE, exactly at the LEFT DRIVER'S EYE POSITION, pointing forwards through the windshield, horizontal level. This is a new rendered viewpoint, not a crop. The wheel is centered in the driver's portion around x=42%, gauges directly behind it; full dashboard, windshield, passenger dash and center gearshift visible, left door at far left, black studio visible beyond windshield. Use a natural wide-angle 24mm lens with straight believable geometry, wide panoramic 16:9 full bleed. Camera low enough to feel seated, not looking in from outside and no visible person, arms or legs. Maintain exact era, dashboard layout, colors, gauges, wheel design and upholstery from references. Wood/chrome only for the classic, black Alcantara/white dials/three spokes only for red GT3, black four-spoke rectangular-center wheel/black dials/orange needles only for white 930. Soft fixed studio lighting, bright enough to read all cabin details but deep natural blacks, no glow cones, no other cars, no showroom. Not a fisheye, no UI, titles, labels or watermark. Foreground wheel and shifter feel physically close, windshield gives depth. Output one 16:9 landscape image, 1920x1080 preferred.",
+      "references": [
+        "exec-db77d267-f24b-42f9-8318-3b4596acb8e9.png",
+        "assets/media/e360/classic-cabin.webp"
+      ],
+      "width": 1672,
+      "height": 941,
+      "bytes": 293872,
+      "sha256": "f93a466150fb95fe166b7ed5cd5ba75ab4bc08677be813af0f4f5305c38a3362",
+      "source_image": "exec-1be33862-46cc-4a90-ab69-d5166c188ae0.png"
+    },
+    {
+      "file": "assets/media/e361/classic-exterior.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "width": 1672,
+      "height": 941,
+      "bytes": 963938,
+      "sha256": "32744223c8119f4a4be53c3428f714d500aa5b1431c59af224a564745e6b4b91",
+      "source_image": "exec-5fdc78ce-6dfc-4b4f-9cd7-ebac5ca759b2.png",
+      "references": [
+        "assets/media/e360/classic-exterior.webp"
+      ],
+      "prompt": "Use case: background-extraction. Input image is the edit target. Return a precise transparent PNG cutout of ONLY this exact vintage cream and black roadster. Change ONLY the background and floor to genuine transparency. Preserve the vehicle exactly: front three-quarter camera angle, size, position, original dark windshield appearance, cabin visible through windshield, hood, wheels, cream body, chrome, black soft top, original lighting. The windshield must remain the original DARK translucent glass, not a white or gray bright rectangle. Do not repaint or brighten the windshield. Maintain the original landscape 1672x941 canvas and existing margins. Remove every floor pixel, shadow, floor reflection, and background pixel. Preserve all vehicle edges, open spaces under the bumper and around the wheels, with transparent alpha in those gaps. Output true RGBA PNG alpha=0 outside the car, with crisp antialiased edges and no colored fringe. No shadows or ground material underneath. No new parts, no background, no UI. This is a background extraction, not a redesign."
+    },
+    {
+      "file": "assets/media/e361/classic-profile.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "width": 1671,
+      "height": 941,
+      "bytes": 619468,
+      "sha256": "8ceb9bcb64fd51ac7399dbe6894d5edb14e993083b3a52180be1c363f749dfad",
+      "source_image": "exec-78f16e2d-e92b-4599-9081-11cd6d4fafdd.png",
+      "references": [
+        "assets/media/e360/classic-profile.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: production transparent vehicle cutout for ARTECH website, reconstruction asset. Input image 1 is the EDIT TARGET, classic-profile.webp. Remove only the entire background and the entire floor, including all floor reflections and all ground/contact/cast shadows. Keep ONLY the exact cream-and-black vintage roadster shown. Preserve the exact vehicle identity, current camera angle and perspective, wheels, chrome, trim, soft top, steering wheel, lighting on the vehicle, body reflections, body details, and all proportions. Preserve the input 1672x941 landscape canvas, car scale, position and transparent margins as closely as possible. Do not zoom, reposition, crop, rotate, relight or redesign any part of the car. Output a true RGBA PNG with genuine transparent alpha outside the exact vehicle silhouette and in visible open gaps. Transparent means alpha=0, NOT white, black, gray or a checkerboard painted into the image. Clean antialiased silhouette, no rectangular backdrop, no halo, no ground remnants, no baked-in shadows, no reflection underneath, no text, no UI, no decorative elements."
+    },
+    {
+      "file": "assets/media/e361/classic-rear.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "width": 1671,
+      "height": 941,
+      "bytes": 843418,
+      "sha256": "a1ca46dda41760b2b47d5be7760b91496e6ddb9f5337d6911c6774549f890b36",
+      "source_image": "exec-be0e9977-56a4-4f41-bec9-1054ab87f1b9.png",
+      "references": [
+        "assets/media/e360/classic-rear.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: production transparent vehicle cutout for ARTECH website, reconstruction asset. Input image 1 is the EDIT TARGET, classic-rear.webp. Remove only the entire background and the entire floor, including all floor reflections and all ground/contact/cast shadows. Keep ONLY the exact cream-and-black vintage roadster shown. Preserve the exact vehicle identity, current camera angle and perspective, wheels, chrome, trim, soft top, steering wheel, lighting on the vehicle, body reflections, body details, and all proportions. Preserve the input 1672x941 landscape canvas, car scale, position and transparent margins as closely as possible. Do not zoom, reposition, crop, rotate, relight or redesign any part of the car. Output a true RGBA PNG with genuine transparent alpha outside the exact vehicle silhouette and in visible open gaps. Transparent means alpha=0, NOT white, black, gray or a checkerboard painted into the image. Clean antialiased silhouette, no rectangular backdrop, no halo, no ground remnants, no baked-in shadows, no reflection underneath, no text, no UI, no decorative elements."
+    },
+    {
+      "file": "assets/media/e361/classic-threshold.webp",
+      "kind": "reconstruction",
+      "transparent": false,
+      "prompt": "Create ONE full-bleed landscape photorealistic rendered camera view, intermediate frame in a cinematic journey into this exact cream and black vintage Chrysler Roadster, same black canvas roof up, chrome radiator, black fenders, whitewall tires and vintage wheels. Cabin has exactly the reference wood-rim three-spoke steering wheel, black dashboard with cream-on-black round gauges, pleated black leather bench and long slender floor shifter. The first reference is the full vehicle with driver's door open. The second reference is its correct cabin. Move the virtual camera physically to just outside the open LEFT DRIVER'S DOOR, camera roughly 1.35 metres high and 70cm outside the sill, looking diagonally forwards and down toward the driver's seat, wheel and dashboard. This is a DIFFERENT CLOSER CAMERA POSITION, not cropping or scaling the first photo. Foreground open door intrudes naturally at the left edge, painted door jamb and sill frame the bottom; dashboard and steering wheel clearly recognizable midframe, passenger seat to the right. Preserve exact era, upholstery, wheel design, gauge color, gearlever and paint. Dark black studio surrounding the vehicle, soft fixed large overhead illumination matching the exterior, charcoal polished concrete floor only visible below sill. No bright showroom, no people, no other cars outside glass, no UI, captions or watermark. Beautiful restrained reflections, natural perspective like a 28mm automotive interior photograph. Wide 16:9 image, no border, no photographic panel. In the next camera step we will sit in this driver's seat looking forwards; composition should make that path legible.",
+      "references": [
+        "exec-ed8e0443-6cb7-42e0-8712-be11e277eacc.png",
+        "assets/media/e360/classic-cabin.webp"
+      ],
+      "width": 1672,
+      "height": 941,
+      "bytes": 292704,
+      "sha256": "ce2937307cfbb1b7368394dcd7e883d0eeb39ca1eaefb4a896cac03934c2c80a",
+      "source_image": "exec-db77d267-f24b-42f9-8318-3b4596acb8e9.png"
+    },
+    {
+      "file": "assets/media/e361/red-door.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "prompt": "Create ONE production-ready photorealistic vehicle render asset for a guided camera transition. Reference 1 is the EXACT red 2010 Porsche 911 GT3, black multi-spoke wheels, large GT3 rear wing. Cabin has exactly the reference black Alcantara three-spoke steering wheel, white circular instruments with yellow needles, dashboard-mounted analog stopwatch, black Alcantara seats and manual shifter. Preserve its car identity, geometry, wheels, paint, roof, soft fixed studio lighting, camera angle, position, scale and landscape canvas. Reference 2 shows its cabin details, use only for continuity. Make exactly one physical change: OPEN the near-side LEFT DRIVER'S DOOR outward about 65 degrees on its proper front hinge, revealing the driver's seat and cabin behind it. The front of the car remains pointing LEFT in the frame as reference 1, same front-left three-quarter camera. Whole car AND open door fully inside canvas with comfortable margins. Do not swing open the passenger side. Do not shift the camera, do not add extra doors, people, captions, overlays, logos outside the car or watermarks. True transparent RGBA background everywhere outside the vehicle, including beneath and around the wheels: remove all floor and cast shadow. No black rectangle, no floor reflection, no fake transparency checkerboard. Only the isolated car with natural self-shadows. 16:9 wide composition, 1920x1080 preferred. This should align with the closed-door reference when overlaid in a web scene.",
+      "references": [
+        "assets/media/e360/red-exterior.webp",
+        "assets/media/b05/a88a0834-1920.webp"
+      ],
+      "width": 1672,
+      "height": 941,
+      "bytes": 197734,
+      "sha256": "f7a1b6cc17cdd43ac6a518a8213288727aebad6b5ce600296687b2c01f1cc079",
+      "source_image": "exec-aa82b79c-60a9-49fb-aa88-5decb5a7f023.png"
+    },
+    {
+      "file": "assets/media/e361/red-driver.webp",
+      "kind": "reconstruction",
+      "transparent": false,
+      "prompt": "Create ONE premium photorealistic automotive cockpit render. This is the final seated viewpoint after entering the exact red 2010 Porsche 911 GT3, black multi-spoke wheels, large GT3 rear wing. Cabin has exactly the reference black Alcantara three-spoke steering wheel, white circular instruments with yellow needles, dashboard-mounted analog stopwatch, black Alcantara seats and manual shifter in the first reference. First reference shows the immediately preceding camera view at the open driver's door. Second reference establishes accurate materials and instruments. Move the camera physically INSIDE, exactly at the LEFT DRIVER'S EYE POSITION, pointing forwards through the windshield, horizontal level. This is a new rendered viewpoint, not a crop. The wheel is centered in the driver's portion around x=42%, gauges directly behind it; full dashboard, windshield, passenger dash and center gearshift visible, left door at far left, black studio visible beyond windshield. Use a natural wide-angle 24mm lens with straight believable geometry, wide panoramic 16:9 full bleed. Camera low enough to feel seated, not looking in from outside and no visible person, arms or legs. Maintain exact era, dashboard layout, colors, gauges, wheel design and upholstery from references. Wood/chrome only for the classic, black Alcantara/white dials/three spokes only for red GT3, black four-spoke rectangular-center wheel/black dials/orange needles only for white 930. Soft fixed studio lighting, bright enough to read all cabin details but deep natural blacks, no glow cones, no other cars, no showroom. Not a fisheye, no UI, titles, labels or watermark. Foreground wheel and shifter feel physically close, windshield gives depth. Output one 16:9 landscape image, 1920x1080 preferred.",
+      "references": [
+        "exec-f33df3d1-2468-4741-b9c1-05bd2b738a12.png",
+        "assets/media/b05/a88a0834-1920.webp"
+      ],
+      "width": 1672,
+      "height": 941,
+      "bytes": 205898,
+      "sha256": "4272f323fd9098dfcb5eaf4c1945df32cdb99dcd647745a9bf103b8fdb3fe74c",
+      "source_image": "exec-317e8b68-420a-4a81-b5a0-b6b2d535626d.png"
+    },
+    {
+      "file": "assets/media/e361/red-exterior.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "width": 1672,
+      "height": 941,
+      "bytes": 817698,
+      "sha256": "16aba1f2cfb02a6db04c3a05671c8d4c3c043e04b58a720f99a17e65f5307243",
+      "source_image": "exec-92f80943-2a44-46a7-873f-0fa499c78698.png",
+      "references": [
+        "assets/media/e360/red-exterior.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: production transparent vehicle cutout, ARTECH reconstruction asset. Input image 1 is the EDIT TARGET, red-exterior.webp. Extract ONLY this exact red Porsche 911 GT3. Remove the entire background and floor, including reflections on the floor and every ground/contact/cast shadow. Preserve the exact car, exact camera angle, perspective, body shape, wheels, badges, wing, lighting, reflections on the body, details and dark original glazing. Preserve the original 1672x941 landscape canvas, vehicle scale, placement and margins. Do not rotate, zoom, relight, recolor or redesign. Keep the windows and interior appearance exactly as the input; do not brighten windows, whiten glass or make a gray window panel. Output true RGBA PNG with genuine alpha=0 around the complete vehicle and in clearly open gaps such as beneath the wing. No rectangle, no floor, no shadow, no reflection below the car, no gray/white/black/checkerboard fake backdrop. Clean antialiased object edges without colored fringes. No new text, no UI, no extra elements."
+    },
+    {
+      "file": "assets/media/e361/red-profile.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "width": 1672,
+      "height": 941,
+      "bytes": 595168,
+      "sha256": "856f418c61c0e51e28c5fa731a1d8052b4f566efbd218117cd3bef693342e5a4",
+      "source_image": "exec-eb620671-de79-47f0-a6e6-6215c8917b7e.png",
+      "references": [
+        "assets/media/e360/red-profile.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: production transparent vehicle cutout, ARTECH reconstruction asset. Input image 1 is the EDIT TARGET, red-profile.webp. Extract ONLY this exact red Porsche 911 GT3. Remove the entire background and floor, including reflections on the floor and every ground/contact/cast shadow. Preserve the exact car, exact camera angle, perspective, body shape, wheels, badges, wing, lighting, reflections on the body, details and dark original glazing. Preserve the original 1672x941 landscape canvas, vehicle scale, placement and margins. Do not rotate, zoom, relight, recolor or redesign. Keep the windows and interior appearance exactly as the input; do not brighten windows, whiten glass or make a gray window panel. Output true RGBA PNG with genuine alpha=0 around the complete vehicle and in clearly open gaps such as beneath the wing. No rectangle, no floor, no shadow, no reflection below the car, no gray/white/black/checkerboard fake backdrop. Clean antialiased object edges without colored fringes. No new text, no UI, no extra elements."
+    },
+    {
+      "file": "assets/media/e361/red-rear.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "width": 1672,
+      "height": 941,
+      "bytes": 749018,
+      "sha256": "4511eb6323cd48bc3eebca98e34442421f17a6a56b09074e40d617d601b5bd7c",
+      "source_image": "exec-e261f867-6cfa-4520-b7eb-8bd7a0440ec0.png",
+      "references": [
+        "assets/media/e360/red-rear.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: production transparent vehicle cutout, ARTECH reconstruction asset. Input image 1 is the EDIT TARGET, red-rear.webp. Extract ONLY this exact red Porsche 911 GT3. Remove the entire background and floor, including reflections on the floor and every ground/contact/cast shadow. Preserve the exact car, exact camera angle, perspective, body shape, wheels, badges, wing, lighting, reflections on the body, details and dark original glazing. Preserve the original 1672x941 landscape canvas, vehicle scale, placement and margins. Do not rotate, zoom, relight, recolor or redesign. Keep the windows and interior appearance exactly as the input; do not brighten windows, whiten glass or make a gray window panel. Output true RGBA PNG with genuine alpha=0 around the complete vehicle and in clearly open gaps such as beneath the wing. No rectangle, no floor, no shadow, no reflection below the car, no gray/white/black/checkerboard fake backdrop. Clean antialiased object edges without colored fringes. No new text, no UI, no extra elements."
+    },
+    {
+      "file": "assets/media/e361/red-threshold.webp",
+      "kind": "reconstruction",
+      "transparent": false,
+      "prompt": "Create ONE full-bleed landscape photorealistic rendered camera view, intermediate frame in a cinematic journey into this exact red 2010 Porsche 911 GT3, black multi-spoke wheels, large GT3 rear wing. Cabin has exactly the reference black Alcantara three-spoke steering wheel, white circular instruments with yellow needles, dashboard-mounted analog stopwatch, black Alcantara seats and manual shifter. The first reference is the full vehicle with driver's door open. The second reference is its correct cabin. Move the virtual camera physically to just outside the open LEFT DRIVER'S DOOR, camera roughly 1.35 metres high and 70cm outside the sill, looking diagonally forwards and down toward the driver's seat, wheel and dashboard. This is a DIFFERENT CLOSER CAMERA POSITION, not cropping or scaling the first photo. Foreground open door intrudes naturally at the left edge, painted door jamb and sill frame the bottom; dashboard and steering wheel clearly recognizable midframe, passenger seat to the right. Preserve exact era, upholstery, wheel design, gauge color, gearlever and paint. Dark black studio surrounding the vehicle, soft fixed large overhead illumination matching the exterior, charcoal polished concrete floor only visible below sill. No bright showroom, no people, no other cars outside glass, no UI, captions or watermark. Beautiful restrained reflections, natural perspective like a 28mm automotive interior photograph. Wide 16:9 image, no border, no photographic panel. In the next camera step we will sit in this driver's seat looking forwards; composition should make that path legible.",
+      "references": [
+        "exec-aa82b79c-60a9-49fb-aa88-5decb5a7f023.png",
+        "assets/media/b05/a88a0834-1920.webp"
+      ],
+      "width": 1672,
+      "height": 941,
+      "bytes": 225270,
+      "sha256": "426faef8de0f5447766f19f0207895b63ed28c4541970c6d3040225fafb5e37f",
+      "source_image": "exec-f33df3d1-2468-4741-b9c1-05bd2b738a12.png"
+    },
+    {
+      "file": "assets/media/e361/studio-floor.webp",
+      "kind": "reconstruction",
+      "transparent": false,
+      "width": 1672,
+      "height": 941,
+      "bytes": 1193344,
+      "sha256": "6cdea4bce33ba398a711cc54ec854629042b3bb91760f0adaaecdc20bd3780a7",
+      "source_image": "exec-978f303f-2d20-4cd4-b814-a27965c0e51a.png",
+      "references": [
+        "/workspace/scratch/bc8dca40463b/generated_images/exec-448adce2-b477-49c2-8a95-544e8cfdd77f.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: standalone empty studio floor background for a website, no user interface. Input image 1 is a STYLE AND MATERIAL reference: the approved ARTECH composition. Produce ONLY the empty environment from that reference: an elegant charcoal-black photography studio, dark polished concrete floor with soft subtle organic texture and restrained gray specular sheen, gently receding into a completely black upper background. Landscape 1672x941 composition, low eye-level automotive studio perspective. Floor should occupy approximately the lower 45 percent and smoothly darken toward the black upper 55 percent, with no hard horizon. Preserve the reference's subdued concrete material and cinematic black atmosphere. Remove ALL three cars and their colors/reflections, all text, logo, navigation, buttons, circles, UI and any objects. No cars, no lettering, no colored reflections, no spotlights, no visible light sources, no beams or cones of light, no stage platforms. This is an opaque clean reusable floor plate, not a mockup. No harsh brightness, no wet mirror finish."
+    },
+    {
+      "file": "assets/media/e361/white-door.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "prompt": "Create ONE production-ready photorealistic vehicle render asset for a guided camera transition. Reference 1 is the EXACT white 1986 Porsche 911 Turbo 930, black Fuchs wheels with polished lips, whale-tail rear spoiler and the reference rear quarter side slats. Cabin has the reference black four-spoke wheel with large rectangular Porsche center pad, black circular instruments with orange needles, black/navy leather and period cassette radio, manual shifter. Preserve its car identity, geometry, wheels, paint, roof, soft fixed studio lighting, camera angle, position, scale and landscape canvas. Reference 2 shows its cabin details, use only for continuity. Make exactly one physical change: OPEN the near-side LEFT DRIVER'S DOOR outward about 65 degrees on its proper front hinge, revealing the driver's seat and cabin behind it. The front of the car remains pointing LEFT in the frame as reference 1, same front-left three-quarter camera. Whole car AND open door fully inside canvas with comfortable margins. Do not swing open the passenger side. Do not shift the camera, do not add extra doors, people, captions, overlays, logos outside the car or watermarks. True transparent RGBA background everywhere outside the vehicle, including beneath and around the wheels: remove all floor and cast shadow. No black rectangle, no floor reflection, no fake transparency checkerboard. Only the isolated car with natural self-shadows. 16:9 wide composition, 1920x1080 preferred. This should align with the closed-door reference when overlaid in a web scene.",
+      "references": [
+        "assets/media/e360/white-exterior.webp",
+        "assets/media/b05/a88a0909-1920.webp"
+      ],
+      "width": 1672,
+      "height": 941,
+      "bytes": 188628,
+      "sha256": "545c0fc3e3f6213af3cfb7f878376fa96d7aa84ece2e212cbf7dc6f8051bb7d2",
+      "source_image": "exec-806e74d1-2897-4641-bf63-1c2710895d13.png"
+    },
+    {
+      "file": "assets/media/e361/white-driver.webp",
+      "kind": "reconstruction",
+      "transparent": false,
+      "prompt": "Create ONE premium photorealistic automotive cockpit render. This is the final seated viewpoint after entering the exact white 1986 Porsche 911 Turbo 930, black Fuchs wheels with polished lips, whale-tail rear spoiler and the reference rear quarter side slats. Cabin has the reference black four-spoke wheel with large rectangular Porsche center pad, black circular instruments with orange needles, black/navy leather and period cassette radio, manual shifter in the first reference. First reference shows the immediately preceding camera view at the open driver's door. Second reference establishes accurate materials and instruments. Move the camera physically INSIDE, exactly at the LEFT DRIVER'S EYE POSITION, pointing forwards through the windshield, horizontal level. This is a new rendered viewpoint, not a crop. The wheel is centered in the driver's portion around x=42%, gauges directly behind it; full dashboard, windshield, passenger dash and center gearshift visible, left door at far left, black studio visible beyond windshield. Use a natural wide-angle 24mm lens with straight believable geometry, wide panoramic 16:9 full bleed. Camera low enough to feel seated, not looking in from outside and no visible person, arms or legs. Maintain exact era, dashboard layout, colors, gauges, wheel design and upholstery from references. Wood/chrome only for the classic, black Alcantara/white dials/three spokes only for red GT3, black four-spoke rectangular-center wheel/black dials/orange needles only for white 930. Soft fixed studio lighting, bright enough to read all cabin details but deep natural blacks, no glow cones, no other cars, no showroom. Not a fisheye, no UI, titles, labels or watermark. Foreground wheel and shifter feel physically close, windshield gives depth. Output one 16:9 landscape image, 1920x1080 preferred.",
+      "references": [
+        "exec-4af92c98-8391-4257-adf7-d3f8853432da.png",
+        "assets/media/b05/a88a0909-1920.webp"
+      ],
+      "width": 1672,
+      "height": 941,
+      "bytes": 262452,
+      "sha256": "2f65c2b1722b5866a40f202783f4240a3877219e669a40f6b940780806d9074c",
+      "source_image": "exec-18f7ff30-b337-4f49-9bb6-c4beaaf56f97.png"
+    },
+    {
+      "file": "assets/media/e361/white-exterior.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "width": 1672,
+      "height": 941,
+      "bytes": 699946,
+      "sha256": "6b329eb1915753b44e7406c618f65eeb010b666673c3f8c18d95a4fbecb68e82",
+      "source_image": "exec-ab556ee9-9abb-4b16-9c27-ea7ba779808e.png",
+      "references": [
+        "assets/media/e360/white-exterior.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: production transparent vehicle cutout, ARTECH reconstruction asset. Input image 1 is the EDIT TARGET, white-exterior.webp. Extract ONLY this exact white classic Porsche 911 Turbo, keeping its current exterior view. Remove the entire background and floor, including all floor reflections and all ground/contact/cast shadows. Preserve the exact car identity, angle and perspective, shape, body details, black bumpers, wing, side strakes, wheels, chrome, original lighting and body reflections. Keep dark windshield and cabin appearance exactly as the input. Do not brighten or whiten windows. Preserve the original 1672x941 landscape canvas, car scale, position and margins as closely as possible. Do not rotate, zoom, crop, relight, recolor, redesign or add parts. Output true RGBA PNG with genuine alpha=0 outside the precise car silhouette and in clearly open background gaps. No rectangle or background color, no checkerboard painted in, no floor remnants, no shadow or reflection below the wheels. Clean antialiased object edges without white halos or colored fringes. No new text, no UI, no decoration."
+    },
+    {
+      "file": "assets/media/e361/white-profile.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "width": 1671,
+      "height": 941,
+      "bytes": 523346,
+      "sha256": "341a70859e15975484dfb1e5853288248cc461fcbc5f61c75d76ed3cc4b24d93",
+      "source_image": "exec-c5e7b310-4a9e-4972-98d9-9bbb705a0ea7.png",
+      "references": [
+        "assets/media/e360/white-profile.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: production transparent vehicle cutout, ARTECH reconstruction asset. Input image 1 is the EDIT TARGET, white-profile.webp. Extract ONLY this exact white classic Porsche 911 Turbo, keeping its current profile view. Remove the entire background and floor, including all floor reflections and all ground/contact/cast shadows. Preserve the exact car identity, angle and perspective, shape, body details, black bumpers, wing, side strakes, wheels, chrome, original lighting and body reflections. Keep dark windshield and cabin appearance exactly as the input. Do not brighten or whiten windows. Preserve the original 1672x941 landscape canvas, car scale, position and margins as closely as possible. Do not rotate, zoom, crop, relight, recolor, redesign or add parts. Output true RGBA PNG with genuine alpha=0 outside the precise car silhouette and in clearly open background gaps. No rectangle or background color, no checkerboard painted in, no floor remnants, no shadow or reflection below the wheels. Clean antialiased object edges without white halos or colored fringes. No new text, no UI, no decoration."
+    },
+    {
+      "file": "assets/media/e361/white-rear.webp",
+      "kind": "reconstruction",
+      "transparent": true,
+      "width": 1672,
+      "height": 941,
+      "bytes": 680962,
+      "sha256": "fd4d6fd9e921d43d32b062e3af143bb61a9bf7b9a1156bc69633854647e56327",
+      "source_image": "exec-0c76c669-6bb5-4253-a472-f76451799c9f.png",
+      "references": [
+        "assets/media/e360/white-rear.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: production transparent vehicle cutout, ARTECH reconstruction asset. Input image 1 is the EDIT TARGET, white-rear.webp. Extract ONLY this exact white classic Porsche 911 Turbo, keeping its current rear view. Remove the entire background and floor, including all floor reflections and all ground/contact/cast shadows. Preserve the exact car identity, angle and perspective, shape, body details, black bumpers, wing, side strakes, wheels, chrome, original lighting and body reflections. Keep dark windshield and cabin appearance exactly as the input. Do not brighten or whiten windows. Preserve the original 1672x941 landscape canvas, car scale, position and margins as closely as possible. Do not rotate, zoom, crop, relight, recolor, redesign or add parts. Output true RGBA PNG with genuine alpha=0 outside the precise car silhouette and in clearly open background gaps. No rectangle or background color, no checkerboard painted in, no floor remnants, no shadow or reflection below the wheels. Clean antialiased object edges without white halos or colored fringes. No new text, no UI, no decoration."
+    },
+    {
+      "file": "assets/media/e361/white-threshold.webp",
+      "kind": "reconstruction",
+      "transparent": false,
+      "prompt": "Create ONE full-bleed landscape photorealistic rendered camera view, intermediate frame in a cinematic journey into this exact white 1986 Porsche 911 Turbo 930, black Fuchs wheels with polished lips, whale-tail rear spoiler and the reference rear quarter side slats. Cabin has the reference black four-spoke wheel with large rectangular Porsche center pad, black circular instruments with orange needles, black/navy leather and period cassette radio, manual shifter. The first reference is the full vehicle with driver's door open. The second reference is its correct cabin. Move the virtual camera physically to just outside the open LEFT DRIVER'S DOOR, camera roughly 1.35 metres high and 70cm outside the sill, looking diagonally forwards and down toward the driver's seat, wheel and dashboard. This is a DIFFERENT CLOSER CAMERA POSITION, not cropping or scaling the first photo. Foreground open door intrudes naturally at the left edge, painted door jamb and sill frame the bottom; dashboard and steering wheel clearly recognizable midframe, passenger seat to the right. Preserve exact era, upholstery, wheel design, gauge color, gearlever and paint. Dark black studio surrounding the vehicle, soft fixed large overhead illumination matching the exterior, charcoal polished concrete floor only visible below sill. No bright showroom, no people, no other cars outside glass, no UI, captions or watermark. Beautiful restrained reflections, natural perspective like a 28mm automotive interior photograph. Wide 16:9 image, no border, no photographic panel. In the next camera step we will sit in this driver's seat looking forwards; composition should make that path legible.",
+      "references": [
+        "exec-806e74d1-2897-4641-bf63-1c2710895d13.png",
+        "assets/media/b05/a88a0909-1920.webp"
+      ],
+      "width": 1672,
+      "height": 941,
+      "bytes": 250280,
+      "sha256": "998c14fa5d632a5960e35f5e4ced3d3c357f3f5129e3bbec27cb3fcbd7b54eba",
+      "source_image": "exec-4af92c98-8391-4257-adf7-d3f8853432da.png"
+    }
+  ]
+}

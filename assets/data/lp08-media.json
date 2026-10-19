@@ -1,0 +1,66 @@
+{
+  "version": "LP08",
+  "notes": "Native master + downscaled derivatives; no upscaling, no crop or aspect ratio distortion.",
+  "scenes": [
+    {
+      "scene": "atelier",
+      "source": "exec-7037cbfb-a297-4baf-a117-d3b453260961.png",
+      "source_width": 1843,
+      "source_height": 853,
+      "origin": "AI outpainting of approved illustrative LP06 source",
+      "variants": [
+        {
+          "path": "assets/media/lp08/atelier-768.webp",
+          "width": 768,
+          "height": 355,
+          "bytes": 30598,
+          "sha256": "3e8f6d2b580f9d94146a07ec7a88c1fc1a921d6bd8c5cb4895ae57e4caae625c"
+        },
+        {
+          "path": "assets/media/lp08/atelier-1280.webp",
+          "width": 1280,
+          "height": 592,
+          "bytes": 60882,
+          "sha256": "bb087e146ba072232612b8e7aed9d40b0924c18eaedcc4dd16e8b1946328e4f6"
+        },
+        {
+          "path": "assets/media/lp08/atelier-1843.webp",
+          "width": 1843,
+          "height": 853,
+          "bytes": 96332,
+          "sha256": "164f93abf09081d53533fafe687653af4987cc12b57a6d7563b6ae0af2cb52ba"
+        }
+      ]
+    },
+    {
+      "scene": "dining",
+      "source": "exec-f4d9e2a8-bbb7-4b13-b88d-c2ec85bf0806.png",
+      "source_width": 1837,
+      "source_height": 856,
+      "origin": "AI outpainting of approved illustrative LP06 source",
+      "variants": [
+        {
+          "path": "assets/media/lp08/dining-768.webp",
+          "width": 768,
+          "height": 358,
+          "bytes": 32528,
+          "sha256": "5317898d441124c64576462ed78fe0c33bdbc1ea621c0073dc383d8c01f9f3df"
+        },
+        {
+          "path": "assets/media/lp08/dining-1280.webp",
+          "width": 1280,
+          "height": 596,
+          "bytes": 65494,
+          "sha256": "47e846e103a3737069d7940b8234a323f229b3938267089035e6386a216f3da4"
+        },
+        {
+          "path": "assets/media/lp08/dining-1837.webp",
+          "width": 1837,
+          "height": 856,
+          "bytes": 102340,
+          "sha256": "558c88a31561ec017884ceab20a3b47c0fe67e47c707cfabf6c348e25a65d627"
+        }
+      ]
+    }
+  ]
+}

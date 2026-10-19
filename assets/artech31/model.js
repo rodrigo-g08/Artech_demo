@@ -35,8 +35,8 @@
   // Fit the silhouette above the caption, with room visible around the exhibit.
   function fitCar(width, height, photo) {
     const [x,y,w,h]=photo.carBounds,portrait=width/height<1;
-    const scale=Math.min(width*(portrait?.88:.70)/w,height*(portrait?.43:.59)/h);
-    const carWidth=w*scale,carHeight=h*scale,bottom=height*(portrait?.62:.78);
+    const scale=Math.min(width*(portrait?.76:.58)/w,height*(portrait?.30:.44)/h);
+    const carWidth=w*scale,carHeight=h*scale,bottom=height*(portrait?.60:.72);
     const top=Math.max(height*.08,bottom-carHeight),left=(width-carWidth)/2;
     return {width:photo.cutoutWidth*scale,height:photo.cutoutHeight*scale,left:left-x*scale,top:top-y*scale};
   }
@@ -102,7 +102,9 @@
         photos.add(photo.key);
       });
     });
-    if (photos.size !== 47) throw Error('The collection must preserve all 47 existing photographs exactly once.');
+    // Identity/photograph totals are checked against the canonical manifest at
+    // build time. Runtime validation must not impose the old 31-car selection.
+    if (expected && expected.some(id => !slugs.has(id))) throw Error('Incomplete route inventory.');
     return true;
   }
   return Object.freeze({ clamp, normalize, filter, hoverVelocity, advance, advanceCircular, wrap, circularDelta, galleryPose, fitScene, fitCar, statistics, validate });

@@ -5,7 +5,7 @@
   'use strict';
   const clamp = n => Math.max(0, Math.min(1, n));
   const smooth = n => { const p = clamp(n); return p * p * (3 - 2 * p); };
-  const count = 5, end = 4.65;
+  const count = 5, end = 6.4;
 
   function stepsAt(local) {
     // All three items finish before the scene starts its exit at .62.
@@ -28,10 +28,23 @@
       next.opacity = smooth(transition);
       next.copy = smooth((transition - .43) / .57);
     }
-    return { progress: p, active: index + (transition >= .5 ? 1 : 0), layers };
+    return { progress: p, active: index + (transition >= .5 ? 1 : 0), cabin: cabinAt(p), layers };
   }
 
-  if (typeof module === 'object' && module.exports) module.exports = { frameAt, stepsAt, end };
+  // One real photograph, continuously re-framed. Every scroll position is
+  // deterministic in both directions; there is no wheel lock, snap or timer.
+  function cabinAt(value) {
+    const progress = Math.max(0, Math.min(3, (value - 4) / .8));
+    const frames = [[.50,.50,1], [.44,.34,1.38], [.65,.51,1.48], [.61,.82,1.42]];
+    const a = Math.min(2, Math.floor(progress)), t = smooth(progress-a);
+    const [x,y,zoom] = frames[a].map((v,i)=>v+(frames[a+1][i]-v)*t);
+    return {progress, active:Math.round(progress), x,y,zoom, intro:1-smooth(progress/.6)};
+  }
+  function cabinGeometry(width,height,state) {
+    const scale=Math.max(width/1851,height/851)*state.zoom, w=1851*scale,h=851*scale;
+    return {width:w,height:h,left:Math.max(width-w,Math.min(0,width/2-state.x*w)),top:Math.max(height-h,Math.min(0,height/2-state.y*h))};
+  }
+  if (typeof module === 'object' && module.exports) module.exports = { frameAt, stepsAt, cabinAt, cabinGeometry, end };
   if (typeof document === 'undefined') return;
   const page = document.getElementById('page-workshops');
   const run = document.getElementById('e362WorkshopRun');
@@ -39,6 +52,8 @@
   if (!page || !run || !stage) return;
   const scenes = [...stage.querySelectorAll('[data-e362-scene]')];
   const items = scenes.map(scene => [...scene.querySelectorAll('.e362-steps > div')]);
+  const cabin = scenes[4], cabinImage=cabin.querySelector('img');
+  const cabinButtons=[...cabin.querySelectorAll('[data-p08-detail]')];
   const nav = document.getElementById('e362WorkshopNav');
   const controls = [...nav.querySelectorAll('[data-e362-go]')];
   const header = document.getElementById('header');
@@ -69,6 +84,8 @@
       scene.style.removeProperty('clip-path');
       scene.style.removeProperty('visibility');
     });
+    cabinImage.removeAttribute('style');
+    cabin.style.removeProperty('--p08-intro');
     active = -1;
   }
 
@@ -93,6 +110,21 @@
     active = index;
   }
 
+
+  function paintCabin(state) {
+    const bounds=stage.getBoundingClientRect(),g=cabinGeometry(bounds.width,stageHeight,state);
+    for(const [key,value] of Object.entries(g))cabinImage.style[key]=value+'px';
+    cabin.style.setProperty('--p08-intro',state.intro.toFixed(4));
+    const en=language()==='en';
+    const labels=en?['Cabin','Wheel','Console','Upholstery']:['Habitáculo','Volante','Consola','Tapicería'];
+    const headings=en?['A view of the whole.','Control, within reach.','Every control has its place.','Texture you can feel.']:['Una mirada al conjunto.','El control, al alcance.','Cada mando tiene su lugar.','Textura que se siente.'];
+    document.getElementById('p08CabinLabel').textContent=String(state.active+1).padStart(2,'0')+' / '+labels[state.active];
+    document.getElementById('p08CabinHeading').textContent=headings[state.active];
+    cabinButtons.forEach((button,i)=>{
+      button.style.setProperty('--p08-progress',clamp(state.progress-i+1).toFixed(4));
+      if(i===state.active)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');
+    });
+  }
   function paint() {
     raf = 0;
     if (!isOpen() || document.hidden) return;
@@ -121,6 +153,7 @@
     });
     stage.style.setProperty('--e362-progress', (frame.progress / end).toFixed(4));
     selectAccessibility(frame.active);
+    paintCabin(frame.cabin);
   }
   function schedule() { if (!raf && isOpen()) raf = requestAnimationFrame(paint); }
 
@@ -160,11 +193,11 @@
   }
 
   function go(index, instant = false) {
-    const next = Math.max(0, Math.min(count - 1, Number(index) || 0));
+    const next = Math.max(0, Math.min(end, Number(index) || 0));
     if (!isOpen()) return;
     const top = pinned
       ? scrollY + run.getBoundingClientRect().top - headerHeight + next * unit
-      : scrollY + scenes[next].getBoundingClientRect().top - headerHeight;
+      : scrollY + scenes[Math.min(count - 1, Math.floor(next))].getBoundingClientRect().top - headerHeight;
     scrollTo({ top, behavior: instant || reduced.matches ? 'instant' : 'smooth' });
   }
   page.querySelectorAll('[data-e362-go]').forEach(control => control.addEventListener('click', event => {
@@ -172,6 +205,7 @@
     event.preventDefault();
     go(control.dataset.e362Go);
   }));
+  cabinButtons.forEach(button=>button.addEventListener('click',()=>go(4+Number(button.dataset.p08Detail)*.8)));
   nav.addEventListener('keydown', event => {
     const index = controls.indexOf(event.target);
     if (index < 0) return;
@@ -223,5 +257,5 @@
   viewport.addEventListener?.('change', () => measure(true));
   document.fonts?.ready.then(() => measure(false));
   translate(); route();
-  window.ArtechWorkshop = Object.freeze({ version: 'P07', refresh: () => measure(false), go });
+  window.ArtechWorkshop = Object.freeze({ version: 'P08', refresh: () => measure(false), go });
 })();

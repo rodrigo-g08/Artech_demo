@@ -1,4 +1,4 @@
-/* ARTECH Collection 31 · catalogue → museum → complete photographic scene. */
+/* ARTECH Collection 96 · catalogue → museum → complete photographic scene. */
 (function () {
   'use strict';
   const M = window.Artech31Model, root = document.documentElement;
@@ -26,7 +26,7 @@
   const museumHash = slug => '#p-collection/museum/' + encodeURIComponent(slug);
   const vehicleHash = slug => '#p-vehicle/' + encodeURIComponent(slug);
   function persist() {
-    const value = { version: 'P07', filters, catalogueScroll, museum: { slugs: museum.slugs, position: museum.position } };
+    const value = { version: 'P08', filters, catalogueScroll, museum: { slugs: museum.slugs, position: museum.position } };
     try { sessionStorage.setItem('artech.collection31', JSON.stringify(value)); } catch (_) {}
   }
   function restore() {
@@ -34,7 +34,7 @@
       const value = JSON.parse(sessionStorage.getItem('artech.collection31'));
       if (value?.filters) filters = { ...filters, ...value.filters };
       catalogueScroll = Number(value?.catalogueScroll) || 0;
-      if (value?.version==='P07' && value?.museum) { museum.slugs = value.museum.slugs || []; museum.position = Number(value.museum.position) || 0; }
+      if (value?.version==='P08' && value?.museum) { museum.slugs = value.museum.slugs || []; museum.position = Number(value.museum.position) || 0; }
     } catch (_) {}
   }
   function prepareDOM() {
@@ -136,7 +136,7 @@
   function rememberMuseum() {
     persist();
     if (parse().key === 'p-collection' && parse().mode === 'museum') {
-      history.replaceState({ ...(history.state || {}), c31Museum: { version:'P07', slugs: museum.slugs, position: museum.position } }, '', location.href);
+      history.replaceState({ ...(history.state || {}), c31Museum: { version:'P08', slugs: museum.slugs, position: museum.position } }, '', location.href);
     }
   }
   function openMuseum(slug, fromCatalogue = true) {
@@ -360,8 +360,8 @@
     if(!inMuseum)stopMotion(true);
     if(inMuseum) {
       $('f01CollectionFilm').pause();
-      const saved=history.state?.c31Museum?.version==='P07'?history.state.c31Museum:null;
-      if(saved?.version==='P07' && saved?.slugs?.length){museum.slugs=saved.slugs;museum.position=saved.position;}
+      const saved=history.state?.c31Museum?.version==='P08'?history.state.c31Museum:null;
+      if(saved?.version==='P08' && saved?.slugs?.length){museum.slugs=saved.slugs;museum.position=saved.position;}
       museum.slugs=museum.slugs.filter(slug=>carMap.has(slug));
       if(!museum.slugs.length) museum.slugs=cars.map(car=>car.slug);
       if(!wasMuseum && !saved && parsed.id && carMap.has(parsed.id) && !museum.slugs.includes(parsed.id))museum.slugs=cars.map(car=>car.slug);
@@ -451,7 +451,7 @@
   async function load() {
     $('c31Error').hidden=$('c31Retry').hidden=true;$('c31Grid').setAttribute('aria-busy','true');
     try {
-      const response=await fetch('assets/artech31/catalogue.json?v=p07-1');if(!response.ok)throw Error('Catalogue unavailable');
+      const response=await fetch('assets/artech31/catalogue.json?v=p08-1');if(!response.ok)throw Error('Catalogue unavailable');
       const data=await response.json();M.validate(data,window.ARTECH31_SLUGS);cars=data;carMap=new Map(cars.map(car=>[car.slug,car]));loaded=true;
       // Never publish selection statistics to f01's museum KPI listener.
       dispatchEvent(new CustomEvent('artech:selection-ready',{detail:{cars:cars.length}}));
@@ -463,6 +463,6 @@
     }
   }
   restore();prepareDOM();wire();translate();
-  window.ArtechCollection31=Object.freeze({showVehicle(slug){const car=carMap.get(slug);if(car)return renderVehicle(car,current?.slug===slug);},openMuseum,version:'P07'});
+  window.ArtechCollection31=Object.freeze({showVehicle(slug){const car=carMap.get(slug);if(car)return renderVehicle(car,current?.slug===slug);},openMuseum,version:'P08'});
   load();
 })();

@@ -35,7 +35,9 @@
   // Fit the silhouette above the caption, with room visible around the exhibit.
   function fitCar(width, height, photo) {
     const [x,y,w,h]=photo.carBounds,portrait=width/height<1;
-    const scale=Math.min(width*(portrait?.76:.58)/w,height*(portrait?.30:.44)/h);
+    // P09: every photographed car is exactly 20% larger than P08.
+    // The shared geometry keeps front/3-4 views and wheel shadows aligned.
+    const scale=1.2*Math.min(width*(portrait?.76:.58)/w,height*(portrait?.30:.44)/h);
     const carWidth=w*scale,carHeight=h*scale,bottom=height*(portrait?.60:.72);
     const top=Math.max(height*.08,bottom-carHeight),left=(width-carWidth)/2;
     return {width:photo.cutoutWidth*scale,height:photo.cutoutHeight*scale,left:left-x*scale,top:top-y*scale};
